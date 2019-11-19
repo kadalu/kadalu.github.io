@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+{% assign author_id = page.url | replace: "/author/", "" %}
+<div class="bg-gray-100 py-10">
+    <div class="mx-auto px-10 md:px-20 w-full sm:w-auto md:w-full lg:w-32 xl:w-3/4">
+        <div class="flex flex-wrap -mx-2">
+            <div class="w-full mb-10 text-xl">
+                <a class="px-2" href="/">Home</a>/<span class="px-2">Author({{ author_id }})</span>
+            </div>
+
+            {% for post in site.posts %}
+            {% if post.author == author_id %}
+            {% assign author = site.data.authors[post.author] %}
+            <a class="block w-full md:w-1/3 px-2 mb-16" href="{{ post.url | relative_url }}">
+                <h2 class="text-xl text-blue-900">{{ post.title }}</h2>
+                <p class="text-gray-600 text-sm">
+                    Posted on 
+                    <time class="italic" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                        {{ post.date | date: " %b %-d, %Y" }}
+                    </time>
+                    by
+                    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <span class="p-author font-bold" itemprop="name">
+                            {{ author.name | escape }}
+                        </span>
+                    </span>
+                </p>
+                <p class="text-gray-900">
+                    {{ post.summary }} ...
+                </p>
+            </a>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

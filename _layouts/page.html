@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="py-2">
+  <div class="mx-auto px-10 md:px-20 w-full sm:w-auto md:w-full lg:w-32 xl:w-3/4">
+    <div class="flex flex-wrap -mx-2">
+      <nav class="breadcrumb w-full mb-10" aria-label="breadcrumbs">
+        <a class="px-2" href="/">Home</a>/
+        <span class="px-2" aria-current="page">{{ page.url | replace: "/", "" | capitalize }}</span>
+      </nav>
+      <div class="w-full md:w-10/12">
+        <article class="content" itemscope itemtype="http://schema.org/BlogPosting">
+          {{ content }}
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

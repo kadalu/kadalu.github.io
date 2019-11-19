@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<div class="container">
+  <div class="container is-fluid">
+    <div class="columns">
+      <div class="column is-3">
+        <aside class="menu has-right-border">
+          {%- for section in site.data.glusterdocs -%}
+          <p class="menu-label">
+            {{ section.section }}
+          </p>
+          <ul class="menu-list">
+            {%- for chapter in section.chapters -%}
+            {%- assign url = chapter.url | default: chapter.title -%}
+            {%- assign url = url | downcase | replace: " ", "-" | prepend: "/glusterdocs/" -%}
+            {%- if page.url == url -%}
+            <li><a class="is-active" href="{{ url }}">{{ chapter.title }}</a></li>
+            {%- else -%}
+            <li><a href="{{ url }}">{{ chapter.title }}</a></li>
+            {%- endif -%}
+            {%- endfor -%}
+          </ul>
+          {%- endfor -%}
+        </aside>
+      </div>
+      <div class="column is-9">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/glusterdocs">Gluster Docs</a></li>
+            <li class="is-active"><a href="#" aria-current="page">{{ page.url | replace: "/glusterdocs/", "" }}</a></li>
+          </ul>
+        </nav>
+        <div class="content">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+title: Use Kadalu Container Storage!
+subtitle: Expose your storage devices to Kubernetes in half the time.
+whatis_details: >-
+    <p>Kadalu provides the persistent storage for applications running in Kubernetes.</p>
+    <p>Easy setup, expose your storage devices to Kubernetes in just two steps.</p>
+whatis_snippet: |-
+  kubectl create -f https://kadalu.org/operator-latest.yaml
+  kubectl create -f storage-pool.yaml
+
+features:
+  - title: Easy to Use
+    text: Easy to install on an already running kubernetes cluster using Kadalu Operator.
+
+  - title: Open Source
+    text: Kadalu is licenced under Apache 2.0 license.
+
+  - title: Secure and Scalable
+    text: Natively integrated with Kubernetes for secured access to Storage servers.
+
+  - title: Powered by GlusterFS
+    text: Kadalu is powered by time tested industry proven Gluster distributed Filesystem.
+        
+  - title: Works with all Kubernetes
+    text: Kadalu works with upstream Kubernetes, Openshift and many others.
+
+  - title: Effective Monitoring
+    text: Easily Monitor Health, Utilization and Performance metrics.
