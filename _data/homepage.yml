@@ -4,7 +4,7 @@ whatis_details: >-
     <p>Kadalu provides the persistent storage for applications running in Kubernetes.</p>
     <p>Easy setup, expose your storage devices to Kubernetes in just two steps.</p>
 whatis_snippet: |-
-  kubectl create -f https://kadalu.org/operator-latest.yaml
+  kubectl create -f https://kadalu.io/operator-latest.yaml
   kubectl create -f storage-pool.yaml
 
 features:
