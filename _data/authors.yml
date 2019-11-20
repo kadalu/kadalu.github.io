@@ -1,7 +1,7 @@
 kadalu:
   bio: Team Kadalu
   name: Kadalu
-  site: https://kadalu.org
+  site: https://kadalu.io
   twitter: kadaluproject
 aravindavk:
   bio: Kadalu Maintainer
@@ -9,12 +9,12 @@ aravindavk:
   site: https://aravindavk.in
   twitter: aravindavk
 amarts:
-  bio: Kadalu Maintainer
+  bio: GlusterFS and Kadalu Maintainer
   name: Amar Tumballi
   site: https://medium.com/@tumballi
   twitter: tumballi
 sac:
   bio: Kadalu Maintainer
   name: Sachidananda Urs
-  site: sac314
-  twitter: https://twitter.com/sac314
+  site: https://twitter.com/sac314
+  twitter: sac314
