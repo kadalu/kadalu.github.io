@@ -1,8 +1,8 @@
 title: Use Kadalu Container Storage!
-subtitle: Expose your storage devices to Kubernetes in half the time.
+subtitle: Provision storage in less time than it takes to brew coffee
 whatis_details: >-
-    <p>Kadalu provides the persistent storage for applications running in Kubernetes.</p>
-    <p>Easy setup, expose your storage devices to Kubernetes in just two steps.</p>
+    <p>Kadalu helps you configure persistent storage in 2 easy steps.</p>
+    <p>So you can focus on managing and scaling your applications within k8s framework.</p>
 whatis_snippet: |-
   kubectl create -f https://kadalu.io/operator-latest.yaml
   kubectl create -f storage-pool.yaml
@@ -24,4 +24,4 @@ features:
     text: Kadalu works with upstream Kubernetes, Openshift and many others.
 
   - title: Effective Monitoring
-    text: Easily Monitor Health, Utilization and Performance metrics.
+    text: Kadalu comes with built-in health, utilization and performance metrics measures. Easy to integrate into observability patterns
