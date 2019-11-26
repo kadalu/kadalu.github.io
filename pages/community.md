@@ -3,8 +3,12 @@ layout: page
 permalink: /community
 ---
 
-Kadalu in kannada language means Ocean. A lightweight Persistent
-storage solution for applications running in Kubernetes.
+kaDalu project offers a lightweight Persistent storage solution
+for applications running in Kubernetes. It provides operator,
+which spawns CSI drivers, and also storage exporter based on
+the configuration provided.
+
+There are many ways you can use storage using kadalu, which are described in our docs.
 
 You can reach to the developers using certain ways.
 
