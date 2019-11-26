@@ -2,22 +2,13 @@
   chapters:
     - title: Introduction
     - title: Quick Start
-    - title: Replica 1 Volumes
-    - title: Replica 3 Volumes
-    - title: Thin Arbiter Volumes
-    - title: Using Kadalu with Kubernetes
-    - title: Using Kadalu with Red Hat OpenShift
-    - title: Backup
-    - title: Troubleshooting
 - section: Use cases
   chapters:
     - title: Running a Webserver
     - title: Running Minio
-    - title: Running Postgresql
 - section: Articles
   chapters:
     - title: How it works?
 - section: Developer Guide
   chapters:
-    - title: Local Setup
     - title: Get Involved
