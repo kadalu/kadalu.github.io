@@ -81,3 +81,22 @@
     overflow: auto;
     padding: 1rem;
 }
+
+.content a{
+    color: #2b6cb0;
+}
+
+.content a:hover {
+    color:#F56565;
+}
+
+.content ul {
+    list-style-type: square;
+    margin-left: 30px;
+    margin-bottom: 1rem;
+}
+.content ol {
+    list-style-type: decimal;
+    margin-left: 30px;
+    margin-bottom: 1rem;
+}
