@@ -75,7 +75,7 @@ $ kubectl port-forward svc/minio-service --address 0.0.0.0 8000:9000
 ```
 
 Now access minio from your laptop using
-http://<ip-of-node>:8000/minio/login
+http://\<ip-of-node\>:8000/minio/login
 
 **Note**: Use Access Key and Secret Key during login as specified while generating
 minio-deployment.yaml file.
