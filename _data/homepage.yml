@@ -4,7 +4,7 @@ whatis_details: >-
     <p>Kadalu helps you configure persistent storage in 2 easy steps.</p>
     <p>So you can focus on managing and scaling your applications within k8s framework.</p>
 whatis_snippet: |-
-  kubectl create -f https://kadalu.io/operator-latest
+  kubectl create -f https://kadalu.io/operator-latest.yaml
   kubectl create -f storage-pool.yaml
 
 features:
