@@ -7,13 +7,13 @@ layout: docs
 Deploy KaDalu Operator using,
 
 ```console
-$ kubectl create -f https://kadalu.io/operator-latest
+$ kubectl create -f https://kadalu.io/operator-latest.yaml
 ```
 
 In the case of OpenShift, deploy Kadalu Operator using,
 
 ```console
-$ oc create -f https://kadalu.io/operator-openshift-latest
+$ oc create -f https://kadalu.io/operator-openshift-latest.yaml
 ```
 
 **Note**: Security Context Constraints can be applied only by admins, Run `oc login -u system:admin` to login as admin
