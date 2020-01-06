@@ -63,10 +63,26 @@ operator-6dfb65dcdd-r664t        1/1     Running   0          30m
 
 Now we are ready to create Persistent volumes and use them in application Pods.
 
+```yaml
+# File: sample-pvc.yaml
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pv1
+spec:
+  storageClassName: kadalu.replica1
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+```
+
 Create PVC using,
 
 ```console
-$ kubectl create -f examples/sample-pvc.yaml
+$ kubectl create -f sample-pvc.yaml
 persistentvolumeclaim/pv1 created
 ```
 
@@ -80,7 +96,31 @@ pv1    Bound    pvc-8cbe80f1-428f-11e9-b31e-525400f59aef   1Gi        RWO       
 
 Now, this PVC is ready to be consumed in your application pod. You can see the sample usage of PVC in an application pod by below:
 
+```yaml
+# File: sample-app.yaml
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod1
+  labels:
+    app: sample-app
+spec:
+  containers:
+  - name: sample-app
+    image: docker.io/kadalu/sample-pv-check-app:latest
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - mountPath: "/mnt/pv"
+      name: csivol
+  volumes:
+  - name: csivol
+    persistentVolumeClaim:
+      claimName: pv1
+  restartPolicy: OnFailure
+```
+
 ```console
-$ kubectl create -f examples/sample-app.yaml
+$ kubectl create -f sample-app.yaml
 pod1 created
 ```
