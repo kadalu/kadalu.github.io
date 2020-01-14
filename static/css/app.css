@@ -69,6 +69,11 @@
     margin-bottom: 1rem;
 }
 
+.content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
 .doc-content h1 {
     font-size: 1.5rem;
 }
@@ -99,4 +104,9 @@
     list-style-type: decimal;
     margin-left: 30px;
     margin-bottom: 1rem;
+}
+.content p code {
+    background-color: #f3f6fa;
+    border: solid 1px #dce6f0;
+    padding: 0 0.5rem;
 }
