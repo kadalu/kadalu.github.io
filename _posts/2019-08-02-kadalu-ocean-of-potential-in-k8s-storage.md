@@ -2,7 +2,7 @@
 title: "kaDalu — Ocean of potential in k8s storage"
 author: amarts
 layout: post
-summary: "It has been more than 3 years since Kubernetes (k8s) picked up exponential growth. Now, almost every software company and every product are trying to latch on to this phenomena and expand. While such stupendous growth is a nice thing, it is not without its unique challenges."
+description: "It has been more than 3 years since Kubernetes (k8s) picked up exponential growth. Now, almost every software company and every product are trying to latch on to this phenomena and expand. While such stupendous growth is a nice thing, it is not without its unique challenges."
 ---
 
 {% include crosspost.html url="https://medium.com/@tumballi/kadalu-ocean-of-potential-in-k8s-storage-a07be1b8b961" name="Amar Tumballi" %}

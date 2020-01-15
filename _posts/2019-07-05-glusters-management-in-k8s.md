@@ -2,7 +2,7 @@
 title: "Gluster’s management in k8s"
 author: amarts
 layout: post
-summary: "This blog gives a small snippet into the talk we are giving in DevConf.IN’19. Goes little deep into Gluster project details."
+description: "This blog gives a small snippet into the talk we are giving in DevConf.IN’19. Goes little deep into Gluster project details."
 ---
 
 {% include crosspost.html url="https://medium.com/@tumballi/glusters-management-in-k8s-13020a561962" name="Amar Tumballi" %}

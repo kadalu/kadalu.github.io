@@ -3,7 +3,7 @@ layout: post
 title: "Gluster and Kubernetes - Portmap"
 date: 2019-07-09
 author: aravindavk
-summary: "If we remove Glusterd in k8s setup, who will do the role of Glusterd? How will the brick process get the port number?"
+description: "If we remove Glusterd in k8s setup, who will do the role of Glusterd? How will the brick process get the port number?"
 ---
 
 {% include crosspost.html url="https://aravindavk.in/blog/gluster-and-k8s-portmap" name="Aravinda" %}

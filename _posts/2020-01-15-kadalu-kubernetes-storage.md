@@ -2,7 +2,7 @@
 title: "Kadalu Kubernetes(k8s) Storage"
 author: aravindavk
 layout: post
-summary: "Kadalu project offers a lightweight persistent storage solution for applications running in Kubernetes. Kadalu k8s storage solution is lightest among all the other k8s integrations using Gluster because Kadalu is integrated natively with Kubernetes without using Gluster's management daemon. With this many layers are reduced and completely isolated processes related to different storage devices."
+description: "Kadalu project offers a lightweight persistent storage solution for applications running in Kubernetes. Kadalu k8s storage solution is lightest among all the other k8s integrations using Gluster because Kadalu is integrated natively with Kubernetes without using Gluster's management daemon. With this many layers are reduced and completely isolated processes related to different storage devices."
 image: /static/images/use-kadalu.jpeg
 ---
 
