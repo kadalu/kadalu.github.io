@@ -2,7 +2,7 @@
 title: "kaDalu — cattle mode for storage"
 author: amarts
 layout: post
-summary: "One of the primary goal for us at Kadalu is keeping things ‘simple’ (It was same for us when we started ‘Gluster’ project). As part of that, our goal was always minimum config, and steps to get things configured. And also, keep the dependency minimal. With release v0.4, kadalu is closer to the reality of true cattle mode for storage"
+description: "One of the primary goal for us at Kadalu is keeping things ‘simple’ (It was same for us when we started ‘Gluster’ project). As part of that, our goal was always minimum config, and steps to get things configured. And also, keep the dependency minimal. With release v0.4, kadalu is closer to the reality of true cattle mode for storage"
 ---
 
 {% include crosspost.html url="https://medium.com/@tumballi/kadalu-cattle-mode-for-storage-26b1adf460a4" name="Amar Tumballi" %}

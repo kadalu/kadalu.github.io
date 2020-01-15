@@ -2,7 +2,7 @@
 title: "Introducing Kadalu kubectl plugin"
 author: aravindavk
 layout: post
-summary: "Kadalu kubectl plugin further simplifies the hassle of generating storage YAML file and adding it to the Kadalu Storage."
+description: "Kadalu kubectl plugin further simplifies the hassle of generating storage YAML file and adding it to the Kadalu Storage."
 ---
 
 > [Kadalu](https://kadalu.io) is a lightweight project which provides
