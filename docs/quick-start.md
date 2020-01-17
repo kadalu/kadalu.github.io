@@ -30,12 +30,12 @@ kind: KadaluStorage
 metadata:
     # This will be used as name of PV Hosting Volume
     name: storage-pool-1
-    spec:
-        type: Replica1
-        storage:
-        - node: kube1      # node name as shown in `kubectl get nodes`
-          device: /dev/vdc # Device to provide storage to all PVs
-```
+spec:
+    type: Replica1
+    storage:
+      - node: kube1      # node name as shown in `kubectl get nodes`
+        device: /dev/vdc  # Device to provide storage to all PVs
+
 
 Now request kadalu-operator to setup storage using,
 
