@@ -35,7 +35,7 @@ spec:
     storage:
       - node: kube1      # node name as shown in `kubectl get nodes`
         device: /dev/vdc  # Device to provide storage to all PVs
-
+```
 
 Now request kadalu-operator to setup storage using,
 
