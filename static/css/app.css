@@ -110,3 +110,20 @@
     border: solid 1px #dce6f0;
     padding: 0 0.5rem;
 }
+.doc-content blockquote {
+    padding-left: 30px;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.54);
+    padding-bottom: 0;
+    border: 0;
+    background-color: #fff;
+}
+.doc-content table td {
+    border-bottom: 1px solid #eee;
+    padding: 5px 10px;
+}
+
+.doc-content table {
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
