@@ -39,6 +39,8 @@ The example above shows adding raw device, Kadalu also supports adding the stora
 
 Many users expressed interest in managing Storage clusters outside the Kubernetes and provision persistent volumes to the applications running in Kubernetes. This is now possible with Kadalu! Add the external Gluster Volume using the storage-add command.
 
+Note that, this capability in kadalu can help to use gluster volumes created from other projects like heketi or other methods as PV. More on this would be made available as a document later.
+
 ```console
 $ kubectl kadalu storage-add storage-pool-1 \
     --external node1.example.com:/gluster-volname
