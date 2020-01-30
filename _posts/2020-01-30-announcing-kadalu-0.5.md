@@ -1,19 +1,20 @@
 ---
-title: "Announcing Kadalu Kubernetes Storage 0.5"
+title: "Announcing Kadalu Storage 0.5"
 author: kadalu
 layout: post
-description: "The Kadalu team is happy to announce a new version of Kadalu Kubernetes Storage, 0.5. Kadalu Kubernetes Storage is a lightweight solution to provide storage for applications running in Kubernetes."
+description: "We are excited to make available a new release of Kadalu Storage. The Kadalu Storage 0.5 continues to provide a lightweight solution to provision persistent storage for applications running in Kubernetes"
 ---
 
-The Kadalu team is happy to announce a new version of Kadalu Kubernetes Storage, 0.5. Kadalu Kubernetes Storage is a lightweight solution to provide storage for applications running in Kubernetes.
+We are excited to make available a new release of Kadalu Storage. The Kadalu Storage 0.5 continues to provide a lightweight solution to provision persistent storage for applications running in Kubernetes
 
-## New in Kadalu Kubernetes Storage 0.5
+## New in Kadalu Storage 0.5
 
 ### Kadalu Kubectl plugin
 
-Kadalu Kubectl plugin was introduced during the release 0.4, which can be easily installed using `pip3 install kubectl-kadalu`. Kadalu Operator install subcommand is introduced with this release. To install Kadalu on an already running Kubernetes cluster,
+We continue to add capabilities to make it easy to work with the Kadalu Kubectl plugin available since 0.4 release. This release has the install subcommand for the Kadalu Operator thus enabling installation of Kadalu on an already running Kubernetes cluster.
 
 ```console
+$ pip3 install kubectl-kadalu
 $ kubectl kadalu install
 ```
 
@@ -34,7 +35,7 @@ Supported types are `Replica1`, `Replica3`, and `External`. More details about t
 
 The example above shows adding raw device, Kadalu also supports adding the storage by specifying a path or a PVC name from other storage providers(Example Azure PV or Amazon EBS).
 
-### External Gluster Storage support
+### Support for external Gluster volume
 
 Many users expressed interest in managing Storage clusters outside the Kubernetes and provision persistent volumes to the applications running in Kubernetes. This is now possible with Kadalu! Add the external Gluster Volume using the storage-add command.
 
@@ -45,7 +46,7 @@ $ kubectl kadalu storage-add storage-pool-1 \
 
 More details about this feature are available [here](https://kadalu.io/docs/k8s-storage/latest/external-gluster-storage)
 
-### Gluster upgrade
+### New images with latest stable Gluster
 
 Kadalu Server container images are upgraded to the latest stable release of Gluster(7.x).
 
@@ -58,7 +59,7 @@ See the detailed [release notes](https://github.com/kadalu/kadalu/blob/master/CH
 
 ## What to expect in the next release?
 
-We are happy to solve the Kubernetes storage requirements; more exciting features are coming up. Feel free to open new issues if your Cloud storage use cases are not covered.
+We continue to make Kadalu more natively integrated with Kubernetes. There are some major features we have coming up. You can use our [issue tracker](https://github.com/kadalu/kadalu/issues) for use cases and workloads which need to be reviewed for priority.
 
 A few key features you can expect in the 0.6 release(End of Feb 2020),
 
