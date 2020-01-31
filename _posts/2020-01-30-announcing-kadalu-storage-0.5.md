@@ -14,7 +14,7 @@ We are excited to make available a new release of Kadalu Storage. The Kadalu Sto
 We continue to add capabilities to make it easy to work with the Kadalu Kubectl plugin available since 0.4 release. This release has the install subcommand for the Kadalu Operator thus enabling installation of Kadalu on an already running Kubernetes cluster.
 
 ```console
-$ pip3 install kubectl-kadalu
+$ sudo pip3 install kubectl-kadalu
 $ kubectl kadalu install
 ```
 
