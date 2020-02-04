@@ -33,6 +33,8 @@ layout: default
             {{ content }}
           </div>
 
+          {% include join-us.html %}
+
           {%- if site.disqus_name and page.comments != false -%}
           <div id="disqus_thread"></div>
           <script>
