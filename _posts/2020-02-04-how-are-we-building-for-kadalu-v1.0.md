@@ -1,6 +1,6 @@
 ---
 title: "How are we building for Kadalu v1.0?"
-author: sankarshan
+author: sankarshanmukhopadhyay
 layout: post
 description: "In the journey from v0.5 to v1.0 we aim to work through the tasks of maturing the set of capabilities which we consider to be required as part of the general availability of the release. We also intend to focus on reaching out to the users and engaging with them to understand how to streamline the switching over from Heketi to a Kadalu based deployment of Gluster as persistent storage."
 ---
