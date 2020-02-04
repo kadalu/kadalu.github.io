@@ -1,14 +1,14 @@
 ---
-title: "What would be kadalu v1.0?"
+title: "How are we building for Kadalu v1.0?"
 author: sankarshan
 layout: post
 description: "In the journey from v0.5 to v1.0 we aim to work through the tasks of maturing the set of capabilities which we consider to be required as part of the general availability of the release. We also intend to focus on reaching out to the users and engaging with them to understand how to streamline the switching over from Heketi to a Kadalu based deployment of Gluster as persistent storage."
 ---
 
 
-GlusterFS (https://github.com/gluster/glusterfs) which started as distributed file storage in a standalone manner has had overwhelming user acceptance as preferred persistent storage backend in the cloud. The Heketi project (https://github.com/heketi/heketi) has contributed immensely by enabling a simple ReSTful management interface for volume lifecycle management. This opened up a range of cloud services to dynamically provision storage.
+[GlusterFS](https://github.com/gluster/glusterfs) which started as distributed file storage in a standalone manner has had overwhelming user acceptance as preferred persistent storage backend in the cloud. The [Heketi project](https://github.com/heketi/heketi) has contributed immensely by enabling a simple ReSTful management interface for volume lifecycle management. This opened up a range of cloud services to dynamically provision storage.
 
-The Kadalu (https://github.com/kadalu/kadalu) Storage project emerged as the next step in the growth of Gluster as a "cloud native" storage. As application workloads get deployed in the open hybrid cloud infrastructure design pattern, it is needed for the storage to be more near to the control plane of this elasticity. We have designed Kadalu to be more cloud-native and thus make storage easier. With the Heketi project in "near maintenance mode" (https://github.com/heketi/heketi/blob/master/README.md) the Gluster community requires a simple, stable and intuitive set of patterns with which to provision and manage storage.
+The [Kadalu](https://github.com/kadalu/kadalu) Storage project emerged as the next step in the growth of Gluster as a "cloud native" storage. As application workloads get deployed in the open hybrid cloud infrastructure design pattern, it is needed for the storage to be more near to the control plane of this elasticity. We have designed Kadalu to be more cloud-native and thus make storage easier. With the Heketi project in ["near maintenance mode"](https://github.com/heketi/heketi/blob/master/README.md) the Gluster community requires a simple, stable and intuitive set of patterns with which to provision and manage storage.
 
 Kadalu is built around design principles that are native to the Kubernetes (k8s) platform. Thus, it is a significant shift from any previous attempts to improve on volume lifecycle management (such as glusterd2). By using design primitives which are already present in k8s, Kadalu extends the flexibility of managing storage so that application workload designers can deploy faster and build efficiently.
 
