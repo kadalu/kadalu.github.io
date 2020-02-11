@@ -67,6 +67,6 @@ Any failure to sync data from `$HOME` to `/srcdata`(or vice-versa) should be tre
 
 **Note**: This approach is not suitable for large volumes, but a similar technique can be adapted for medium and large volumes if Inotify(or similar tools) is available for containers.
 
-Thanks, [Gautham Pai](https://twitter.com/gauthampai) for brainstorming the issues related to small PVs and data movements required when an application Pod starts in other node and hostPath was used as PV.
+Thanks, [Gautham Pai](https://twitter.com/gauthampai)([Jnaapti](https://jnaapti.com/)) for brainstorming the issues related to small PVs and data movements required when an application Pod starts in other node and hostPath was used as PV.
 
 **WARNING**: This approach is not suitable for all use cases. The specific use case creates a trade-off that losing data for such minimal time duration is considered to be acceptable.
