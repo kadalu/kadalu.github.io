@@ -1,0 +1,74 @@
+---
+title: "Kadalu Storage 0.6 and Future"
+author: kadalu
+layout: post
+description: "Kadalu team is actively working on creating the opinionated storage solution based on GlusterFS, and the new solution aims to improve the user experience by providing modern methods to manage the Storage cluster."
+---
+
+The Kadalu team is happy to announce a new version of Kadalu Storage,
+0.6.0.
+
+## New Features
+
+* Support for Replica 2 - The Kadalu team hosts a tie-breaker node that
+  enables users to create Replica 2 volumes with confidence. The use
+  of the Tie-breaker node is to avoid Split-brain. This enhancement
+  uses GlusterFS Thin arbiter feature ([Issue #37](https://github.com/kadalu/kadalu/issues/37)).
+* Enhancements have been added to the CSI provisioner to choose
+  available storages randomly to avoid retrying with the same storage
+  pool if that is down. This method also helps to utilize all the
+  available storage pool for PVs ([PR #189](https://github.com/kadalu/kadalu/pull/189)).
+* Kadalu base container image upgraded to Fedora 31 and Gluster
+  version in server and CSI container images to 7.3 ([PR #198](https://github.com/kadalu/kadalu/pull/198))
+
+## Important bug fixes
+
+* Fixed showing the wrong state for Storage pods - In the last
+  release, the new init process(shell script) introduced in the Server
+  pods to handle the termination gracefully. But the new init process
+  masked the failures of the Server process. Due to this, the status
+  was "Running" always, even if there were failures ([PR #192](https://github.com/kadalu/kadalu/pull/192)).
+* Fixed Gluster remount failure, when connectivity with storage pods
+  goes down, and `df` command doesn't show the Gluster mount ([PR #192](https://github.com/kadalu/kadalu/pull/192)).
+* Fixed permissions issue if app pods try to use mounted Kadalu PVs
+  with a non-root user ([Issue #187](https://github.com/kadalu/kadalu/issues/187)).
+* Fixed issue in kubectl kadalu plugin while parsing arguments related
+  to external storage and Tiebreaker node ([Issue #199](https://github.com/kadalu/kadalu/issues/199)).
+
+See the detailed [release
+notes](https://github.com/kadalu/kadalu/blob/master/CHANGELOG.md) for
+additional information.
+
+## Kadalu Storage for non-Kubernetes use cases
+
+Kadalu team is actively working on creating the opinionated storage
+solution based on GlusterFS, and the new solution aims to improve the
+user experience by providing modern methods to manage the Storage
+cluster.
+
+The [new RFC](https://github.com/kadalu/rfcs/pull/14) for an external
+control plane enables existing users on Gluster to view a clean
+separation between the data layer and the control plane. We see this
+as an efficient way to deploy Kadalu storage and gain from the
+improvements in design.
+
+Please provide your valuable inputs for the RFC.
+
+## Replica 2 support for general purpose
+
+Kadalu Team will work on extending Replica 2 support for general
+purpose using the thin arbiter feature of GlusterFS. Follow the steps
+mentioned in the below tweet to setup the Kadalu Tiebreaker container
+yourself.
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Two options made available from us:<br>1. use `<a href="https://t.co/VvuopJSQSn">https://t.co/VvuopJSQSn</a>:/mnt` as the thin-arbiter brick for your volume.<br>Or :<br>2. `docker run --privileged -p 24007:24007 -v ${hostbrickdir}:/mnt/brick <a href="https://t.co/3NV9VrPu5r">https://t.co/3NV9VrPu5r</a>`</p>&mdash; Kadalu (@kadaluIO) <a href="https://twitter.com/kadaluIO/status/1225677569439125504?ref_src=twsrc%5Etfw">February 7, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+## New Distributed Test framework - Binnacle
+
+[Binnacle
+RFC](https://kadalu.io/rfcs/0002-test-framework-binnacle.html) was
+accepted, and initial feature
+[patches](https://github.com/kadalu/binnacle) landed in the
+repository. This framework focusses on the Tester's delight than the
+technology to write tests. More details about this framework are
+available in the RFC.
