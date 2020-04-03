@@ -168,7 +168,7 @@ spec:
 $ kubectl create -f webserver-app.yaml
 ```
 
-Documentation for this use-case is available [here](https://kadalu.io/docs/running-a-webserver)
+Documentation for this use-case is available [here](https://kadalu.io/docs/k8s-storage/latest/running-a-webserver)
 
 ## Kadalu Configurations
 ### Kadalu configuration - Replica1
