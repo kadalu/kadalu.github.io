@@ -71,7 +71,7 @@ The Kadalu team is happy to announce a new version of Kadalu Storage,
 * Kadalu now works with **Kubernetes 1.18**
 
 * Kadalu Server and CSI container images are upgraded to the latest
-  stable release of Gluster(7.4).
+  stable release of Gluster(7.5).
 
 * Fixed an issue of Server pods not starting due to long
   names. Removed hostname identifier from the Server pod names so that
