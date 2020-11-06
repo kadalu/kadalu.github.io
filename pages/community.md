@@ -16,6 +16,6 @@ You can reach to the developers using certain ways.
 <a class="mr-2 inline-block" href="https://twitter.com/{{ site.twitter_username }}"><i class="fab fa-twitter pr-2 text-3xl"></i>Twitter</a>
 <a class="mr-2 inline-block" href="https://github.com/{{ site.github_username }}/kadalu"><i class="fab fa-github pr-2"></i>Github</a>
 <a class="mr-2 inline-block" href="https://github.com/{{ site.github_username }}/kadalu/issues"><i class="fas fa-bug pr-2"></i>Issues</a>
-<a class="mr-2 inline-block" href="https://kadalu.slack.com"><i class="fab fa-slack pr-2"></i>Slack</a>
+<a class="mr-2 inline-block" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU"><i class="fab fa-slack pr-2"></i>Slack</a>
 <a class="mr-2 inline-block" href="/docs/k8s-storage/latest/get-involved"><i class="fas fa-users pr-2"></i>Get Involved</a>
 </div>
