@@ -10,20 +10,46 @@ compile '/**/*.html' do
   end
 end
 
-# This is an example rule that matches Markdown (.md) files, and filters them
-# using the :kramdown filter. It is commented out by default, because kramdown
-# is not bundled with Nanoc or Ruby.
-#
-#compile '/**/*.md' do
-#  filter :kramdown
-#  layout '/default.*'
-#
-#  if item.identifier =~ '**/index.*'
-#    write item.identifier.to_s
-#  else
-#    write item.identifier.without_ext + '/index.html'
-#  end
-#end
+compile '/blog.erb' do
+  filter :erb
+  layout '/blog_list.*'
+
+  write item.identifier.without_ext + '/index.html'
+end
+
+route '/blog/*' do
+  y, m, d, slug = /([0-9]+)\-([0-9]+)\-([0-9]+)\-([^\/]+)/.match(item.identifier.without_ext).captures
+
+  "/blog/#{slug}/index.html"
+end
+
+compile '/blog/*.adoc' do
+  filter :erb
+  filter :asciidoctor, :header_footer => true, :attributes => [
+           'last-update-label!=', # Do not show last updated label in every page
+           'source-highlighter=rouge'
+         ]
+  layout '/blog.*'
+
+  #write item.identifier.without_ext + '/index.html'
+end
+
+compile '/**/*.adoc' do
+  filter :asciidoctor, :header_footer => true, :attributes => [
+           'last-update-label!=', # Do not show last updated label in every page
+           'source-highlighter=rouge'
+         ]
+  layout '/default.*'
+
+  write item.identifier.without_ext + '/index.html'
+end
+
+compile '/**/*.md' do
+  filter :kramdown, :syntax_highlighter => 'rouge'
+  layout '/default.*'
+
+  write item.identifier.without_ext + '/index.html'
+end
 
 compile '/**/*' do
   write item.identifier.to_s
