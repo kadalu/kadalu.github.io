@@ -1,0 +1,17 @@
+= Open Source
+
+Kadalu Storage is opinionated GlusterFS distribution focused on ease of use and Scalable network filesystem.
+
+== License
+
+Kadalu Storage is Open source under GPL v3 or any later version. Read more about it link:#[here].
+
+== Can Kadalu Storage be self-hosted?
+
+Yes. Hosted Control plane option is also available.
+
+== Ways to Contribute
+
+* Request for features here.
+
+* Participate in Community Slack.
