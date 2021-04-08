@@ -1,0 +1,9 @@
+---
+title: Compare
+---
+
+== Kadalu Storage vs GlusterFS
+
+Kadalu Storage skips the management layer Glusterd when used with Kubernetes.
+
+In On-premise deployments, Kadalu Storage uses external control plane for all the Volume and Cluster operations.

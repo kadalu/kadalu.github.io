@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8">
         <%= render '/seo.html' %>
-        <link rel="stylesheet" href="/static/css/stylesheet.css">
-        <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+        <%= render '/head.html' %>
     </head>
     <body>
-        <div class="bg-no-repeat bg-purple-100 bg-bottom" style="background-image: url(undraw_chilling_8tii.svg); background-size: 15%">
-            <%= render '/header_menu.html' %>
+        <%= render '/header_menu.html' %>
+        <div class="bg-indigo-100 py-10">
             <div id="main" class="mx-auto w-3/4">
                 <%= yield %>
             </div>
         </div>
+        <%= render '/footer.html' %>
     </body>
 </html>
 

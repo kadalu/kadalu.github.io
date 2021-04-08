@@ -1,4 +1,6 @@
-= Office Hours
+---
+title: Office Hours
+---
 
 Kadalu Office Hours is a great way to engage with other Kadalu Storage Community members and our product & engineering teams.
 

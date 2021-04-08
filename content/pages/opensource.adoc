@@ -1,4 +1,6 @@
-= Open Source
+---
+title: Open Source
+---
 
 Kadalu Storage is opinionated GlusterFS distribution focused on ease of use and Scalable network filesystem.
 

@@ -3,12 +3,11 @@
     <head>
         <meta charset="utf-8">
         <%= render '/seo.html' %>
-        <link rel="stylesheet" href="/static/css/stylesheet.css">
-        <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+        <%= render '/head.html' %>
     </head>
     <body>
-        <div class="">
-            <%= render '/header_menu.html' %>
+        <%= render '/header_menu.html' %>
+        <div class="py-10">
             <div id="main" class="prose mx-auto max-w-none w-3/4">
                 <h1><%= item[:title] %></h1>
                 <% slug, created_at = slug_and_created_at(item) %>
@@ -21,5 +20,6 @@
                 <%= yield %>
             </div>
         </div>
+        <%= render '/footer.html' %>
     </body>
 </html>

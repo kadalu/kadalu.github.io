@@ -1,4 +1,6 @@
-= FAQ
+---
+title: FAQ
+---
 
 == Can Glusterd and Kadalu Storage Clusters co-exist?
 

@@ -1,4 +1,6 @@
-= About Us
+---
+title: About Us
+---
 
 == Kadalu Storage
 
