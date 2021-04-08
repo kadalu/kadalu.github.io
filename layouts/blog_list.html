@@ -12,23 +12,11 @@
     <body>
         <div class="bg-no-repeat bg-purple-100 bg-bottom" style="background-image: url(undraw_chilling_8tii.svg); background-size: 15%">
             <%= render '/header_menu.html' %>
-            <div id="main" class="prose mx-auto max-w-none w-3/4">
+            <div id="main" class="mx-auto w-3/4">
                 <%= yield %>
-            </div>
-        </div>
-        <div class="">
-            <div class="mx-auto w-3/4" style="height: 70vh">
-                <div class="grid grid-cols-4 gap-4">
-                    <div class="">
-                        <h2>Company</h2>
-                        <ul>
-                            <li>About</li>
-                            <li>Contact</li>
-                            <li>Sitemap</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </div>
     </body>
 </html>
+
+

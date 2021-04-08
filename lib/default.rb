@@ -35,3 +35,39 @@ def reading_time(content)
 
   "1 minute"
 end
+
+AUTHORS = {
+  :kadalu => {
+    :bio => "Team Kadalu",
+    :name => "Kadalu",
+    :site => "https://kadalu.io",
+    :twitter => "kadaluio"
+  },
+  :aravindavk => {
+    :bio => "Kadalu Maintainer",
+    :name => "Aravinda Vishwanathapura",
+    :site => "https://aravindavk.in",
+    :twitter => "aravindavk"
+  },
+  :amarts => {
+    :bio => "GlusterFS and Kadalu Maintainer",
+    :name => "Amar Tumballi",
+    :site => "https://medium.com/@tumballi",
+    :twitter => "tumballi"
+  },
+  :sac => {
+    :bio => "Kadalu Maintainer",
+    :name => "Sachidananda Urs",
+    :site => "https://twitter.com/sac314",
+    :twitter => "sac314"
+  },
+  :sankarshanmukhopadhyay => {
+    :name => "Sankarshan Mukhopadhyay",
+    :site => "https://medium.com/@sankarshan",
+    :twitter => "sankarshan"
+  }
+}
+
+def author_data(id)
+  AUTHORS[id]
+end

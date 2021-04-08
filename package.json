@@ -6,8 +6,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "build:css": "postcss layouts/tailwind.css -o content/stylesheet.css",
-    "prod:css": "NODE_ENV=production postcss layouts/tailwind.css -o content/stylesheet.css"
+    "build:css": "postcss layouts/tailwind.css -o content/static/css/stylesheet.css",
+    "prod:css": "NODE_ENV=production postcss layouts/tailwind.css -o content/static/css/stylesheet.css"
   },
   "repository": {
     "type": "git",
