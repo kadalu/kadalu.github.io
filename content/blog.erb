@@ -1,12 +1,13 @@
 <h2 class="text-2xl font-bold mb-10">List of Blog Posts</h2>
 <div class="grid grid-cols-3 gap-4 pb-10">
     <% sort_blog_posts(@items.find_all('/blog/*')).each do |post| %>
+        <% author = author_data(post[:author].to_sym) %>
         <% slug, created_at = slug_and_created_at(post) %>
         <a href="<%= slug %>">
             <div class="shadow-lg bg-white p-5 rounded-lg" style="height: 350px">
                 <div class="font-semibold text-xl mb-2"><%= post[:title] %></div>
-                <div class="text-gray-500 text-sm mb-7">Posted on <strong><%= get_pretty_date(created_at) %></strong> by <strong><%= post[:author] %></strong></div>
-                <p class="text-sm"><%= post[:summary] %>...</p>
+                <div class="text-gray-500 text-sm mb-7">Posted on <strong><%= get_pretty_date(created_at) %></strong> by <strong><%= author[:name] %></strong></div>
+                <p class="text-sm"><%= post[:description] %>...</p>
             </div>
         </a>
     <% end %>

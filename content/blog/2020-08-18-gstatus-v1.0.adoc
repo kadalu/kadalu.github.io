@@ -1,13 +1,14 @@
 ---
 title: "gstatus 1.0"
 author: sac
-layout: post
 description: "gstatus is a command line tool which aggregates the various status information about GlusterFS cluster and presents the data in pretty printed format on the console."
 ---
 
-gstatus is a command line tool which aggregates the various status information about GlusterFS cluster and presents the data in pretty printed format on the console. Output can be printed in JSON format as well with the ```-o json``` option.
+:tilde: ~
 
-## New in gstatus 1.0
+gstatus is a command line tool which aggregates the various status information about GlusterFS cluster and presents the data in pretty printed format on the console. Output can be printed in JSON format as well with the `-o json` option.
+
+== New in gstatus 1.0
 
 * Python3 port (Now supports only Python3)
 * Supports all volume types (earlier versions displayed wrong volume sizes for arbiter and disperse volumes)
@@ -16,41 +17,47 @@ gstatus is a command line tool which aggregates the various status information a
 * The default view now shows volume information as well.
 * Much richer json output, this includes snapshot, volume health, brick process information, brick mount options and lot more.
 
-## Why rewrite?
+== Why rewrite?
 
-The earlier version was not maintained for a long time and was outdated. Due to the bulky code base, adding new features like quota, snapshots, and new volume types was difficult and would slow down the tool. Another motivation to rewrite gstatus is to leverage the flexibility and robustness of [glustercli-python](https://github.com/gluster/glustercli-python) library written by Aravinda and get away with gluster command execution, xml parsing, exception handling routines implemented within gstatus. All the heavy lifting is now done by the [glustercli-python](https://github.com/gluster/glustercli-python) library thus making gstatus faster, easily maintainable, and lightweight (gstatus is now ~200 lines of python program as compared to ~2500 lines in the earlier versions).
+The earlier version was not maintained for a long time and was outdated. Due to the bulky code base, adding new features like quota, snapshots, and new volume types was difficult and would slow down the tool. Another motivation to rewrite gstatus is to leverage the flexibility and robustness of https://github.com/gluster/glustercli-python[glustercli-python] library written by Aravinda and get away with gluster command execution, xml parsing, exception handling routines implemented within gstatus. All the heavy lifting is now done by the https://github.com/gluster/glustercli-python[glustercli-python] library thus making gstatus faster, easily maintainable, and lightweight (gstatus is now {tilde}200 lines of python program as compared to {tilde}2500 lines in the earlier versions).
 
 
-## A brief tour of gstatus
+== A brief tour of gstatus
 
-### Installing from source
+=== Installing from source
 
 * Installing glustercli-python
-
-```console
++
+[source,console]
+----
 $ git clone https://github.com/gluster/glustercli-python.git
 $ cd glustercli-python
 # python3 setup.py install
-```
+----
 
 * Installing the gstatus tool
-```console
++
+[source,console]
+----
 $ git clone https://github.com/gluster/gstatus.git
 $ cd gstatus
 $ VERSION=1.0.1 make gen-version
 # python3 setup.py install
-```
+----
 
-### Using the pre-compiled binary
-```console
+=== Using the pre-compiled binary
+
+[source,console]
+----
 $ curl -LO https://github.com/gluster/gstatus/releases/download/v1.0.1/gstatus
 $ chmod +x ./gstatus
 # cp gstatus /usr/local/bin
-```
+----
 
-### Running gstatus
+=== Running gstatus
 
-```console
+[source,console]
+----
 # root@master-node:~# gstatus --help
 Usage: gstatus [options]
 
@@ -70,7 +77,10 @@ Options:
   -o OUTPUT_MODE, --output-mode=OUTPUT_MODE
                         Output mode, only json is supported currently. Default
                         is to print to console.
+----
 
+[source,console]
+----
 root@master-node:~# gstatus
 
 Cluster:
@@ -85,19 +95,20 @@ Volumes:
 
 
 root@master-node:~#
-```
+----
 
-Please try out other options and let us know what you think. In case of any issues please report [here](https://github.com/gluster/gstatus/issues)
+Please try out other options and let us know what you think. In case of any issues please report https://github.com/gluster/gstatus/issues[here]
 
-## What's next?
+== What's next?
+
 Currently gstatus does not have self-heal information. In the next release we plan to add self-heal information like number of files pending heal.
 
-## Contact us
+== Contact us
 
 Happy to discuss new features, issues, enhancements...
 
-* Follow us on Twitter [@kadaluIO](https://twitter.com/kadaluio)
-* Write to us - [hello@kadalu.io](mailto:hello@kadalu.io)
-* [Slack](https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU)
-* [Linkedin](https://linkedin.com/company/kadalu-io)
-* [Github](https://github.com/kadalu/kadalu)
+* Follow us on Twitter https://twitter.com/kadaluio[@kadaluIO]
+* Write to us - hello@kadalu.io
+* https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU[Slack]
+* https://linkedin.com/company/kadalu-io[Linkedin]
+* https://github.com/kadalu/kadalu[Github]

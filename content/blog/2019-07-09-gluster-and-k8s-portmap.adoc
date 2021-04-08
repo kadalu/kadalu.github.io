@@ -6,7 +6,9 @@ author: aravindavk
 description: "If we remove Glusterd in k8s setup, who will do the role of Glusterd? How will the brick process get the port number?"
 ---
 
-{% include crosspost.html url="https://aravindavk.in/blog/gluster-and-k8s-portmap" name="Aravinda" %}
+++++
+<%= render "/crosspost.*", {:url => "https://aravindavk.in/blog/gluster-and-k8s-portmap", :name => "Aravinda Vishwanathapura"} %>
+++++
 
 One of the primary roles of Glusterd is to allocate a port for brick
 processes and let the clients know about it when requested.
@@ -17,7 +19,7 @@ between 49152-49664. Gluster client(or mount) will connect to Glusterd
 (port:24007) and asks for the brick port, Glusterd provides brick port
 and client then connects to the brick process.
 
-![Get brick port from Glusterd](/static/images/gluster-glusterd-brick-port.png)
+image::/static/images/gluster-glusterd-brick-port.png[Get brick port from Glusterd]
 
 If we remove Glusterd in k8s setup, who will do the role of Glusterd?
 How will the brick process get the port number?
@@ -31,6 +33,6 @@ that the connecting process is Glusterd or Brick process. The client
 connects to 24007 to get brick port, and it finds the brick process
 itself.
 
-![Client directly connects to brick](/static/images/gluster-brick-connect-direct.png)
+image::/static/images/gluster-brick-connect-direct.png[Client directly connects to brick]
 
-Found interesting? Do join our talk about [Managing Gluster in Kubernetes without using Glusterd/Glusterd2](http://bit.ly/gluster-k8s-devconf) at the devconf India event.
+Found interesting? Do join our talk about http://bit.ly/gluster-k8s-devconf[Managing Gluster in Kubernetes without using Glusterd/Glusterd2] at the devconf India event.

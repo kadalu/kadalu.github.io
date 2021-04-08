@@ -5,7 +5,9 @@ layout: post
 description: "It has been more than 3 years since Kubernetes (k8s) picked up exponential growth. Now, almost every software company and every product are trying to latch on to this phenomena and expand. While such stupendous growth is a nice thing, it is not without its unique challenges."
 ---
 
-{% include crosspost.html url="https://medium.com/@tumballi/kadalu-ocean-of-potential-in-k8s-storage-a07be1b8b961" name="Amar Tumballi" %}
+++++
+<%= render "/crosspost.*", {:url => "https://medium.com/@tumballi/kadalu-ocean-of-potential-in-k8s-storage-a07be1b8b961", :name => "Amar Tumballi"} %>
+++++
 
 It has been more than 3 years since Kubernetes (k8s) picked up
 exponential growth. Now, almost every software company and every
@@ -15,9 +17,7 @@ challenges.
 
 ## k8s and storage:
 
-While process (CPU), network management has completely moved [to
-cattle
-mode](https://thenewstack.io/how-to-treat-your-kubernetes-clusters-like-cattle-not-pets/)
+While process (CPU), network management has completely moved https://thenewstack.io/how-to-treat-your-kubernetes-clusters-like-cattle-not-pets/[to cattle mode]
 in k8s, storage is not virtualized enough to become a cattle mode
 candidate. By migrating storage management to CSI (Container Storage
 Interface) and introducing concepts of PV (PersistentVolume) and PVC
@@ -29,7 +29,7 @@ Let me explain why;
 - While network and CPU can stay ephemeral and invoked only when there
   is a need for ‘execution’, data needs to be persisted — stored and
   retrieved even when processes are not invoked.
-- To ‘store’ data, one needs to access physical storage media,
+- To "store" data, one needs to access physical storage media,
   somewhere.
 
 This is the main reason why object storage made sense (mainly because
@@ -41,7 +41,7 @@ storage. Then the question is, what do we do till then?
 
 ## Gluster and k8s — story
 
-[Gluster](http://gluster.org/), being a SDS (Software Defined
+http://gluster.org/[Gluster], being a SDS (Software Defined
 Storage), has all the ingredients to make storage more cattle mode
 like, but lacks a good management layer based on APIs (or call it REST
 APIs). The existing implementation made the solution bulkier than
@@ -80,19 +80,18 @@ gluster community didn’t perceive this as a generic solution.
 
 This was the time when the proposal for a light-weight service that
 would provide a comprehensive solution, came through. I wrote about it
-earlier [here in my
-blog](https://medium.com/@tumballi/13020a561962). Once we started
+earlier https://medium.com/@tumballi/13020a561962[here in my blog]. Once we started
 prototyping, we called the project as ‘kaDalu’ (ಕಡಲು), which means
 Ocean.
 
 We talked about this at today’s
-[DevConf.IN](https://devconfin19.sched.com/event/RVPw). You can find
+https://devconfin19.sched.com/event/RVPw[DevConf.IN]. You can find
 the slides for our
-[presentation](https://github.com/kadalu/kadalu/blob/master/doc/rethinking-gluster-management-using-k8s.pdf)
+https://github.com/kadalu/kadalu/blob/master/doc/rethinking-gluster-management-using-k8s.pdf[presentation]
 here, and the demo of our simple two steps install can be found @
-[https://asciinema.org/a/259949](https://asciinema.org/a/259949)
+https://asciinema.org/a/259949
 
-![Kadalu Overview](/static/images/kadalu-operator.jpg)
+image::/static/images/kadalu-operator.jpg[Kadalu Overview,500]
 
 kaDalu is the operator which provisions the gluster storage as
 containers, and manages everything related to GlusterFS, so that k8s
@@ -116,12 +115,12 @@ storage config file to k8s.
 > expose in k8s
 
 We invite you to try out the project, steps to try and install the
-operator are in its [github page](https://github.com/kadalu/kadalu).
+operator are in its https://github.com/kadalu/kadalu[github page].
 
 I should say, this is not yet a ‘Gluster community’ project, mainly as
 it changes the way Gluster is managed, and perceived in last 10
 years. If there are enough users trying it out, and liking the project
 we can call it a community project. Right now, this is still
-[Aravinda](https://aravindavk.in)’s and my pet project. Do give a github star if you like it,
+https://aravindavk.in[Aravinda]’s and my pet project. Do give a github star if you like it,
 so we know you like it. We also don’t mind you tweeting and blogging
 about it :-)
