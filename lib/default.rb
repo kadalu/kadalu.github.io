@@ -4,9 +4,14 @@ use_helper Nanoc::Helpers::Rendering
 
 module PostHelper
   def slug_and_created_at(post)
-    y, m, d, slug = /([0-9]+)\-([0-9]+)\-([0-9]+)\-([^\/]+)/.match(post.identifier.without_ext).captures
+    match = /([0-9]+)\-([0-9]+)\-([0-9]+)\-([^\/]+)/.match(post.identifier.without_ext)
+    if match
+      y, m, d, slug = match.captures
 
-    [slug, "#{y}-#{m}-#{d}"]
+      [slug, "#{y}-#{m}-#{d}"]
+    else
+      [post.identifier.without_ext, ""]
+    end
   end
 
   def get_pretty_date(date_field)

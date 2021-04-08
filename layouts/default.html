@@ -2,12 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>A Brand New Nanoc Site - <%= @item[:title] %></title>
+        <%= render '/seo.html' %>
         <link rel="stylesheet" href="/static/css/stylesheet.css">
         <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
 
-        <!-- you don't need to keep this, but it's cool for stats! -->
-        <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
     </head>
     <body>
         <div class="bg-no-repeat bg-purple-100 bg-bottom" style="background-image: url(undraw_chilling_8tii.svg); background-size: 15%">
