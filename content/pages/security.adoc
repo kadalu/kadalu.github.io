@@ -1,4 +1,6 @@
-= Security
+---
+title: Security
+---
 
 We aim to keep Kadalu Storage safe for everyone. Publicly disclosing bugs in a public forum puts everyone in the Kadalu/GlusterFS community at risk. Please send the details to security@kadalu.io if you find a vulnerability in our software.
 

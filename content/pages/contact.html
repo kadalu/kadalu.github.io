@@ -1,0 +1,77 @@
+---
+title: Contact Us
+---
+
+<div x-data="data()" class="w-1/2 my-10">
+    <p class="text-gray-800 text-xl mb-5">We are happy to connect with you. Please fill the details and send message</p>
+    <form action="" @submit.prevent="onSubmitHandle">
+        <div class="bg-indigo-200 text-gray-800 px-5 py-2 rounded-lg mb-10" x-show="message !== ''" x-html="message"></div>
+        <div class="bg-red-300 text-gray-800 px-5 py-2 rounded-lg mb-10" x-show="error !== ''" x-html="error"></div>
+        <input type="hidden" name="_redirect" value="false" />
+        <select name="topic" x-model="formData.topic" class="mb-5 w-full border">
+            <option>Please select the Topic</option>
+            <option>Enquery</option>
+            <option>Consultancy</option>
+            <option>Product Demo</option>
+        </select>
+        <input class="px-5 py-1 border outline-none rounded-lg mb-5 focus:outline-none focus:ring focus:border-blue-300 block w-full" type="text" id="name" name="name" placeholder="Name" required=""  x-model="formData.name"/>
+        <input class="px-5 py-1 border outline-none rounded-lg mb-5 focus:outline-none focus:ring focus:border-blue-300 block w-full" type="email" id="email" name="email" placeholder="Email" required=""  x-model="formData.email"/>
+        <textarea
+            class="px-5 py-1 border outline-none rounded-lg mb-5 focus:outline-none focus:ring focus:border-indigo-300 block w-full" 
+            id="message"
+            name="message"
+            placeholder="Message"
+            required=""
+            x-model="formData.message"
+        ></textarea>
+        <button class="bg-indigo-600 text-gray-100 px-5 py-2 rounded-lg shadow-lg text-lg font-semibold" type="submit" x-bind:disabled="submitting" x-text="buttonText()"></button>
+    </form>
+</div>
+<script>
+ function data() {
+     return {
+         message: "",
+         error: "",
+         submitting: false,
+         buttonText: function() {
+             return this.submitting ? "Sending..." : "Send";
+         },
+         formData: {
+             topic: "",
+             name: "",
+             email: "",
+             message: ""
+         },
+         resetFormData: function() {
+             this.formData = {
+                 topic: "",
+                 name: "",
+                 email: "",
+                 message: ""
+             }
+         },
+         onSubmitHandle: function () {
+             this.submitting = true;
+             var dataObj = this;
+
+             fetch("https://submit-form.com/40uTYzNs",
+                   {
+                       method: 'POST',
+                       headers: {
+                           "Content-Type": "application/json",
+                           Accept: "application/json",
+                       },
+                       body: JSON.stringify(dataObj.formData)
+                   }
+             )
+                 .then((resp) => {
+                     dataObj.message = "Message sent to Kadalu Team successfully";
+                     dataObj.submitting = false;
+                 })
+                 .catch((err) => {
+                     dataObj.error = 'Failed to send message to Kadalu Team. Please send email to <a href="mailto:hello@kadalu.io">hello@kadalu.io</a>'
+                 })
+         }
+     }
+ }
+</script>

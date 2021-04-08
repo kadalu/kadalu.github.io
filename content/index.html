@@ -1,14 +1,103 @@
 ---
-title: Home
+title: Kadalu Storage - Opinionated GlusterFS distribution
 ---
+<div class="bg-indigo-100" style="height:70vh">
+    <div class="w-3/4 mx-auto text-center py-10">
+        <h1 class="text-2xl md:text-4xl font-extrabold mb-10 mt-20">
+            <span class="text-indigo-600">Kadalu Storage</span>
+            <span class="text-gray-700">is an opinionated GlusterFS distribution</span></h1>
+        <p class="text-gray-700">Kadalu Storage is an collection of Open Source projects to make GlusterFS more accessible, user friendly, accessible and Scalable.</p>
+        <p class="text-gray-700">Our mission is to provide stable File system with Modern ways to manage and monitor</p>
+    </div>
+</div>
 
-<h1>A Brand New Nanoc Site!</h1>
+<div class="h-screen">
+    <div class="w-3/4 mx-auto py-10">
+        <h2 class="text-2xl font-bold mb-2">Kubernetes native Storage</h2>
+        <p class="text-gray-500 font-semibold">Provision storage in less time than it takes to brew coffee</p>
+        <div class="grid grid-cols-2 gap-4 mt-10">
+            <div class="prose max-w-none">
+                <p>Kadalu helps you configure persistent storage in 2 easy steps.</p>
+                <p>So you can focus on managing and scaling your applications within k8s framework.</p>
+                <ul class="">
+                    <li><strong>Easy to Use</strong> - Easy to install on an already running kubernetes cluster using Kadalu Operator.</li>
+                    <li><strong>Open Source</strong> - Kadalu is licenced under Apache 2.0 license.</li>
+                    <li><strong>Secure and Scalable</strong> - Natively integrated with Kubernetes for secured access to Storage servers.</li>
+                    <li><strong>Powered by GlusterFS</strong> - Kadalu is powered by time tested industry proven Gluster distributed Filesystem.</li>
+                    <li><strong>Works with all Kubernetes</strong> - Kadalu works with upstream Kubernetes, Openshift and many others.</li>
+                    <li><strong>Effective Monitoring</strong> - Kadalu comes with built-in health, utilization and performance metrics measures. Easy to integrate into observability patterns</li>
+                </ul>
+            </div>
+            <div class="">
+                <div class="prose max-w-none">
+                    <pre>
+$ kubectl kadalu install
+$ kubectl kadalu storage-add storage-pool-1 \
+    --device kube-node1.example.com:/dev/vdc
+                    </pre>
+                </div>
+                <div class="text-center mt-10">
+                    <a class="inline-block bg-indigo-600 text-gray-100 font-semibold rounded-lg shadow-lg px-5 py-2" href="#">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>You’ve just created a new Nanoc site. The page you are looking at right now is the home page for your site. To get started, consider replacing this default homepage with your own customized homepage. Some pointers on how to do so..</p>
+<div class="h-screen bg-indigo-100">
+    <div class="w-3/4 mx-auto py-10">
+        <h2 class="text-2xl font-bold mb-2">Kadalu Storage</h2>
+        <p class="text-gray-500 font-semibold">An Opinionated GlusterFS distribution</p>
+        <div class="grid grid-cols-2 gap-4 mt-10">
+            <div class="prose max-w-none">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
 
-<ul>
-  <li><p><strong>Change this page’s content</strong> by editing the “index.html” file in the “content” directory. This is the actual page content, and therefore doesn’t include the header, sidebar or style information (those are part of the layout).</p></li>
-  <li><p><strong>Change the layout</strong>, which is the “default.html” file in the “layouts” directory, and create something unique (and hopefully less bland).</p></li>
-</ul>
+<div class="h-screen">
+    <div class="w-3/4 mx-auto py-10">
+        <h2 class="text-2xl font-bold mb-2">GlusterFS Monitoring</h2>
+        <p class="text-gray-500 font-semibold">Monitor your GlusterFS clusters using the Simplest monitoring tool.</p>
+        <div class="grid grid-cols-2 gap-4 mt-10">
+            <div class="prose max-w-none">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>If you need any help with customizing your Nanoc web site, be sure to check out the documentation (see sidebar), and be sure to subscribe to the discussion group (also see sidebar). Enjoy!</p>
+<div class="h-screen bg-indigo-100">
+    <div class="w-3/4 mx-auto py-10">
+        <h2 class="text-2xl font-bold mb-2">Services</h2>
+        <p class="text-gray-500 font-semibold"></p>
+        <div class="grid grid-cols-2 gap-4 mt-10">
+            <div class="prose max-w-none">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="h-screen bg-indigo-200">
+    <div class="w-3/4 mx-auto">
+        <h2 class="text-2xl font-bold mb-10 py-10">Latest Blog Posts</h2>
+        <div class="grid grid-cols-3 gap-4 pb-10">
+            <% sort_blog_posts(@items.find_all('/blog/*'))[0, 3].each do |post| %>
+            <% author = author_data(post[:author].to_sym) %>
+            <% slug, created_at = slug_and_created_at(post) %>
+            <a href="<%= slug %>">
+                <div class="shadow-lg bg-white p-5 rounded-lg" style="height: 350px">
+                    <div class="font-semibold text-xl mb-2"><%= post[:title] %></div>
+                    <div class="text-gray-500 text-sm mb-7">Posted on <strong><%= get_pretty_date(created_at) %></strong> by <strong><%= author[:name] %></strong></div>
+                    <p class="text-sm"><%= post[:description] %>...</p>
+                </div>
+            </a>
+            <% end %>
+        </div>
+        <div class="text-right">
+            <a class="bg-indigo-600 text-gray-100 px-5 py-2 rounded-lg shadow-lg" href="/blog">more</a>
+        </div>
+    </div>
+</div>
