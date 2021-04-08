@@ -1,0 +1,17 @@
+<% slug, created_at = slug_and_created_at(@item) %>
+<title><%= @item[:title] %> | Kadalu </title>
+<meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
+<meta property="og:title" content="<%= @item[:title] %>"/>
+<meta name="author" content="<%= @item[:author] %>"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content="<%= @item[:description] %>"/>
+<meta property="og:description" content="<%= @item[:description] %>"/>
+<link rel="canonical" href="<%= @item.path %>"/>
+<meta property="og:url" content="<%= @item.path %>"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:image" content="<%= @item[:image] %>"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="<%= created_at %>"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:image" content="<%= @item[:image] %>"/>
+<meta property="twitter:title" content="<%= @item[:title] %>"/>

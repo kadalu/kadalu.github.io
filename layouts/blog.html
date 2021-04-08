@@ -1,28 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>A Brand New Nanoc Site - <%= @item[:title] %></title>
-    <link rel="stylesheet" href="/static/css/stylesheet.css">
-    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
-
-    <!-- you don't need to keep this, but it's cool for stats! -->
-    <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
-  </head>
-  <body>
-      <div class="">
-          <%= render '/header_menu.html' %>
-          <div id="main" class="prose mx-auto max-w-none w-3/4">
-              <h1><%= item[:title] %></h1>
-              <% slug, created_at = slug_and_created_at(item) %>
-              <% author = author_data(item[:author].to_sym) %>
-              <div class="text-gray-500 text-sm mb-1">Posted on <strong><%= get_pretty_date(created_at) %></strong> by <strong><%= author[:name] %></strong></div>
-              <div class="text-gray-600 text-sm mb-7">
-                  <svg class="w-6 h-6 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
-                  <%= reading_time(item.compiled_content) %> read.
-              </div>
-              <%= yield %>
-          </div>
-      </div>
-  </body>
+    <head>
+        <meta charset="utf-8">
+        <%= render '/seo.html' %>
+        <link rel="stylesheet" href="/static/css/stylesheet.css">
+        <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    </head>
+    <body>
+        <div class="">
+            <%= render '/header_menu.html' %>
+            <div id="main" class="prose mx-auto max-w-none w-3/4">
+                <h1><%= item[:title] %></h1>
+                <% slug, created_at = slug_and_created_at(item) %>
+                <% author = author_data(item[:author].to_sym) %>
+                <div class="text-gray-500 text-sm mb-1">Posted on <strong><%= get_pretty_date(created_at) %></strong> by <strong><%= author[:name] %></strong></div>
+                <div class="text-gray-600 text-sm mb-7">
+                    <svg class="w-6 h-6 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                    <%= reading_time(item.compiled_content) %> read.
+                </div>
+                <%= yield %>
+            </div>
+        </div>
+    </body>
 </html>
