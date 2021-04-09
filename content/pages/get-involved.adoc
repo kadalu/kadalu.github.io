@@ -1,0 +1,15 @@
+---
+title: Get Involved
+---
+
+There are many ways you as a user, developer, contributor can get involved.
+
+* Tweet(https://twitter.com/kadaluio[@kadaluio]) and share your experience of using Kadalu Storage.
+* **File a bug report** - Kadalu team believes in Open development, you can open a bug report in any of the Kadalu projects listed under https://github.com/kadalu[Github/Kadalu].
+* **Discuss in Slack** - Join https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU[here] to discuss with Kadalu core team members and other community users.
+* Write blog posts, articles and documentation.
+* Alpha-test the development version of Kadalu.
+* Contribute to the https://github.com/kadalu/[source code].
+* Review pull requests.
+* Feature request.
+* mailto:support@kadalu.io[Contribute] for Test infrastructure.

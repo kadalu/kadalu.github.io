@@ -8,16 +8,38 @@
     <body>
         <%= render '/header_menu.html' %>
         <div class="py-10">
-            <div id="main" class="prose mx-auto max-w-none w-3/4">
-                <h1><%= item[:title] %></h1>
-                <% slug, created_at = slug_and_created_at(item) %>
-                <% author = author_data(item[:author].to_sym) %>
-                <div class="text-gray-500 text-sm mb-1">Posted on <strong><%= get_pretty_date(created_at) %></strong> by <strong><%= author[:name] %></strong></div>
-                <div class="text-gray-600 text-sm mb-7">
-                    <svg class="w-6 h-6 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
-                    <%= reading_time(item.compiled_content) %> read.
-                </div>
-                <%= yield %>
+            <div id="main" class="mx-auto w-3/4 mb-10">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="col-span-9 prose max-w-none prose-indigo">
+                        <h1><%= item[:title] %></h1>
+                        <% slug, created_at = slug_and_created_at(item) %>
+                        <% author = author_data(item[:author].to_sym) %>
+                        <div class="text-gray-500 text-sm mb-1">Posted on <strong><%= get_pretty_date(created_at) %></strong> by <strong><%= author[:name] %></strong></div>
+                        <div class="text-gray-600 text-sm mb-7">
+                            <svg class="w-6 h-6 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                            <%= reading_time(item.compiled_content) %> read.
+                        </div>
+                        <%= yield %>
+                        <p class="bg-blue-200 px-2 py-2 mb-10 rounded">Join the Kadalu team as we plan, design and develop new features. We are available on our Slack instance, <a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">https://kadalu.slack.com</a>.</p>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="mt-20 text-center">
+                            <img class="rounded-full mb-5 mx-auto" style="width:150px;height:150px" src="https://github.com/<%= item[:author] %>.png?size=300px"/>
+                            <h2 class="font-semibold text-center"><%= author[:name] %></h2>
+                            <% if author.has_key?(:bio) %>
+                            <p><%= author[:bio] %></p>
+                            <% end %>
+                            <p>
+                                <% if author.has_key?(:site) %>
+                                <a class="mr-2 text-indigo-600" href="<%= author[:site] %>">Website</a>|
+                                <% end %>
+                                <% if author.has_key?(:twitter) %>
+                                <a class="mx-2 text-indigo-600" href="https://twitter.com/<%= author[:twitter] %>">Twitter</a>|
+                                <% end %>
+                                <a class="ml-2 text-indigo-600" href="https://github.com/<%= item[:author] %>">Github</a>
+                            </p>
+                        </div>
+                    </div>
             </div>
         </div>
         <%= render '/footer.html' %>
