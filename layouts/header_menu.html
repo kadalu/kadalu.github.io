@@ -1,12 +1,12 @@
 <% cls = "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" %>
 <% selected_cls = "bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" %>
 <div class="bg-indigo-900">
-    <div class="w-3/4 m-auto py-5">
-        <div class="grid grid-cols-12">
-            <div class="col-span-2">
+    <div class="w-full px-10 md:w-3/4 md:px-0 m-auto py-5">
+        <div class="lg:grid lg:grid-cols-12">
+            <div class="col-span-3 lg:col-span-2">
                 <a href="/"><img src="/static/css/logo.png" class="h-10" /></a>
             </div>
-            <div class="col-span-10 text-right pt-2">
+            <div class="hidden col-span-9 lg:col-span-10 md:block text-right pt-2">
                 <a href="/docs" class="<% if @item.path == "/docs/" %><%= selected_cls %><% else %><%= cls %><% end %>">Docs</a>
                 <a href="/products" class="<% if @item.path == "/products/" %><%= selected_cls %><% else %><%= cls %><% end %>">Products</a>
                 <a href="/services" class="<% if @item.path == "/services/" %><%= selected_cls %><% else %><%= cls %><% end %>">Services</a>
