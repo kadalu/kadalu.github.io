@@ -2,6 +2,7 @@
 title: Services
 ---
 
+[#features]
 == GlusterFS/Kadalu Storage feature development
 
 We can design, prototype and implement GlusterFS/Kadalu Storage tools, applications and features for your Company. Get compitative advantage by using the features specially customized to your company/users needs. We will also help to submit the features to Upstream(GlusterFS is licensed under GPL-v3).
@@ -12,21 +13,25 @@ We can work with an in-house team or independently, depending on the needs of th
 
 Contact us to discuss your GlusterFS/Kadalu Storage needs.
 
-
+[#migration]
 == Migration to Kadalu Storage
 
 Kadalu Storage is an Opinionated GlusterFS distribution focused on ease of use. We can plan and execute the GlusterFS to Kadalu Storage migration without or very minimal data movement. 
 
-
+[#training]
 == GlusterFS/Kadalu Storage Training
 
 Whether you have a new admin with no GlusterFS/Kadalu Storage experience who needs to learn the basics, or developers who need to master some advanced topics or GlusterFS internals, we can provide a training program tailored to your company needs. 
 
 We can tailor our training courses to your particular goals. For example, you may wish to focus on a particular area, such as Xlators, Geo-replication, Snapshots and others.
 
-
+[#consultancy]
 == Advice/Consultancy
 
 With our experience of GlusterFS/Kadalu Storage, we can help get your Storage deployments on the right track from the start. We will work with your developers and admins to ensure that you configure the GlusterFS/Kadalu Storage that are right for your needs.
 
 Contact us for more information about GlusterFS/Kadalu Storage advice services.
+
+[#upgrade]
+== Upgrade assistance
+
