@@ -24,7 +24,8 @@ compile '/blog/*.adoc' do
   filter :erb
   filter :asciidoctor, :header_footer => true, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
-           'source-highlighter=rouge'
+           'source-highlighter=rouge',
+           'stylesheet!='
          ]
   layout '/blog.*'
 
@@ -41,7 +42,8 @@ end
 compile '/pages/*.adoc' do
   filter :asciidoctor, :header_footer => true, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
-           'source-highlighter=rouge'
+           'source-highlighter=rouge',
+           'stylesheet!='
          ]
   layout '/page.*'
 
@@ -51,7 +53,8 @@ end
 compile '/**/*.adoc' do
   filter :asciidoctor, :header_footer => true, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
-           'source-highlighter=rouge'
+           'source-highlighter=rouge',
+           'stylesheet!='
          ]
   layout '/default.*'
 
