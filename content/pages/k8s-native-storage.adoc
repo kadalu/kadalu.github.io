@@ -1,0 +1,49 @@
+---
+title: Kubernetes native Storage
+---
+
+Kadalu offers a lightweight Persistent storage solution for applications running in Kubernetes. It provides operator, which spawns CSI drivers, and also storage exporter based on the configuration provided.
+
+++++
+<p>
+   <%= check_icon %><strong>Operator</strong> - Kadalu Operator takes care of managing the lifecycle of Server pods and CSI pods running in Kubernetes.<br/>
+    <%= check_icon %><strong>CSI driver</strong> - Kadalu provides drivers compatible with <a href="https://github.com/container-storage-interface/spec/blob/master/spec.md">Container Storage Interface(CSI)</a> specification.<br/>
+    <%= check_icon %><strong>Server</strong> - Server pods to export the underlaying storage and to manage them.<br/>
+   <%= check_icon %><strong>Kubectl Plugin</strong> - powerful kubectl plugin to interact with Operator and other pods to provision and manage the resources in the Kadalu namespace.
+</p>
+++++
+
+== Quick Start
+
+Download and install the latest Kadalu Kubectl plugin by running,
+
+[source,console]
+----
+kubectl krew install kadalu
+----
+
+Now install the Kadalu Operator by running,
+
+[source,console]
+----
+kubectl kadalu install
+----
+
+Once Operator is started, create Kadalu Storage by providing the devices or paths or existing PVCs. For example, create a Replica 3 Storage with three devices.
+
+[source,console]
+----
+$ kubectl kadalu storage-add storage-pool-1 \
+    --type=Replica3 \
+    --device kube-node1.example.com:/dev/vdc \
+    --device kube-node2.example.com:/dev/vdc \
+    --device kube-node3.example.com:/dev/vdc
+----
+
+Thats all! Kadalu Storage is now ready to provide PVs on request. Read the documentation for more details.
+
+++++
+<button class="button bg-indigo-600 text-gray-100" onclick="location.href='/docs/k8s-storage'">Get Started for free</button>
+<button class="button bg-yellow-200" onclick="location='/contact/?topic=Product Demo - Kubernetes native Storage'">Request for a demo</button>
+++++
+
