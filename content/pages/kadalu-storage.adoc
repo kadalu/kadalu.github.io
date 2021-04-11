@@ -1,0 +1,11 @@
+---
+title: Kadalu Storage
+---
+
+
+Kadalu Storage will be generally available soon. Contact us for a demo or to get early access.
+
+++++
+<button class="button bg-indigo-600 text-gray-100" onclick="location='/contact/?topic=Early access - Kadalu Storage'">Request for early access</button>
+<button class="button bg-yellow-200" onclick="location='/contact/?topic=Product Demo - Kadalu Storage'">Request for a demo</button>
+++++

@@ -1,0 +1,10 @@
+---
+title: GlusterFS monitoring
+---
+
+Hosted GlusterFS monitoring solution will be launched soon. Contact us for a demo or to get early access.
+
+++++
+<button class="button bg-indigo-600 text-gray-100" onclick="location='/contact/?topic=Early access - GlusterFS Monitoring'">Request for early access</button>
+<button class="button bg-yellow-200" onclick="location='/contact/?topic=Product Demo - GlusterFS Monitoring'">Request for a demo</button>
+++++

@@ -34,12 +34,13 @@ end
 
 compile '/pages/*.html' do
   filter :erb
-  layout '/page.*'
+  layout '/page_noprose.*'
 
   write item.identifier.without_ext.gsub("/pages/", "/") + '/index.html'
 end
 
 compile '/pages/*.adoc' do
+  filter :erb
   filter :asciidoctor, :header_footer => true, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
            'source-highlighter=rouge',
@@ -51,6 +52,7 @@ compile '/pages/*.adoc' do
 end
 
 compile '/**/*.adoc' do
+  filter :erb
   filter :asciidoctor, :header_footer => true, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
            'source-highlighter=rouge',
@@ -76,6 +78,12 @@ compile '/**/*.html' do
   else
     write item.identifier.without_ext + '/index.html'
   end
+end
+
+compile '/sitemap.xml' do
+  filter :erb
+
+  write item.identifier.to_s
 end
 
 compile '/**/*' do

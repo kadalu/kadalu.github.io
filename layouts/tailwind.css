@@ -9,3 +9,6 @@
 .input-field:focus {
     @apply border-indigo-400 outline-none;
 }
+.button {
+    @apply inline-block px-5 py-2 rounded-lg shadow-lg font-semibold;
+}

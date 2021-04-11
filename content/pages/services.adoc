@@ -11,7 +11,7 @@ Kadalu Storage is an Opinionated GlusterFS distribution focused on ease of use. 
 
 We can work with an in-house team or independently, depending on the needs of the client.
 
-Contact us to discuss your GlusterFS/Kadalu Storage needs.
+link:/contact/?topic=Feature%20development%20-%20GlusterFS/Kadalu%20Storage[Contact us] to discuss your GlusterFS/Kadalu Storage needs.
 
 [#migration]
 == Migration to Kadalu Storage
@@ -25,13 +25,20 @@ Whether you have a new admin with no GlusterFS/Kadalu Storage experience who nee
 
 We can tailor our training courses to your particular goals. For example, you may wish to focus on a particular area, such as Xlators, Geo-replication, Snapshots and others.
 
+link:/contact/?topic=Training%20-%20GlusterFS/Kadalu%20Storage[Contact us] to discuss your GlusterFS/Kadalu Storage Training requirements.
+
 [#consultancy]
 == Advice/Consultancy
 
 With our experience of GlusterFS/Kadalu Storage, we can help get your Storage deployments on the right track from the start. We will work with your developers and admins to ensure that you configure the GlusterFS/Kadalu Storage that are right for your needs.
 
-Contact us for more information about GlusterFS/Kadalu Storage advice services.
+link:/contact/?topic=Consultancy%20-%20GlusterFS/Kadalu%20Storage[Contact us] for more information about GlusterFS/Kadalu Storage advice services.
 
 [#upgrade]
 == Upgrade assistance
 
+link:/contact/?topic=Upgrade%20assistance%20-%20GlusterFS/Kadalu%20Storage[Contact us]
+
+== GlusterFS/Kadalu Storage bug fixes
+
+link:/contact/?topic=Bug%20fixes%20-%20GlusterFS/Kadalu%20Storage[Contact us]

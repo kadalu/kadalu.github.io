@@ -1,5 +1,6 @@
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Text
+include Nanoc::Helpers::XMLSitemap
 use_helper Nanoc::Helpers::Rendering
 
 module PostHelper
@@ -75,4 +76,8 @@ AUTHORS = {
 
 def author_data(id)
   AUTHORS[id]
+end
+
+def check_icon
+  File.read("./layouts/check_icon.html")
 end

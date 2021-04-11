@@ -11,3 +11,5 @@ gem "adsf", "~> 1.4"
 gem "adsf-live", "~> 1.4"
 gem "asciidoctor", "~> 2.0"
 gem "rouge", "~> 3.26"
+
+gem "builder", "~> 3.2"
