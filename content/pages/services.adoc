@@ -37,6 +37,8 @@ link:/contact/?topic=Consultancy%20-%20GlusterFS/Kadalu%20Storage[Contact us] fo
 [#upgrade]
 == Upgrade assistance
 
+We can help you to get answers quickly to upgrade related questions.
+
 link:/contact/?topic=Upgrade%20assistance%20-%20GlusterFS/Kadalu%20Storage[Contact us]
 
 == GlusterFS/Kadalu Storage bug fixes
