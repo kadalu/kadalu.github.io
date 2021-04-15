@@ -15,46 +15,46 @@ For Standalone use cases, Kadalu Storage provides external Control plane for man
 
 Kadalu Software Private Limited is incorporated in 2019 by the core team members of GlusterFS with the focus of providing easy, scalable Storage solution for Kubernetes and for Standalone use cases.
 
-== Team
+// == Team
 
-++++
-<div class="grid grid-cols-4">
-    <div class="">
-         <div style="width:200px;height:250px" class="bg-gray-200">
-         </div>
-         <strong>Amar Tumballi</strong>
-    </div>
-    <div class="">
-         <div style="width:200px;height:250px" class="bg-gray-200">
-         </div>
-         <strong>Aravinda Vishwanathapura</strong>
-    </div>
-    <div class="">
-         <div style="width:200px;height:250px" class="bg-gray-200">
-         </div>
-         <strong>Sachidanda Urs</strong>
-    </div>
-    <div class="">
-         <div style="width:200px;height:250px" class="bg-gray-200">
-         </div>
-         <strong>Pallavi</strong>
-    </div>
-</div>
-++++
+// ++++
+// <div class="grid grid-cols-4">
+//     <div class="">
+//          <div style="width:200px;height:250px" class="bg-gray-200">
+//          </div>
+//          <strong>Amar Tumballi</strong>
+//     </div>
+//     <div class="">
+//          <div style="width:200px;height:250px" class="bg-gray-200">
+//          </div>
+//          <strong>Aravinda Vishwanathapura</strong>
+//     </div>
+//     <div class="">
+//          <div style="width:200px;height:250px" class="bg-gray-200">
+//          </div>
+//          <strong>Sachidanda Urs</strong>
+//     </div>
+//     <div class="">
+//          <div style="width:200px;height:250px" class="bg-gray-200">
+//          </div>
+//          <strong>Pallavi</strong>
+//     </div>
+// </div>
+// ++++
 
-== Advisory Group
+// == Advisory Group
 
-++++
-<div class="grid grid-cols-3">
-    <div class="">
-         <div style="width:200px;height:250px" class="bg-gray-200">
-         </div>
-         <strong>Satish Mohan</strong>
-    </div>
-    <div class="">
-         <div style="width:200px;height:250px" class="bg-gray-200">
-         </div>
-         <strong>Sankarshan</strong>
-    </div>
-</div>
-++++
+// ++++
+// <div class="grid grid-cols-3">
+//     <div class="">
+//          <div style="width:200px;height:250px" class="bg-gray-200">
+//          </div>
+//          <strong>Satish Mohan</strong>
+//     </div>
+//     <div class="">
+//          <div style="width:200px;height:250px" class="bg-gray-200">
+//          </div>
+//          <strong>Sankarshan</strong>
+//     </div>
+// </div>
+// ++++
