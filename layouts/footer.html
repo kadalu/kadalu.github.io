@@ -65,3 +65,14 @@
         &copy; <%= Time.new.year %> Kadalu Software Private Limited. All Rights Reserved.
     </div>
 </div>
+<% if ENV['NANOC_ENV'] == 'prod' %>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144588868-2"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-144588868-2');
+</script>
+<% end %>

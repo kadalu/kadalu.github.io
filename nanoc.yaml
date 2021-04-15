@@ -10,4 +10,10 @@ data_sources:
   - type: filesystem
     encoding: utf-8
 
-base_url: https://kadalu.io
+environments:
+  default:
+    base_url: http://localhost:3000
+  prod:
+    base_url: https://kadalu.io
+  dev:
+    base_url: http://localhost:3000
