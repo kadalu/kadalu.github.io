@@ -1,0 +1,21 @@
+- name: k8s-storage
+  title: Kubernetes Native Storage
+  description: Kadalu Storage for the apps running in Kubernetes
+  repo: https://github.com/kadalu/kadalu
+  versions: ["devel"]
+  docs_dir: "doc"
+# - name: glusterfs
+#   description: GlusterFS
+#   repo: https://github.com/kadalu/glusterfs-docs
+#   versions: ["devel"]
+#   docs_dir: "docs"
+# - name: kadalu-storage
+#   description: Kadalu Storage with external control plane
+#   repo: https://github.com/kadalu/moana
+#   versions: ["devel"]
+#   docs_dir: "docs"
+# - name: binnacle
+#   description: Testing tool with the focus of Tester delight.
+#   repo: https://github.com/kadalu/binnacle
+#   versions: ["devel"]
+#   docs_dir: "docs"

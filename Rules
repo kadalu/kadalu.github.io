@@ -48,9 +48,10 @@ compile '/docs/**/*.erb' do
 end
 
 compile '/docs/**/*.adoc' do
-  filter :asciidoctor, :header_footer => true, :attributes => [
+  filter :asciidoctor, :standalone => false, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
            'source-highlighter=rouge',
+           'showtitle=yes',
            'stylesheet!='
          ]
   layout '/doc_default.*'
@@ -86,9 +87,10 @@ end
 
 compile '/blog/*.adoc' do
   filter :erb
-  filter :asciidoctor, :header_footer => true, :attributes => [
+  filter :asciidoctor, :standalone => false, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
            'source-highlighter=rouge',
+           'showtitle=yes',
            'stylesheet!='
          ]
   layout '/blog.*'
@@ -105,9 +107,10 @@ end
 
 compile '/pages/*.adoc' do
   filter :erb
-  filter :asciidoctor, :header_footer => true, :attributes => [
+  filter :asciidoctor, :standalone => false, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
            'source-highlighter=rouge',
+           'showtitle=yes',
            'stylesheet!='
          ]
   layout '/page.*'
@@ -117,9 +120,10 @@ end
 
 compile '/**/*.adoc' do
   filter :erb
-  filter :asciidoctor, :header_footer => true, :attributes => [
+  filter :asciidoctor, :standalone => false, :attributes => [
            'last-update-label!=', # Do not show last updated label in every page
            'source-highlighter=rouge',
+           'showtitle=yes',
            'stylesheet!='
          ]
   layout '/default.*'

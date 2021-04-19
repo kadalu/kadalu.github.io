@@ -12,4 +12,5 @@ output
 tmp
 content/docs/*
 !content/docs/index.erb
-crash.log
+bin
+tmprepos
