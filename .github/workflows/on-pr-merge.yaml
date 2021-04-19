@@ -35,7 +35,7 @@ jobs:
           shards build --release --stats --time
     - name: Generate
       run: |
-          ./bin/kadalu-site projects.yml
+          ./bin/kadalu-sitegen projects.yml
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
