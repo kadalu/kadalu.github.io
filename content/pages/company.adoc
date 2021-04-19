@@ -4,16 +4,16 @@ title: About Us
 
 == Kadalu Storage
 
-Kadalu Storage is opinionated distribution of GlusterFS. Kadalu Storage brings good parts of GlusterFS with added enhancements like improved Quota, Management layer and others.
+Kadalu Storage is an opinionated distribution of GlusterFS. Kadalu Storage brings good parts of GlusterFS with added enhancements like improved Quota, Management layer and others.
 
-Kadalu Storage project offers a lightweight Persistent storage solution for applications running in Kubernetes. It provides operator, which spawns CSI drivers, and also storage exporter based on the configuration provided. Kadalu Storage natively integrates with Kubernetes apis to provide the efficient solution without the need of Glusterd.
+Kadalu Storage project offers a lightweight Persistent storage solution for applications running in Kubernetes. It provides an operator, which spawns CSI drivers, and also a storage exporter based on the configuration provided. Kadalu Storage natively integrates with Kubernetes APIs to provide an efficient solution without the need for Glusterd.
 
-For Standalone use cases, Kadalu Storage provides external Control plane for managing multiple Clusters easily.
+For Standalone use cases, Kadalu Storage provides an external control plane for managing multiple Clusters easily.
 
 
 == Company
 
-Kadalu Software Private Limited is incorporated in 2019 by the core team members of GlusterFS with the focus of providing easy, scalable Storage solution for Kubernetes and for Standalone use cases.
+Kadalu Software Private Limited is incorporated in 2019 by the core team members of GlusterFS with the focus of providing an easy, scalable Storage solution for Kubernetes and for Standalone use cases.
 
 // == Team
 

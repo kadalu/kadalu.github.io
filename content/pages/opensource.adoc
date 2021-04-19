@@ -2,7 +2,7 @@
 title: Open Source
 ---
 
-Kadalu Storage is opinionated GlusterFS distribution focused on ease of use and Scalable network filesystem. All the production grade Kadalu Software are available as free/Open Source for self hosting purposes. For community support we provide help via Slack and Github issues/discussions.
+Kadalu Storage is opinionated GlusterFS distribution focused on ease of use and a Scalable network filesystem. All the production-grade Kadalu Software are available as free/Open Source for self-hosting purposes. For community support, we provide help via Slack and Github issues/discussions.
 
 == License
 
@@ -11,16 +11,16 @@ The core filesystem layer is GlusterFS with added features. GlusterFS project is
 == Projects
 
 * https://github.com/kadalu/kadalu[kadalu] project provides Operator, CSI drivers, Server and Prometheus exporters required for providing Kubernetes native storage solution.
-* https://github.com/kadalu/moana[moana] project provides external control plane for managing GlusterFS Clusters and Volumes without using Glusterd.
-* https://github.com/kadalu/gluster-metrics-exporter[gluster-metrics-exporter] project provides Prometheus exporters for exporting Cluster and node level metrics.
-* https://github.com/kadalu/gdash[gdash] project provides light weight dashboard for GlusterFS.
+* https://github.com/kadalu/moana[moana] project provides an external control plane for managing GlusterFS Clusters and Volumes without using Glusterd.
+* https://github.com/kadalu/gluster-metrics-exporter[gluster-metrics-exporter] project provides Prometheus exporters for exporting Cluster and node-level metrics.
+* https://github.com/kadalu/gdash[gdash] project provides a lightweight dashboard for GlusterFS.
 * https://github.com/kadalu/binnacle[binnacle] a Test framework with the focus for Tester's delight!
 
 and many more projects. Visit https://github.com/kadalu[Github/Kadalu] and https://github.com/gluster[Gluster] org for the list of all projects.
 
 == Ways to Contribute
 
-There are many ways you as a user, developer, contributor can get involved.
+There are many ways you as a user, developer or contributor can get involved.
 
 * You can support Kadalu Storage by sponsoring the https://opencollective.com/kadalu[Kadalu Open Collective] page.
 * Provide feedback on the link:/rfcs[RFCs]
@@ -32,5 +32,5 @@ There are many ways you as a user, developer, contributor can get involved.
 * Contribute to the https://github.com/kadalu/[source code].
 * Review pull requests.
 * Feature request.
-* mailto:support@kadalu.io[Contribute] for Test infrastructure.
+* mailto:support@kadalu.io[Contribute] to Test infrastructure.
 

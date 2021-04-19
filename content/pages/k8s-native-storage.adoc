@@ -1,14 +1,15 @@
 ---
 title: Kubernetes native Storage
+draft: true
 ---
 
-Kadalu offers a lightweight Persistent storage solution for applications running in Kubernetes. It provides operator, which spawns CSI drivers, and also storage exporter based on the configuration provided.
+Kadalu offers a lightweight Persistent storage solution for applications running in Kubernetes. It provides an operator, which spawns CSI drivers, and also a storage exporter based on the configuration provided.
 
 ++++
 <p>
    <%= check_icon %><strong>Operator</strong> - Kadalu Operator takes care of managing the lifecycle of Server pods and CSI pods running in Kubernetes.<br/>
     <%= check_icon %><strong>CSI driver</strong> - Kadalu provides drivers compatible with <a href="https://github.com/container-storage-interface/spec/blob/master/spec.md">Container Storage Interface(CSI)</a> specification.<br/>
-    <%= check_icon %><strong>Server</strong> - Server pods to export the underlaying storage and to manage them.<br/>
+    <%= check_icon %><strong>Server</strong> - Server pods to export the underlying storage and to manage them.<br/>
    <%= check_icon %><strong>Kubectl Plugin</strong> - powerful kubectl plugin to interact with Operator and other pods to provision and manage the resources in the Kadalu namespace.
 </p>
 ++++
