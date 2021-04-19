@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+<title>Small PVs and Kadalu Storage | Kadalu </title>
+<link href="/static/css/fav.png" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/static/css/fav.png" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content="Small PVs and Kadalu Storage"/>
+<meta name="author" content="aravindavk"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content="Kadalu Storage can provision the smallest Persistent Volume as low as 20MiB for the applications running in Kubernetes(k8s). Small PVs are attractive for many use cases like providing home dir for each container user or storing config files of applications etc."/>
+<meta property="og:description" content="Kadalu Storage can provision the smallest Persistent Volume as low as 20MiB for the applications running in Kubernetes(k8s). Small PVs are attractive for many use cases like providing home dir for each container user or storing config files of applications etc."/>
+<link rel="canonical" href="/blog/small-pvs-and-kadalu-storage/"/>
+<meta property="og:url" content="/blog/small-pvs-and-kadalu-storage/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:image" content=""/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2020-02-11"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:image" content=""/>
+<meta property="twitter:title" content="Small PVs and Kadalu Storage"/>
+
+        <link rel="stylesheet" href="/static/css/stylesheet.css">
+<link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+
+    </head>
+    <body>
+        
+
+<div class="bg-indigo-900">
+    <div class="w-full px-5 px-10 md:w-3/4 md:px-0 m-auto py-5">
+        <div class="lg:grid lg:grid-cols-12" x-data="{ menuOpen : false }">
+            <div class="col-span-4 lg:col-span-2" style="height:40px">
+                <a href="/"><img src="/static/css/logo.png" class="h-10 float-left" /></a>
+                <button @click="menuOpen = !menuOpen" class="block absolute md:hidden right-7 top-5 w-8 h-8 text-gray-200 p-1">
+                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="pt-2 col-span-8 lg:col-span-10">
+                <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col-reverse md:flex-row-reverse md:space-x-3 font-semibold w-full md:w-auto bg-indigo-900 shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-5 md:p-0"
+                     :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}"  @click.away="menuOpen = false"
+                >
+                    <a href="/blog" class="bg-gray-900 text-white py-2 px-3 rounded-md text-sm font-medium">Blog</a>
+                    <a href="/company" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Company</a>
+                    <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
+                    <a href="/services" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Services</a>
+                    <a href="/products" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Products</a>
+                    <a href="/docs" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Docs</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="py-10">
+            <div id="main" class="mx-auto w-full px-10 md:w-3/4 md:px-0 mb-10">
+                <div class="grid grid-cols-12 gap-4">
+                    <div class="col-span-9 prose max-w-none prose-indigo">
+                        <h1>Small PVs and Kadalu Storage</h1>
+                        
+                        
+                        <div class="text-gray-500 text-sm mb-1">Posted on <strong>Feb 11, 2020</strong> by <strong>Aravinda Vishwanathapura</strong></div>
+                        <div class="text-gray-600 text-sm mb-7">
+                            <svg class="w-6 h-6 inline-block mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                            3 minutes read.
+                        </div>
+                        <div class="paragraph">
+<p>Kadalu Storage can provision the smallest Persistent Volume as low as <code>20MiB</code> for the applications running in Kubernetes(k8s). Small PVs are attractive for many use cases like providing home dir for each container user or storing config files of applications etc.</p>
+</div>
+<div class="paragraph">
+<p>Performant Read and write of small files over the network are always challenging, and it is still hard to match local filesystem performance.</p>
+</div>
+<div class="paragraph">
+<p>This blog is to discuss a hybrid approach to solve these performance issues if the data is not very critical(In case of failure, it is okay to lose last 10-30 seconds data).</p>
+</div>
+<div class="paragraph">
+<p>Claim PV from Kadalu as usual with the required size, for example, <code>200MiB</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">pv1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica1</span>
+  <span class="na">accessModes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
+  <span class="na">resources</span><span class="pi">:</span>
+    <span class="na">requests</span><span class="pi">:</span>
+      <span class="na">storage</span><span class="pi">:</span> <span class="s">200Mi</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Prepare the Pod container image such that, on start, it copies data from <code>/srcdata</code> to <code>$HOME</code> directory. The idea is to mount Kadalu PV to <code>/src</code> directory and design application to use <code>$HOME</code> directory(Or any other required directory). With this approach, the application will be using local data instead of accessing data from the PV provided by Kadalu.</p>
+</div>
+<div class="paragraph">
+<p>On Pod termination(using pre stop hook), call the reverse sync script to sync data from <code>$HOME</code> to <code>/srcdata</code>. This method secures the Pod/container data in PV So that it can be started again anytime.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">pod1</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">my-super-app</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">my-super-app</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">docker.io/kadalu/my-super-app:latest</span>
+    <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">IfNotPresent</span>
+    <span class="na">lifecycle</span><span class="pi">:</span>
+      <span class="na">preStop</span><span class="pi">:</span>
+        <span class="na">exec</span><span class="pi">:</span>
+          <span class="na">command</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">/usr/local/bin/sync.sh"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">~/"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">/srcdata"</span><span class="pi">]</span>
+    <span class="na">volumeMounts</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">mountPath</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/srcdata"</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">csivol</span>
+  <span class="na">volumes</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">csivol</span>
+    <span class="na">persistentVolumeClaim</span><span class="pi">:</span>
+      <span class="na">claimName</span><span class="pi">:</span> <span class="s">pv1</span>
+  <span class="na">restartPolicy</span><span class="pi">:</span> <span class="s">OnFailure</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: The container image used in the above example is non-existent. It is used for illustrative purposes only.</p>
+</div>
+<div class="sect1">
+<h2 id="_minimize_the_risk">Minimize the Risk</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>What happens in cases where the Pod terminates abruptly or, the node goes down without being able to call Pre to stop the hook script? Let&#8217;s create a background job that syncs data from <code>$HOME</code> to <code>/srcdata</code> at regular intervals. For example, if the background job runs once every 10 seconds, then the risk of losing data is reduced to 10 seconds(plus sync time).</p>
+</div>
+<div class="paragraph">
+<p>Any failure to sync data from <code>$HOME</code> to <code>/srcdata</code>(or vice-versa) should be treated as a Pod failure to avoid more data loss.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: This approach is not suitable for large volumes, but a similar technique can be adapted for medium and large volumes if Inotify(or similar tools) is available for containers.</p>
+</div>
+<div class="paragraph">
+<p>Thanks, <a href="https://twitter.com/gauthampai">Gautham Pai</a>(<a href="https://jnaapti.com/">Jnaapti</a>) for brainstorming the issues related to small PVs and data movements required when an application Pod starts in other node and hostPath was used as PV.</p>
+</div>
+<div class="paragraph">
+<p><strong>WARNING</strong>: This approach is not suitable for all use cases. The specific use case creates a trade-off that losing data for such minimal time duration is considered to be acceptable.</p>
+</div>
+</div>
+</div>
+                        <p class="bg-blue-200 px-2 py-2 mb-10 rounded">Join the Kadalu team as we plan, design and develop new features. We are available on our Slack instance, <a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">https://kadalu.slack.com</a>.</p>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="mt-20 text-center">
+                            <img class="rounded-full mb-5 mx-auto" style="width:150px;height:150px" src="https://github.com/aravindavk.png?size=300px"/>
+                            <h2 class="font-semibold text-center">Aravinda Vishwanathapura</h2>
+                            
+                            <p>Kadalu Maintainer</p>
+                            
+                            <p>
+                                
+                                <a class="mr-2 text-indigo-600" href="https://aravindavk.in">Website</a>|
+                                
+                                
+                                <a class="mx-2 text-indigo-600" href="https://twitter.com/aravindavk">Twitter</a>|
+                                
+                                <a class="ml-2 text-indigo-600" href="https://github.com/aravindavk">Github</a>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="bg-gray-800 text-gray-100 py-10">
+    <div class="mx-auto w-full px-5 px-10 md:w-3/4 md:px-0" style="min-height: 40vh">
+        <div class="md:grid gap-2 md:grid-cols-4 md:gap-4">
+            <div class="mb-10">
+                <h2 class="text-xl font-semibold text-indigo-300">Kadalu</h2>
+                <ul>
+                    <li><a href="/products#k8s-native-storage">Kubernetes native Storage</a></li>
+                    <li><a href="/products#kadalu-storage">Kadalu Storage</a></li>
+                    <li><a href="/products#glusterup">GlusterFS monitoring</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/services#features">Feature development</a></li>
+                    <li><a href="/services#upgrade">Upgrade assistance</a></li>
+                    <li><a href="/services#consultancy">Consultancy</a></li>
+                    <li><a href="/security">Security</a></li>
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <h2 class="text-xl font-semibold text-indigo-300">Community</h2>
+                <ul>
+                    <li><a href="/opensource">Open Source</a></li>
+                    <li><a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Slack</a></li>
+                    <li><a href="https://github.com/kadalu">Github</a></li>
+                    <!-- <li><a href="/office-hours">Office Hours</a></li> -->
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <h2 class="text-xl font-semibold text-indigo-300">Learn</h2>
+                <ul>
+                    <li><a href="/docs">Documentation</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/rfcs">RFCs</a></li>
+                    <!-- <li><a href="/compare">Compare</a></li> -->
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <h2 class="text-xl font-semibold text-indigo-300">Company</h2>
+                <ul>
+                    <li><a href="/company">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/sitemap.xml">Sitemap</a></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-indigo-300 mt-10">Write to us</h2>
+                <ul>
+                    <li><a href="mailto:hello@kadalu.io"><svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>hello@kadalu.io</a></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-indigo-300 mt-10">Follow Us</h2>
+                <ul>
+                    <li><a href="https://twitter.com/kadaluio">Twitter</a></li>
+                    <li><a href="https://linkedin.com/company/kadalu-io">Linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-gray-800 text-gray-100 py-10">
+    <div class="mx-auto w-3/4 text-center text-gray-300 mb-10">
+        &copy; 2021 Kadalu Software Private Limited. All Rights Reserved.
+    </div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144588868-2"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-144588868-2');
+</script>
+
+
+    </body>
+</html>
