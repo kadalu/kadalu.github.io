@@ -10,6 +10,7 @@ data_sources:
   - type: filesystem
     encoding: utf-8
 
+prefix_path: "/docs"
 environments:
   default:
     base_url: http://localhost:3000

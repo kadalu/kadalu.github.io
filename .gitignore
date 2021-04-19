@@ -10,3 +10,6 @@ content/static/css/stylesheet.css
 crash.log
 output
 tmp
+content/docs/*
+!content/docs/index.erb
+crash.log
