@@ -8,37 +8,37 @@ Yes and No. If the GlusterFS version available is compatible with Moana supporte
 
 
 
-== Is Kadalu Storage is same as GlusterFS except the management layer?
+== Is Kadalu Storage is same as GlusterFS except for the management layer?
 
-Kadalu Storage is opinionated distribution of GlusterFS. Kadalu Storage brings good parts of GlusterFS with added enhancements like improved Quota, Management layer and others. 
+Kadalu Storage is an opinionated distribution of GlusterFS. Kadalu Storage brings good parts of GlusterFS with added enhancements like improved Quota, Management layer and others. 
 
-Mostly same. But some of the additional features available with Kadalu Storage (Refer [this](#) article to understand the differences). Also the default configurations/values will differ. All the enhancements available with Kadalu Storage are also Open Source, so technically these features can be installed with GlusterFS as well but with additional effort.
-
+Mostly same. But some of the additional features available with Kadalu Storage. Also, the default configurations/values will differ. All the enhancements available with Kadalu Storage are also Open Source, so technically these features can be installed with GlusterFS as well but with additional effort.
 
 
 == Who is behind Kadalu Storage?
 
-The Kadalu Storage project is currently sponsored by Kadalu Software Pvt Ltd. The project was started by core team members of GlusterFS project with the initial focus to provide lightweight storage solution for the apps running on Kubernetes. With the release of Kadalu Moana project, GlusterFS management is simplified for non Kubernetes use cases as well.
+The Kadalu Storage project is currently sponsored by Kadalu Software Pvt Ltd. The project was started by core team members of the GlusterFS project with the initial focus to provide a lightweight storage solution for the apps running on Kubernetes. With the release of the Kadalu Moana project, GlusterFS management is simplified for non-Kubernetes use cases as well.
 
 == How Stable is Kadalu Storage?
 
-As explained previously, major difference between Kadalu Storage and GlusterFS is the management layer. No worries for your data, Kadalu Storage uses time tested File system bits from GlusterFS.
+As explained previously, the major difference between Kadalu Storage and GlusterFS is the management layer. No worries for your data, Kadalu Storage uses time tested File system bits from GlusterFS.
 
-== Why not contribute back to GlusterFS project itself?
+== Why not contribute back to the GlusterFS project itself?
 
-We do. All enhancements done in Kadalu will be sent to GlusterFS. If any feature that is not applicable to GlusterFS community but for Kadalu users then it will be maintained in Kadalu Storage open source repository. Release and support cycles of Kadalu Storage is not aligned with GlusterFS release cycles, so we are maintaing separate releases.
+We do. All enhancements done in Kadalu will be sent to GlusterFS. If any feature is not applicable to the GlusterFS community but for Kadalu users then it will be maintained in Kadalu Storage open-source repository. Release and support cycles of Kadalu Storage is not aligned with GlusterFS release cycles, so we are maintaining separate releases.
 
-== Monitoring is one of the pain point with GlusterFS, how is this issue addressed?
+== Monitoring is one of the pain points with GlusterFS, how is this issue addressed?
 
-Moana exports rich set of metrics that can be readily used with Prometheus server easily. Apart from that, we also maintain couple of projects like Gdash, Gluster prometheus exporter, Gstatus etc to improve GlusterFS monitoring without using Moana.
+Moana exports a rich set of metrics that can be readily used with the Prometheus server easily. Apart from that, we also maintain a couple of projects like Gdash, Gluster Prometheus exporter, Gstatus etc to improve GlusterFS monitoring without using Moana.
 
-== Is Kadalu Storage is fork of GlusterFS?
+// == Is Kadalu Storage is a fork of GlusterFS?
 
 == You say kadalu is powered by GlusterFS, but I don’t see GlusterFS installation notes
 
-That is the beauty of Kadalu. We made ‘gluster’ invisible to users. Many of the gluster management’s (glusterd/CLI) responsibilities are deligated to Kubernetes to make the solution simple. Read more about this in our first presentation.
+That is the beauty of Kadalu. We made "GlusterFS" invisible to users. Many of the gluster management’s (glusterd/CLI) responsibilities are deligated to Kubernetes to make the solution simple. Read more about this in our first presentation.
 
 == I don’t see any option to configure glusterfs, you say none of 350+ options of gluster needs to be configured?
 
-We believe in simplicity. Specially in case of micro-services ecosystem, the highlight is always on simplicity. We have removed many layers of gluster in our template volfiles. Our default options which are added in gluster volfile template are good enough for 90-95% of the usecases we want to serve. If you are in that rare 1-5% of usecases, our code is open, and you can extend the templates. Or also get in touch with us to resolve your issue.
+We believe in simplicity. Especially in the case of the micro-services ecosystem, the highlight is always on simplicity. We have removed many layers of gluster in our template volfiles. Our default options which are added in the gluster volfile template are good enough for 90-95% of the use cases we want to serve. If you are in that rare 1-5% of use cases, our code is open, and you can extend the templates. Or also get in touch with us to resolve your issue.
+
 
