@@ -1,5 +1,69 @@
 #!/usr/bin/env ruby
 
+compile '/docs/**/versions.html' do
+  filter :erb
+  layout '/doc_versions.*'
+
+  write item.identifier.without_ext.gsub('/versions', '') + '/index.html'
+end
+
+compile '/docs/**/redirect.html' do
+  layout '/doc_redirect.*'
+
+  write item.identifier.without_ext.gsub("redirect", "") + 'index.html'
+end
+
+compile '/docs/**/*.html' do
+  layout '/doc_default.*'
+
+  if item.identifier =~ '**/index.*'
+    write item.identifier.to_s
+  else
+    write item.identifier.without_ext + '/index.html'
+  end
+end
+
+compile '/docs/**/index.erb' do
+  filter :erb
+  layout '/doc_projects.*'
+
+  write item.identifier.without_ext + '.html'
+end
+
+compile '/docs/**/*.json.erb' do
+  filter :erb
+
+  write item.identifier.without_ext
+end
+
+compile '/docs/**/*.erb' do
+  filter :erb
+  layout '/doc_default.*'
+
+  if item.identifier =~ '**/index.*'
+    write item.identifier.to_s
+  else
+    write item.identifier.without_ext + '/index.html'
+  end
+end
+
+compile '/docs/**/*.adoc' do
+  filter :asciidoctor, :header_footer => true, :attributes => [
+           'last-update-label!=', # Do not show last updated label in every page
+           'source-highlighter=rouge',
+           'stylesheet!='
+         ]
+  layout '/doc_default.*'
+
+  if item.identifier =~ '**/index.*'
+    write item.identifier.without_ext + '.html'
+  else
+    write item.identifier.without_ext + '/index.html'
+  end
+end
+
+# END: /docs rules
+
 compile '/index.html' do
   filter :erb
   layout '/home.*'
@@ -58,13 +122,6 @@ compile '/**/*.adoc' do
            'source-highlighter=rouge',
            'stylesheet!='
          ]
-  layout '/default.*'
-
-  write item.identifier.without_ext + '/index.html'
-end
-
-compile '/**/*.md' do
-  filter :kramdown, :syntax_highlighter => 'rouge'
   layout '/default.*'
 
   write item.identifier.without_ext + '/index.html'
