@@ -24,9 +24,18 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    - name: Setup
+    - name: Install Crystal
       run: |
-          make setup-prod
+          curl -fsSL https://crystal-lang.org/install.sh | sudo bash
+    - name: Install Build deps
+      run: |
+        sudo apt install -y libyaml-dev
+    - name: Build kadalu-sitegen tool
+      run: |
+          shards build --release --stats --time
+    - name: Generate
+      run: |
+          ./bin/kadalu-site projects.yml
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
