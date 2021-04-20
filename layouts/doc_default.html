@@ -13,6 +13,7 @@
                     <div class="p-5 bg-gray-200 border text-right rounded-lg">
                         <strong>Version: </strong>
                         <select class="input-field" onchange="location = '<%= @config[:prefix_path] %>/<%= project_name %>/' + this.value;">
+                            <option <% if "latest" == project_version %>selected<% end %> value="latest">latest</option>
                             <% supported_versions(project_name).each do |version| %>
                             <option <% if version == project_version %>selected<% end %> value="<%= version %>"><%= version %></option>
                             <% end %>
