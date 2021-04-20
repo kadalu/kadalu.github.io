@@ -4,14 +4,21 @@ set -e
 
 ROOT_DIR=$(ruby -e 'puts File.expand_path(".")')
 
-function prepare_versioned_docs {
+function version_checkout
+{
+    local project_name=$1
+    local version=$2
+    cd "${ROOT_DIR}/tmprepos/${project_name}" && git checkout -b v${version} ${version}
+}
+
+function prepare_versioned_docs
+{
     local projects_yaml_file=$1
     local project_name=$2
     local project_repo=$3
     local docs_dir=$4
     local version=$5
 
-    cd "${ROOT_DIR}/tmprepos/${project_name}" && git checkout -b v${version} ${version}
     mkdir -p "${ROOT_DIR}/content/docs/${project_name}"
 
     project_dir="${ROOT_DIR}/content/docs/${project_name}"
@@ -67,8 +74,14 @@ function main
         # For each required version checkout and prepare the docs
         ruby ${ROOT_DIR}/scripts/versions.rb $projects_yaml_file $project_name | while read version
         do
+            version_checkout $project_name $version
             prepare_versioned_docs $projects_yaml_file $project_name $project_repo $docs_dir $version
         done
+
+        # Checkout the Latest alias version again and setup as required
+        latest_alias=$(ruby ${ROOT_DIR}/scripts/latest_alias.rb $projects_yaml_file $project_name)
+        cd "${ROOT_DIR}/tmprepos/${project_name}" && git checkout v${latest_alias}
+        prepare_versioned_docs $projects_yaml_file $project_name $project_repo $docs_dir "latest"
     done
 
     build_docs_site

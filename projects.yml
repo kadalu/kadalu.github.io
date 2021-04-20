@@ -4,18 +4,22 @@
   repo: https://github.com/kadalu/kadalu
   versions: ["devel"]
   docs_dir: "doc"
+  latest_alias: "devel"
 # - name: glusterfs
 #   description: GlusterFS
 #   repo: https://github.com/kadalu/glusterfs-docs
 #   versions: ["devel"]
 #   docs_dir: "docs"
+#   latest_alias: "devel"
 # - name: kadalu-storage
 #   description: Kadalu Storage with external control plane
 #   repo: https://github.com/kadalu/moana
 #   versions: ["devel"]
 #   docs_dir: "docs"
+#   latest_alias: "devel"
 # - name: binnacle
 #   description: Testing tool with the focus of Tester delight.
 #   repo: https://github.com/kadalu/binnacle
 #   versions: ["devel"]
 #   docs_dir: "docs"
+#   latest_alias: "devel"
