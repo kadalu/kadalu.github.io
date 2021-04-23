@@ -200,7 +200,7 @@
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
 <span class="na">metadata</span><span class="pi">:</span>
  <span class="c1"># This will be used as name of PV Hosting Volume</span>
@@ -214,7 +214,7 @@
 </div>
 <div class="paragraph">
 <p>For now,
-* <code>apiVersion</code> will always be having value of <code>kadalu-operator.storage/v1alpha</code>.
+* <code>apiVersion</code> will always be having value of <code>kadalu-operator.storage/v1alpha1</code>.
 * <code>kind</code> will always be having value of <code>KadaluStorage</code>. kadalu operator only understands config of this <strong>kind</strong>.
 * <code>metadata</code> is required, and should have an entry for 'name', which will be used as 'gluster&#8217;s volume name and pod names.
 * <code>spec</code> field should be required, and should have <code>type</code> field.</p>
