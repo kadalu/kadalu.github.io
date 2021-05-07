@@ -189,6 +189,11 @@ of the kubernetes (k8s) cluster. We describe this <code>kind</code> of setup as
 'External'. Such a description is intended to indicate that the storage
 server processes are not managed by kadalu operator.</p>
 </div>
+<div class="paragraph">
+<p>In both the ways please note <code>metadata.name</code> (let&#8217;s say <code>e-vol</code>) in
+<code>kind: KadaluStorage</code> will create a StorageClass with name
+<code>kadalu.external.&lt;volname&gt;</code> (<code>volname</code> will be replaces with <code>e-vol</code>).</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -222,7 +227,9 @@ sample yaml file</p>
     <span class="na">gluster_host</span><span class="pi">:</span> <span class="s">gluster1.kadalu.io</span>
     <span class="na">gluster_volname</span><span class="pi">:</span> <span class="s">kadalu</span>
     <span class="na">gluster_options</span><span class="pi">:</span> <span class="s">log-level=DEBUG</span>
-
+    <span class="c1"># Omitting 'kadalu_format' or using 'native' as a value will create</span>
+    <span class="c1"># 1 PV : 1 Subdir in external gluster volume</span>
+    <span class="na">kadalu_format</span><span class="pi">:</span> <span class="s">native</span>
 
 <span class="c1"># file: pvc-from-external-gluster.yaml</span>
 <span class="nn">---</span>
@@ -282,23 +289,25 @@ gluster volumes in this mode. This helps to use the PVs used in other deployment
 to be still consumed.</p>
 </div>
 <div class="paragraph">
-<p>In this mode, you don&#8217;t need storage config, but all you need is to have a sample
-like below</p>
+<p>You&#8217;ll be needing something similar to below config to use whole gluster
+volume as a single PV</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># file: external-gluster-as-pv.yaml</span>
 <span class="nn">---</span>
-<span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
 <span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">kadalu.external.pv-ext</span> <span class="c1"># Keep changing the name for different volumes</span>
-<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kadalu</span>
-<span class="na">parameters</span><span class="pi">:</span>
-  <span class="na">hostvol_type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">External"</span>
-  <span class="na">gluster_host</span><span class="pi">:</span> <span class="s">gluster1.kadalu.io</span>   <span class="c1"># Change to your gluster host</span>
-  <span class="na">gluster_volname</span><span class="pi">:</span> <span class="s">test</span>              <span class="c1"># Change to existing gluster volume</span>
-  <span class="na">gluster_options</span><span class="pi">:</span> <span class="s">log-level=DEBUG</span>   <span class="c1"># Comma separated options</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">pv-ext</span> <span class="c1"># Keep changing the name for different volumes</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">External</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="na">gluster_host</span><span class="pi">:</span> <span class="s">gluster1.kadalu.io</span>   <span class="c1"># Change to your gluster host</span>
+    <span class="na">gluster_volname</span><span class="pi">:</span> <span class="s">test</span>              <span class="c1"># Change to existing gluster volume</span>
+    <span class="na">gluster_options</span><span class="pi">:</span> <span class="s">log-level=DEBUG</span>   <span class="c1"># Comma separated options</span>
+    <span class="c1"># Setting 'kadalu_format' as 'non-native' is important</span>
+    <span class="na">kadalu_format</span><span class="pi">:</span> <span class="s">non-native</span>          <span class="c1"># Will map 1 Gluster Volume : 1 PV</span>
 
 <span class="nn">---</span>
 <span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>

@@ -408,10 +408,10 @@
 <div class="sect2">
 <h3 id="_external_storage_for_non_kadalu_mode">External Storage for non-kadalu mode.</h3>
 <div class="paragraph">
-<p>This is a hidden option provided in kadalu to access a gluster volume as a whole as PV. This is particularly useful if one wants to use an already existing Gluster volume as a PV (for example, a gluster volume created by heketi). We don&#8217;t recommend this for normal usage, as this mode would have scale limitations, and also would add more k8s resources likes StorageClass.</p>
+<p>This option is provided in kadalu to access a gluster volume as a whole as PV. This is particularly useful if one wants to use an already existing Gluster volume as a PV (for example, a gluster volume created by heketi). We don&#8217;t recommend this for normal usage, as this mode would have scale limitations, and also would add more k8s resources likes StorageClass.</p>
 </div>
 <div class="paragraph">
-<p>This option is not provided using storage config, but admin/user has to create a StorageClass themselves with external gluster information. The example config file added for CI/CD gives an idea about options. Note that the options provided here looks same as whats given in storage config, but when kadalu operator creates the StorageClass, it adds another field <code>kadalu-format: true</code>. Refer the <a href="/docs/k8s-storage/devel/external-gluster-storage">external-storage document</a> for more information on this mode.</p>
+<p>The example config file added for CI/CD gives an idea about options. Note that the options provided here looks same as whats given in storage config, but when kadalu operator creates the StorageClass with values (<code>natvie</code> vs <code>non-native</code>) supplied to field <code>kadalu_format</code> inorder to decide kadalu or non-kadalu mode. Refer the <a href="/docs/k8s-storage/devel/external-gluster-storage">external-storage document</a> for more information on this mode.</p>
 </div>
 </div>
 </div>
