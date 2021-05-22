@@ -13,8 +13,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/k8s-storage/latest/README/"/>
-<meta property="og:url" content="/docs/k8s-storage/latest/README/"/>
+<link rel="canonical" href="/rfcs/0001-external-gluster-storage.html"/>
+<meta property="og:url" content="/rfcs/0001-external-gluster-storage.html"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
@@ -51,7 +51,7 @@
                     <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
                     <a href="/services" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Services</a>
                     <a href="/products" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Products</a>
-                    <a href="/docs" class="bg-gray-900 text-white py-2 px-3 rounded-md text-sm font-medium">Docs</a>
+                    <a href="/docs" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Docs</a>
                 </nav>
             </div>
         </div>
@@ -63,213 +63,239 @@
             <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
                 <div class="py-5 px-5">
                     
-                    <div class="p-5 bg-gray-200 border text-right rounded-lg">
-                        <strong>Version: </strong>
-                        <select class="input-field" onchange="location = '/docs/k8s-storage/' + this.value;">
-                            <option selected value="latest">latest</option>
-                            
-                            <option  value="devel">devel</option>
-                            
-                        </select>
-                    </div>
                     
-                    <h2 class="text-xl font-semibold mt-7">User Guide</h2>
                     <ul>
                         
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/quick-start/">Quick Start</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/introduction/">Introduction</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs">Introduction</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup/">Setup</a></li>
+                        <li class="text-indigo-600 font-semibold py-2 md:py-0">0001 External Gluster Storage</li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup-storage/">Setup Storage</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0002-test-framework-binnacle.html">0002 Test Framework Binnacle</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/csi-to-claim-persistent-volumes/">CSI to claim Persistent Volumes</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0003-kadalu-thin-arbiter-support.html">0003 Kadalu Thin Arbiter Support</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/try-kadalu/">Try Kadalu</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0004-gluster-error-codes.html">0004 Gluster Error Codes</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/external-gluster-storage/">External Gluster Storage</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0005-external-control-plane-gluster.html">0005 External Control Plane Gluster</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/storage-config-options/">Storage Config Options</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0006-optimized-quota-feature-with-namespace.html">0006 Optimized Quota Feature With Namespace</a></li>
                         
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/storage-classes/">Storage Classes</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/troubleshooting/">Troubleshooting</a></li>
                         
                         
                     </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Use cases</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/running-a-webserver/">Running a Webserver</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/running-minio/">Running Minio</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Articles</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/how-it-works?/">How it works?</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/gluster-and-kadalu/">Gluster and Kadalu</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Developer Guide</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/get-involved/">Get Involved</a></li>
-                        
-                        
-                    </ul>
-                    
-                    
                     
                 </div>
             </div>
             <div id="main" class="col-span-9">
                 <div class="py-5 px-10">
                     
-                    <div class="mb-10">
-                        <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
-                            <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/latest">latest</a> / README/</span>
-                    </div>
-                    
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Kadalu Documentation</h1>
+                        <h1>Supporting External Gluster Cluster with Kadalu</h1>
 <div class="sect1">
-<h2 id="_user_guide">User Guide</h2>
+<h2 id="_authors">Authors</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="quick-start">Quick Start</a></p>
+<p>Aravinda Vishwanathapura - <a href="mailto:aravinda@kadalu.io">aravinda@kadalu.io</a></p>
 </li>
 <li>
-<p><a href="introduction">Introduction</a></p>
-</li>
-<li>
-<p><a href="setup">Setup</a></p>
-</li>
-<li>
-<p><a href="setup-storage">Setup Storage</a></p>
-</li>
-<li>
-<p><a href="csi-to-claim-persistent-volumes">CSI to claim Persistent Volumes</a></p>
-</li>
-<li>
-<p><a href="try-kadalu">Try Kadalu</a></p>
-</li>
-<li>
-<p><a href="external-gluster-storage">External Gluster Storage</a></p>
-</li>
-<li>
-<p><a href="storage-config-options">Storage Config Options</a></p>
-</li>
-<li>
-<p><a href="storage-classes">Storage Classes</a></p>
-</li>
-<li>
-<p><a href="troubleshooting">Troubleshooting</a></p>
+<p>Amar Tumballi - <a href="mailto:amar@kadalu.io">amar@kadalu.io</a></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_use_cases">Use Cases</h2>
+<h2 id="_summary">Summary</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="running-a-webserver">Running a Webserver</a></p>
-</li>
-<li>
-<p><a href="running-minio">Running Minio</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Kadalu Operator accepts the raw devices provided from each node and creates Gluster volume using those devices. These Gluster Volumes will be used to provision persistent volumes claimed by Kubernetes applications. The Kadalu Operator itself manages Gluster volumes. In this use-case, the user already has managed Gluster cluster, and Kadalu Operator and CSI drivers use the external Gluster Cluster and provision persistent volumes for Kubernetes applications.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_articles">Articles</h2>
+<h2 id="_motivation">Motivation</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="how-it-works">How it Works?</a></p>
-</li>
-<li>
-<p><a href="gluster-and-kadalu">Gluster and Kadalu</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>This feature is critical for success of kadalu, as there are many users and administrators who would like to keep storage out of their application management. This way, they can isolate the responsibility and management. We have been asked about such feature in early stages of the project, and many users said that without this feature, they wouldn&#8217;t use the project.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_developer_guide">Developer Guide</h2>
+<h2 id="_detailed_design">Detailed design</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The need is further discussed in: <a href="https://github.com/kadalu/kadalu/issues/36" class="bare">https://github.com/kadalu/kadalu/issues/36</a></p>
+</div>
+<div class="sect2">
+<h3 id="_connect_to_remote_glusterd_from_csi_pods">Connect to remote Glusterd from CSI pods</h3>
+<div class="paragraph">
+<p>Accept the storage configuration with just Volume name and list of primary node and backup nodes, as mentioned in the Github issue.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: storage-config.yaml</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">ext-storage</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">External</span> <span class="c1">#Here, volume type can be anything</span>
+  <span class="na">details</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">gluster_node</span><span class="pi">:</span> <span class="s">node1</span>
+      <span class="na">gluster_volname</span><span class="pi">:</span> <span class="s">volume_name</span> <span class="c1"># Volume name</span>
+      <span class="na">Gluster_options</span><span class="pi">:</span> <span class="s">log_level=DEBUG</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deploy this storage configuration using,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl create <span class="nt">-f</span> storage-config.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Instead of generating Volfile based on Volume info stored in configMap, Gluster clients running in CSI pods directly connect to remote Glusterd and gets Client Volfile.</p>
+</div>
+<div class="paragraph">
+<p>Now, while requesting PV from this storage, use ‘StorageClass’ as <code>kadalu.external.{{ config_name }}</code>, in this case <strong><code>kadalu.external.ext-storage</code></strong>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_quota">Quota</h3>
+<div class="paragraph">
+<p>Kadalu provides persistent storage by creating a sub-directory and by setting subdirectory quota(Kadalu uses backend filesystem Quota). Run Kadalu Quota daemon in each Gluster node, which contains brick(s) of exported volume.</p>
+</div>
+<div class="paragraph">
+<p>Add exported volumes list to <code>/var/lib/glusterd/kadalustorage.info</code> and start/restart the kadalu quota daemon.
+(TBD: If we can set some metadata to Volumes then no need of external configuration, the daemon can get the list of exported volumes from Volume info).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="go">systemctl start kadalu-quotad</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For each exported volume, Quota daemon gets local bricks list and crawls each brick and sets Quota when necessary.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_challenges">Challenges</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="get-involved">Get Involved</a></p>
+<p>We may not have execution permission on Gluster Cluster, and hence, all ‘side-car’ container tasks we are planning to do would need to be run by the admin on gluster cluster.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Quota</p>
 </li>
 <li>
-<p><a href="testing-kadalu">Testing Kadalu</a></p>
+<p>Monitoring</p>
 </li>
 <li>
-<p><a href="release-management">Release Management</a></p>
+<p>Backup</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>The volume may have features we don’t support</p>
+</li>
+<li>
+<p>The volume may have distribute, in which case, some assumptions we have made would go wrong.</p>
+</li>
+<li>
+<p>The bricks may not be using xfs.</p>
+</li>
+<li>
+<p>Gluster version in CSI pods may be different from than version of the external Gluster cluster. A possible solution is to release CSI container images with different Gluster versions.</p>
+</li>
+<li>
+<p>If Volume options or sub-volume changes in the externally managed cluster, will Glusterfs client running in CSI pods gets the notification?</p>
+</li>
+<li>
+<p>CSI pods should have access to nodes of Gluster cluster, That means CSI pods can connect to any Gluster nodes(Port 24007 and brick ports)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_assumptions">Assumptions</h3>
+<div class="paragraph">
+<p>With the above Challenges, to deliver a feature, it is good for us to go with some assumptions, and guidelines.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Only xfs bricks are supported now, Quota works only if the externally managed Gluster Volume contains bricks with xfs filesystem and projectquota is enabled on these brick mounts.</p>
+</li>
+<li>
+<p>Only glusterfs version 6 or higher to be used on gluster-cluster (ie, RHGS 3.5 and above if one is using RHGS).</p>
+</li>
+<li>
+<p>Only Single brick volume, or Replicate/Disperse/Arbiter volume supported. Ie, if distribute is used, the volume size limit for PV users wouldn’t be valid, hence not supported.</p>
+</li>
+<li>
+<p>Python3 support is expected on the Brick host machine.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_improvements">Improvements</h3>
+<div class="paragraph">
+<p>Considering even heketi created volumes can become an external entity for same ‘External’ type, proposing 1 more fields in the config 'KadaluStorage'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kadalu-format </span><span class="pi">:</span> <span class="no">true</span><span class="s">/false</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This option will tell CSI driver, how the data / PV layout is. If it is a subdirectory based (ie, kadalu model), or heketi model, which means, the whole volume is a single PV.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_implementation">Implementation</h3>
+<div class="paragraph">
+<p>The initial work towards this has been done in below PRs.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/kadalu/kadalu/pull/88" class="bare">https://github.com/kadalu/kadalu/pull/88</a></p>
+</li>
+<li>
+<p><a href="https://github.com/kadalu/kadalu/pull/81" class="bare">https://github.com/kadalu/kadalu/pull/81</a></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>

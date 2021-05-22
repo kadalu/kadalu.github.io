@@ -62,6 +62,7 @@
         <div class="flex flex-col md:grid md:grid-cols-12 w-full" x-data="{docMenuOpen: false}">
             <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
                 <div class="py-5 px-5">
+                    
                     <div class="p-5 bg-gray-200 border text-right rounded-lg">
                         <strong>Version: </strong>
                         <select class="input-field" onchange="location = '/docs/k8s-storage/' + this.value;">
@@ -167,15 +168,19 @@
                         
                     </ul>
                     
+                    
+                    
                 </div>
             </div>
             <div id="main" class="col-span-9">
                 <div class="py-5 px-10">
+                    
                     <div class="mb-10">
                         <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
                             <a href="/">
                                 <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/latest">latest</a> / get-involved/</span>
                     </div>
+                    
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>

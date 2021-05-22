@@ -13,8 +13,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/k8s-storage/latest/README/"/>
-<meta property="og:url" content="/docs/k8s-storage/latest/README/"/>
+<link rel="canonical" href="/rfcs/0003-kadalu-thin-arbiter-support.html"/>
+<meta property="og:url" content="/rfcs/0003-kadalu-thin-arbiter-support.html"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
@@ -51,7 +51,7 @@
                     <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
                     <a href="/services" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Services</a>
                     <a href="/products" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Products</a>
-                    <a href="/docs" class="bg-gray-900 text-white py-2 px-3 rounded-md text-sm font-medium">Docs</a>
+                    <a href="/docs" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Docs</a>
                 </nav>
             </div>
         </div>
@@ -63,213 +63,157 @@
             <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
                 <div class="py-5 px-5">
                     
-                    <div class="p-5 bg-gray-200 border text-right rounded-lg">
-                        <strong>Version: </strong>
-                        <select class="input-field" onchange="location = '/docs/k8s-storage/' + this.value;">
-                            <option selected value="latest">latest</option>
-                            
-                            <option  value="devel">devel</option>
-                            
-                        </select>
-                    </div>
                     
-                    <h2 class="text-xl font-semibold mt-7">User Guide</h2>
                     <ul>
                         
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/quick-start/">Quick Start</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/introduction/">Introduction</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs">Introduction</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup/">Setup</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0001-external-gluster-storage.html">0001 External Gluster Storage</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup-storage/">Setup Storage</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0002-test-framework-binnacle.html">0002 Test Framework Binnacle</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/csi-to-claim-persistent-volumes/">CSI to claim Persistent Volumes</a></li>
+                        <li class="text-indigo-600 font-semibold py-2 md:py-0">0003 Kadalu Thin Arbiter Support</li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/try-kadalu/">Try Kadalu</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0004-gluster-error-codes.html">0004 Gluster Error Codes</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/external-gluster-storage/">External Gluster Storage</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0005-external-control-plane-gluster.html">0005 External Control Plane Gluster</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/storage-config-options/">Storage Config Options</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0006-optimized-quota-feature-with-namespace.html">0006 Optimized Quota Feature With Namespace</a></li>
                         
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/storage-classes/">Storage Classes</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/troubleshooting/">Troubleshooting</a></li>
                         
                         
                     </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Use cases</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/running-a-webserver/">Running a Webserver</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/running-minio/">Running Minio</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Articles</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/how-it-works?/">How it works?</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/gluster-and-kadalu/">Gluster and Kadalu</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Developer Guide</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/get-involved/">Get Involved</a></li>
-                        
-                        
-                    </ul>
-                    
-                    
                     
                 </div>
             </div>
             <div id="main" class="col-span-9">
                 <div class="py-5 px-10">
                     
-                    <div class="mb-10">
-                        <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
-                            <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/latest">latest</a> / README/</span>
-                    </div>
-                    
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Kadalu Documentation</h1>
+                        <h1>Thin Arbiter support for Kadalu Storage</h1>
 <div class="sect1">
-<h2 id="_user_guide">User Guide</h2>
+<h2 id="_authors">Author(s)</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="quick-start">Quick Start</a></p>
-</li>
-<li>
-<p><a href="introduction">Introduction</a></p>
-</li>
-<li>
-<p><a href="setup">Setup</a></p>
-</li>
-<li>
-<p><a href="setup-storage">Setup Storage</a></p>
-</li>
-<li>
-<p><a href="csi-to-claim-persistent-volumes">CSI to claim Persistent Volumes</a></p>
-</li>
-<li>
-<p><a href="try-kadalu">Try Kadalu</a></p>
-</li>
-<li>
-<p><a href="external-gluster-storage">External Gluster Storage</a></p>
-</li>
-<li>
-<p><a href="storage-config-options">Storage Config Options</a></p>
-</li>
-<li>
-<p><a href="storage-classes">Storage Classes</a></p>
-</li>
-<li>
-<p><a href="troubleshooting">Troubleshooting</a></p>
+<p>Amar Tumballi <a href="mailto:amar@kadalu.io">amar@kadalu.io</a></p>
 </li>
 </ul>
+</div>
+<div class="sect2">
+<h3 id="_reference">Reference</h3>
+<div class="paragraph">
+<p><a href="https://github.com/kadalu/kadalu/issues/37" class="bare">https://github.com/kadalu/kadalu/issues/37</a></p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_use_cases">Use Cases</h2>
+<h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="running-a-webserver">Running a Webserver</a></p>
-</li>
-<li>
-<p><a href="running-minio">Running Minio</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Thin-Arbiter is a feature of glusterfs, introduced in v7.0 (Nov 2019). This feature provides a better 'high-availability' solution than replica 2 setup. Replica 2 setups are now not recommended in glusterfs, but default supported is Replica 3 or Replica 2 with Arbiter node.</p>
+</div>
+<div class="paragraph">
+<p>The challenge with Replica3 is, the cost of adding one more full set of data is high for users (1/3 increase in hardware cost, and 1/3 reduction in write speed). Hence the recommended solution was 'Arbiter' volume type in gluster, which reduced the 'storage cost' involved in 3rd copy, as it doesn&#8217;t host any data, but still user has to manage 3 set of machines, and even in arbiter case, the latency requirements are high.</p>
+</div>
+<div class="paragraph">
+<p>So, the thin-arbiter feature is very useful for users who have just 2 data centers with required latency, but not the 3rd. With this feature, all such users can actually have the 3rd tie-breaker node in cloud without latency limitation.</p>
+</div>
+<div class="paragraph">
+<p>Even for kadalu users, if you have a stretched k8s cluster, which spans across 2 data centers (or 2 availability zones in Cloud), this feature will be useful. This helps by reducing the resources required for high-availability, and also the speed of write (1/2 instead of 1/3).</p>
+</div>
+<div class="paragraph">
+<p>The design details of thin-arbiter was discussed <a href="https://github.com/gluster/glusterfs/issues/352">here</a> and <a href="https://docs.gluster.org/en/latest/Administrator%20Guide/Thin-Arbiter-Volumes/">here</a>. In this proposal we will talk about how we can add thin-arbiter volume type to kadalu.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_articles">Articles</h2>
+<h2 id="_design">Design</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="how-it-works">How it Works?</a></p>
-</li>
-<li>
-<p><a href="gluster-and-kadalu">Gluster and Kadalu</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Kadalu works with predefined volume templates for gluster. We need add thin-arbiter template, and also define a specific storage <code>Type</code> for this template. The same can be used for storage-config 'type' too. Already <code>Replica1</code> and <code>Replica3</code> namespace taken. We can choose 'Replica2' as it is indeed a replica2 setup.</p>
+</div>
+<div class="paragraph">
+<p>Motive behind picking Replica2 for thin-arbiter is also because kadalu project would hide the complexity of gluster, and for kadalu users, there is no need to know about gluster&#8217;s storage options.</p>
+</div>
+<div class="paragraph">
+<p>Proposed config file looks something like below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: storage-config.yaml</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+ <span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">storage-pool-name</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica2</span>       <span class="c1"># Just to highlight your data is just in 2 places.</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>      <span class="c1"># node name as shown in `kubectl get nodes`</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/vdc</span> <span class="c1"># Device to provide storage to all PVs</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube2</span>      <span class="c1"># node name as shown in `kubectl get nodes`</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/vdc</span> <span class="c1"># Device to provide storage to all PVs</span>
+  <span class="na">tie-breaker</span><span class="pi">:</span> <span class="c1"># Optional. If not present, would consider</span>
+               <span class="c1"># 'tie-breaker.kadalu.io:/mnt' as the option.</span>
+    <span class="na">node</span><span class="pi">:</span> <span class="s">tie-breaker.kadalu.io</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">/mnt/tie-breaker/</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the PV spec, one would need to use the option as below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># -*- mode: yaml -*-</span>
+<span class="nn">---</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">pv1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica2</span>
+  <span class="na">accessModes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">ReadWriteOnce</span> <span class="c1"># You can also provide 'ReadWriteMany' here</span>
+  <span class="na">resources</span><span class="pi">:</span>
+    <span class="na">requests</span><span class="pi">:</span>
+      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The main definition which needs to be properly validated would be of <code>tie-breaker</code>. There is no need to provide this option, in which case it takes <strong>'tie-breaker.kadalu.io:/mnt'</strong> as the option. Kadalu would 'host' a tie-breaker node, and allow anyone to have tie-breaker node on the web.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_developer_guide">Developer Guide</h2>
+<h2 id="_further_improvement">Further improvement</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="get-involved">Get Involved</a></p>
-</li>
-<li>
-<p><a href="testing-kadalu">Testing Kadalu</a></p>
-</li>
-<li>
-<p><a href="release-management">Release Management</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>In the similar lines, we can add support for 'Arbiter' too, as there may be users who would like to have arbiter support in kadalu. Need to have a reserved type for the same (may be 'Arbiter'). But, it doesn&#8217;t make sense to expose that option much if thin-arbiter works fine for us.</p>
 </div>
 </div>
 </div>

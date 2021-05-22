@@ -62,6 +62,7 @@
         <div class="flex flex-col md:grid md:grid-cols-12 w-full" x-data="{docMenuOpen: false}">
             <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
                 <div class="py-5 px-5">
+                    
                     <div class="p-5 bg-gray-200 border text-right rounded-lg">
                         <strong>Version: </strong>
                         <select class="input-field" onchange="location = '/docs/k8s-storage/' + this.value;">
@@ -167,15 +168,19 @@
                         
                     </ul>
                     
+                    
+                    
                 </div>
             </div>
             <div id="main" class="col-span-9">
                 <div class="py-5 px-10">
+                    
                     <div class="mb-10">
                         <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
                             <a href="/">
                                 <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/devel">devel</a> / storage-config-options/</span>
                     </div>
+                    
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
@@ -281,6 +286,21 @@
 </div>
 <div class="paragraph">
 <p>To create a PVC from this storage, you need to provide <code>storageClassName</code> option as <code>kadalu.replica3</code>.</p>
+</div>
+</li>
+<li>
+<p><strong>Disperse</strong> Dispersed volumes are based on erasure codes. It stripes the encoded data of files, with some redundancy added, across multiple bricks in the volume. You can use dispersed volumes to have a configurable level of reliability with minimum space waste. This mode requires atleast 3 storages and increase the number of storages based on the requirement. Refer <a href="https://docs.gluster.org/en/latest/Administrator-Guide/Setting-Up-Volumes/#creating-dispersed-volumes">GlusterFS documentation</a> to know more about Disperse Volumes.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="s">$ kubectl kadalu storage-add storage-pool1 --type=Disperse \</span>
+    <span class="s">--data 2 --redundancy 1          \</span>
+    <span class="s">--device kube-nodename1:/dev/vdc \</span>
+    <span class="s">--device kube-nodename2:/dev/vdc \</span>
+    <span class="s">--device kube-nodename3:/dev/vdc \</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create a PVC from this storage, you need to provide <code>storageClassName</code> option as <code>kadalu.disperse</code>.</p>
 </div>
 </li>
 </ul>
@@ -413,6 +433,45 @@
 <div class="paragraph">
 <p>The example config file added for CI/CD gives an idea about options. Note that the options provided here looks same as whats given in storage config, but when kadalu operator creates the StorageClass with values (<code>natvie</code> vs <code>non-native</code>) supplied to field <code>kadalu_format</code> inorder to decide kadalu or non-kadalu mode. Refer the <a href="/docs/k8s-storage/devel/external-gluster-storage">external-storage document</a> for more information on this mode.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_archiving_persistent_volume_claims">Archiving Persistent Volume Claims</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Archiving a PVC retains its data when <code>delete</code> is called on it. This option can be enabled by specifying <code>pvReclaimPolicy</code> either through <code>StorageClass</code> or <code>Kadalu CLI</code>. The <code>pvReclaimPolicy</code> takes either <code>delete</code> or <code>archive</code>. Default value is <code>delete</code> which deletes the PVC along with its data. <code>archive</code> option retains the data by renaming <code>pvc-123</code> to <code>archived-pvc-123</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adding 'pvReclaimPolicy' through config file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+<span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">storage1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica1</span>
+  <span class="na">pvReclaimPolicy</span><span class="pi">:</span> <span class="s">archive</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/vdc</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Adding 'pvReclaimPolicy' through Kadalu CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
+    <span class="nt">--device</span> kube1:/dev/vdc <span class="nt">--pv-reclaim-policy</span><span class="o">=</span>archive</code></pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>

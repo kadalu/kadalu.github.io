@@ -13,8 +13,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/k8s-storage/latest/README/"/>
-<meta property="og:url" content="/docs/k8s-storage/latest/README/"/>
+<link rel="canonical" href="/rfcs/0004-gluster-error-codes.html"/>
+<meta property="og:url" content="/rfcs/0004-gluster-error-codes.html"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
@@ -51,7 +51,7 @@
                     <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
                     <a href="/services" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Services</a>
                     <a href="/products" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Products</a>
-                    <a href="/docs" class="bg-gray-900 text-white py-2 px-3 rounded-md text-sm font-medium">Docs</a>
+                    <a href="/docs" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Docs</a>
                 </nav>
             </div>
         </div>
@@ -63,213 +63,209 @@
             <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
                 <div class="py-5 px-5">
                     
-                    <div class="p-5 bg-gray-200 border text-right rounded-lg">
-                        <strong>Version: </strong>
-                        <select class="input-field" onchange="location = '/docs/k8s-storage/' + this.value;">
-                            <option selected value="latest">latest</option>
-                            
-                            <option  value="devel">devel</option>
-                            
-                        </select>
-                    </div>
                     
-                    <h2 class="text-xl font-semibold mt-7">User Guide</h2>
                     <ul>
                         
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/quick-start/">Quick Start</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/introduction/">Introduction</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs">Introduction</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup/">Setup</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0001-external-gluster-storage.html">0001 External Gluster Storage</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup-storage/">Setup Storage</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0002-test-framework-binnacle.html">0002 Test Framework Binnacle</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/csi-to-claim-persistent-volumes/">CSI to claim Persistent Volumes</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0003-kadalu-thin-arbiter-support.html">0003 Kadalu Thin Arbiter Support</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/try-kadalu/">Try Kadalu</a></li>
+                        <li class="text-indigo-600 font-semibold py-2 md:py-0">0004 Gluster Error Codes</li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/external-gluster-storage/">External Gluster Storage</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0005-external-control-plane-gluster.html">0005 External Control Plane Gluster</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/storage-config-options/">Storage Config Options</a></li>
+                        <li class="py-2 md:py-0"><a href="/rfcs/0006-optimized-quota-feature-with-namespace.html">0006 Optimized Quota Feature With Namespace</a></li>
                         
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/storage-classes/">Storage Classes</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/troubleshooting/">Troubleshooting</a></li>
                         
                         
                     </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Use cases</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/running-a-webserver/">Running a Webserver</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/running-minio/">Running Minio</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Articles</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/how-it-works?/">How it works?</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/gluster-and-kadalu/">Gluster and Kadalu</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Developer Guide</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/get-involved/">Get Involved</a></li>
-                        
-                        
-                    </ul>
-                    
-                    
                     
                 </div>
             </div>
             <div id="main" class="col-span-9">
                 <div class="py-5 px-10">
                     
-                    <div class="mb-10">
-                        <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
-                            <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/latest">latest</a> / README/</span>
-                    </div>
-                    
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Kadalu Documentation</h1>
+                        <h1>Error codes in Gluster</h1>
 <div class="sect1">
-<h2 id="_user_guide">User Guide</h2>
+<h2 id="_versions">Versions</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>v0.1 -  24th  Jan, 2020.</p>
+</div>
+<div class="sect2">
+<h3 id="_contributors">Contributors</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="quick-start">Quick Start</a></p>
+<p>Amar Tumballi &lt;<a href="mailto:amar@kadalu.io">amar@kadalu.io</a>&gt; <a href="https://github.com/amarts">@amarts</a></p>
 </li>
 <li>
-<p><a href="introduction">Introduction</a></p>
+<p>Xavi Hernandez &lt;<a href="mailto:jahernan@redhat.com">jahernan@redhat.com</a>&gt; <a href="https://github.com/xhernandez">@xhernandez</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_special_thanks">Special thanks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Jeff Darcy &lt;<a href="mailto:jeff@pl.atyp.us">jeff@pl.atyp.us</a>&gt; - <a href="https://github.com/jdarcy">@jdarcy</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reference">Reference</h3>
+<div class="paragraph">
+<p><a href="https://github.com/gluster/glusterfs/issues/280" class="bare">https://github.com/gluster/glusterfs/issues/280</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The above github issue talks about the need for error-codes in glusterfs, and even goes to the details of how we can achieve it. This document is an attempt to consolidate all those points and come at something meaningful before we implement it for real.</p>
+</div>
+<div class="paragraph">
+<p>The need for this is very simple, and critical too. At any point of execution, if there is a failure, we should be having exact reason for failure, instead of making guesses. This also allows us to reduce the logs, and debugging effort in case of problems. If a product is easy to debug, then it means, it is easy to maintain, and improve.</p>
+</div>
+<div class="sect2">
+<h3 id="_challenges">Challenges</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The first and foremost problem is, the amount of changes we need to do to complete the effort.</p>
 </li>
 <li>
-<p><a href="setup">Setup</a></p>
+<p>Changes shouldn&#8217;t be very disruptive, and should be easier to review.</p>
 </li>
 <li>
-<p><a href="setup-storage">Setup Storage</a></p>
+<p>This should be done without disturbing the current code flow, so we can break it into multiple smaller patches, without breaking regression.</p>
 </li>
 <li>
-<p><a href="csi-to-claim-persistent-volumes">CSI to claim Persistent Volumes</a></p>
+<p>Need contribution across codebase, so more of collaborated activity.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_points_from_github_issue">Points from github issue</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>We only have 32 bits to use, so breaking it into multiple groups of fewer bits would be useful.</p>
 </li>
 <li>
-<p><a href="try-kadalu">Try Kadalu</a></p>
+<p>Originator ID (to identify which xlator) caused the issue is very helpful.</p>
 </li>
 <li>
-<p><a href="external-gluster-storage">External Gluster Storage</a></p>
+<p>The errorcodes should be negative to indicate error, so, 0 can be reserved for success, and +ve is for other overloaded success values.</p>
 </li>
 <li>
-<p><a href="storage-config-options">Storage Config Options</a></p>
-</li>
-<li>
-<p><a href="storage-classes">Storage Classes</a></p>
-</li>
-<li>
-<p><a href="troubleshooting">Troubleshooting</a></p>
+<p>Instead of static id, good to get originator-id (or xlator id) in run time.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="_use_cases">Use Cases</h2>
+<h2 id="_proposed_solution">Proposed solution</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="running-a-webserver">Running a Webserver</a></p>
-</li>
-<li>
-<p><a href="running-minio">Running Minio</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_articles">Articles</h2>
-<div class="sectionbody">
+<p>Use return value to indicate error code, let errno continue to exist till we make complete changes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="how-it-works">How it Works?</a></p>
+<p>This is easier to make change in codebase, as <code>(ret &lt; 0)</code> is considered failure already.</p>
 </li>
 <li>
-<p><a href="gluster-and-kadalu">Gluster and Kadalu</a></p>
+<p>This doesn&#8217;t impact the checks we have to compare errno and then decide what to do. Keeping it the same would make regressions run smoothly and also would help in quicker reviews.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_developer_guide">Developer Guide</h2>
-<div class="sectionbody">
+</li>
+<li>
+<p>Reserve 8k worth (13bits) of error-codes per translator.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="get-involved">Get Involved</a></p>
-</li>
-<li>
-<p><a href="testing-kadalu">Testing Kadalu</a></p>
-</li>
-<li>
-<p><a href="release-management">Release Management</a></p>
+<p>Allows 17 more bits for originator-id and other things.</p>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>Provide a thread local pointer in <code>gf_strerror()</code>, so one can use it similar to <code>strerror()</code>. Also provide an alternative to return filled pointer like <code>uuid_utoa_r()</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The thread local pointer would be used in most places where it is just used in logging.</p>
+</li>
+<li>
+<p>The alternative method would be used if one needs to store the pointer, or use it more than one time.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Make sure to check the complete execution path to treat negative value as error, not just -1.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This should be done more carefully.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Let each translator have their static ID through enum.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In the initial version it wouldn&#8217;t be runtime, and not per instance of xlator.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_future_improvements">Future improvements</h3>
+<div class="paragraph">
+<p>Design a way to get details of translators running on server-side, and their run-time-id, during client-handshake. That way, we can pin-point the issue to a particular instance of translator in future, instead of the static id. This will be useful for translators designed and written outside of glusterfs too.</p>
+</div>
 </div>
 </div>
 </div>

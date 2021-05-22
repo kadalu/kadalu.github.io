@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> | Kadalu </title>
+<link href="/static/css/fav.png" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/static/css/fav.png" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/rfcs/"/>
+<meta property="og:url" content="/rfcs/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:image" content=""/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta property="twitter:image" content=""/>
+<meta property="twitter:title" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="/static/css/stylesheet.css">
+<link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+
+    </head>
+    <body>
+        
+
+<div class="bg-indigo-900">
+    <div class="w-full px-5  m-auto py-5">
+        <div class="lg:grid lg:grid-cols-12" x-data="{ menuOpen : false }">
+            <div class="col-span-4 lg:col-span-2" style="height:40px">
+                <a href="/"><img src="/static/css/logo.png" class="h-10 float-left" /></a>
+                <button @click="menuOpen = !menuOpen" class="block absolute md:hidden right-7 top-5 w-8 h-8 text-gray-200 p-1">
+                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="pt-2 col-span-8 lg:col-span-10">
+                <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col-reverse md:flex-row-reverse md:space-x-3 font-semibold w-full md:w-auto bg-indigo-900 shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-5 md:p-0"
+                     :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}"  @click.away="menuOpen = false"
+                >
+                    <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Blog</a>
+                    <a href="/company" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Company</a>
+                    <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
+                    <a href="/services" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Services</a>
+                    <a href="/products" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Products</a>
+                    <a href="/docs" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Docs</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+        
+        <div class="flex flex-col md:grid md:grid-cols-12 w-full" x-data="{docMenuOpen: false}">
+            <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
+                <div class="py-5 px-5">
+                    
+                    
+                    <ul>
+                        
+                        <li class="py-2 md:py-0"><a href="/rfcs">Introduction</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/rfcs/0001-external-gluster-storage.html">0001 External Gluster Storage</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/rfcs/0002-test-framework-binnacle.html">0002 Test Framework Binnacle</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/rfcs/0003-kadalu-thin-arbiter-support.html">0003 Kadalu Thin Arbiter Support</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/rfcs/0004-gluster-error-codes.html">0004 Gluster Error Codes</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/rfcs/0005-external-control-plane-gluster.html">0005 External Control Plane Gluster</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/rfcs/0006-optimized-quota-feature-with-namespace.html">0006 Optimized Quota Feature With Namespace</a></li>
+                        
+                        
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+            <div id="main" class="col-span-9">
+                <div class="py-5 px-10">
+                    
+                    <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
+                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div class="mb-24 prose max-w-none prose-indigo">
+                        <h1>Kadalu RFCs</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Many changes, including bug fixes and documentation improvements can be
+implemented and reviewed via the normal GitHub pull request workflow.</p>
+</div>
+<div class="paragraph">
+<p>Some changes though are "substantial", and we ask that these be put through a
+bit of a design process and produce a consensus among the Kadalu community and
+the [sub-team]s.</p>
+</div>
+<div class="paragraph">
+<p>The "RFC" (request for comments) process is intended to provide a consistent
+and controlled path for new features to enter the Kadalu echosystem,
+so that all stakeholders can be confident about the direction the
+community.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/kadalu/rfcs/pulls">Active RFCs</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_when_you_need_to_follow_this_process">When you need to follow this process</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You need to follow this process if you intend to make "substantial"
+changes to repos in github/kadalu organization, or the RFC process
+itself. What constitutes a "substantial" change is evolving based on
+community norms and varies depending on what part of the ecosystem you
+are proposing to change, but may include the following.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Any semantic or syntactic change that is not a bugfix.</p>
+</li>
+<li>
+<p>Removing features, including those that are feature-gated.</p>
+</li>
+<li>
+<p>API changes</p>
+</li>
+<li>
+<p>CLI changes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Some changes do not require an RFC:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rephrasing, reorganizing, refactoring, or otherwise "changing shape does
+not change meaning".</p>
+</li>
+<li>
+<p>Additions that strictly improve objective, numerical quality criteria
+(warning removal, speedup, better platform coverage, more parallelism, trap
+more errors, etc.)</p>
+</li>
+<li>
+<p>Additions only likely to be <em>noticed by</em> other developers,
+invisible to users.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you submit a pull request to implement a new feature without going through
+the RFC process, it may be closed with a polite request to submit an RFC first.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gathering_feedback_before_submitting">Gathering feedback before submitting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It&#8217;s often helpful to get feedback on your concept before diving into
+the level of API design detail required for an RFC. You may open an
+issue on this repo to start a high-level discussion, with the goal of
+eventually formulating an RFC pull request with the specific
+implementation design. We also highly recommend sharing drafts of RFCs
+in <code>#dev-rfc</code> on the <a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Kadalu Slack channel</a>
+for early feedback.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_process">The process</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In short, to get a major feature added to Kadalu, one must first get the
+RFC merged into the RFC repo as a markdown file. At that point the RFC
+is 'active' and may be implemented with the goal of eventual inclusion
+into Kadalu.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fork the RFC repo <a href="http://github.com/kadalu/rfcs" class="bare">http://github.com/kadalu/rfcs</a></p>
+</li>
+<li>
+<p>Copy the appropriate template. For most RFCs, this is <code>0000-template.adoc</code>,
+for deprecation RFCs it is <code>deprecation-template.adoc</code>.
+Copy the template file to <code>text/0000-my-feature.adoc</code>, where
+'my-feature' is descriptive. Don&#8217;t assign an RFC number yet.</p>
+</li>
+<li>
+<p>Fill in the RFC. Put care into the details: <strong>RFCs that do not
+present convincing motivation, demonstrate understanding of the
+impact of the design, or are disingenuous about the drawbacks or
+alternatives tend to be poorly-received</strong>.</p>
+</li>
+<li>
+<p>Fill in the relevant core teams. Use the table below to map from projects to
+teams.</p>
+</li>
+<li>
+<p>Submit a pull request. As a pull request the RFC will receive design
+feedback from the larger community, and the author should be prepared
+to revise it in response.</p>
+</li>
+<li>
+<p>Find a champion on the relevant core team. The champion is responsible for
+shepherding the RFC through the RFC process and representing it in core team
+meetings.</p>
+</li>
+<li>
+<p>Update the pull request to add the number of the PR to the filename and
+add a link to the PR in the header of the RFC.</p>
+</li>
+<li>
+<p>Build consensus and integrate feedback. RFCs that have broad support
+are much more likely to make progress than those that don&#8217;t receive any
+comments.</p>
+</li>
+<li>
+<p>Eventually, the [core teams] will decide whether the RFC is a candidate
+for inclusion in Kadalu.</p>
+</li>
+<li>
+<p>RFCs that are candidates for inclusion in Kadalu will enter a "final comment
+period" lasting 7 days. The beginning of this period will be signaled with a
+comment and tag on the RFC&#8217;s pull request. Furthermore,
+<a href="https://twitter.com/kadaluio">Kadalu&#8217;s official Twitter account</a> will post a
+tweet about the RFC to attract the community&#8217;s attention.</p>
+</li>
+<li>
+<p>An RFC can be modified based upon feedback from the [core teams] and community.
+Significant modifications may trigger a new final comment period.</p>
+</li>
+<li>
+<p>An RFC may be rejected by the [core teams] after public discussion has settled
+and comments have been made summarizing the rationale for rejection. The RFC
+will enter a "final comment period to close" lasting 7 days. At the end of the
+"FCP to close" period, the PR will be closed.</p>
+</li>
+<li>
+<p>An RFC may also be closed by the core teams if it is superseded by a merged
+RFC. In this case, a link to the new RFC should be added in a comment.</p>
+</li>
+<li>
+<p>An RFC author may withdraw their own RFC by closing it themselves.</p>
+</li>
+<li>
+<p>An RFC may be accepted at the close of its final comment period. A [core team]
+member will merge the RFC&#8217;s associated pull request, at which point the RFC will
+become 'active'.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_rfc_life_cycle">The RFC life-cycle</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once an RFC becomes active the relevant teams will plan the feature
+and create issues in the relevant repositories. Becoming 'active' is
+not a rubber stamp, and in particular still does not mean the feature
+will ultimately be merged; it does mean that the core team has agreed
+to it in principle and are amenable to merging it.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, the fact that a given RFC has been accepted and is
+'active' implies nothing about what priority is assigned to its
+implementation, nor whether anybody is currently working on it.</p>
+</div>
+<div class="paragraph">
+<p>Modifications to active RFC&#8217;s can be done in followup PR&#8217;s. We strive
+to write each RFC in a manner that it will reflect the final design of
+the feature; but the nature of the process means that we cannot expect
+every merged RFC to actually reflect what the end result will be at
+the time of the next major release; therefore we try to keep each RFC
+document somewhat in sync with the feature as planned, tracking such
+changes via followup pull requests to the document.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementing_an_rfc">Implementing an RFC</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The author of an RFC is not obligated to implement it. Of course, the
+RFC author (like any other developer) is welcome to post an
+implementation for review after the RFC has been accepted.</p>
+</div>
+<div class="paragraph">
+<p>If you are interested in working on the implementation for an 'active'
+RFC, but cannot determine if someone else is already working on it,
+feel free to ask (e.g. by leaving a comment on the associated issue).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_for_core_team_members">For Core Team Members</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_reviewing_rfcs">Reviewing RFCs</h3>
+<div class="paragraph">
+<p>Each core team is responsible for reviewing open RFCs. The team must ensure
+that if an RFC is relevant to their team&#8217;s responsibilities the team is
+correctly specified in the 'Relevant Team(s)' section of the RFC front-matter.
+The team must also ensure that each RFC addresses any consequences, changes, or
+work required in the team&#8217;s area of responsibility.</p>
+</div>
+<div class="paragraph">
+<p>As it is with the wider community, the RFC process is the time for
+teams and team members to push back on, encourage, refine, or otherwise comment
+on proposals.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_referencing_rfcs">Referencing RFCs</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>When mentioning RFCs that have been merged, link to the merged version,
+not to the pull-request.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_helpful_checklists">Helpful checklists</h3>
+<div class="sect3">
+<h4 id="_moving_to_fcp_to_merge">Moving to FCP to Merge</h4>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10063; Achieve consensus to move to "FCP to Merge" from relevant core teams</p>
+</li>
+<li>
+<p>&#10063; Comment in the RFC to address any outstanding issues and to proclaim the
+start of the FCP period</p>
+</li>
+<li>
+<p>&#10063; Tweet from <code>@kadaluio</code> about the FCP</p>
+</li>
+<li>
+<p>&#10063; Ensure the RFC has had the filename and header updated with the PR number</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_move_to_fcp_to_close">Move to FCP to Close</h4>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10063; Achieve consensus to move to "FCP to Close" from relevant core teams</p>
+</li>
+<li>
+<p>&#10063; Comment in the RFC to explain the decision</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_closing_an_rfc">Closing an RFC</h4>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10063; Comment about the end of the FCP period with no new info</p>
+</li>
+<li>
+<p>&#10063; Close the PR</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_merging_an_rfc">Merging an RFC</h4>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10063; Achieve consensus to merge from relevant core teams</p>
+</li>
+<li>
+<p>&#10063; Ensure the RFC has had the filename and header updated with the PR number</p>
+</li>
+<li>
+<p>&#10063; Create a tracking card for the RFC implementation at {projects}</p>
+</li>
+<li>
+<p>&#10063; Update the RFC header with a link to the tracking</p>
+</li>
+<li>
+<p>&#10063; Merge</p>
+</li>
+<li>
+<p>&#10063; Update the RFC PR with a link to the merged RFC (The <code>Rendered</code> links often
+go stale when the branch or fork is deleted)</p>
+</li>
+<li>
+<p>&#10063; Ensure relevant teams plan out what is necessary to implement</p>
+</li>
+<li>
+<p>&#10063; Put relevant issues on the tracking</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Kadalu&#8217;s RFC process owes its inspiration to the <a href="https://github.com/rust-lang/rfcs">Rust RFC process</a>
+and <a href="https://github.com/emberjs/rfcs">EmberJs RFC process</a></strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-800 text-gray-100 py-10">
+    <div class="mx-auto w-full px-5 " style="min-height: 40vh">
+        <div class="md:grid gap-2 md:grid-cols-4 md:gap-4">
+            <div class="mb-10">
+                <h2 class="text-xl font-semibold text-indigo-300">Kadalu</h2>
+                <ul>
+                    <li><a href="/products#k8s-native-storage">Kubernetes native Storage</a></li>
+                    <li><a href="/products#kadalu-storage">Kadalu Storage</a></li>
+                    <li><a href="/products#glusterup">GlusterFS monitoring</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/services#features">Feature development</a></li>
+                    <li><a href="/services#upgrade">Upgrade assistance</a></li>
+                    <li><a href="/services#consultancy">Consultancy</a></li>
+                    <li><a href="/security">Security</a></li>
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <h2 class="text-xl font-semibold text-indigo-300">Community</h2>
+                <ul>
+                    <li><a href="/opensource">Open Source</a></li>
+                    <li><a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Slack</a></li>
+                    <li><a href="https://github.com/kadalu">Github</a></li>
+                    <!-- <li><a href="/office-hours">Office Hours</a></li> -->
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <h2 class="text-xl font-semibold text-indigo-300">Learn</h2>
+                <ul>
+                    <li><a href="/docs">Documentation</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/rfcs">RFCs</a></li>
+                    <!-- <li><a href="/compare">Compare</a></li> -->
+                </ul>
+            </div>
+
+            <div class="mb-10">
+                <h2 class="text-xl font-semibold text-indigo-300">Company</h2>
+                <ul>
+                    <li><a href="/company">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/sitemap.xml">Sitemap</a></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-indigo-300 mt-10">Write to us</h2>
+                <ul>
+                    <li><a href="mailto:hello@kadalu.io"><svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>hello@kadalu.io</a></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold text-indigo-300 mt-10">Follow Us</h2>
+                <ul>
+                    <li><a href="https://twitter.com/kadaluio">Twitter</a></li>
+                    <li><a href="https://linkedin.com/company/kadalu-io">Linkedin</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-gray-800 text-gray-100 py-10">
+    <div class="mx-auto w-3/4 text-center text-gray-300 mb-10">
+        &copy; 2021 Kadalu Software Private Limited. All Rights Reserved.
+    </div>
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144588868-2"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+
+ gtag('config', 'UA-144588868-2');
+</script>
+
+
+    </body>
+</html>

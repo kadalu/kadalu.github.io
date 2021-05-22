@@ -204,6 +204,7 @@ Correct the inability to style clickable types in iOS and Safari.
 
 button,
 [type='button'],
+[type='reset'],
 [type='submit'] {
   -webkit-appearance: button;
 }
@@ -1396,6 +1397,10 @@ video {
 
 .z-20 {
   z-index: 20;
+}
+
+.isolate {
+  isolation: isolate;
 }
 
 .gap-2 {
