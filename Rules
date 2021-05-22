@@ -65,6 +65,18 @@ end
 
 # END: /docs rules
 
+compile '/rfcs/**/*.adoc' do
+  filter :asciidoctor, :standalone => false, :attributes => [
+           'last-update-label!=', # Do not show last updated label in every page
+           'source-highlighter=rouge',
+           'showtitle=yes',
+           'stylesheet!='
+         ]
+  layout '/doc_default.*'
+
+  write item.identifier.without_ext + '.html'
+end
+
 compile '/index.html' do
   filter :erb
   layout '/home.*'

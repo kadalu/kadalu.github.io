@@ -123,6 +123,21 @@ def supported_versions(project_name)
   versions
 end
 
+def list_rfcs
+  Dir["./content/rfcs/*.adoc"].sort.map do |entry|
+    url = entry.gsub("./content/rfcs/", "").gsub(".adoc", "")
+    title = "Introduction"
+    if url != "index"
+      title = (url.split("-").map {|part| part.capitalize}).join(" ")
+    end
+
+    {
+      "title" => title,
+      "path" => "/rfcs/#{url}.html"
+    }
+  end
+end
+
 def list_projects
   YAML.load(File.read("./content/docs/projects.yml"))
 end

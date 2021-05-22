@@ -12,5 +12,6 @@ output
 tmp
 content/docs/*
 !content/docs/index.erb
+content/rfcs/*
 bin
 tmprepos
