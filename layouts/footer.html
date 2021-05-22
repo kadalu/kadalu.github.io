@@ -1,5 +1,5 @@
 <div class="bg-gray-800 text-gray-100 py-10">
-    <div class="mx-auto w-full px-5 <% if !@item.path.start_with?("/docs/") %>px-10 md:w-3/4 md:px-0<% end %>" style="min-height: 40vh">
+    <div class="mx-auto w-full px-5 <% if !@item.path.start_with?("/docs/") && !@item.path.start_with?("/rfcs/") %>px-10 md:w-3/4 md:px-0<% end %>" style="min-height: 40vh">
         <div class="md:grid gap-2 md:grid-cols-4 md:gap-4">
             <div class="mb-10">
                 <h2 class="text-xl font-semibold text-indigo-300">Kadalu</h2>

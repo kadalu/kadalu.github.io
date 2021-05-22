@@ -38,7 +38,7 @@ function prepare_versioned_docs
 }
 
 
-function build_docs_site
+function build_site
 {
     cd ${ROOT_DIR} && bundle install
     cd ${ROOT_DIR} && npm install
@@ -84,7 +84,14 @@ function main
         prepare_versioned_docs $projects_yaml_file $project_name $project_repo $docs_dir "latest"
     done
 
-    build_docs_site
+    # Clone the Rfcs Repo
+    git clone --depth 1 https://github.com/kadalu/rfcs.git ${ROOT_DIR}/tmprepos/rfcs
+
+    # Copy the rfcs/text directory
+    cp -r "${ROOT_DIR}/tmprepos/rfcs/text" "${ROOT_DIR}/content/rfcs"
+    cp -r "${ROOT_DIR}/tmprepos/rfcs/README.adoc" "${ROOT_DIR}/content/rfcs/index.adoc"
+
+    build_site
 }
 
 echo "Project directory: ${ROOT_DIR}"
