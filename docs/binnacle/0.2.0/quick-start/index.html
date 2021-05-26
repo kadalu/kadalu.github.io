@@ -4,24 +4,24 @@
         
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>kadalu.io projects | Kadalu </title>
+<title> | Kadalu </title>
 <link href="/static/css/fav.png" rel="icon" type="image/x-icon" />
 <link rel="apple-touch-icon" href="/static/css/fav.png" />
 <meta name="generator" content="Nanoc 4.12.1">
-<meta property="og:title" content="kadalu.io projects"/>
+<meta property="og:title" content=""/>
 <meta name="author" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/"/>
-<meta property="og:url" content="/docs/"/>
+<link rel="canonical" href="/docs/binnacle/0.2.0/quick-start/"/>
+<meta property="og:url" content="/docs/binnacle/0.2.0/quick-start/"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content=""/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta property="twitter:image" content=""/>
-<meta property="twitter:title" content="kadalu.io projects"/>
+<meta property="twitter:title" content=""/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -58,20 +58,147 @@
     </div>
 </div>
 
-        <div class="w-full px-5 py-10 bg-indigo-100" style="min-height:50vh">
-            <h2 class="text-3xl mb-10">kadalu.io projects</h2>
-            <div class="md:grid md:grid-cols-4 gap-4">
-                
-                <div class="shadow-lg rounded-lg py-2 px-5 bg-white mb-5 cursor-pointer hover:bg-gray-100" onclick="location='/docs/k8s-storage'">
-                    <h2 class="text-2xl">Kubernetes Native Storage</h2>
-                    <p class="text-gray-500 text-sm">Kadalu Storage for the apps running in Kubernetes</p>
+        
+        <div class="flex flex-col md:grid md:grid-cols-12 w-full" x-data="{docMenuOpen: false}">
+            <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
+                <div class="py-5 px-5">
+                    
+                    <div class="p-5 bg-gray-200 border text-right rounded-lg">
+                        <strong>Version: </strong>
+                        <select class="input-field" onchange="location = '/docs/binnacle/' + this.value;">
+                            <option  value="latest">latest</option>
+                            
+                            <option  value="devel">devel</option>
+                            
+                            <option selected value="0.2.0">0.2.0</option>
+                            
+                        </select>
+                    </div>
+                    
+                    <h2 class="text-xl font-semibold mt-7">Tester Guide</h2>
+                    <ul>
+                        
+                        
+                        
+                        <li class="text-indigo-600 font-semibold py-2 md:py-0">Quick Start</li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/binnacle/0.2.0/introduction/">Introduction</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/binnacle/0.2.0/installation/">Installation</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/binnacle/0.2.0/syntax/">Syntax</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/binnacle/0.2.0/keywords/">Keywords</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/binnacle/0.2.0/plugins/">Plugins</a></li>
+                        
+                        
+                    </ul>
+                    
+                    
+                    
                 </div>
-                
-                <div class="shadow-lg rounded-lg py-2 px-5 bg-white mb-5 cursor-pointer hover:bg-gray-100" onclick="location='/docs/binnacle'">
-                    <h2 class="text-2xl">Simple Test Framework</h2>
-                    <p class="text-gray-500 text-sm">Automating tests in a distributed setup is always hard. Binnacle aims to simplify the ergonomics so that a tester without Programming language expertise can adapt to this quickly.</p>
+            </div>
+            <div id="main" class="col-span-9">
+                <div class="py-5 px-10">
+                    
+                    <div class="mb-10">
+                        <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
+                            <a href="/">
+                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/binnacle">binnacle</a> / <a href="/docs/binnacle/0.2.0">0.2.0</a> / quick-start/</span>
+                    </div>
+                    
+                    <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
+                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    </button>
+                    <div class="mb-24 prose max-w-none prose-indigo">
+                        <h1>Quick Start</h1>
+<div class="paragraph">
+<p>Binnacle is a simple Test framework with the focus on Tester&#8217;s delight.</p>
+</div>
+<div class="paragraph">
+<p>Download and install using the following commands. Ruby should be installed on the machine where it needs to work.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-L</span> https://github.com/kadalu/binnacle/releases/download/0.2.0/binnacle <span class="nt">-o</span> binnacle</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Make the binnacle file executable.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">chmod</span> +x ./binnacle</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Move the binary in to your PATH.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo mv</span> ./binnacle /usr/local/bin/binnacle</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Test to ensure the version you installed is up-to-date</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>binnacle <span class="nt">--version</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Lets write a quick test file that tests a file exists or not</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="c1"># file: hello.t</span>
+<span class="no">TEST</span> <span class="s2">"stat /var/www/html/index.html"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now run this test file by running,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>binnacle hello.t <span class="nt">-v</span>
+<span class="go">1..1
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">stat</span>: /var/www/html/index.html: <span class="nb">stat</span>: No such file or directory
+<span class="go">not ok   1 - node=local cmd="TEST stat /var/www/html/index.html"
+TOTAL: 1  PASSED: 0  FAILED: 1  SKIPPED: 0  TODOs: 0
+Result: FAIL</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If that file exists then it will print the output as below</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>binnacle hello.t <span class="nt">-v</span>
+<span class="go">1..1
+ok       1 - node=local cmd="TEST stat /var/www/html/index.html"
+TOTAL: 1  PASSED: 1  FAILED: 0  SKIPPED: 0  TODOs: 0
+Result: PASS</span></code></pre>
+</div>
+</div>
+                    </div>
                 </div>
-                
             </div>
         </div>
         <div class="bg-gray-800 text-gray-100 py-10">
