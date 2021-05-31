@@ -9,6 +9,6 @@
   title: Binnacle
   description: Simple Test Framework
   repo: https://github.com/kadalu/binnacle
-  versions: ["devel", "0.2.0"]
+  versions: ["devel"]
   docs_dir: "docs"
   latest_alias: "devel"
