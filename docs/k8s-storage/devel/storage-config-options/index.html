@@ -475,6 +475,45 @@
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_recreation_of_storage_pool_with_existing_volume_id">Recreation of storage-pool with existing Volume ID</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every storage-pool created with device/path/pvc/external volumes will be associated with a unique Volume ID. In case of cleanup of Kadalu namespace and referencing the same existing volume will throw error since it has already been attached with unique ID, to avoid this and recreate the storage-pool specify the <code>volume_id</code> in storage-config or <code>--volume-id</code> in Kadalu CLI.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adding 'volume_id' through config file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+<span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">storage1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica1</span>
+  <span class="na">volume_id</span><span class="pi">:</span> <span class="s">example-1234-volumeid-7890</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/vdc</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Adding 'volume_id' through Kadalu CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
+    <span class="nt">--device</span> kube1:/dev/vdc <span class="nt">--volume-id</span><span class="o">=</span>example-1234-volumeid-7890</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
                     </div>
                 </div>
             </div>

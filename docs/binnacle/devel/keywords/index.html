@@ -70,8 +70,6 @@
                             
                             <option selected value="devel">devel</option>
                             
-                            <option  value="0.2.0">0.2.0</option>
-                            
                         </select>
                     </div>
                     
@@ -216,7 +214,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_node">NODE</h2>
+<h2 id="_use_node">USE_NODE</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To switch node to execute the tests.</p>
@@ -225,11 +223,11 @@
 <div class="content">
 <pre class="rouge highlight"><code data-lang="ruby"><span class="c1"># Approach 1: set required node before the test statements</span>
 
-<span class="no">NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
 <span class="no">TEST</span> <span class="s2">"command1.."</span>
 <span class="no">TEST</span> <span class="s2">"command2.."</span>
 
-<span class="no">NODE</span> <span class="s2">"node2.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span>
 <span class="no">TEST</span> <span class="s2">"command1.."</span>
 <span class="no">TEST</span> <span class="s2">"command2.."</span></code></pre>
 </div>
@@ -239,12 +237,12 @@
 <pre class="rouge highlight"><code data-lang="ruby"><span class="c1"># Approach 2: Use Block syntax when node switch is required</span>
 
 <span class="c1"># Default node set</span>
-<span class="no">NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
 
 <span class="no">TEST</span> <span class="s2">"command 1"</span>
 <span class="no">TEST</span> <span class="s2">"command 2"</span>
 
-<span class="no">NODE</span> <span class="s2">"node2.example.com"</span> <span class="k">do</span>
+<span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span> <span class="k">do</span>
   <span class="no">TEST</span> <span class="s2">"command 3"</span>
   <span class="no">TEST</span> <span class="s2">"command 4"</span>
 <span class="k">end</span>
@@ -256,20 +254,20 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_remote_plugin">REMOTE_PLUGIN</h2>
+<h2 id="_use_remote_plugin">USE_REMOTE_PLUGIN</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Default remote plugin is <code>ssh</code>, change it when required. Similar to <code>NODE</code> keyword, this also supports Block syntax.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="ruby"><span class="no">NODE</span> <span class="s2">"node1.example.com"</span>
-<span class="no">REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
 
 <span class="no">TEST</span> <span class="s2">"command 1"</span>
 
-<span class="no">REMOTE_PLUGIN</span> <span class="s2">"docker"</span> <span class="k">do</span>
-  <span class="no">NODE</span> <span class="s2">"node2.example.com"</span> <span class="k">do</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"docker"</span> <span class="k">do</span>
+  <span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span> <span class="k">do</span>
     <span class="no">TEST</span> <span class="s2">"command 2"</span>
   <span class="k">end</span>
 <span class="k">end</span>

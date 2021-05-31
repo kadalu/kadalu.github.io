@@ -70,8 +70,6 @@
                             
                             <option selected value="devel">devel</option>
                             
-                            <option  value="0.2.0">0.2.0</option>
-                            
                         </select>
                     </div>
                     
@@ -179,13 +177,13 @@ DURATION: 0.115948522 seconds</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="ruby"><span class="no">NODE</span> <span class="s2">"node1.example.com"</span>
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
 <span class="no">EXPECT</span> <span class="s2">"node1.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span>
 
-<span class="no">NODE</span> <span class="s2">"node2.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span>
 <span class="no">EXPECT</span> <span class="s2">"node2.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span>
 
-<span class="no">NODE</span> <span class="s2">"node3.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node3.example.com"</span>
 <span class="no">EXPECT</span> <span class="s2">"node3.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span></code></pre>
 </div>
 </div>
@@ -194,15 +192,15 @@ DURATION: 0.115948522 seconds</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="ruby"><span class="no">REMOTE_PLUGIN</span> <span class="s2">"docker"</span>
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"docker"</span>
 
-<span class="no">NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
 <span class="no">EXPECT</span> <span class="s2">"node1.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span>
 
-<span class="no">NODE</span> <span class="s2">"node2.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span>
 <span class="no">EXPECT</span> <span class="s2">"node2.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span>
 
-<span class="no">NODE</span> <span class="s2">"node3.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node3.example.com"</span>
 <span class="no">EXPECT</span> <span class="s2">"node3.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span></code></pre>
 </div>
 </div>
@@ -212,12 +210,12 @@ DURATION: 0.115948522 seconds</span></code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="ruby"><span class="c1"># Default node setup</span>
-<span class="no">NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
 
 <span class="no">TEST</span> <span class="s2">"stat /var/www/html/index.html"</span>
 <span class="no">EXPECT</span> <span class="s2">"node1.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span>
 
-<span class="no">NODE</span> <span class="s2">"node2.example.com"</span> <span class="k">do</span>
+<span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span> <span class="k">do</span>
   <span class="no">EXPECT</span> <span class="s2">"node2.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span>
 <span class="k">end</span></code></pre>
 </div>
@@ -238,8 +236,8 @@ DURATION: 0.115948522 seconds</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="ruby"><span class="no">REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
-<span class="no">NODE</span> <span class="s2">"node1.example.com"</span>
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
 <span class="no">TEST</span> <span class="s2">"command1 arg1 arg2"</span></code></pre>
 </div>
 </div>
@@ -248,13 +246,13 @@ DURATION: 0.115948522 seconds</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="bash">ssh node1.example.com /bin/bash <span class="nt">-c</span> <span class="s1">'command1 arg1 arg2'</span></code></pre>
+<pre class="rouge highlight"><code data-lang="bash">ssh node1.example.com <span class="s1">'command1 arg1 arg2'</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="ruby"><span class="no">REMOTE_PLUGIN</span> <span class="s2">"docker"</span>
-<span class="no">NODE</span> <span class="s2">"node1.example.com"</span>
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"docker"</span>
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
 <span class="no">TEST</span> <span class="s2">"command1 arg1 arg2"</span></code></pre>
 </div>
 </div>

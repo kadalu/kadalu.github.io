@@ -70,8 +70,6 @@
                             
                             <option  value="devel">devel</option>
                             
-                            <option  value="0.2.0">0.2.0</option>
-                            
                         </select>
                     </div>
                     
@@ -215,7 +213,7 @@
 <pre class="rouge highlight"><code data-lang="ruby"><span class="c1"># Executes in Local node</span>
 <span class="no">TEST</span> <span class="s2">"echo Hello"</span>
 
-<span class="no">NODE</span> <span class="s2">"node1.example.com"</span> <span class="k">do</span>
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span> <span class="k">do</span>
   <span class="no">TEST</span> <span class="s2">"echo Hello"</span>
 <span class="k">end</span>
 
@@ -237,7 +235,7 @@
 
 <span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
   <span class="c1"># Set node</span>
-  <span class="no">NODE</span> <span class="n">node</span>
+  <span class="no">USE_NODE</span> <span class="n">node</span>
 
   <span class="c1"># Validate the hostname set properly</span>
   <span class="no">EXPECT</span> <span class="n">node</span><span class="p">,</span> <span class="s2">"hostname"</span>
