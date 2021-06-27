@@ -1,0 +1,112 @@
+---
+title: "Announcing Kadalu Storage 0.8.3"
+author: aravindavk
+description: "Disperse Storage, Archiving PVs, Better Arm support and much more"
+---
+
+The Kadalu team is happy to announce a new version of Kadalu Storage, 0.8.3.
+
+== Features
+
+=== Disperse Storage Type
+
+If you already used GlusterFS Volume then you will be familiar with Disperse Volume type. With this release, we are happy to announce that we added support for Disperse Storage in Kadalu. Disperse type uses erasure codes. The data can be recoverable if the number of bricks equivalent to the number of redundancy bricks. Redundancy is distributed equally in all the bricks, data is recoverable/readable even if a data brick is down but Quoram is available(`up_bricks == data_bricks_count`). Read more about Disperse Volume type in GlusterFS documentation and usage instructions on the Kadalu website.
+
+[source,console]
+----
+# kubectl kadalu storage-add storage-pool1 --type=Disperse \
+    --data 2 --redundancy 1                                \
+    --device kube-nodename1:/dev/vdc                       \
+    --device kube-nodename2:/dev/vdc                       \
+    --device kube-nodename3:/dev/vdc
+----
+
+=== Distributed Volume support for External Volumes
+
+Early releases of Kadalu used xfs quota in the Storage backend for each PVs created. With that supporting Distribute Storage was a challenge. With the version 0.8.0, the Simple Quota feature was introduced for the Storage volumes managed by Kadalu Operator. But the Simple Quota feature is not available with GlusterFS releases yet! So Distribute was not supported for the external GlusterFS Volumes.
+
+With this release, Distribute Volume support is added by using the GlusterFS Quota feature itself. Thanks to **Yugo Yamauchi from Hitachi** for this wonderful enhancement. Read more details about this enhancement https://kadalu.io/rfcs/0007-Using-GlusterFS-directory-quota-for-external-gluster-volumes.html[here].
+
+=== Archiving the PVs on delete
+
+Introduced the option to set a reclaim policy for all the PVCs at the Storage level. Set this option while adding the new Storages. By default, the PV reclaim policy is set to `delete`. If it is set to `archive` then all PVs will be archived instead of delete.
+
+With kubectl extension,
+
+[source,console]
+----
+# kubectl kadalu storage-add storage-pool-1 \
+    --device kube1.example.com:/dev/vdc     \
+    --pv-reclaim-policy=archive
+----
+
+=== Arm64 / Arm7 support
+
+Arm support is getting better with the releases. Arm support is first introduced in 7.6, many issues are fixed. In this release, this got even better. Fixed a couple of issues related to GlusterFS build and kubectl binary compatibility issues within the containers.
+
+=== Migrating Gluster Volumes to Kadalu Storage
+
+If someone plan to migrate the existing Gluster Volume to Kubernetes, it is very easy now. Join all your Storage nodes to Kubernetes Cluster and add the bricks of the existing Gluster Volume as Kadalu Storage units in the same order. 
+
+For example, if the Gluster Volume is `gvol1` with the following bricks
+
+[source,text]
+----
+Volume ID: 0a5836ff-e3c0-4760-a54c-2baafa80635d
+Bricks:
+ server1.example.com:/bricks/gvol1/brick1/brick
+ server2.example.com:/bricks/gvol1/brick2/brick
+ server3.example.com:/bricks/gvol1/brick3/brick
+----
+
+Get the node names by running the `kubectl get nodes` command if the Storage node names are changed. Once the new node names are collected, prepare the Kadalu storage-add command as follows.
+
+[source,console]
+----
+# kubectl kadalu storage-add gvol1                             \
+    --volume-id 0a5836ff-e3c0-4760-a54c-2baafa80635d           \
+    --path kube-server1.example.com:/bricks/gvol1/brick1/brick \
+    --path kube-server2.example.com:/bricks/gvol1/brick2/brick \
+    --path kube-server3.example.com:/bricks/gvol1/brick3/brick
+----
+
+**Note** the additional argument(`--volume-id`) to the Storage add command. This Volume ID should be the same as the Volume ID when it was a Gluster Volume.
+
+This enhancement also helps to re-setup the GlusterFS or Kadalu Storage when disks need to be migrated.
+
+* Gluster CLI compatible syntax is coming soon(Ref: https://github.com/kadalu/kadalu/issues/548)
+* Heketi to Kadalu Migration support is coming soon(Ref: https://github.com/kadalu/kadalu/issues/587)
+
+=== External GlusterFS Volume support enhancements
+
+Support for external GlusterFS Volume just got better with this release. Storage configuration for external Volume is looking similar to in-cluster Volumes configurations/YAML. The following two formats are available with External Volumes.
+
+* **native**: Multiple PVs from the external Volume
+* **non-native**: Single PV from the external Volume
+
+=== Decommissioning Storage units
+
+Introduced the option to decommission a Storage unit so that Storage shrink, replacing the disks and other maintenance activities are possible.
+
+=== Replica 1 to Replica 2 or 3 Migration support
+
+The existing Replica 1 Storage type can be migrated to Replica 2/3 and Self-heal will sync all the files to the new bricks.
+
+See the detailed https://github.com/kadalu/kadalu/blob/master/CHANGELOG.md[release notes] for
+additional information.
+
+== Contributors to this release (8)
+
+A huge thanks go to all the awesome people who made this release
+possible.
+
+* https://github.com/amarts[Amar Tumballi]
+* https://github.com/aravindavk[Aravinda Vishwanathapura]
+* https://github.com/Ornias1993[Kjeld Schouten-Lebbing]
+* https://github.com/leelavg[Leela Venkaiah G]
+* https://github.com/vatsa287[Shree Vatsa N]
+* https://github.com/hunter86bg[Strahil Nikolov]
+* https://github.com/magicaljellybeans[Tom Robinson]
+* https://github.com/yugyama[Yugo Yamauchi]
+
+See the list of all contributors https://github.com/kadalu/kadalu/graphs/contributors[here].
