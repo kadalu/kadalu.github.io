@@ -13,8 +13,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/k8s-storage/devel/quick-start/"/>
-<meta property="og:url" content="/docs/k8s-storage/devel/quick-start/"/>
+<link rel="canonical" href="/docs/k8s-storage/devel/create-pvc/"/>
+<meta property="og:url" content="/docs/k8s-storage/devel/create-pvc/"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
@@ -78,7 +78,7 @@
                         
                         
                         
-                        <li class="text-indigo-600 font-semibold py-2 md:py-0">Quick Start</li>
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/quick-start/">Quick Start</a></li>
                         
                         
                         
@@ -178,104 +178,90 @@
                     <div class="mb-10">
                         <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
                             <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/devel">devel</a> / quick-start/</span>
+                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/devel">devel</a> / create-pvc/</span>
                     </div>
                     
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Quick Start</h1>
-<div class="quoteblock">
-<blockquote>
+                        <div class="sect1">
+<h2 id="_csi_to_claim_persistent_volumes_pvcpv">CSI to claim Persistent Volumes (PVC/PV)</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p><strong>NOTE:</strong> This document is written with the focus to have a single document which can fit both new-comers to k8s ecosystem, and also those who know the system. If you are well versed with k8s yaml files, and can manage using 'kubectl' directly, you can use kadalu without python3 dependency, directly using yaml files. Check <a href="/docs/k8s-storage/devel/quick-start-yaml">this document</a> for more details.</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>Download the latest release of Kadalu Kubectl plugin using,</p>
+<p>Once kadalu operator is started, and storage config is attached, we are ready to get started with PVC.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="go">
-curl -LO https://github.com/kadalu/kadalu/releases/latest/download/kubectl-kadalu
-chmod +x ./kubectl-kadalu
-sudo mv ./kubectl-kadalu /usr/local/bin/kubectl-kadalu</span></code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: sample-pvc.yaml</span>
+<span class="nn">---</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">pv1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica1</span>
+  <span class="na">accessModes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
+  <span class="na">resources</span><span class="pi">:</span>
+    <span class="na">requests</span><span class="pi">:</span>
+      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Note: In the case of Openshift,</p>
+<p>Create PVC using,</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="go">curl -LO https://github.com/kadalu/kadalu/releases/latest/download/kubectl-kadalu
-chmod +x ./kubectl-kadalu
-sudo mv ./kubectl-kadalu /usr/local/bin/oc-kadalu</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> sample-pvc.yaml
+<span class="go">persistentvolumeclaim/pv1 created</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Test the version you installed is up-to-date and install Operator.</p>
+<p>and check the status of PVC using,</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="go">kubectl kadalu version
-kubectl kadalu install</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl get pvc
+<span class="go">NAME   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS     AGE
+pv1    Bound    pvc-8cbe80f1-428f-11e9-b31e-525400f59aef   1Gi        RWO            kadalu.replica1  42s</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In the case of OpenShift, deploy Kadalu Operator using,</p>
+<p>Now, this PVC is ready to be consumed in your application pod. You can see the sample usage of PVC in an application pod by below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>oc kadalu <span class="nb">install</span> <span class="nt">--type</span><span class="o">=</span>openshift</code></pre>
+<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: sample-app.yaml</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">pod1</span>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="na">app</span><span class="pi">:</span> <span class="s">sample-app</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">containers</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">sample-app</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">docker.io/kadalu/sample-pv-check-app:latest</span>
+    <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">IfNotPresent</span>
+    <span class="na">volumeMounts</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">mountPath</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/mnt/pv"</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">csivol</span>
+  <span class="na">volumes</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">csivol</span>
+    <span class="na">persistentVolumeClaim</span><span class="pi">:</span>
+      <span class="na">claimName</span><span class="pi">:</span> <span class="s">pv1</span>
+  <span class="na">restartPolicy</span><span class="pi">:</span> <span class="s">OnFailure</span></code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p><strong>Note</strong>: Security Context Constraints can be applied only by admins, Run <code>oc login -u system:admin</code> to login as admin</p>
-</div>
-<div class="paragraph">
-<p>Identify the devices available from nodes and run the following command to add storage to Kadalu.</p>
-</div>
-<div class="paragraph">
-<p><strong>Note</strong>: if your host is running RHEL/CentOS 7.x series or Ubuntu/Debian older than 18.04, you may need to do below tasks before adding storage to kadalu.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="c"># On CentOS7.x/Ubuntu-16.04</span>
-<span class="gp">$</span><span class="w"> </span><span class="nb">sudo dd </span><span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sdc <span class="nv">bs</span><span class="o">=</span>512 <span class="nv">count</span><span class="o">=</span>1
-<span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>mkfs.xfs /dev/sdc</code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> sample-app.yaml
+<span class="go">pod1 created</span></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Once the device is ready, add it to kadalu pool. (note: <code>kube1</code> below is hostname, check yours by <code>kubectl get nodes</code>).</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool-1 <span class="nt">--device</span> kube1:/dev/sdc</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Operator will start the storage export pods as required. And, in 2 steps, your storage system is up and running.</p>
-</div>
-<div class="paragraph">
-<p>Check the status of Pods using,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl get pods <span class="nt">-n</span> kadalu
-<span class="go">NAME                             READY   STATUS    RESTARTS   AGE
-server-storage-pool-1-kube1-0    1/1     Running   0          84s
-csi-attacher-0                   2/2     Running   0          30m
-csi-nodeplugin-5hfms             2/2     Running   0          30m
-csi-nodeplugin-924cc             2/2     Running   0          30m
-csi-nodeplugin-cbjl9             2/2     Running   0          30m
-csi-provisioner-0                3/3     Running   0          30m
-operator-6dfb65dcdd-r664t        1/1     Running   0          30m</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>After this, go ahead and <a href="create-pvc">create your PVC and attach</a> it to other applications.</p>
 </div>
                     </div>
                 </div>

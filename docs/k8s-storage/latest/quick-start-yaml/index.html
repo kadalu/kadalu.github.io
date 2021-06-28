@@ -289,83 +289,8 @@ csi-provisioner-0                3/3     Running   0          30m
 operator-6dfb65dcdd-r664t        1/1     Running   0          30m</span></code></pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_csi_to_claim_persistent_volumes_pvcpv">CSI to claim Persistent Volumes (PVC/PV)</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Now we are ready to create Persistent volumes and use them in application Pods.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: sample-pvc.yaml</span>
-<span class="nn">---</span>
-<span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv1</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica1</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Create PVC using,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> sample-pvc.yaml
-<span class="go">persistentvolumeclaim/pv1 created</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>and check the status of PVC using,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl get pvc
-<span class="go">NAME   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS     AGE
-pv1    Bound    pvc-8cbe80f1-428f-11e9-b31e-525400f59aef   1Gi        RWO            kadalu.replica1  42s</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now, this PVC is ready to be consumed in your application pod. You can see the sample usage of PVC in an application pod by below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: sample-app.yaml</span>
-<span class="nn">---</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pod1</span>
-  <span class="na">labels</span><span class="pi">:</span>
-    <span class="na">app</span><span class="pi">:</span> <span class="s">sample-app</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">containers</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">sample-app</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s">docker.io/kadalu/sample-pv-check-app:latest</span>
-    <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">IfNotPresent</span>
-    <span class="na">volumeMounts</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">mountPath</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/mnt/pv"</span>
-      <span class="na">name</span><span class="pi">:</span> <span class="s">csivol</span>
-  <span class="na">volumes</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">csivol</span>
-    <span class="na">persistentVolumeClaim</span><span class="pi">:</span>
-      <span class="na">claimName</span><span class="pi">:</span> <span class="s">pv1</span>
-  <span class="na">restartPolicy</span><span class="pi">:</span> <span class="s">OnFailure</span></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> sample-app.yaml
-<span class="go">pod1 created</span></code></pre>
-</div>
+<p>After this, go ahead and <a href="create-pvc">create your PVC and attach</a> it to other applications.</p>
 </div>
 </div>
 </div>
