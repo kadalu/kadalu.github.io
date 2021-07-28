@@ -391,7 +391,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add external-pool <span class="se">\</span>
     <span class="nt">--external</span> gluster_host:/gluster_volname</code></pre>
 </div>
 </div>
@@ -409,7 +409,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Notice that to create PVC from External Storage config, you need to provide <code>storageClassName</code> option as <code>kadalu.external.{{ config-name }}</code>. In above case, it becomes <strong><code>kadalu.external.ext-config</code></strong>.</p>
+<p>Notice that to create PVC from External Storage config, you need to provide <code>storageClassName</code> option as <code>kadalu.{{ config-name }}</code>. In above case, it becomes <strong><code>kadalu.external-pool</code></strong>.</p>
 </div>
 <div class="sect2">
 <h3 id="_how_it_works">How it works?</h3>

@@ -239,81 +239,56 @@ available volumes without applying any filters.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_kadalu_replica1">kadalu.replica1</h2>
+<h2 id="_kadalu_storage_pool_name">kadalu.storage-pool-name</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>On using this Storage class, Kadalu will provision PVs only from
-Replica 1 Storage pools across the Cluster. Use this option when high
-availability is provided by the application and not required from the
-Storage.</p>
+<p>Kadalu creates and deploys Storage Class when storage is created.
+The name of this Storage class is same as the Storage name. Kadalu wil
+provision PVs only from this Storage pool across the Cluster.</p>
 </div>
 <div class="paragraph">
-<p>Example PVC,</p>
+<p>Example:</p>
+</div>
+<div class="paragraph">
+<p>When a Storage is created with name "storage-pool-1", Kadalu deploys
+a Storage Class with name "kadalu.storage-pool-1". The parameter "storage_name"
+is set to "storage-pool-1" to filter storages to PVs only from this Storage.</p>
+</div>
+<div class="paragraph">
+<p>Example:
+Create Storage "storage-pool-1",</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool-1 <span class="se">\</span>
+    <span class="nt">--path</span> kube-nodename:/mnt/mount/export-path</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Deployed Storage Class,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">kadalu.storage-pool-1</span>
+<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kadalu</span>
+<span class="na">parameters</span><span class="pi">:</span>
+  <span class="na">storage_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">storage-pool-1"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And the PVC,</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
 <span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
 <span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv2</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">pv1</span>
 <span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica1</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_kadalu_replica2">kadalu.replica2</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>On using this Storage class, Kadalu will provision PVs only from
-Replica 2 Storage pools across the Cluster. Replica 2 Storage pools
-use Tiebreaker to avoid Split-brain.</p>
-</div>
-<div class="paragraph">
-<p>Example PVC,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv3</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica2</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_kadalu_replica3">kadalu.replica3</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>On using this Storage class, Kadalu will provision PVs only from
-Replica 3 Storage pools across the Cluster. Use this Storage class
-when PVs require high availability.</p>
-</div>
-<div class="paragraph">
-<p>Example PVC,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv4</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica3</span>
+  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.storage-pool-1</span>
   <span class="na">accessModes</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">ReadWriteMany</span>
   <span class="na">resources</span><span class="pi">:</span>

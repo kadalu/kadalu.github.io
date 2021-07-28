@@ -329,6 +329,24 @@ above, you may need to replace 'md3' with proper device of your choice.
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_quota_of_pvcs">Quota of PVCs</h3>
+<div class="paragraph">
+<p><code>kadalu</code> uses simple-quota feature of glusterfs, which is present only in kadalu storage releases of glusterfs.</p>
+</div>
+<div class="paragraph">
+<p>As this is a new feature of glusterfs, there is possibilities where an user can hit a bug which is stopping the usage in in production. Hence, we have provided an option to disable quota limit check on PVCs of a particular storage pool. Please use below steps to get this working.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl <span class="nb">exec</span> <span class="nt">-it</span> kadalu-csi-provisioner-0 <span class="nt">-c</span> kadalu-provisioner <span class="nt">--</span> bash
+<span class="gp">#</span><span class="w"> </span>setfattr <span class="nt">-n</span> glusterfs.quota.disable-check <span class="nt">-v</span> <span class="s2">"1"</span> /mnt/<span class="k">${</span><span class="nv">storage</span><span class="p">-pool-name</span><span class="k">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This disable check is 'runtime' only fix right now, so if the server pods are restarted, this command may need to be issued again. Similarly to enable the check again, just pass the value as <code>"0"</code>.</p>
+</div>
+</div>
 </div>
 </div>
                     </div>
