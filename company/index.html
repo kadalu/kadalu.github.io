@@ -28,7 +28,7 @@
 
         <link rel="stylesheet" href="/static/css/stylesheet.css">
 <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+<script defer src="https://unpkg.com/alpinejs@3.2.2/dist/cdn.min.js"></script>
 
     </head>
     <body>
@@ -45,7 +45,7 @@
             </div>
             <div class="pt-2 col-span-8 lg:col-span-10">
                 <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col-reverse md:flex-row-reverse md:space-x-3 font-semibold w-full md:w-auto bg-indigo-900 shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-5 md:p-0"
-                     :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}"  @click.away="menuOpen = false"
+                     :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}" @keyup.escape.window="menuOpen = false"
                 >
                     <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Blog</a>
                     <a href="/company" class="bg-gray-900 text-white py-2 px-3 rounded-md text-sm font-medium">Company</a>
