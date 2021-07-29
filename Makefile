@@ -14,5 +14,5 @@ setup-dev:
 setup-prod:
 	bundle install
 	npm install
-	npm run prod:css
+	npm run build:css
 	bundle exec nanoc compile --env prod
