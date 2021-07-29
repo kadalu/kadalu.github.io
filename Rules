@@ -1,12 +1,5 @@
 #!/usr/bin/env ruby
 
-compile '/glusterup/*' do
-  filter :erb
-  layout '/landing_page.*'
-
-  write item.identifier.to_s
-end
-
 compile '/docs/**/versions.html' do
   filter :erb
   layout '/doc_versions.*'
