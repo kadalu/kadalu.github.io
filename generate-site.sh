@@ -42,7 +42,7 @@ function build_site
 {
     cd ${ROOT_DIR} && bundle install
     cd ${ROOT_DIR} && npm install
-    cd ${ROOT_DIR} && npm run prod:css
+    cd ${ROOT_DIR} && npm run build:css
     cd ${ROOT_DIR} && bundle exec nanoc compile --env prod
 }
 
