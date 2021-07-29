@@ -6,8 +6,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "build:css": "npx tailwindcss -i layouts/tailwind.css -o content/static/css/stylesheet.css",
-    "watch:css": "npx tailwindcss -w -i layouts/tailwind.css -o content/static/css/stylesheet.css"
+    "build:css": "postcss layouts/tailwind.css -o content/static/css/stylesheet.css",
+    "prod:css": "NODE_ENV=production postcss layouts/tailwind.css -o content/static/css/stylesheet.css"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,10 @@
   },
   "homepage": "https://github.com/kadalu/kadalu.github.io#readme",
   "devDependencies": {
-    "@tailwindcss/typography": "^0.4.0"
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.9",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.1"
   }
 }
