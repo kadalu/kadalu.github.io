@@ -146,9 +146,14 @@
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>binnacle test_ssh_key_initialized.t
-<span class="go">TOTAL: 1  PASSED: 1  FAILED: 0  SKIPPED: 0  TODOs: 0
-Result: PASS
-DURATION: 0.118192311 seconds</span></code></pre>
+<span class="go">ok       1 - node=local cmd="TEST stat ~/.ssh/id_rsa.pub"
+
+
+STATUS  TESTS  PASSED  FAILED  DUR(SEC)  SPEED(TPM)  INDEX DUR(SEC)  FILE
+=========================================================================
+OK          1       1      0          0           0               0
+
+Result: Pass</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -157,11 +162,21 @@ DURATION: 0.118192311 seconds</span></code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>binnacle test_ssh_key_initialized.t <span class="nt">-v</span>
-<span class="go">1..1
-ok       1 - node=local cmd="stat ~/.ssh/id_rsa.pub"
-TOTAL: 1  PASSED: 1  FAILED: 0  SKIPPED: 0  TODOs: 0
-Result: PASS
-DURATION: 0.115948522 seconds</span></code></pre>
+<span class="go">Indexing test files... done.  tests=1  test_files=1  duration_seconds=0
+
+
+------- STARTED(tests=1, file="test_ssh_key_initialized.t")
+ok       1 - node=local cmd="TEST stat ~/.ssh/id_rsa.pub"
+------- COMPLETED(OK, tests=1, passed=1, failed=0)
+
+
+STATUS  TESTS  PASSED  FAILED  DUR(SEC)  SPEED(TPM)  INDEX DUR(SEC)  FILE
+=========================================================================
+OK          1       1      0          0           0               0  test_ssh_key_initialized.t
+-------------------------------------------------------------------------
+OK          1       1      0          0           0               0
+
+Result: Pass</span></code></pre>
 </div>
 </div>
 <div class="paragraph">

@@ -287,6 +287,14 @@ will need to provide the pre-created gluster volume name for the config.</p>
 <p>kadalu native way does not support distributed volumes on the external gluster. You could execute the following commands before installation to enable kadalu to achieve PV capacity limitation using the Gluster directory Quota.</p>
 </div>
 <div class="paragraph">
+<p>Please make sure you have enabled quota for external gluster volume before deploying kadalu</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>gluster volume quota &lt;volname&gt; enable
+---</p>
+</div>
+<div class="paragraph">
 <p>Create namespace in advance for using Secret</p>
 </div>
 <div class="listingblock">

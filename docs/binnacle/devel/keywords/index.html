@@ -148,6 +148,22 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="_run">RUN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is very similar to <code>TEST</code> but ignores if any error. This will be useful when some cleanup command to be run but that may fail.</p>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">RUN</span> <span class="n">losetup</span> <span class="o">-</span><span class="n">d</span> <span class="sr">/dev/non</span><span class="n">_existing_dev</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_expect">EXPECT</h2>
 <div class="sectionbody">
 <div class="paragraph">

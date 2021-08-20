@@ -134,7 +134,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-L</span> https://github.com/kadalu/binnacle/releases/download/0.3.0/binnacle <span class="nt">-o</span> binnacle</code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-L</span> https://github.com/kadalu/binnacle/releases/latest/download/binnacle <span class="nt">-o</span> binnacle</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -176,11 +176,22 @@
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>binnacle hello.t <span class="nt">-v</span>
-<span class="go">1..1
-</span><span class="gp">#</span><span class="w"> </span><span class="nb">stat</span>: /var/www/html/index.html: <span class="nb">stat</span>: No such file or directory
-<span class="go">not ok   1 - node=local cmd="TEST stat /var/www/html/index.html"
-TOTAL: 1  PASSED: 0  FAILED: 1  SKIPPED: 0  TODOs: 0
-Result: FAIL</span></code></pre>
+<span class="go">Indexing test files... done.  tests=1  test_files=1  duration_seconds=0
+
+
+------- STARTED(tests=1, file="/hello.t")
+not ok   1 - node=local cmd="TEST stat /var/www/html/index.html"
+</span><span class="gp">#</span><span class="w"> </span><span class="nb">stat</span>: cannot <span class="nb">stat</span> <span class="s1">'/var/www/html/index.html'</span>: No such file or directory
+<span class="go">------- COMPLETED(NOT OK, tests=1, passed=0, failed=1)
+
+
+STATUS  TESTS  PASSED  FAILED  DUR(SEC)  SPEED(TPM)  INDEX DUR(SEC)  FILE
+=========================================================================
+NOT OK      1       0      1          0           0               0  /hello.t
+-------------------------------------------------------------------------
+NOT OK      1       0      1          0           0               0
+
+Result: Fail</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -189,10 +200,21 @@ Result: FAIL</span></code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>binnacle hello.t <span class="nt">-v</span>
-<span class="go">1..1
+<span class="go">Indexing test files... done.  tests=1  test_files=1  duration_seconds=0
+
+
+------- STARTED(tests=1, file="/hello.t")
 ok       1 - node=local cmd="TEST stat /var/www/html/index.html"
-TOTAL: 1  PASSED: 1  FAILED: 0  SKIPPED: 0  TODOs: 0
-Result: PASS</span></code></pre>
+------- COMPLETED(OK, tests=1, passed=1, failed=0)
+
+
+STATUS  TESTS  PASSED  FAILED  DUR(SEC)  SPEED(TPM)  INDEX DUR(SEC)  FILE
+=========================================================================
+OK          1       1      0          0           0               0  /hello.t
+-------------------------------------------------------------------------
+OK          1       1      0          0           0               0
+
+Result: Pass</span></code></pre>
 </div>
 </div>
                     </div>
