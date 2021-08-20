@@ -41,7 +41,7 @@ title: Kadalu Storage - Opinionated GlusterFS distribution
             <% sort_blog_posts(@items.find_all('/blog/*'))[0, 3].each do |post| %>
             <% author = author_data(post[:author].to_sym) %>
             <% slug, created_at = slug_and_created_at(post) %>
-            <a href="<%= slug %>">
+            <a href="/blog/<%= slug %>">
                 <div class="shadow-lg bg-white p-5 rounded-lg mb-5" style="height: 350px">
                     <div class="font-semibold text-xl mb-2"><%= post[:title] %></div>
                     <div class="text-gray-500 text-sm mb-7">Posted on <strong><%= get_pretty_date(created_at) %></strong> by <strong><%= author[:name] %></strong></div>
