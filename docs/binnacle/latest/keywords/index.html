@@ -27,6 +27,7 @@
 
         <link rel="stylesheet" href="/static/css/stylesheet.css">
 <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+<script defer data-domain="kadalu.io" src="https://plausible.io/js/plausible.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 
     </head>
@@ -290,6 +291,29 @@
 
 <span class="c1"># Continue with default plugin</span>
 <span class="no">TEST</span> <span class="s2">"command 3"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exit_on_not_ok">EXIT_ON_NOT_OK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, on error of a test case Test file execution is not terminated. Use this option to Halt the execution on error when required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TEST</span> <span class="s2">"command 1"</span>
+
+<span class="c1"># On setting this all future tests will use this setting</span>
+<span class="no">EXIT_ON_NOT_OK</span> <span class="kp">true</span>
+<span class="no">TEST</span> <span class="s2">"command 2"</span>
+
+<span class="c1"># Only use this setting for some commands</span>
+<span class="no">EXIT_ON_NOT_OK</span> <span class="kp">true</span> <span class="k">do</span>
+    <span class="no">TEST</span> <span class="s2">"command 3"</span>
+    <span class="no">TEST</span> <span class="s2">"command 4"</span>
+<span class="k">end</span></code></pre>
 </div>
 </div>
 </div>
