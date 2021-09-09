@@ -119,6 +119,11 @@
                         
                         
                         
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/mounted-block-volume/">Mounted Block Volume</a></li>
+                        
+                        
+                        
+                        
                         <li class="text-indigo-600 font-semibold py-2 md:py-0">Storage Classes</li>
                         
                         
@@ -419,6 +424,42 @@ Storage types.</p>
   <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica2</span>
   <span class="na">accessModes</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">ReadWriteMany</span>
+  <span class="na">resources</span><span class="pi">:</span>
+    <span class="na">requests</span><span class="pi">:</span>
+      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pv_type">pv_type</h3>
+<div class="paragraph">
+<p>Use this option if the PV created using this Storage Class should be a Mounted Block Volume.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">kadalu.db-storage</span>
+<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kadalu</span>
+<span class="na">parameters</span><span class="pi">:</span>
+  <span class="na">storage_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">storage-pool-1"</span>
+  <span class="na">pv_type</span><span class="pi">:</span> <span class="s">Block</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And the PVC,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">pv8</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.db-storage</span>
+  <span class="na">accessModes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">ReadWriteOnce</span>
   <span class="na">resources</span><span class="pi">:</span>
     <span class="na">requests</span><span class="pi">:</span>
       <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>

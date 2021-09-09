@@ -971,6 +971,10 @@ video {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
 .top-5 {
   top: 1.25rem;
 }

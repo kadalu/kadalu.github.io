@@ -318,6 +318,40 @@
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_embed_other_test_files">Embed other test files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use <code>load</code> keyword to include the tests/utilities from other files.</p>
+</div>
+<div class="paragraph">
+<p>For example, <code>repeat_tests.t</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TEST</span> <span class="s2">"command 1"</span>
+<span class="no">TEST</span> <span class="s2">"command 2"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the <code>main.t</code> tests file</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"docker"</span>
+
+<span class="p">[</span><span class="s2">"node1.example.com"</span><span class="p">,</span> <span class="s2">"node2.example.com"</span><span class="p">,</span> <span class="s2">"node3.example.com"</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+    <span class="no">USE_NODE</span> <span class="n">node</span>
+
+    <span class="nb">load</span> <span class="s2">"./repeat_tests.t"</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: Load path is relative to the current directory from where the <code>binnacle</code> command is called.</p>
+</div>
+</div>
+</div>
                     </div>
                 </div>
             </div>
