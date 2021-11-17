@@ -296,6 +296,73 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="_use_ssh_user">USE_SSH_USER</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set SSH user. Default is "root". This option is only applicable with <code>USE_REMOTE_PLUGIN ssh</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_SSH_USER</span> <span class="s2">"ubuntu"</span>
+
+<span class="no">TEST</span> <span class="s2">"stat ~/Public"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_ssh_pem_file">USE_SSH_PEM_FILE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set SSH pem file path. Default is <code>~/.ssh/id_rsa</code>. This option is only applicable with <code>USE_REMOTE_PLUGIN ssh</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_SSH_USER</span> <span class="s2">"ubuntu"</span>
+<span class="no">USE_SSH_PEM_FILE</span> <span class="s2">"~/.ssh/automation.pem"</span>
+
+<span class="no">TEST</span> <span class="s2">"stat ~/Public"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_ssh_sudo">USE_SSH_SUDO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use <code>sudo</code> with all the commands. Default is <code>false</code>. This option is only applicable with <code>USE_REMOTE_PLUGIN ssh</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_SSH_USER</span> <span class="s2">"ubuntu"</span>
+<span class="no">USE_SSH_SUDO</span> <span class="kp">true</span>
+
+<span class="no">TEST</span> <span class="s2">"echo </span><span class="se">\"</span><span class="s2">127.0.0.1 server1.example.com</span><span class="se">\"</span><span class="s2"> &gt;&gt; /etc/hosts"</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_SSH_USER</span> <span class="s2">"ubuntu"</span>
+
+<span class="no">USE_SSH_SUDO</span> <span class="kp">true</span> <span class="k">do</span>
+    <span class="no">TEST</span> <span class="s2">"echo </span><span class="se">\"</span><span class="s2">127.0.0.1 server1.example.com</span><span class="se">\"</span><span class="s2"> &gt;&gt; /etc/hosts"</span>
+<span class="k">end</span>
+
+<span class="c1"># Run without sudo</span>
+<span class="no">TEST</span> <span class="s2">"stat ~/Public"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_exit_on_not_ok">EXIT_ON_NOT_OK</h2>
 <div class="sectionbody">
 <div class="paragraph">
