@@ -9,6 +9,13 @@
   title: Binnacle
   description: Simple Test Framework
   repo: https://github.com/kadalu/binnacle
-  versions: ["devel"]
+  versions: ["main"]
   docs_dir: "docs"
-  latest_alias: "devel"
+  latest_alias: "main"
+- name: kadalu-storage
+  title: Kadalu Storage
+  description: Kadalu Storage for Cloud, On-Premise
+  repo: https://github.com/kadalu/moana
+  versions: ["main"]
+  docs_dir: "docs"
+  latest_alias: "main"
