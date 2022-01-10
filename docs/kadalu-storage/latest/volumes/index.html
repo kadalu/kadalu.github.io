@@ -107,6 +107,11 @@
                         <li class="text-indigo-600 font-semibold py-2 md:py-0">Volumes</li>
                         
                         
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/faqs/">FAQs</a></li>
+                        
+                        
                     </ul>
                     
                     
@@ -138,7 +143,7 @@ ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Where,</p>
+<p>Where</p>
 </div>
 <div class="ulist">
 <ul>
@@ -157,7 +162,19 @@ ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 </ul>
 </div>
 <div class="paragraph">
-<p>To create a Replicated or Mirrored Volume,</p>
+<p>Automatically create the Pool and add nodes to Pool that are specified in the Volume create request by adding <code>--auto-create-pool</code> and <code>--auto-add-nodes</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu volume create DEV/vol1 <span class="se">\</span>
+    server1.example.com:/exports/vol1/s1 <span class="se">\</span>
+    <span class="nt">--auto-create-pool</span> <span class="nt">--auto-add-nodes</span>
+<span class="go">Volume vol1 created successfully
+ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a Replicated or Mirrored Volume</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -170,7 +187,7 @@ ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Using <code>mirror</code> is also supported.</p>
+<p>Using <code>mirror</code> is also supported</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -183,7 +200,7 @@ ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Alternatively GlusterFS syntax is also supported.</p>
+<p>Alternatively, GlusterFS syntax is also supported</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -198,10 +215,10 @@ ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Volumes are started on create. Use <code>--no-start</code> to override this behavior.</p>
+<p>By default, volumes are started on create. Use <code>--no-start</code> to override this behavior.</p>
 </li>
 <li>
-<p>If the Storage unit path is not a mounted directory then use <code>--allow-root-partition</code> option (Not yet implemented). This is not optimal setup since the Kadalu Volume can fill up the root partition or other application can fill up Kadalu Volume.</p>
+<p>If the Storage unit path is not a mounted directory then use <code>--allow-root-partition</code> option (Not yet implemented). This is not an optimal setup since the Kadalu Volume can fill up the root partition or other applications can fill up Kadalu Volume.</p>
 </li>
 <li>
 <p>To import a Volume, Use <code>--volume-id</code> option to set the Same Volume ID to the imported Volume (Not yet implemented).</p>
@@ -217,12 +234,12 @@ ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 <p>To reuse a Storage unit directory that was part of other Volume earlier, use <code>--reuse-storage-unit</code> (Not yet implemented, only applicable if the Storage unit directory is empty).</p>
 </li>
 <li>
-<p>To allow using Replicate/Mirrored/Disperse Storage units from same node, use <code>--from-same-node</code>. This is not Optimal setup since no high availability for the distribute group if one node goes down (Not yet implemented).</p>
+<p>To allow using Replicate/Mirrored/Disperse Storage units from same node, use <code>--from-same-node</code>. This is not an optimal setup since it does not provide high availability for the distribute group if one node goes down (Not yet implemented).</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Storage Unit ports are assigned automatically(<code>49252</code> to <code>49452</code>) while creating the Volume. Restarting the Volume will not change the Ports of Storage units. Volume info command will show the assigned ports. It is also possible to manually specify the Port while creating the Volume.</p>
+<p>Ports for the Storage Unit are assigned automatically (<code>49252</code> to <code>49452</code>) while creating the Volume. Restarting the Volume will not change the Ports of the Storage units. The Volume info command will show the assigned ports. It is also possible to manually specify the Port while creating the Volume.</p>
 </div>
 <div class="listingblock">
 <div class="content">

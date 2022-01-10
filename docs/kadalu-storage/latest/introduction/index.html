@@ -107,6 +107,11 @@
                         <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/volumes/">Volumes</a></li>
                         
                         
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/faqs/">FAQs</a></li>
+                        
+                        
                     </ul>
                     
                     
@@ -128,7 +133,7 @@
                     <div class="mb-24 prose max-w-none prose-indigo">
                         <h1>Introduction to Kadalu Storage</h1>
 <div class="paragraph">
-<p>Kadalu Storage is an modern opinionated distributed filesystem focused on ease of use, scale and stability.</p>
+<p>Kadalu Storage is a modern opinionated distributed filesystem focused on ease of use, scale, and stability.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -136,18 +141,18 @@
 <p><strong>Storage Pool</strong> is a logical entity that groups the Volumes and provides isolation from other Pools available.</p>
 </li>
 <li>
-<p><strong>Storage Volume</strong> exposes the storage from all nodes and provides single Unified namespace to the applications.</p>
+<p><strong>Storage Volume</strong> exposes the storage from all nodes and provides a single Unified namespace to the applications.</p>
 </li>
 <li>
 <p><strong>Storage Nodes</strong> are associated with the Kadalu Storage pool. One Storage node can&#8217;t be part of two Storage pools.</p>
 </li>
 <li>
-<p><strong>Storage Unit</strong> is a directory or device in a node that will then be combined with other directories/devices from same of different nodes to provide single unified namespace.</p>
+<p><strong>Storage Unit</strong> is a directory or device in a node that will then be combined with other directories/devices from same or different nodes to provide single unified namespace.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>First create a Storage Pool and then start adding nodes to the Pool. Following example shows three nodes added to the Storage pool.</p>
+<p>First, create a Storage Pool and then start adding nodes to the Pool. The following example shows three nodes added to the Storage Pool.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -169,7 +174,7 @@ ID: 9abf4512-029a-4ae1-85d6-400bf7e8e30c</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Prepare the mounted directory to use as Storage unit while creating the Volume. Any filesystem that supports the xattrs can be used as Storage Unit of a Kadalu Volume. Following example demonstrates using a directory from each server and creating a Mirrored Kadalu Volume using them.</p>
+<p>Prepare the mounted directory to use as a Storage unit while creating the Volume. Any filesystem that supports xattrs can be used as a Storage Unit of a Kadalu Volume. The following example demonstrates using a directory from each server and creating a Mirrored Kadalu Volume using them.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -188,7 +193,7 @@ ID: 9abf4512-029a-4ae1-85d6-400bf7e8e30c</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Mirrored or Replicate volume copies file in all the three storage units whenever a file is created from the Mount point. Mount Kadalu Volume in any node using the following command. Note that all the Storage servers should be accessible from the node where the Volume is mounted.</p>
+<p>Mirrored or Replicate volume copies a file to all three storage units whenever a file is created from the Mount point. Mount Kadalu Volume in any node using the following command. Note that all the Storage servers should be accessible from the node where the Volume is mounted.</p>
 </div>
 <div class="listingblock">
 <div class="content">

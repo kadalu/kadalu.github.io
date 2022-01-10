@@ -13,8 +13,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/kadalu-storage/latest/devel/README/"/>
-<meta property="og:url" content="/docs/kadalu-storage/latest/devel/README/"/>
+<link rel="canonical" href="/docs/kadalu-storage/latest/faqs/"/>
+<meta property="og:url" content="/docs/kadalu-storage/latest/faqs/"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
@@ -109,7 +109,7 @@
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/faqs/">FAQs</a></li>
+                        <li class="text-indigo-600 font-semibold py-2 md:py-0">FAQs</li>
                         
                         
                     </ul>
@@ -124,64 +124,95 @@
                     <div class="mb-10">
                         <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
                             <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/kadalu-storage">kadalu-storage</a> / <a href="/docs/kadalu-storage/latest">latest</a> / devel/README/</span>
+                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/kadalu-storage">kadalu-storage</a> / <a href="/docs/kadalu-storage/latest">latest</a> / faqs/</span>
                     </div>
                     
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Developer Documentation</h1>
+                        <h1>Kadalu Storage FAQs</h1>
 <div class="sect1">
-<h2 id="_welcome">Welcome :-)</h2>
+<h2 id="_is_kadalu_storage_the_same_as_glusterfs_except_for_the_management_layer">Is Kadalu Storage the same as GlusterFS except for the management layer?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Please refer to <a href="../../CONTRIBUTING.md">Contributing Guidelines</a> before getting into development of the project.</p>
+<p>Kadalu Storage is an opinionated Storage solution. It uses only the core filesystem from GlusterFS. Kadalu Storage brings good parts of GlusterFS with added enhancements like improved Quota, Management layer among others.</p>
+</div>
+<div class="paragraph">
+<p>Along with the additional features, the default configurations/values will differ. All the enhancements available with Kadalu Storage are also Open Source.</p>
+</div>
+<div class="paragraph">
+<p>Kadalu Storage provides a more intuitive Command line interface compared to Gluster CLI.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_code_organization">Code Organization</h2>
+<h2 id="_can_glusterfs_and_kadalu_storage_co_exist">Can GlusterFS and Kadalu Storage Co-exist?</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><code>$SRC/mgr/src/server</code> - Server and Agent implementation</p>
-</li>
-<li>
-<p><code>$SRC/mgr/src/cmds</code> - All CLI subcommands(<code>mgr</code>, <code>volume</code>, <code>cluster</code>&#8230;&#8203;) using the <code>clients/crystal</code> package.</p>
-</li>
-<li>
-<p><code>$SRC/clients/crystal</code> - Crystal language bindings for Kadalu Storage APIs</p>
-</li>
-<li>
-<p><code>$SRC/clients/python</code> - Python language bindings for Kadalu Storage APIs</p>
-</li>
-<li>
-<p><code>$SRC/types</code> - Common Type definitions that will be used by Server, Client and CLI.</p>
-</li>
-<li>
-<p><code>$SRC/volgen</code> - Volfile generation library. Server will use this library to generate required Volfiles(Client, Storage Unit, Heal daemon, etc) using the YAML Templates.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Why not? Short answer is Yes. If the GlusterFS version available in the system is compatible with the Kadalu Storage supported version then it can co-exist. Else it is not possible since Kadalu Storage uses the core filesystem from GlusterFS.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_topics">Topics</h2>
+<h2 id="_who_is_behind_kadalu_storage">Who is behind Kadalu Storage?</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="./testing.adoc">Testing</a></p>
-</li>
-<li>
-<p><a href="./container-based-dev-setup-single-node.adoc">Container based Development Environment Setup</a></p>
-</li>
-<li>
-<p><a href="./emacs-setup.adoc">Emacs based Crystal Development Environment Setup</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>The Kadalu Storage project is currently sponsored by Kadalu Software Pvt Ltd. The project was started by a few core team members of the GlusterFS project with the initial focus to provide a lightweight storage solution for the apps running on Kubernetes. With the release of the <a href="https://github.com/kadalu/moana">Kadalu Moana</a> project, GlusterFS management is simplified for non Kubernetes use cases as well.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_stable_is_kadalu_storage">How stable is Kadalu Storage?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As explained previously, the major difference between Kadalu Storage and GlusterFS is the management layer. No worries for your data, Kadalu Storage uses time-tested File system bits from GlusterFS. Additionally we invest heavily in automated tests and use advanced testing methods to test both the Filesystem layer as well as the Management layer.</p>
+</div>
+<div class="paragraph">
+<p>Even though the filesystem layer is stable, Kadalu Storage is not yet 1.0. It is still under active development and we are working on making it production ready in 2022.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_not_contribute_back_to_the_glusterfs_project_itself">Why not contribute back to the GlusterFS project itself?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We do. All filesystem-related enhancements done in Kadalu will be sent to GlusterFS. If any feature is not applicable to the GlusterFS community but useful for Kadalu users then it will be maintained in the Kadalu Storage open source repository. Release and support cycles of Kadalu Storage are not aligned with GlusterFS release cycles, so we will maintain separate releases.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_monitoring_is_one_of_the_pain_points_with_glusterfs_how_is_this_issue_addressed">Monitoring is one of the pain points with GlusterFS, how is this issue addressed?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kadalu Storage exports a rich set of metrics that can be readily used with the Prometheus server. Kadalu Storage also provides JSON metrics so that it can be easily integrated into other applications.</p>
+</div>
+<div class="paragraph">
+<p>Apart from that, we also maintain a couple of projects like Gdash, Gluster metrics exporter, Gstatus etc to improve GlusterFS monitoring without using Kadalu Storage.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_is_kadalu_storage_a_fork_of_glusterfs">Is Kadalu Storage a fork of GlusterFS?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Short answer is No. All the filesystem enhancements will be sent as PR to the GlusterFS repo. But if some of the patches are not applicable to the GlusterFS community then it will be maintained in our repository.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_will_gluster_cli_commands_work_for_kadalu_storage">Will Gluster CLI commands work for Kadalu Storage?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kadalu Storage provides the new CLI to manage the Kadalu Storage Volumes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_where_can_i_request_for_new_features_or_report_issues">Where can I request for new features or report issues?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open a new <a href="https://github.com/kadalu/moana/issues/new">Github issue</a> with the details about the new feature or the issue.</p>
 </div>
 </div>
 </div>

@@ -13,8 +13,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/kadalu-storage/latest/devel/README/"/>
-<meta property="og:url" content="/docs/kadalu-storage/latest/devel/README/"/>
+<link rel="canonical" href="/docs/kadalu-storage/main/devel/emacs-setup/"/>
+<meta property="og:url" content="/docs/kadalu-storage/main/devel/emacs-setup/"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
@@ -67,9 +67,9 @@
                     <div class="p-5 bg-gray-200 border text-right rounded-lg">
                         <strong>Version: </strong>
                         <select class="input-field" onchange="location = '/docs/kadalu-storage/' + this.value;">
-                            <option selected value="latest">latest</option>
+                            <option  value="latest">latest</option>
                             
-                            <option  value="main">main</option>
+                            <option selected value="main">main</option>
                             
                         </select>
                     </div>
@@ -79,37 +79,37 @@
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/quick-start/">Quick Start</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/quick-start/">Quick Start</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/introduction/">Introduction</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/introduction/">Introduction</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/install/">Install</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/install/">Install</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/user-management/">User Management</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/user-management/">User Management</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/pools/">Pools</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/pools/">Pools</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/volumes/">Volumes</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/volumes/">Volumes</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/latest/faqs/">FAQs</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/faqs/">FAQs</a></li>
                         
                         
                     </ul>
@@ -124,66 +124,84 @@
                     <div class="mb-10">
                         <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
                             <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/kadalu-storage">kadalu-storage</a> / <a href="/docs/kadalu-storage/latest">latest</a> / devel/README/</span>
+                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/kadalu-storage">kadalu-storage</a> / <a href="/docs/kadalu-storage/main">main</a> / devel/emacs-setup/</span>
                     </div>
                     
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Developer Documentation</h1>
-<div class="sect1">
-<h2 id="_welcome">Welcome :-)</h2>
-<div class="sectionbody">
+                        <h1>Emacs based Crystal Development Environment Setup</h1>
+<div class="ulist">
+<ul>
+<li>
+<p>Install Crystal by following the instructions available in <a href="https://crystal-lang.org/install/" class="bare">https://crystal-lang.org/install/</a></p>
+</li>
+<li>
+<p>Install Ameba to get Lint suggestions to Crystal code</p>
+<div class="listingblock">
+<div class="content">
+<pre>git clone https://github.com/crystal-ameba/ameba &amp;&amp; cd ameba
+make install</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>Please refer to <a href="../../CONTRIBUTING.md">Contributing Guidelines</a> before getting into development of the project.</p>
+<p>Add Melpa packages repository details to <code>.emacs</code> file if not added already.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="emacs-lisp"><span class="p">(</span><span class="nb">require</span> <span class="ss">'package</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-to-list</span> <span class="ss">'package-archives</span> <span class="o">'</span><span class="p">(</span><span class="s">"melpa"</span> <span class="o">.</span> <span class="s">"https://melpa.org/packages/"</span><span class="p">)</span> <span class="no">t</span><span class="p">)</span>
+<span class="c1">;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`</span>
+<span class="c1">;; and `package-pinned-packages`. Most users will not need or want to do this.</span>
+<span class="c1">;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)</span>
+<span class="p">(</span><span class="nv">package-initialize</span><span class="p">)</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Install the following packages by running <code>M-x list-packages</code></p>
 </div>
-<div class="sect1">
-<h2 id="_code_organization">Code Organization</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><code>$SRC/mgr/src/server</code> - Server and Agent implementation</p>
+<p>crystal-mode - For syntax highlight</p>
 </li>
 <li>
-<p><code>$SRC/mgr/src/cmds</code> - All CLI subcommands(<code>mgr</code>, <code>volume</code>, <code>cluster</code>&#8230;&#8203;) using the <code>clients/crystal</code> package.</p>
+<p>ameba - Linter</p>
 </li>
 <li>
-<p><code>$SRC/clients/crystal</code> - Crystal language bindings for Kadalu Storage APIs</p>
+<p>flycheck-crystal - On the fly check errors</p>
 </li>
 <li>
-<p><code>$SRC/clients/python</code> - Python language bindings for Kadalu Storage APIs</p>
-</li>
-<li>
-<p><code>$SRC/types</code> - Common Type definitions that will be used by Server, Client and CLI.</p>
-</li>
-<li>
-<p><code>$SRC/volgen</code> - Volfile generation library. Server will use this library to generate required Volfiles(Client, Storage Unit, Heal daemon, etc) using the YAML Templates.</p>
+<p>exec-path-from-shell - To load env vars from shell</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Add below code to fetch env variables from the shell</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="emacs-lisp"><span class="c1">;; Set PATH and other env vars</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">exec-path-from-shell-check-startup-files</span> <span class="no">nil</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">exec-path-from-shell-initialize</span><span class="p">)</span></code></pre>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_topics">Topics</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><a href="./testing.adoc">Testing</a></p>
-</li>
-<li>
-<p><a href="./container-based-dev-setup-single-node.adoc">Container based Development Environment Setup</a></p>
-</li>
-<li>
-<p><a href="./emacs-setup.adoc">Emacs based Crystal Development Environment Setup</a></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Now enable the flycheck and ameba mode by adding the following in <code>~/.emacs</code> file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="emacs-lisp"><span class="p">(</span><span class="nb">require</span> <span class="ss">'flycheck-crystal</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'crystal-mode-hook</span> <span class="ss">'flycheck-mode</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">add-hook</span> <span class="ss">'crystal-mode-hook</span> <span class="ss">'ameba-mode</span><span class="p">)</span></code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Thats all! now Emacs starts highlighting the syntax errors on the fly. Check ameba errors by running <code>M-x ameba-check-current-file</code> when required.</p>
 </div>
                     </div>
                 </div>
