@@ -48,7 +48,7 @@ We can design, prototype and implement GlusterFS/Kadalu Storage tools, applicati
 
 === Leela Gangavarapu joins Kadalu Kubernetes integration core team
 
-https://twitter.com/leela_vg[Leela] has been contributing to Kadalu Kubernetes integration projects for a long time. He is very active and is helping the Kadalu project in numerous ways.
+https://www.linkedin.com/in/leelavg[Leela] has been contributing to Kadalu Kubernetes integration projects for a long time. He is very active and is helping the Kadalu project in numerous ways.
 
 === Kadalu Kubernetes Storage
 
