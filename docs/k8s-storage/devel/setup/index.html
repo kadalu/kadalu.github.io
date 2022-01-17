@@ -224,35 +224,11 @@
 <div class="sect2">
 <h3 id="_binary_based_installation">Binary based installation</h3>
 <div class="paragraph">
-<p>Download the latest release of Kadalu Kubectl plugin using,</p>
+<p>Download and install the latest release of Kadalu Kubectl plugin using,</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-LO</span> https://github.com/kadalu/kadalu/releases/latest/download/kubectl-kadalu</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Make the kubectl binary executable.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">chmod</span> +x ./kubectl-kadalu</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Move the binary in to your PATH.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo mv</span> ./kubectl-kadalu /usr/local/bin/kubectl-kadalu</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Note: In the case of Openshift,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo mv</span> ./kubectl-kadalu /usr/local/bin/oc-kadalu</code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-fsSL</span> https://github.com/kadalu/kadalu/releases/latest/download/install.sh | <span class="nb">sudo </span>bash <span class="nt">-x</span></code></pre>
 </div>
 </div>
 <div class="paragraph">

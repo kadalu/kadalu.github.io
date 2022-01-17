@@ -205,12 +205,9 @@ It should apply to any newer upgrade.</p>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="go">  curl -LO https://github.com/kadalu/kadalu/releases/latest/download/kubectl-kadalu
-  chmod +x ./kubectl-kadalu
-  sudo mv ./kubectl-kadalu /usr/local/bin/kubectl-kadalu
-  kubectl-kadalu version
-
-</span><span class="gp">  =&gt;</span><span class="w"> </span>kubectl-kadalu 0.8.6</code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-fsSL</span> https://github.com/kadalu/kadalu/releases/latest/download/install.sh | <span class="nb">sudo </span>bash <span class="nt">-x</span>
+<span class="gp">$</span><span class="w"> </span>kubectl-kadalu version
+<span class="go">kubectl-kadalu 0.8.6</span></code></pre>
 </div>
 </div>
 </div>
