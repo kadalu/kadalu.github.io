@@ -2,6 +2,7 @@
 title: "Introducing Kadalu Storage - Part 1"
 author: aravindavk
 description: "After facing many challenges with Glusterd based Volume management, we experimented to integrate the GlusterFS core filesystem with Kubernetes without using Glusterd. This experiment helped us to understand that some of Gluster's capabilities are limited by the Management layer and not by the filesystem itself."
+image: /static/images/spot-the-differences-1.png
 ---
 
 Kadalu Storage is an opinionated distributed Storage solution focused on providing scalable and easy to use Volumes for Cloud, On-Premise, Kubernetes, or Raspberry Pis.
