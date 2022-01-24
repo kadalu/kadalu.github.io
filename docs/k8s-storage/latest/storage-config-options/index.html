@@ -446,7 +446,7 @@
 <h2 id="_archiving_persistent_volume_claims">Archiving Persistent Volume Claims</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Archiving a PVC retains its data when <code>delete</code> is called on it. This option can be enabled by specifying <code>pvReclaimPolicy</code> either through <code>StorageClass</code> or <code>Kadalu CLI</code>. The <code>pvReclaimPolicy</code> takes either <code>delete</code> or <code>archive</code>. Default value is <code>delete</code> which deletes the PVC along with its data. <code>archive</code> option retains the data by renaming <code>pvc-123</code> to <code>archived-pvc-123</code>.</p>
+<p>Archiving a PVC retains its data when <code>delete</code> is called on it. This option can be enabled by specifying <code>pvReclaimPolicy</code> either through <code>StorageClass</code> or <code>Kadalu CLI</code>. The <code>pvReclaimPolicy</code> takes either <code>delete</code>, <code>archive</code> or <code>retain</code>. Default value is <code>delete</code> which deletes the PVC along with its data. <code>archive</code> option retains the data by renaming <code>pvc-123</code> to <code>archived-pvc-123</code>. <code>retain</code> option retains the data in place.</p>
 </div>
 <div class="ulist">
 <ul>
