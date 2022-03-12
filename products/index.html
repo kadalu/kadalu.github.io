@@ -49,10 +49,7 @@
                      :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}"  @click.away="menuOpen = false"
                 >
                     <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Blog</a>
-                    <a href="/company" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Company</a>
                     <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
-                    <a href="/services" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Services</a>
-                    <a href="/products" class="bg-gray-900 text-white py-2 px-3 rounded-md text-sm font-medium">Products</a>
                     <a href="/docs" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Docs</a>
                 </nav>
             </div>
@@ -95,71 +92,8 @@ $ kubectl kadalu storage-add storage-pool-1 \
     --device kube-node1.example.com:/dev/vdc
                     </pre>
                 </div>
-                <div class="text-center mt-10">
-                    <button class="button bg-indigo-600 text-gray-100" onclick="location.href='/docs/k8s-storage'">Get Started for free</button>
-                    <button class="button bg-yellow-200" onclick="location='/contact/?topic=Product Demo - Kubernetes native Storage'">Request for a demo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="kadalu-storage" class="bg-indigo-100">
-    <div class="w-full px-10 md:w-3/4 md:px-0 mx-auto py-10">
-        <h2 class="text-2xl font-bold mb-2 text-indigo-600">Kadalu Storage</h2>
-        <p class="text-gray-500 font-semibold">An Opinionated GlusterFS distribution</p>
-        <div class="md:grid md:grid-cols-2 gap-4 mt-10">
-            <div class="prose max-w-none mb-10">
-                <p>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Multi-Cluster Support</strong> - Manage multiple clusters in one place.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Externally hosted Control plane</strong> - Modern solution for managing Volumes and Clusters.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>ReST APIs</strong> - Automate Kadalu Storage deployments easily by using the ReST APIs<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Web/Mobile UI with multi-user support</strong> - Web/Mobile UI allows managing Kadalu Storage clusters on the go.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Long term support</strong> - Stop worrying about upgrading your storage nodes too often, get stable Kadalu Storage with 3 years of support<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>NFS integration</strong> - Natively integrated with NFS-Ganesha to provide config-free NFS setup easily<br/>
-                </p>
-            </div>
-            <div class="">
-                <p class="px-10">Kadalu Storage will be generally available soon. Contact us for a demo or to get early access.</p>
-                <div class="text-center mt-10">
-                    <button class="button bg-indigo-600 text-gray-100 mb-5" onclick="location='/contact/?topic=Early access - Kadalu Storage'">Request for early access</button>
-                    <button class="button bg-yellow-200 mb-5" onclick="location='/contact/?topic=Product Demo - Kadalu Storage'">Request for a demo</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="glusterup" class="">
-    <div class="w-full px-10 md:w-3/4 md:px-0 mx-auto py-10">
-        <h2 class="text-2xl font-bold mb-2 text-indigo-600">GlusterFS Monitoring</h2>
-        <p class="text-gray-500 font-semibold">Monitor your GlusterFS clusters using the Simplest monitoring tool.</p>
-        <div class="md:grid md:grid-cols-2 gap-4 mt-10">
-            <div class="prose max-w-none mb-10">
-                <p>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Easy to configure</strong> - Login to the dashboard and configure GlusterFS monitoring easily with a few steps.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Multi-Cluster support</strong> - Monitor multiple clusters easily in a single place.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Instant alerts</strong> - Get alerts by email/Slack message instantly for the configured events<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Specially designed for GlusterFS</strong> - No need to spend time configuring monitoring tool for GlusterFS.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Detailed Reports</strong> - Get detailed reports every week by email.<br/>
-                </p>
-            </div>
-            <div class="">
-                <p class="px-10">Hosted GlusterFS monitoring solution will be launched soon. Contact us for a demo or to get early access.</p>
-                <div class="text-center mt-10">
-                    <button class="button bg-indigo-600 text-gray-100 mb-5" onclick="location='/contact/?topic=Early access - GlusterFS Monitoring'">Request for early access</button>
-                    <button class="button bg-yellow-200 mb-5" onclick="location='/contact/?topic=Product Demo - GlusterFS Monitoring'">Request for a demo</button>
+                <div class="text-right mt-10">
+                    <button class="button bg-indigo-600 text-gray-100" onclick="location.href='/docs/k8s-storage'">Read the docs</button>
                 </div>
             </div>
         </div>
@@ -171,26 +105,11 @@ $ kubectl kadalu storage-add storage-pool-1 \
     <div class="mx-auto w-full px-5 px-10 md:w-3/4 md:px-0" style="min-height: 40vh">
         <div class="md:grid gap-2 md:grid-cols-4 md:gap-4">
             <div class="mb-10">
-                <h2 class="text-xl font-semibold text-indigo-300">Kadalu</h2>
-                <ul>
-                    <li><a href="/products#k8s-native-storage">Kubernetes native Storage</a></li>
-                    <li><a href="/products#kadalu-storage">Kadalu Storage</a></li>
-                    <li><a href="/products#glusterup">GlusterFS monitoring</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/services#features">Feature development</a></li>
-                    <li><a href="/services#upgrade">Upgrade assistance</a></li>
-                    <li><a href="/services#consultancy">Consultancy</a></li>
-                    <li><a href="/security">Security</a></li>
-                </ul>
-            </div>
-
-            <div class="mb-10">
                 <h2 class="text-xl font-semibold text-indigo-300">Community</h2>
                 <ul>
                     <li><a href="/opensource">Open Source</a></li>
                     <li><a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Slack</a></li>
                     <li><a href="https://github.com/kadalu">Github</a></li>
-                    <!-- <li><a href="/office-hours">Office Hours</a></li> -->
                 </ul>
             </div>
 
@@ -201,27 +120,6 @@ $ kubectl kadalu storage-add storage-pool-1 \
                     <li><a href="/blog">Blog</a></li>
                     <li><a href="/faq">FAQ</a></li>
                     <li><a href="/rfcs">RFCs</a></li>
-                    <!-- <li><a href="/compare">Compare</a></li> -->
-                </ul>
-            </div>
-
-            <div class="mb-10">
-                <h2 class="text-xl font-semibold text-indigo-300">Company</h2>
-                <ul>
-                    <li><a href="/company">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/sitemap.xml">Sitemap</a></li>
-                </ul>
-
-                <h2 class="text-xl font-semibold text-indigo-300 mt-10">Write to us</h2>
-                <ul>
-                    <li><a href="mailto:hello@kadalu.io"><svg class="w-4 h-4 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>hello@kadalu.io</a></li>
-                </ul>
-
-                <h2 class="text-xl font-semibold text-indigo-300 mt-10">Follow Us</h2>
-                <ul>
-                    <li><a href="https://twitter.com/kadaluio">Twitter</a></li>
-                    <li><a href="https://linkedin.com/company/kadalu-io">Linkedin</a></li>
                 </ul>
             </div>
         </div>
@@ -229,7 +127,7 @@ $ kubectl kadalu storage-add storage-pool-1 \
 </div>
 <div class="bg-gray-800 text-gray-100 py-10">
     <div class="mx-auto w-3/4 text-center text-gray-300 mb-10">
-        &copy; 2022 Kadalu Software Private Limited. All Rights Reserved.
+        &copy; 2022 Kadalu Community(https://github.com/kadalu). All Rights Reserved.
     </div>
 </div>
 
