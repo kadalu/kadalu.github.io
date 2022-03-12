@@ -479,6 +479,45 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>When PVCs are archived, the data is intact. Due to which 'storage-list' might still be showing consumption.
+One can free these archived data manually or through Kadalu CLI.</p>
+</div>
+<div class="paragraph">
+<p>Note: While using option --pvc only pass the pvc which are archived.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Removing archived pvc(s) through Kadalu CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu remove-archived-pv storage-pool-1</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu remove-archived-pv storage-pool-1 <span class="nt">--pvc</span><span class="o">=</span>pvc-e91ab8c8-4a48-48ad-ab5e-b207399565bc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Removing archived pvc(s) through Kadalu CSI provisioner:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exec into Kadalu Provisioner pod. Run the script 'remove_archived_pv.py' with similar arguments as Kadalu CLI.</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> /kadalu
+<span class="gp">$</span><span class="w"> </span>python remove_archived_pv.py storage-pool-1 <span class="nt">--pvc</span><span class="o">=</span>archived-pvc-123-456-789</code></pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
