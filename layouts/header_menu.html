@@ -14,10 +14,7 @@
                      :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}"  @click.away="menuOpen = false"
                 >
                     <a href="/blog" class="<% if @item.path.start_with? "/blog/" %><%= selected_cls %><% else %><%= cls %><% end %>">Blog</a>
-                    <a href="/company" class="<% if @item.path == "/company/" %><%= selected_cls %><% else %><%= cls %><% end %>">Company</a>
                     <a href="/opensource" class="<% if @item.path == "/opensource/" %><%= selected_cls %><% else %><%= cls %><% end %>">Open Source</a>
-                    <a href="/services" class="<% if @item.path == "/services/" %><%= selected_cls %><% else %><%= cls %><% end %>">Services</a>
-                    <a href="/products" class="<% if @item.path == "/products/" %><%= selected_cls %><% else %><%= cls %><% end %>">Products</a>
                     <a href="/docs" class="<% if @item.path.start_with?("/docs/") %><%= selected_cls %><% else %><%= cls %><% end %>">Docs</a>
                 </nav>
             </div>
