@@ -81,12 +81,22 @@
                         
                         
                         
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/quick-start-yaml/">Quick Start YAML</a></li>
+                        
+                        
+                        
+                        
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/introduction/">Introduction</a></li>
                         
                         
                         
                         
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup/">Setup</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/using-with-private-container-registry/">Using with Private Container Registry</a></li>
                         
                         
                         
@@ -226,6 +236,14 @@ kubectl kadalu install</span></code></pre>
 </div>
 <div class="paragraph">
 <p><strong>Note</strong>: Security Context Constraints can be applied only by admins, Run <code>oc login -u system:admin</code> to login as admin</p>
+</div>
+<div class="paragraph">
+<p>Use <code>--local-yaml</code> and <code>--local-csi-yaml</code> options to use local yaml files instead of downloading the Operator and CSI yaml files from the internet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="go">kubectl kadalu install --local-yaml=./kadalu-operator.yaml --local-csi-yaml=./csi-nodeplugin.yaml</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Identify the devices available from nodes and run the following command to add storage to Kadalu.</p>

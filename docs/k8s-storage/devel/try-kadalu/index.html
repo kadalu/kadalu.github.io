@@ -81,12 +81,22 @@
                         
                         
                         
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/quick-start-yaml/">Quick Start YAML</a></li>
+                        
+                        
+                        
+                        
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/introduction/">Introduction</a></li>
                         
                         
                         
                         
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/setup/">Setup</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/using-with-private-container-registry/">Using with Private Container Registry</a></li>
                         
                         
                         
@@ -321,13 +331,15 @@ If you are using kadalu versions below 0.8.0, then please refer to document on 0
 <p>With this, there will be 3 bricks, and kadalu CSI driver will mount the corresponding volume and provide data.</p>
 </div>
 <div class="paragraph">
-<p><strong>NOTE</strong>: There can be both replica1 and replica3 type volume co-existing in the system. Note that while claiming the PV, you just need to provide <code>storageClassName: kadalu.replica1</code> or <code>storageClassName: kadalu.replica3</code> to use the relevant option.</p>
+<p><strong>NOTE</strong>: There can be both replica1 and replica3 type volume co-existing in
+the system. Note that while claiming the PV, you just need to provide relavant
+storageClassName as <code>storageClassName: kadalu.&lt;name_of_storage_pool&gt;</code></p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_on_data_recovery">On data recovery</h3>
 <div class="paragraph">
-<p>As we use glusterfs as storage backend, without any sharding/striping/disperse mode, the data remains as is, on your backend storage. Just that each PV would be a subdirectory on your storage. So, no need to panic.</p>
+<p>As we use glusterfs as storage backend, without any sharding/striping mode, the data remains as is, on your backend storage. Just that each PV would be a subdirectory on your storage. So, no need to panic.</p>
 </div>
 </div>
 <div class="sect2">

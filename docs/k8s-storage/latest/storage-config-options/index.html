@@ -81,12 +81,22 @@
                         
                         
                         
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/quick-start-yaml/">Quick Start YAML</a></li>
+                        
+                        
+                        
+                        
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/introduction/">Introduction</a></li>
                         
                         
                         
                         
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup/">Setup</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/using-with-private-container-registry/">Using with Private Container Registry</a></li>
                         
                         
                         
@@ -278,7 +288,7 @@
 </div>
 </li>
 <li>
-<p><strong>Replica3</strong> In this mode, Gluster will started with high availability, ie, replicate module. It will require 3 storage options to be provided, and each storage will be one gluster server process pod running as pod.</p>
+<p><strong>Replica3</strong> In this mode, Gluster will be started with high availability, ie, replicate module. It will require 3 storage options to be provided, and each storage will be one gluster server process pod running as pod.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="yaml"><span class="s">$ kubectl kadalu storage-add storage-pool1 --type=Replica3 \</span>

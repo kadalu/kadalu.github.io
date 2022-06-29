@@ -81,12 +81,22 @@
                         
                         
                         
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/quick-start-yaml/">Quick Start YAML</a></li>
+                        
+                        
+                        
+                        
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/introduction/">Introduction</a></li>
                         
                         
                         
                         
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup/">Setup</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/using-with-private-container-registry/">Using with Private Container Registry</a></li>
                         
                         
                         
@@ -215,38 +225,11 @@ requirements.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_kadalu">kadalu</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>On using this Storage class, Kadalu can provision PVs from any of the
-available volumes without applying any filters.</p>
-</div>
-<div class="paragraph">
-<p>Example PVC,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv1</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="_kadalu_storage_pool_name">kadalu.storage-pool-name</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Kadalu creates and deploys Storage Class when storage is created.
-The name of this Storage class is same as the Storage name. Kadalu wil
+<p>Kadalu creates and deploys Storage Class when storage pool is created.
+The name of this Storage class is same as the Storage name. Kadalu will
 provision PVs only from this Storage pool across the Cluster.</p>
 </div>
 <div class="paragraph">

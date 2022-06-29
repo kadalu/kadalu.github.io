@@ -955,6 +955,10 @@ video {
   color: #4f46e5;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .invisible {
   visibility: hidden;
 }

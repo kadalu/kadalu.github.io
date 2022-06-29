@@ -81,12 +81,22 @@
                         
                         
                         
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/quick-start-yaml/">Quick Start YAML</a></li>
+                        
+                        
+                        
+                        
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/introduction/">Introduction</a></li>
                         
                         
                         
                         
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/setup/">Setup</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/using-with-private-container-registry/">Using with Private Container Registry</a></li>
                         
                         
                         
@@ -209,7 +219,7 @@ server processes are not managed by kadalu operator.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you delete a previously used volume (pool) in external gluster from Kadalu, some
-folders and files will be left behind, since we do not run any commands on external
+folders and files will be left behind as we do not run any commands on external
 gluster except quota commands.</p>
 </div>
 <div class="paragraph">
@@ -311,10 +321,10 @@ will need to provide the pre-created gluster volume name for the config.</p>
 <div class="paragraph">
 <p>Please make sure you have enabled quota for external gluster volume before deploying kadalu</p>
 </div>
-<hr>
-<div class="paragraph">
-<p>gluster volume quota &lt;volname&gt; enable
----</p>
+<div class="listingblock">
+<div class="content">
+<pre>gluster volume quota &lt;volname&gt; enable</pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Create namespace in advance for using Secret</p>

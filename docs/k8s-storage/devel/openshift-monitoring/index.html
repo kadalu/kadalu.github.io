@@ -13,8 +13,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/k8s-storage/devel/create-pvc/"/>
-<meta property="og:url" content="/docs/k8s-storage/devel/create-pvc/"/>
+<link rel="canonical" href="/docs/k8s-storage/devel/openshift-monitoring/"/>
+<meta property="og:url" content="/docs/k8s-storage/devel/openshift-monitoring/"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
@@ -81,12 +81,22 @@
                         
                         
                         
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/quick-start-yaml/">Quick Start YAML</a></li>
+                        
+                        
+                        
+                        
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/introduction/">Introduction</a></li>
                         
                         
                         
                         
                         <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/setup/">Setup</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/using-with-private-container-registry/">Using with Private Container Registry</a></li>
                         
                         
                         
@@ -181,87 +191,259 @@
                     <div class="mb-10">
                         <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
                             <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/devel">devel</a> / create-pvc/</span>
+                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/devel">devel</a> / openshift-monitoring/</span>
                     </div>
                     
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class="mb-24 prose max-w-none prose-indigo">
-                        <div class="sect1">
-<h2 id="_csi_to_claim_persistent_volumes_pvcpv">CSI to claim Persistent Volumes (PVC/PV)</h2>
+                        <h1>Setup Monitoring of Kadalu in Openshift &amp; OKD 4.X clusters</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once kadalu operator is started, and storage config is attached, we are ready to get started with PVC.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: sample-pvc.yaml</span>
-<span class="nn">---</span>
-<span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv1</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica1</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
+<p>This guide will assist you in collecting metrics &amp; performance data into Openshift/OKD Prometheus.</p>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_enable_user_workload_monitoring">Enable user workload monitoring</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Create PVC using,</p>
+<p>Follow the official documentation for enabling user workload monitoring.
+This is a sample from OKD4.10 and it should be used as a guidance only.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> sample-pvc.yaml
-<span class="go">persistentvolumeclaim/pv1 created</span></code></pre>
+<pre class="rouge highlight"><code># In this example we also use Kadalu as persistent storage of Prometheus.
+# If you use another storage class for that -&gt; set only "enableUserWorkload"
+
+$ oc -n openshift-monitoring edit configmap cluster-monitoring-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-monitoring-config
+  namespace: openshift-monitoring
+data:
+  config.yaml: |
+    enableUserWorkload: true
+    prometheusK8s:
+      volumeClaimTemplate:
+       metadata:
+         name: prometheusdb
+       spec:
+         storageClassName: kadalu.gluster
+         accessModes:
+           - ReadWriteMany
+         resources:
+           requests:
+             storage: 50Gi
+    alertmanagerMain:
+      volumeClaimTemplate:
+       metadata:
+         name: alertmanager
+       spec:
+         storageClassName: kadalu.gluster
+         accessModes:
+           - ReadWriteMany
+         resources:
+           requests:
+             storage: 50Gi
+
+$ oc  -n openshift-user-workload-monitoring  edit configmap user-workload-monitoring-config
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user-workload-monitoring-config
+  namespace: openshift-user-workload-monitoring
+data:
+  config.yaml: |</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>and check the status of PVC using,</p>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_apply_the_following_manifest">Apply the following manifest:</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: kadalu
+  labels:
+    openshift.io/cluster-monitoring: "true"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: operator
+  namespace: kadalu
+  labels:
+    name: kadalu
+spec:
+  selector:
+    name: kadalu
+  ports:
+    - name: kadalu-metrics
+      protocol: TCP
+      port: 8050
+      targetPort: 8050
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kadalu-metrics
+  namespace: kadalu
+  labels:
+    name: kadalu
+spec:
+  endpoints:
+    - path: /metrics
+      port: kadalu-metrics
+      scheme: http
+      bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+      tlsConfig:
+        insecureSkipVerify: true
+  selector:
+    matchLabels:
+      name: kadalu</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_necessary_permissions">Set necessary permissions.</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Assign a relevant role for the service account (I&#8217;m using 'kadalu-operator' as we do not have a viewer role, yet):</p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl get pvc
-<span class="go">NAME   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS     AGE
-pv1    Bound    pvc-8cbe80f1-428f-11e9-b31e-525400f59aef   1Gi        RWO            kadalu.replica1  42s</span></code></pre>
+<pre class="rouge highlight"><code>oc policy add-role-to-user kadalu-operator system:serviceaccount:openshift-monitoring:prometheus-k8s -n kadalu</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Now, this PVC is ready to be consumed in your application pod. You can see the sample usage of PVC in an application pod by below:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: sample-app.yaml</span>
-<span class="nn">---</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">kind</span><span class="pi">:</span> <span class="s">Pod</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pod1</span>
-  <span class="na">labels</span><span class="pi">:</span>
-    <span class="na">app</span><span class="pi">:</span> <span class="s">sample-app</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">containers</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">sample-app</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s">docker.io/kadalu/sample-pv-check-app:latest</span>
-    <span class="na">imagePullPolicy</span><span class="pi">:</span> <span class="s">IfNotPresent</span>
-    <span class="na">volumeMounts</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">mountPath</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/mnt/pv"</span>
-      <span class="na">name</span><span class="pi">:</span> <span class="s">csivol</span>
-  <span class="na">volumes</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">csivol</span>
-    <span class="na">persistentVolumeClaim</span><span class="pi">:</span>
-      <span class="na">claimName</span><span class="pi">:</span> <span class="s">pv1</span>
-  <span class="na">restartPolicy</span><span class="pi">:</span> <span class="s">OnFailure</span></code></pre>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Verify the rolebinding</p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> sample-app.yaml
-<span class="go">pod1 created</span></code></pre>
+<pre class="rouge highlight"><code>$ oc -n kadalu get rolebinding kadalu-operator -o yaml
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"RoleBinding","metadata":{"annotations":{},"creationTimestamp":"2022-04-13T14:39:10Z","name":"kadalu-operator","namespace":"kadalu","resourceVersion":"42934554","uid":"f8ce8d9f-b5cd-46c1-98bc-bde6dff0ecca"},"roleRef":{"apiGroup":"rbac.authorization.k8s.io","kind":"ClusterRole","name":"kadalu-operator"},"subjects":[{"kind":"ServiceAccount","name":"prometheus-k8s","namespace":"openshift-monitoring"}]}
+  creationTimestamp: "2022-04-13T14:39:10Z"
+  name: kadalu-operator
+  namespace: kadalu
+  resourceVersion: "49108675"
+  uid: f8ce8d9f-b5cd-46c1-98bc-bde6dff0ecca
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kadalu-operator
+subjects:
+- kind: ServiceAccount
+  name: prometheus-k8s
+  namespace: openshift-monitoring</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_verify_that_the_target_is_being_scraped">Verify that the target is being scraped:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Obtain the endpoints of the service</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>$ oc -n kadalu  describe  services operator | awk '/Endpoints/ {print "http://"$2}'</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to the UI &#8594; Administrator &#8594; Observe &#8594; Targets</p>
+</li>
+<li>
+<p>Go to the UI &#8594; Administrator &#8594; Observe &#8594; Metrics &#8594; Type "kadalu_" &#8594; There should be multiple metrics</p>
+</li>
+<li>
+<p>In case you got troubles with the Metrics, consider restarting the pods in the openshift-user-workload-monitoring namespace (and in rare cases openshift-monitoring)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_alarm_configuration">Alarm configuration</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Once the Metrics are visible in the UI, you can setup some alerts.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code># Create and apply this manifest:
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: kadalu-alert
+  namespace: kadalu
+
+spec:
+  groups:
+  - name: PVC-Space-alerts
+    rules:
+    - alert: PvcFreeSpaceLow
+      annotations:
+        description: PVC space is low!
+      expr: kadalu_pvc_free_capacity_bytes &lt; 1.073741824e+10
+      labels:
+        severity: warning
+    - alert: PvcFreeSpaceCritical
+      annotations:
+        description: PVC space is critical!
+      expr: kadalu_pvc_free_capacity_bytes &lt; 0.536870912e+10
+      labels:
+        severity: critical
+  - name: PVC-inode-alerts
+    rules:
+    - alert: PVCFreeInodesLow
+      annotations:
+        description: PVC Free inodes is low!
+      expr: kadalu_pvc_free_inodes &lt; 500000
+      labels:
+        severity: warning
+    - alert: PVCFreeInodesCritical
+      annotations:
+        description: PVC Free inodes is critical!
+      expr: kadalu_pvc_free_inodes &lt; 200000
+      labels:
+        severity: critical</code></pre>
 </div>
 </div>
 </div>
