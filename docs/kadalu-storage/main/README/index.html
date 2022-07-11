@@ -13,8 +13,8 @@
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
 <meta property="og:description" content=""/>
-<link rel="canonical" href="/docs/binnacle/latest/installation/"/>
-<meta property="og:url" content="/docs/binnacle/latest/installation/"/>
+<link rel="canonical" href="/docs/kadalu-storage/main/README/"/>
+<meta property="og:url" content="/docs/kadalu-storage/main/README/"/>
 <meta property="og:site_name" content="Kadalu"/>
 <meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
@@ -63,45 +63,60 @@
                     
                     <div class="p-5 bg-gray-200 border text-right rounded-lg">
                         <strong>Version: </strong>
-                        <select class="input-field" onchange="location = '/docs/binnacle/' + this.value;">
-                            <option selected value="latest">latest</option>
+                        <select class="input-field" onchange="location = '/docs/kadalu-storage/' + this.value;">
+                            <option  value="latest">latest</option>
                             
-                            <option  value="main">main</option>
+                            <option selected value="main">main</option>
                             
                         </select>
                     </div>
                     
-                    <h2 class="text-xl font-semibold mt-7">Tester Guide</h2>
+                    <h2 class="text-xl font-semibold mt-7">User Guide</h2>
                     <ul>
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/binnacle/latest/quick-start/">Quick Start</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/quick-start/">Quick Start</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/binnacle/latest/introduction/">Introduction</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/container-based-setup/">Container Based Setup</a></li>
                         
                         
                         
                         
-                        <li class="text-indigo-600 font-semibold py-2 md:py-0">Installation</li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/introduction/">Introduction</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/binnacle/latest/syntax/">Syntax</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/install/">Install</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/binnacle/latest/keywords/">Keywords</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/user-management/">User Management</a></li>
                         
                         
                         
                         
-                        <li class="py-2 md:py-0"><a href="/docs/binnacle/latest/plugins/">Plugins</a></li>
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/config-snapshots/">Config Snapshots</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/pools/">Pools</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/volumes/">Volumes</a></li>
+                        
+                        
+                        
+                        
+                        <li class="py-2 md:py-0"><a href="/docs/kadalu-storage/main/faqs/">FAQs</a></li>
                         
                         
                     </ul>
@@ -116,28 +131,46 @@
                     <div class="mb-10">
                         <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
                             <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/binnacle">binnacle</a> / <a href="/docs/binnacle/latest">latest</a> / installation/</span>
+                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/kadalu-storage">kadalu-storage</a> / <a href="/docs/kadalu-storage/main">main</a> / README/</span>
                     </div>
                     
                     <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
                         <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                     </button>
                     <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Installation</h1>
-<div class="paragraph">
-<p>Download and install using the following commands. Ruby should be installed on the machine where it needs to work.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-fsSL</span> https://github.com/kadalu/binnacle/releases/latest/download/install.sh | <span class="nb">sudo </span>bash <span class="nt">-x</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Test to ensure the version you installed is up-to-date</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>binnacle <span class="nt">--version</span></code></pre>
+                        <h1>Moana</h1>
+<div class="sect2">
+<h3 id="_table_of_content">Table of Content</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/docs/kadalu-storage/main/quick-start">Quick Start Guide</a></p>
+</li>
+<li>
+<p><a href="/docs/kadalu-storage/main/container-based-setup">Container Based Setup</a></p>
+</li>
+<li>
+<p><a href="/docs/kadalu-storage/main/introduction">Introduction</a></p>
+</li>
+<li>
+<p><a href="/docs/kadalu-storage/main/install">Install</a></p>
+</li>
+<li>
+<p><a href="/docs/kadalu-storage/main/user-management">User Management</a></p>
+</li>
+<li>
+<p><a href="/docs/kadalu-storage/main/config-snapshots">Config Snapshots</a></p>
+</li>
+<li>
+<p><a href="/docs/kadalu-storage/main/pools">Pools</a></p>
+</li>
+<li>
+<p><a href="/docs/kadalu-storage/main/volumes">Volumes</a></p>
+</li>
+<li>
+<p><a href="/docs/kadalu-storage/main/faqs">FAQs</a></p>
+</li>
+</ul>
 </div>
 </div>
                     </div>
