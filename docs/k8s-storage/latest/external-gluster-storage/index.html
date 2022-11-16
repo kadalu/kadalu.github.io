@@ -259,9 +259,9 @@ sample yaml file</p>
   <span class="na">name</span><span class="pi">:</span> <span class="s">ext-config</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">type</span><span class="pi">:</span> <span class="s">External</span>
-  <span class="c1"># Omitting 'kadalu_format' or using 'native' as a value will create</span>
+  <span class="c1"># Omitting 'single_pv_per_pool' or using 'false' as a value will create</span>
   <span class="c1"># 1 PV : 1 Subdir in external gluster volume</span>
-  <span class="na">kadalu_format</span><span class="pi">:</span> <span class="s">native</span>
+  <span class="na">single_pv_per_pool</span><span class="pi">:</span> <span class="no">false</span>
   <span class="na">details</span><span class="pi">:</span>
     <span class="c1"># gluster_hosts: [ gluster1.kadalu.io, gluster2.kadalu.io ]</span>
     <span class="na">gluster_host</span><span class="pi">:</span> <span class="s">gluster1.kadalu.io</span>
@@ -383,8 +383,8 @@ volume as a single PV</p>
   <span class="na">name</span><span class="pi">:</span> <span class="s">pv-ext</span> <span class="c1"># Keep changing the name for different volumes</span>
 <span class="na">spec</span><span class="pi">:</span>
   <span class="na">type</span><span class="pi">:</span> <span class="s">External</span>
-  <span class="c1"># Setting 'kadalu_format' as 'non-native' is important</span>
-  <span class="na">kadalu_format</span><span class="pi">:</span> <span class="s">non-native</span>          <span class="c1"># Will map 1 Gluster Volume : 1 PV</span>
+  <span class="c1"># Setting 'single_pv_per_pool' as 'true' is important</span>
+  <span class="na">single_pv_per_pool</span><span class="pi">:</span> <span class="no">true</span>            <span class="c1"># Will map 1 Gluster Volume : 1 PV</span>
   <span class="na">details</span><span class="pi">:</span>
     <span class="na">gluster_host</span><span class="pi">:</span> <span class="s">gluster1.kadalu.io</span>   <span class="c1"># Change to your gluster host</span>
     <span class="na">gluster_volname</span><span class="pi">:</span> <span class="s">test</span>              <span class="c1"># Change to existing gluster volume</span>

@@ -224,6 +224,11 @@
  <span class="c1"># This will be used as name of PV Hosting Volume</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s">storage1</span>
 <span class="na">spec</span><span class="pi">:</span>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoSchedule"</span>
   <span class="na">type</span><span class="pi">:</span> <span class="s">Replica1</span>
   <span class="na">storage</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>
@@ -239,6 +244,19 @@
 </div>
 <div class="paragraph">
 <p>The above 3 fields will be common for config files for all different modes.</p>
+</div>
+<div class="sect2">
+<h3 id="_tolerations">Tolerations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>For <code>.spec.tolerations</code> refer <a href="https://github.com/kubernetes-client/python/blob/da6076/kubernetes/docs/V1Toleration.md">Toleration Spec</a></p>
+</li>
+<li>
+<p>These tolerations will get added to <code>server</code> pods and typical use-case includes usage of tainted nodes from which kadalu storage is created</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -268,7 +286,7 @@
 </div>
 </li>
 <li>
-<p><strong>Replica2</strong> In this mode, Gluster will be started with high availability, with 'tie-breaker' (or thin-arbiter in gluster speak) option. It will use 2 storage options, from which the RWX and RWO PVs will be carved out. This storage will be exposed by a gluster server pod, which gets spawned by kadalu operator. The <code>tiebreaker</code> node has to be managed outside, and if the user doesn&#8217;t want to host it, kadalu provides a free service for the same, which can be consumed by not providing any <code>tiebreaker</code> option :-)</p>
+<p><strong>Replica2</strong> In this mode, Gluster will be started with high availability, with 'tie-breaker' (or thin-arbiter in gluster speak) option. It will use 2 storage options, from which the RWX and RWO PVs will be carved out. This storage will be exposed by a gluster server pod, which gets spawned by kadalu operator. The <code>tiebreaker</code> node has to be managed outside, and if the tiebreaker option is not provided, Kadalu creates the Replica 2 Volume without Tiebreaker.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="yaml"><span class="nn">...</span>
@@ -439,12 +457,12 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_external_storage_for_non_kadalu_mode">External Storage for non-kadalu mode.</h3>
+<h3 id="_single_pv_per_pool">Single PV per Pool</h3>
 <div class="paragraph">
 <p>This option is provided in kadalu to access a gluster volume as a whole as PV. This is particularly useful if one wants to use an already existing Gluster volume as a PV (for example, a gluster volume created by heketi). We don&#8217;t recommend this for normal usage, as this mode would have scale limitations, and also would add more k8s resources likes StorageClass.</p>
 </div>
 <div class="paragraph">
-<p>The example config file added for CI/CD gives an idea about options. Note that the options provided here looks same as whats given in storage config, but when kadalu operator creates the StorageClass with values (<code>natvie</code> vs <code>non-native</code>) supplied to field <code>kadalu_format</code> inorder to decide kadalu or non-kadalu mode. Refer the <a href="/docs/k8s-storage/devel/external-gluster-storage">external-storage document</a> for more information on this mode.</p>
+<p>The example config file added for CI/CD gives an idea about options. Note that the options provided here looks same as whats given in storage config, but when kadalu operator creates the StorageClass with values supplied to field <code>single_pv_per_pool</code> inorder to decide multiple PVs per pool or not. Refer the <a href="/docs/k8s-storage/devel/external-gluster-storage">external-storage document</a> for more information on this mode.</p>
 </div>
 </div>
 </div>

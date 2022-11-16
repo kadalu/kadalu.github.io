@@ -389,7 +389,7 @@ subjects:
 <p>Go to the UI &#8594; Administrator &#8594; Observe &#8594; Metrics &#8594; Type "kadalu_" &#8594; There should be multiple metrics</p>
 </li>
 <li>
-<p>In case you got troubles with the Metrics, consider restarting the pods in the openshift-user-workload-monitoring namespace (and in rare cases openshift-monitoring)</p>
+<p>In case you got troubles with the Metrics, consider setting "openshift.io/cluster-monitoring" to "false" and back to "true" and if needed restarting the pods in the openshift-user-workload-monitoring namespace (and in rare cases openshift-monitoring)</p>
 </li>
 </ul>
 </div>
