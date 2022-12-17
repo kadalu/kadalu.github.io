@@ -14,37 +14,19 @@ compile '/docs/**/redirect.html' do
 end
 
 compile '/docs/**/*.html' do
-  layout '/doc_default.*'
+  layout '/doc_redirect.*'
 
   if item.identifier =~ '**/index.*'
     write item.identifier.to_s
   else
     write item.identifier.without_ext + '/index.html'
   end
-end
-
-compile '/docs/**/index.erb' do
-  filter :erb
-  layout '/doc_projects.*'
-
-  write item.identifier.without_ext + '.html'
 end
 
 compile '/docs/**/*.json.erb' do
   filter :erb
 
   write item.identifier.without_ext
-end
-
-compile '/docs/**/*.erb' do
-  filter :erb
-  layout '/doc_default.*'
-
-  if item.identifier =~ '**/index.*'
-    write item.identifier.to_s
-  else
-    write item.identifier.without_ext + '/index.html'
-  end
 end
 
 compile '/docs/**/*.adoc' do
@@ -54,7 +36,7 @@ compile '/docs/**/*.adoc' do
            'showtitle=yes',
            'stylesheet!='
          ]
-  layout '/doc_default.*'
+  layout '/doc_redirect.*'
 
   if item.identifier =~ '**/index.*'
     write item.identifier.without_ext + '.html'
@@ -77,57 +59,18 @@ compile '/rfcs/**/*.adoc' do
   write item.identifier.without_ext + '.html'
 end
 
-compile '/index.html' do
+
+compile '/index.adoc' do
   filter :erb
+  filter :asciidoctor, :standalone => false, :attributes => [
+           'last-update-label!=', # Do not show last updated label in every page
+           'source-highlighter=rouge',
+           'showtitle=yes',
+           'stylesheet!='
+         ]
   layout '/home.*'
 
-  write item.identifier.to_s
-end
-
-compile '/blog.erb' do
-  filter :erb
-  layout '/blog_list.*'
-
-  write item.identifier.without_ext + '/index.html'
-end
-
-route '/blog/*' do
-  y, m, d, slug = /([0-9]+)\-([0-9]+)\-([0-9]+)\-([^\/]+)/.match(item.identifier.without_ext).captures
-
-  "/blog/#{slug}/index.html"
-end
-
-compile '/blog/*.adoc' do
-  filter :erb
-  filter :asciidoctor, :standalone => false, :attributes => [
-           'last-update-label!=', # Do not show last updated label in every page
-           'source-highlighter=rouge',
-           'showtitle=yes',
-           'stylesheet!='
-         ]
-  layout '/blog.*'
-
-  #write item.identifier.without_ext + '/index.html'
-end
-
-compile '/pages/*.html' do
-  filter :erb
-  layout '/page_noprose.*'
-
-  write item.identifier.without_ext.gsub("/pages/", "/") + '/index.html'
-end
-
-compile '/pages/*.adoc' do
-  filter :erb
-  filter :asciidoctor, :standalone => false, :attributes => [
-           'last-update-label!=', # Do not show last updated label in every page
-           'source-highlighter=rouge',
-           'showtitle=yes',
-           'stylesheet!='
-         ]
-  layout '/page.*'
-
-  write item.identifier.without_ext.gsub("/pages/", "/") + '/index.html'
+  write item.identifier.without_ext + '.html'
 end
 
 compile '/**/*.adoc' do
@@ -138,9 +81,13 @@ compile '/**/*.adoc' do
            'showtitle=yes',
            'stylesheet!='
          ]
-  layout '/default.*'
+  layout '/docs.*'
 
-  write item.identifier.without_ext + '/index.html'
+  if item.identifier =~ '**/index.*'
+    write item.identifier.without_ext + '.html'
+  else
+    write item.identifier.without_ext + '/index.html'
+  end
 end
 
 compile '/**/*.html' do

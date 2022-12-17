@@ -44,42 +44,6 @@ def reading_time(content)
   "1 minute"
 end
 
-AUTHORS = {
-  :kadalu => {
-    :bio => "Team Kadalu",
-    :name => "Kadalu",
-    :site => "https://kadalu.io",
-    :twitter => "kadaluio"
-  },
-  :aravindavk => {
-    :bio => "Kadalu Maintainer",
-    :name => "Aravinda Vishwanathapura",
-    :site => "https://aravindavk.in",
-    :twitter => "aravindavk"
-  },
-  :amarts => {
-    :bio => "GlusterFS and Kadalu Maintainer",
-    :name => "Amar Tumballi",
-    :site => "https://medium.com/@tumballi",
-    :twitter => "tumballi"
-  },
-  :sac => {
-    :bio => "Kadalu Maintainer",
-    :name => "Sachidananda Urs",
-    :site => "https://twitter.com/sac314",
-    :twitter => "sac314"
-  },
-  :sankarshanmukhopadhyay => {
-    :name => "Sankarshan Mukhopadhyay",
-    :site => "https://medium.com/@sankarshan",
-    :twitter => "sankarshan"
-  }
-}
-
-def author_data(id)
-  AUTHORS[id]
-end
-
 def check_icon
   File.read("./layouts/check_icon.html")
 end
@@ -89,11 +53,11 @@ def link_from_title(project, version, title)
 end
 
 def sidemenu(project, version)
-  YAML.load(File.read("./content/docs/#{project}/#{version}/index.yml"))
+  YAML.load(File.read("./content/#{project}/#{version}/index.yml"))
 end
 
 def first_chapter(project, version)
-  chapters = YAML.load(File.read("./content/docs/#{project}/#{version}/index.yml"))
+  chapters = YAML.load(File.read("./content/#{project}/#{version}/index.yml"))
   first_one = nil
   sidemenu(project, version).each do |section|
     section["chapters"].each do |chapter|
@@ -139,12 +103,12 @@ def list_rfcs
 end
 
 def list_projects
-  YAML.load(File.read("./content/docs/projects.yml"))
+  YAML.load(File.read("./projects.yml"))
 end
 
 def project_and_version_from_url(item_path)
   $projects = list_projects if $projects.nil?
-  parts = item_path.gsub("/docs/", "/").split("/", 4)
+  parts = item_path.split("/", 4)
   project_name = ""
   project_version = ""
   chapter = ""
@@ -163,7 +127,7 @@ def project_and_version_from_url(item_path)
 end
 
 def project_from_url(item_path)
-  parts = item_path.gsub("/docs/", "/").split("/", 4)
+  parts = item_path.split("/", 4)
 
   parts[1]
 end

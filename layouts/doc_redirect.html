@@ -1,22 +1,20 @@
 <!DOCTYPE HTML>
-<% project_name, project_version, chapter_name = project_and_version_from_url(@item.path) %>
-<% first_chapter_url = link_from_title(project_name, project_version, first_chapter(project_name, project_version)["title"]) %>
 <html lang="en">
     <head>
         <%= render '/seo.html' %>
         <%= render '/head.html' %>
+        <% redirect_to_url = @item.path.gsub("/docs/", "/") %>
         <meta charset="utf-8">
         <title>Redirecting&hellip;</title>
-        <link rel="canonical" href="<%= @config[:prefix_path] %><%= first_chapter_url %>">
-        <script>location="<%= @config[:prefix_path] %><%= first_chapter_url %>"</script>
-        <meta http-equiv="refresh" content="0; url=<%= @config[:prefix_path] %><%= first_chapter_url %>">
+        <link rel="canonical" href="<%= redirect_to_url %>">
+        <script>location="<%= redirect_to_url %>"</script>
+        <meta http-equiv="refresh" content="0; url=<%= redirect_to_url %>">
         <meta name="robots" content="noindex">
     </head>
     <body>
-        <%= render '/header_menu.html' %>
-        <div class="w-full px-5 py-10 bg-indigo-100" style="min-height:50vh">
-            <h1>Redirecting to <%= @config[:prefix_path] %><%= first_chapter_url %> &hellip;</h1>
-            <a href="<%= @config[:prefix_path] %><%= first_chapter_url %>">Click here if you are not redirected.</a>
+        <div class="p-6" style="min-height:50vh;max-width:960px;margin:auto">
+            <h1>Redirecting to <%= redirect_to_url %> &hellip;</h1>
+            <a href="<%= redirect_to_url %>">Click here if you are not redirected.</a>
         </div>
         <%= render '/footer.html' %>
     </body>
