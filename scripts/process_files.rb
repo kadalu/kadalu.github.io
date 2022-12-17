@@ -8,6 +8,6 @@ Dir["#{doc_path}/*.adoc"].each do |adoc_file|
   content = File.read(adoc_file)
               .gsub(".adoc[", "[")
               .gsub("link:../", "#{project_repo}/tree/#{repo_version}/")
-              .gsub("link:./", "link:/docs/#{project_name}/#{version}/")
+              .gsub("link:./", "link:/#{project_name}/#{version}/")
   File.write(adoc_file, content)
 end
