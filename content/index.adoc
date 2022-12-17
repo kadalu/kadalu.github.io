@@ -1,0 +1,32 @@
+---
+title: List of Kadalu Projects
+---
+++++
+<div class="columns is-multiline">
+    <% list_projects.each do |project| %>
+    <div class="column is-3">
+        <div class="card">
+            <div class="card-content has-text-grey-dark">
+                <a href="/<%= project["name"] %>/latest" class="title is-5 is-block mb-2" style="min-height:70px">
+                    <%= project["title"] %>
+                </a>
+                <div class="mb-2" style="min-height:30px">
+                    <a href="/<%= project["name"] %>/latest" class="tag">latest</a>
+                    <% project["branches"].each do |branch| %>
+                    <a href="/<%= project["name"] %>/<%= branch["short_name"] %>" class="tag"><%= branch["short_name"] %></a>
+                    <% end %>
+                </div>
+                <div class="content is-small" style="min-height: 80px">
+                    <%= project["description"] %>
+                </div>
+                <footer class="card-footer">
+                    <span class="card-footer-item">
+                        <a href="/<%= project["name"] %>/latest" class="button is-primary">Get started</a>
+                    </span>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+++++

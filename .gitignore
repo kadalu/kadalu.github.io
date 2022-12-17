@@ -10,8 +10,10 @@ content/static/css/stylesheet.css
 crash.log
 output
 tmp
-content/docs/*
-!content/docs/index.erb
+tmp_docs
+content/kadalu-storage/*
+content/k8s-storage/*
+content/binnacle/*
 content/rfcs/*
 bin
 tmprepos

@@ -1,9 +1,6 @@
 <% slug, created_at = slug_and_created_at(@item) %>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title><%= @item[:title] %> | Kadalu </title>
-<link href="/static/css/fav.png" rel="icon" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/static/css/fav.png" />
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
 <meta name="generator" content="Nanoc <%= Nanoc::VERSION %>">
 <meta property="og:title" content="<%= @item[:title] %>"/>
 <meta name="author" content="<%= @item[:author] %>"/>
@@ -13,11 +10,19 @@
 <link rel="canonical" href="<%= @item.path %>"/>
 <meta property="og:url" content="<%= @item.path %>"/>
 <meta property="og:site_name" content="Kadalu"/>
-<meta property="og:image" content="<%= @item[:image] %>"/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content="<%= created_at %>"/>
+<% if @item[:image] && @item[:image] != "" %>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta property="twitter:image" content="<%= @item[:image] %>"/>
-<meta property="twitter:title" content="<%= @item[:title] %>"/>
+<meta name="twitter:image" content="https://kadalu.tech<%= @item[:image] %>"/>
+<meta property="og:image" content="https://kadalu.tech<%= @item[:image] %>"/>
+<% else %>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<% end %>
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content="<%= @item[:title] %>"/>
+<meta name="twitter:description" content="<%= @item[:description] %>"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />

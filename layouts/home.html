@@ -1,13 +1,18 @@
 <!DOCTYPE HTML>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <%= render '/seo.html' %>
-        <%= render '/head.html' %>
-    </head>
+    <%= render '/head.*' %>
     <body>
-        <%= render '/header_menu.html' %>
-        <%= yield %>
-        <%= render '/footer.html' %>
+        <div id="main">
+            <%= render '/top_bar.*' %>
+            <div class="has-background-primary-light">
+                <div class="p-4 container" style="max-width:1024px" id="blog-list">
+                    <h1 class="title has-text-centered mt-6"><%= @item[:title] %></h1>
+                    <div class="py-6">
+                        <%= yield %>
+                    </div>
+                </div>
+            </div>
+            <%= render '/footer.*' %>
+        </div>
     </body>
 </html>

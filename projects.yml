@@ -1,21 +1,43 @@
-- name: k8s-storage
-  title: Kubernetes Native Storage
-  description: Kadalu Storage for the apps running in Kubernetes
-  repo: https://github.com/kadalu/kadalu
-  versions: ["devel"]
-  docs_dir: "doc"
-  latest_alias: "devel"
-- name: binnacle
-  title: Binnacle
-  description: Simple Test Framework
-  repo: https://github.com/kadalu/binnacle
-  versions: ["main"]
-  docs_dir: "docs"
-  latest_alias: "main"
 - name: kadalu-storage
   title: Kadalu Storage
-  description: Kadalu Storage for Cloud, On-Premise
+  description: Kadalu Storage is a distributed filesystem management system. At its core, at present, Kadalu uses the GlusterFS filesystem.
   repo: https://github.com/kadalu/moana
-  versions: ["main"]
+  branches:
+    - name: kadalu_1.0.x
+      short_name: 1.0.x
+      index: README
+  docs_dir: "docs"
+  latest_alias: "1.0.x"
+- name: k8s-storage
+  title: Kadalu Storage (Kubernetes Native)
+  description: Kadalu Storage for the apps running in Kubernetes
+  repo: https://github.com/kadalu/kadalu
+  branches:
+    - name: kadalu_1.0.x
+      short_name: 1.0.x
+      index: README
+    - name: devel
+      short_name: devel
+      index: README
+  docs_dir: "doc"
+  latest_alias: "1.0.x"
+- name: console
+  title: Kadalu Storage Console
+  description: Web Console for managing Kadalu Storage
+  repo: https://github.com/kadalu-tech/console
+  branches:
+    - name: main
+      short_name: main
+      index: README
+  docs_dir: "docs"
+  latest_alias: "main"
+- name: binnacle
+  title: Binnacle
+  description: Simple Test Framework and Infra automation tool
+  repo: https://github.com/kadalu/binnacle
+  branches:
+    - name: main
+      short_name: main
+      index: README
   docs_dir: "docs"
   latest_alias: "main"

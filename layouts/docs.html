@@ -1,0 +1,76 @@
+<% project_name, version, chapter = project_and_version_from_url(@item.path) %>
+<% project_data = project_from_name(project_name) %>
+<!DOCTYPE HTML>
+<html lang="en">
+    <%= render '/head.*' %>
+    <body>
+        <div id="main" x-data="{version: '<%= version %>', menuShow: true}">
+            <%= render '/top_bar.*' %>
+            <div class="tabs is-small mb-0">
+                <ul>
+                    <% list_projects.each do |project| %>
+                    <li class="<% if project_name == project["name"] %>is-active<% end %>">
+                        <a href="/<%= project["name"] %>/latest" class="mb-0">
+                            <span><%= project["title"] %></span>
+                        </a>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '250px' : '20px'}">
+                    <div class="has-text-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" @click="menuShow = !menuShow">
+                            <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" @click="menuShow = !menuShow">
+                            <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        <% sidemenu(project_name, version).each do |section| %>
+                        <p class="menu-label mt-4">
+                            <%= section["section"] %>
+                        </p>
+                        <ul class="menu-list">
+                            <% section["chapters"].each do |chapter| %>
+                            <% chapter_url = link_from_title(project_name, version, chapter["title"]) %>
+                            <li class=""><a class="<% if chapter_url == @item.path %>is-active<% end %>" href="<%= link_from_title(project_name, version, chapter["title"]) %>"><%= chapter["title"] %></a></li>
+                            <% end %>
+                        </ul>
+                        <% end %>
+                    </aside>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6">
+                        <div class="content is-flex">
+                            <div style="max-width: 800px">
+                                <div class="p-2 has-text-right">
+                                    <span>Version</span>
+                                    <div class="select is-small is-rounded">
+                                        <select x-model="version" style="width: 100%" @change="window.location=`/<%= project_name %>/${version}`">
+                                            <option>latest</option>
+                                            <% project_data["branches"].each do |branch| %>
+                                            <option><%= branch["short_name"] %></option>
+                                            <% end %>
+                                        </select>
+                                    </div>
+                                </div>
+                                <%= yield %>
+                            </div>
+                            <div class="p-4" x-data="{headings: document.getElementsByTagName('h2')}" style="position:relative">
+                                <div style="position: sticky;top:20px">
+                                    <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                    <template x-for="heading in headings">
+                                        <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%= render '/footer.*' %>
+        </div>
+    </body>
+</html>

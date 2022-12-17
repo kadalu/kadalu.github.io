@@ -1,18 +1,12 @@
-build:
+site-build:
 	bundle exec nanoc
 
-live:
-	bundle exec nanoc
+site-build-prod:
+	bundle install
+	bundle exec nanoc compile --env prod
+
+site-view:
 	bundle exec nanoc view -L
 
-setup-dev:
-	bundle install
-	npm install
-	npm run build:css
-	bundle exec nanoc
-
-setup-prod:
-	bundle install
-	npm install
-	npm run prod:css
-	bundle exec nanoc compile --env prod
+gen-css:
+	sass --sourcemap=none sass/stylesheet.scss:content/bulma-0.9.4.min.css

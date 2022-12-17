@@ -13,3 +13,5 @@ gem "asciidoctor", "~> 2.0"
 gem "rouge", "~> 3.26"
 
 gem "builder", "~> 3.2"
+
+gem "puma", "~> 6.0"
