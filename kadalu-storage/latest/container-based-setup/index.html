@@ -1,0 +1,369 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/kadalu-storage/latest/container-based-setup/"/>
+<meta property="og:url" content="/kadalu-storage/latest/container-based-setup/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+    <body>
+        <div id="main" x-data="{version: 'latest', menuShow: true}">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        
+    </div>
+
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="tabs is-small mb-0">
+                <ul>
+                    
+                    <li class="is-active">
+                        <a href="/kadalu-storage/latest" class="mb-0">
+                            <span>Kadalu Storage</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/k8s-storage/latest" class="mb-0">
+                            <span>Kadalu Storage (Kubernetes Native)</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/console/latest" class="mb-0">
+                            <span>Kadalu Storage Console</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/binnacle/latest" class="mb-0">
+                            <span>Binnacle</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '230px' : '0'}">
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        
+                        <p class="menu-label mt-4">
+                            User Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/quick-start/">Quick Start</a></li>
+                            
+                            
+                            <li class=""><a class="is-active" href="/kadalu-storage/latest/container-based-setup/">Container Based Setup</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/introduction/">Introduction</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/install/">Install</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/user-management/">User Management</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/config-snapshots/">Config Snapshots</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/pools/">Pools</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/volumes/">Volumes</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/faqs/">FAQs</a></li>
+                            
+                        </ul>
+                        
+                    </aside>
+                </div>
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light has-text-right" style="flex-basis: 20px; position:relative" @click="menuShow = !menuShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6 content is-flex" id="main-content">
+                        <div class="is-flex-grow-1 is-flex-shrink-1">
+                            <div class="p-2 has-text-right mb-6">
+                                <span>Version</span>
+                                <div class="select is-small is-rounded">
+                                    <select x-model="version" style="width: 100%" @change="window.location=`/kadalu-storage/${version}`">
+                                        <option>latest</option>
+                                        
+                                        <option>1.0.x</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="doc-content">
+                                <h1>Container based setup</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kadalu Storage project is still under active development. It depends on the core parts of GlusterFS and built a new ecosystem around it. Many fixes are submitted to upstream GlusterFS to make it work with the Kadalu Storage manager, but unfortunately, the fixes are in devel branch but not yet part of the GlusterFS release. The Kadalu team plans to release the core GlusterFS packages with the Kadalu Storage package releases. Untill the Kadalu Storage packages are available for use, Containers are the best choice to try out and provide feedback to us about it.</p>
+</div>
+<div class="paragraph">
+<p>Start the Storage node or Client as shown in the example below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo docker run -d                            \
+    --network host                            \
+    -v /root/kadalu/workdir:/var/lib/kadalu   \
+    -v /root/kadalu/home:/root/.kadalu        \
+    -v /ZP1/storage1:/ZP/storage1             \
+    -v /sys/fs/cgroup/:/sys/fs/cgroup:ro      \
+    --privileged                              \
+    --name kadalu-$(hostname)                 \
+    --hostname $(hostname)                    \
+    kadalu/storage-node:latest</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_storage_units">Storage Units</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>..
+    -v /ZP1/storage1:/ZP/storage1             \
+..</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pre create the file system(xfs/ext4/zfs) and expose the Storage while starting the Kadalu Storage container. Provide multiple Storage units per container/node as required. For example, the following code shows creating ZFS dataset and exposing that while starting the Storage node.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo zpool create ZP1 /dev/vda
+sudo zfs create ZP1/storage1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Storage from host are exposed to the Storage container.</p>
+</div>
+<div class="paragraph">
+<p>Storage Units are available as Volumes inside container, use those to Create Kadalu Volumes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: This approach will not work in Mac based container setup since these Volumes are not exposed directly from the host machine.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_persistent_volumes">Other Persistent Volumes</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>..
+    -v /root/kadalu/workdir:/var/lib/kadalu   \
+    -v /root/kadalu/home:/root/.kadalu        \
+..</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Along with Storage units a few other directories needs to be persisted.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/var/lib/kadalu</code> - If a Container becomes Mgr instance then it stores full Cluster configurations, else if it is Agent instance, it will contain the tokens that are required to communicate with Mgr instances.</p>
+</li>
+<li>
+<p><code>/root/.kadalu</code> - This is optional, but good to have this persisted to avoid running login command every time on container restart.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_network_host">Network - Host</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>..
+    --network host                            \
+..</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Kadalu Storage nodes will communicate with each other, prefered to use Host network option while starting the Storage container. A few more fixes required to make the Storage manager to customize the Port. Once it gets that capability, possibly other network modes can be supported.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: Since network=host option is in use, starting multiple Storage containers per node is not possible. Instead expose multiple Storage units per instance of Storage container.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_initialize">Initialize</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After starting all the Storage containers, login to any one container and create a User. Note that, first node where we create a user will become Manager. All other instances will become Agents.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>docker <span class="nb">exec</span> <span class="nt">-it</span> kadalu-<span class="si">$(</span><span class="nb">hostname</span><span class="si">)</span> /bin/bash
+<span class="gp">#</span><span class="w"> </span>kadalu user create admin
+<span class="go">Password:
+User admin created successfully. Run `kadalu user login admin` to login
+</span><span class="gp">#</span><span class="w"> </span>kadalu user login admin
+<span class="go">Password:
+Login successful. Details saved in `/root/.kadalu/session`. Delete this file or run `kadalu user logout` command to delete the session.</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now create a Pool and add nodes(Container instances created as above) to that Pool.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># kadalu pool create DEV
+# kadalu node add DEV/server1.example.com
+# kadalu node add DEV/server2.example.com
+# kadalu node add DEV/server3.example.com</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create a Kadalu Volume using the Storages exported from the host.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># kadalu volume create DEV/vol1 mirror \
+    server1.example.com:/ZP1/storage1/vol1 \
+    server2.example.com:/ZP2/storage2/vol1 \
+    server3.example.com:/ZP3/storage3/vol1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Mount the Volume by logging into one of the Storage container or the Client container.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ sudo docker exec -it client1.example.com /bin/bash
+# kadalu login admin
+Password:
+# mkdir /mnt/vol1
+# mount -t kadalu server1.example.com:/DEV/vol1 /mnt/vol1</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_notes">Notes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>No separate Client container image is available. Use the storage-node container itself for time being.</p>
+</li>
+<li>
+<p>Container images are not yet optimized for size.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+                            </div>
+                        </div>
+                        <div class="p-4 is-flex-grow-1 is-flex-shrink-1 is-hidden-touch" x-data="{headings: document.getElementById('main-content').getElementsByTagName('h2')}" style="position:relative">
+                            <div style="position: sticky;top:20px">
+                                <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                <template x-for="heading in headings">
+                                    <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

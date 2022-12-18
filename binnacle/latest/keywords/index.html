@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/binnacle/latest/keywords/"/>
+<meta property="og:url" content="/binnacle/latest/keywords/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+    <body>
+        <div id="main" x-data="{version: 'latest', menuShow: true}">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        
+    </div>
+
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="tabs is-small mb-0">
+                <ul>
+                    
+                    <li class="">
+                        <a href="/kadalu-storage/latest" class="mb-0">
+                            <span>Kadalu Storage</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/k8s-storage/latest" class="mb-0">
+                            <span>Kadalu Storage (Kubernetes Native)</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/console/latest" class="mb-0">
+                            <span>Kadalu Storage Console</span>
+                        </a>
+                    </li>
+                    
+                    <li class="is-active">
+                        <a href="/binnacle/latest" class="mb-0">
+                            <span>Binnacle</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '230px' : '0'}">
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        
+                        <p class="menu-label mt-4">
+                            Tester Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/binnacle/latest/quick-start/">Quick Start</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/binnacle/latest/introduction/">Introduction</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/binnacle/latest/installation/">Installation</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/binnacle/latest/syntax/">Syntax</a></li>
+                            
+                            
+                            <li class=""><a class="is-active" href="/binnacle/latest/keywords/">Keywords</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/binnacle/latest/plugins/">Plugins</a></li>
+                            
+                        </ul>
+                        
+                    </aside>
+                </div>
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light has-text-right" style="flex-basis: 20px; position:relative" @click="menuShow = !menuShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6 content is-flex" id="main-content">
+                        <div class="is-flex-grow-1 is-flex-shrink-1">
+                            <div class="p-2 has-text-right mb-6">
+                                <span>Version</span>
+                                <div class="select is-small is-rounded">
+                                    <select x-model="version" style="width: 100%" @change="window.location=`/binnacle/${version}`">
+                                        <option>latest</option>
+                                        
+                                        <option>main</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="doc-content">
+                                <h1>Keywords</h1>
+<div class="sect1">
+<h2 id="_test">TEST</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Runs any given command and validates for the exit code. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TEST</span> <span class="s2">"stat /var/www/html/index.html"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or validate for a specific exit code</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TEST</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"ls /non/existing/dir"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_run">RUN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is very similar to <code>TEST</code> but ignores if any error. This will be useful when some cleanup command to be run but that may fail.</p>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">RUN</span> <span class="n">losetup</span> <span class="o">-</span><span class="n">d</span> <span class="sr">/dev/non</span><span class="n">_existing_dev</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_expect">EXPECT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Runs the given command and validates the output only if exit code of the command is zero.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">EXPECT</span> <span class="s2">"node1.example.com"</span><span class="p">,</span> <span class="s2">"hostname"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_test_within">TEST_WITHIN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To be implemented</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_expect_within">EXPECT_WITHIN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To be implemented</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exists">EXISTS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To be implemented</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_equal">EQUAL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Test if given two values are Equal</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">EQUAL</span> <span class="n">var1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">"Test if var1 == 100"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_not_equal">NOT_EQUAL</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Test if given two values are not Equal.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">NOT_EQUAL</span> <span class="n">var1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">"Test if var1 != 100"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_true">TRUE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Test any expression</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TRUE</span> <span class="o">&lt;</span><span class="n">expr</span><span class="o">&gt;</span><span class="p">,</span> <span class="s2">"test title"</span><span class="p">,</span> <span class="s2">"message to show on failure"</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TRUE</span> <span class="mi">42</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Even number test for 42"</span>
+
+<span class="n">hn</span> <span class="o">=</span> <span class="no">TEST</span> <span class="s2">"hostname"</span>
+<span class="no">TRUE</span> <span class="n">hn</span> <span class="o">==</span> <span class="s2">"node1.example.com"</span><span class="p">,</span> <span class="s2">"hostname test for node1.example.com"</span><span class="p">,</span> <span class="s2">"Actual: </span><span class="si">#{</span><span class="n">hn</span><span class="si">}</span><span class="s2">"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_false">FALSE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Same as <code>TRUE</code> but validate for <code>false</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_node">USE_NODE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To switch node to execute the tests.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="c1"># Approach 1: set required node before the test statements</span>
+
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">TEST</span> <span class="s2">"command1.."</span>
+<span class="no">TEST</span> <span class="s2">"command2.."</span>
+
+<span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span>
+<span class="no">TEST</span> <span class="s2">"command1.."</span>
+<span class="no">TEST</span> <span class="s2">"command2.."</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="c1"># Approach 2: Use Block syntax when node switch is required</span>
+
+<span class="c1"># Default node set</span>
+<span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+
+<span class="no">TEST</span> <span class="s2">"command 1"</span>
+<span class="no">TEST</span> <span class="s2">"command 2"</span>
+
+<span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span> <span class="k">do</span>
+  <span class="no">TEST</span> <span class="s2">"command 3"</span>
+  <span class="no">TEST</span> <span class="s2">"command 4"</span>
+<span class="k">end</span>
+
+<span class="c1"># continue running commands in default node</span>
+<span class="no">TEST</span> <span class="s2">"command 5"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_remote_plugin">USE_REMOTE_PLUGIN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Default remote plugin is <code>ssh</code>, change it when required. Similar to <code>NODE</code> keyword, this also supports Block syntax.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+
+<span class="no">TEST</span> <span class="s2">"command 1"</span>
+
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"docker"</span> <span class="k">do</span>
+  <span class="no">USE_NODE</span> <span class="s2">"node2.example.com"</span> <span class="k">do</span>
+    <span class="no">TEST</span> <span class="s2">"command 2"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># Continue with default plugin</span>
+<span class="no">TEST</span> <span class="s2">"command 3"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_ssh_user">USE_SSH_USER</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set SSH user. Default is "root". This option is only applicable with <code>USE_REMOTE_PLUGIN ssh</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_SSH_USER</span> <span class="s2">"ubuntu"</span>
+
+<span class="no">TEST</span> <span class="s2">"stat ~/Public"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_ssh_pem_file">USE_SSH_PEM_FILE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Set SSH pem file path. Default is <code>~/.ssh/id_rsa</code>. This option is only applicable with <code>USE_REMOTE_PLUGIN ssh</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_SSH_USER</span> <span class="s2">"ubuntu"</span>
+<span class="no">USE_SSH_PEM_FILE</span> <span class="s2">"~/.ssh/automation.pem"</span>
+
+<span class="no">TEST</span> <span class="s2">"stat ~/Public"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_ssh_sudo">USE_SSH_SUDO</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use <code>sudo</code> with all the commands. Default is <code>false</code>. This option is only applicable with <code>USE_REMOTE_PLUGIN ssh</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_SSH_USER</span> <span class="s2">"ubuntu"</span>
+<span class="no">USE_SSH_SUDO</span> <span class="kp">true</span>
+
+<span class="no">TEST</span> <span class="s2">"echo </span><span class="se">\"</span><span class="s2">127.0.0.1 server1.example.com</span><span class="se">\"</span><span class="s2"> &gt;&gt; /etc/hosts"</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_NODE</span> <span class="s2">"node1.example.com"</span>
+<span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"ssh"</span>
+<span class="no">USE_SSH_USER</span> <span class="s2">"ubuntu"</span>
+
+<span class="no">USE_SSH_SUDO</span> <span class="kp">true</span> <span class="k">do</span>
+    <span class="no">TEST</span> <span class="s2">"echo </span><span class="se">\"</span><span class="s2">127.0.0.1 server1.example.com</span><span class="se">\"</span><span class="s2"> &gt;&gt; /etc/hosts"</span>
+<span class="k">end</span>
+
+<span class="c1"># Run without sudo</span>
+<span class="no">TEST</span> <span class="s2">"stat ~/Public"</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exit_on_not_ok">EXIT_ON_NOT_OK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default, on error of a test case Test file execution is not terminated. Use this option to Halt the execution on error when required.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TEST</span> <span class="s2">"command 1"</span>
+
+<span class="c1"># On setting this all future tests will use this setting</span>
+<span class="no">EXIT_ON_NOT_OK</span> <span class="kp">true</span>
+<span class="no">TEST</span> <span class="s2">"command 2"</span>
+
+<span class="c1"># Only use this setting for some commands</span>
+<span class="no">EXIT_ON_NOT_OK</span> <span class="kp">true</span> <span class="k">do</span>
+    <span class="no">TEST</span> <span class="s2">"command 3"</span>
+    <span class="no">TEST</span> <span class="s2">"command 4"</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_embed_other_test_files">Embed other test files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use <code>load</code> keyword to include the tests/utilities from other files.</p>
+</div>
+<div class="paragraph">
+<p>For example, <code>repeat_tests.t</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TEST</span> <span class="s2">"command 1"</span>
+<span class="no">TEST</span> <span class="s2">"command 2"</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the <code>main.t</code> tests file</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">USE_REMOTE_PLUGIN</span> <span class="s2">"docker"</span>
+
+<span class="p">[</span><span class="s2">"node1.example.com"</span><span class="p">,</span> <span class="s2">"node2.example.com"</span><span class="p">,</span> <span class="s2">"node3.example.com"</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+    <span class="no">USE_NODE</span> <span class="n">node</span>
+
+    <span class="nb">load</span> <span class="s2">"./repeat_tests.t"</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: Load path is relative to the current directory from where the <code>binnacle</code> command is called.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_emit_stdout">Emit Stdout</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some times printing the <code>STDOUT</code> output in test report gives better understanding of the Test case.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TEST</span> <span class="s2">"command 1"</span>
+
+<span class="c1"># On setting this all future tests will use this setting</span>
+<span class="no">EMIT_STDOUT</span> <span class="kp">true</span>
+<span class="no">TEST</span> <span class="s2">"command 2"</span>
+
+<span class="c1"># Only use this setting for some commands</span>
+<span class="no">EMIT_STDOUT</span> <span class="kp">true</span> <span class="k">do</span>
+    <span class="no">TEST</span> <span class="s2">"command 3"</span>
+    <span class="no">TEST</span> <span class="s2">"command 4"</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example output of <code>TEST "stat /var/www/html/index.html"</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#   File: /var/www/html/index.html
+#   Size: 13            Blocks: 8          IO Block: 4096   regular file
+# Device: 10307h/66311d Inode: 4325842     Links: 1
+# Access: (0664/-rw-rw-r--)  Uid: ( 1000/aravinda)   Gid: ( 1000/aravinda)
+# Access: 2022-06-17 13:11:52.807419056 +0530
+# Modify: 2022-06-17 13:11:52.807419056 +0530
+# Change: 2022-06-17 13:11:52.807419056 +0530
+#  Birth: -
+ok       1 - node=local cmd="TEST stat /var/www/html/index.html"</pre>
+</div>
+</div>
+</div>
+</div>
+                            </div>
+                        </div>
+                        <div class="p-4 is-flex-grow-1 is-flex-shrink-1 is-hidden-touch" x-data="{headings: document.getElementById('main-content').getElementsByTagName('h2')}" style="position:relative">
+                            <div style="position: sticky;top:20px">
+                                <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                <template x-for="heading in headings">
+                                    <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

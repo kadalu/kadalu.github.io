@@ -1,0 +1,641 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/k8s-storage/1.0.x/storage-config-options/"/>
+<meta property="og:url" content="/k8s-storage/1.0.x/storage-config-options/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+    <body>
+        <div id="main" x-data="{version: '1.0.x', menuShow: true}">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        
+    </div>
+
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="tabs is-small mb-0">
+                <ul>
+                    
+                    <li class="">
+                        <a href="/kadalu-storage/latest" class="mb-0">
+                            <span>Kadalu Storage</span>
+                        </a>
+                    </li>
+                    
+                    <li class="is-active">
+                        <a href="/k8s-storage/latest" class="mb-0">
+                            <span>Kadalu Storage (Kubernetes Native)</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/console/latest" class="mb-0">
+                            <span>Kadalu Storage Console</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/binnacle/latest" class="mb-0">
+                            <span>Binnacle</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '230px' : '0'}">
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        
+                        <p class="menu-label mt-4">
+                            User Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/quick-start/">Quick Start</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/quick-start-yaml/">Quick Start YAML</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/introduction/">Introduction</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/setup/">Setup</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/using-with-private-container-registry/">Using with Private Container Registry</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/setup-storage/">Setup Storage</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/csi-to-claim-persistent-volumes/">CSI to claim Persistent Volumes</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/try-kadalu/">Try Kadalu</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/external-gluster-storage/">External Gluster Storage</a></li>
+                            
+                            
+                            <li class=""><a class="is-active" href="/k8s-storage/1.0.x/storage-config-options/">Storage Config Options</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/block-volume/">Block Volume</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/storage-classes/">Storage Classes</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/troubleshooting/">Troubleshooting</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Use cases
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/running-a-webserver/">Running a Webserver</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/running-minio/">Running Minio</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Articles
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/how-it-works?/">How it works?</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/gluster-and-kadalu/">Gluster and Kadalu</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Developer Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/get-involved/">Get Involved</a></li>
+                            
+                        </ul>
+                        
+                    </aside>
+                </div>
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light has-text-right" style="flex-basis: 20px; position:relative" @click="menuShow = !menuShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6 content is-flex" id="main-content">
+                        <div class="is-flex-grow-1 is-flex-shrink-1">
+                            <div class="p-2 has-text-right mb-6">
+                                <span>Version</span>
+                                <div class="select is-small is-rounded">
+                                    <select x-model="version" style="width: 100%" @change="window.location=`/k8s-storage/${version}`">
+                                        <option>latest</option>
+                                        
+                                        <option>1.0.x</option>
+                                        
+                                        <option>devel</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="doc-content">
+                                <h1>Kadalu Storage Config</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Storage configuration is core of the kadalu.io project. This config file provides details of which devices provide PVs, and what type (Replica1/Replica3 or other). Kadalu operator reads this config file, and starts the relevant gluster server pods exporting the storage provided in the config.</p>
+</div>
+<div class="paragraph">
+<p>The features of kadalu project comes from options in storage-config file. In this document we will provide details of each options possible in config file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_config_file_format">Config file format.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let us look into below sample config file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+ <span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">storage1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">tolerations</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">key1"</span>
+    <span class="na">operator</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Equal"</span>
+    <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">value1"</span>
+    <span class="na">effect</span><span class="pi">:</span> <span class="s2">"</span><span class="s">NoSchedule"</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica1</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/vdc</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For now,
+* <code>apiVersion</code> will always be having value of <code>kadalu-operator.storage/v1alpha1</code>.
+* <code>kind</code> will always be having value of <code>KadaluStorage</code>. kadalu operator only understands config of this <strong>kind</strong>.
+* <code>metadata</code> is required, and should have an entry for 'name', which will be used as 'gluster&#8217;s volume name and pod names.
+* <code>spec</code> field should be required, and should have <code>type</code> field.</p>
+</div>
+<div class="paragraph">
+<p>The above 3 fields will be common for config files for all different modes.</p>
+</div>
+<div class="sect2">
+<h3 id="_tolerations">Tolerations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>For <code>.spec.tolerations</code> refer <a href="https://github.com/kubernetes-client/python/blob/da6076/kubernetes/docs/V1Toleration.md">Toleration Spec</a></p>
+</li>
+<li>
+<p>These tolerations will get added to <code>server</code> and <code>kadalu-csi-nodeplugin</code> pods typical use-case includes usage of tainted nodes from which kadalu storage is created.</p>
+</li>
+<li>
+<p>Please decide on what all tolerations should be used before applying the Pool CR as modifications would typically restart <code>server</code> and <code>kadalu-csi-nodeplugin</code> pods.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_native_mode">Native mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this mode, the storage is provided from inside of the kubernetes cluster. Lets look at how native mode can be configured in each these options.</p>
+</div>
+<div class="sect2">
+<h3 id="_type">Type</h3>
+<div class="paragraph">
+<p>Native mode is available with 3 <code>type</code> options. They are <code>Replica1</code>, <code>Replica2</code> and another <code>Replica3</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Replica1</strong> In this mode, Gluster will be started without high availability, i.e without replicate module. It will use just one storage, from which the RWX and RWO PVs will be carved out. This storage will be exposed by a gluster server pod, which gets spawned by kadalu operator.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="nt">--type</span><span class="o">=</span>Replica1 <span class="se">\</span>
+    <span class="nt">--device</span> kube-nodename1:/dev/vdc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create a PVC from this storage, you need to provide <code>storageClassName</code> option as <code>kadalu.replica1</code>.</p>
+</div>
+</li>
+<li>
+<p><strong>Replica2</strong> In this mode, Gluster will be started with high availability, with 'tie-breaker' (or thin-arbiter in gluster speak) option. It will use 2 storage options, from which the RWX and RWO PVs will be carved out. This storage will be exposed by a gluster server pod, which gets spawned by kadalu operator. The <code>tiebreaker</code> node has to be managed outside, and if the tiebreaker option is not provided, Kadalu creates the Replica 2 Volume without Tiebreaker.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="nn">...</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica2</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">...</span>
+    <span class="pi">-</span> <span class="s">...</span>
+  <span class="na">tiebreaker</span><span class="pi">:</span>
+    <span class="na">node</span><span class="pi">:</span> <span class="s">...</span>
+    <span class="na">path</span><span class="pi">:</span> <span class="s">...</span>
+<span class="nn">...</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create a PVC from this storage, you need to provide <code>storageClassName</code> option as <code>kadalu.replica2</code>.</p>
+</div>
+</li>
+<li>
+<p><strong>Replica3</strong> In this mode, Gluster will be started with high availability, ie, replicate module. It will require 3 storage options to be provided, and each storage will be one gluster server process pod running as pod.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="s">$ kubectl kadalu storage-add storage-pool1 --type=Replica3 \</span>
+    <span class="s">--device kube-nodename1:/dev/vdc \</span>
+    <span class="s">--device kube-nodename2:/dev/vdc \</span>
+    <span class="s">--device kube-nodename3:/dev/vdc \</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create a PVC from this storage, you need to provide <code>storageClassName</code> option as <code>kadalu.replica3</code>.</p>
+</div>
+</li>
+<li>
+<p><strong>Disperse</strong> Dispersed volumes are based on erasure codes. It stripes the encoded data of files, with some redundancy added, across multiple bricks in the volume. You can use dispersed volumes to have a configurable level of reliability with minimum space waste. This mode requires atleast 3 storages and increase the number of storages based on the requirement. Refer <a href="https://docs.gluster.org/en/latest/Administrator-Guide/Setting-Up-Volumes/#creating-dispersed-volumes">GlusterFS documentation</a> to know more about Disperse Volumes.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="s">$ kubectl kadalu storage-add storage-pool1 --type=Disperse \</span>
+    <span class="s">--data 2 --redundancy 1          \</span>
+    <span class="s">--device kube-nodename1:/dev/vdc \</span>
+    <span class="s">--device kube-nodename2:/dev/vdc \</span>
+    <span class="s">--device kube-nodename3:/dev/vdc \</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To create a PVC from this storage, you need to provide <code>storageClassName</code> option as <code>kadalu.disperse</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_storage">Storage</h3>
+<div class="paragraph">
+<p>The native mode storage can be provided by many different types in kadalu. Lets look into each of those, with samples.</p>
+</div>
+<div class="sect3">
+<h4 id="_storage_from_device">Storage from Device</h4>
+<div class="paragraph">
+<p>In this case, a device (<code>/dev/sd*</code> or similar), attached to a node in k8s cluster is provided as storage. The device is exported into the gluster server pod, and is formatted and mounted into specific brick path.</p>
+</div>
+<div class="paragraph">
+<p>The sample command looks like below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
+    <span class="nt">--device</span> kube-nodename:/dev/vdc</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that both <code>node</code> and <code>device</code> fields are required. A device info without a node doesn&#8217;t contain all the required information for kadalu operator to start the brick process.</p>
+</div>
+<div class="paragraph">
+<p>According to us, this is most common way of providing the storage to kadalu.</p>
+</div>
+<div class="paragraph">
+<p>Also, if <code>device</code> option has a file as option, the same file will be formatted and used as device too. This is particularly helpful as a testing option, where from same backend multiple devices needs to be carved out. Our CI/CD tests use this approach.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_storage_from_path">Storage from path</h4>
+<div class="paragraph">
+<p>In this case, a directory path (/mnt/mount/path or similar) is exported as a brick from a node in the cluster as storage for gluster server process. This is particularly useful when a larger device is mounted and shared with other applications too.</p>
+</div>
+<div class="paragraph">
+<p>Note that path option is valid only if the file system on the given path is xfs. path option is helpful for those who want to try kadalu in an existing setup. When path option is provided, kadalu operator doesn&#8217;t try to format and mount, but uses the path as export path for kadalu storage volume.</p>
+</div>
+<div class="paragraph">
+<p>The sample command looks like below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
+    <span class="nt">--path</span> kube-nodename:/mnt/mount/export-path</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again here, both <code>node</code> and <code>path</code> are required fields. kadalu operator won&#8217;t have all required information to start gluster server pods without these two fields.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_storage_from_another_pvc">Storage from another PVC</h4>
+<div class="paragraph">
+<p>This is an interesting option, and makes sense specifically in a cloud environment, where a virtual storage device would be available as PVC in k8s cluster. kadalu can use a PVC, which is not bound to any 'node' as the storage, and provide multiple smaller PVCs through kadalu storageclass.</p>
+</div>
+<div class="paragraph">
+<p>In this case, a PVC is exposed to kadalu&#8217;s server pod as storage through <code>volumes</code> option of pod config. With that the given PVC exposed into the server pods, we expose the given storage through gluster.</p>
+</div>
+<div class="paragraph">
+<p>The sample config looks like below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
+    <span class="nt">--pvc</span> pvc-name-in-namespace</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that this PVC should be available in 'kadalu' namespace. Also there is no need of mentioning <code>node</code> field for this storage. k8s itself will start pod in relevant node in cluster.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_external_mode">External mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In this mode, storage will be provided by gluster servers not managed by kadalu operator. Note that in this case, the gluster server can be running inside or outside k8s cluster.</p>
+</div>
+<div class="paragraph">
+<p>The external mode can be specified with <code>type</code> as <code>External</code>. And when the type is External, the field it expects is <code>details</code>. Lets look at a sample, and then describe each of the options it takes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add external-pool <span class="se">\</span>
+    <span class="nt">--external</span> gluster_host:/gluster_volname</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Above,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>'gluster_host': This option takes one hostname or IP address, which is accessible from the k8s cluster.</p>
+</li>
+<li>
+<p>'gluster_volname': Gluster volume name to be used as kadalu host storage volume. We prefer it to be a new volume created for kadalu.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Notice that to create PVC from External Storage config, you need to provide <code>storageClassName</code> option as <code>kadalu.{{ config-name }}</code>. In above case, it becomes <strong><code>kadalu.external-pool</code></strong>.</p>
+</div>
+<div class="sect2">
+<h3 id="_how_it_works">How it works?</h3>
+<div class="paragraph">
+<p>kadalu operator doesn&#8217;t start any storage pods when 'External' type is used, but creates a <code>StorageClass</code> particular to this config, so when a PVC is created, the information is passed to the CSI drivers. The host-volume is mounted as below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="go">mount -t glusterfs {{ gluster_host }}:/{{ gluster_volname }} -o{{gluster_options}} /mount/point</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Other than this, the CSI volume&#8217;s behavior would be same for both Native mode, and External mode.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_single_pv_per_pool">Single PV per Pool</h3>
+<div class="paragraph">
+<p>This option is provided in kadalu to access a gluster volume as a whole as PV. This is particularly useful if one wants to use an already existing Gluster volume as a PV (for example, a gluster volume created by heketi). We don&#8217;t recommend this for normal usage, as this mode would have scale limitations, and also would add more k8s resources likes StorageClass.</p>
+</div>
+<div class="paragraph">
+<p>The example config file added for CI/CD gives an idea about options. Note that the options provided here looks same as whats given in storage config, but when kadalu operator creates the StorageClass with values supplied to field <code>single_pv_per_pool</code> inorder to decide multiple PVs per pool or not. Refer the <a href="/k8s-storage/1.0.x/external-gluster-storage">external-storage document</a> for more information on this mode.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_archiving_persistent_volume_claims">Archiving Persistent Volume Claims</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Archiving a PVC retains its data when <code>delete</code> is called on it. This option can be enabled by specifying <code>pvReclaimPolicy</code> either through <code>StorageClass</code> or <code>Kadalu CLI</code>. The <code>pvReclaimPolicy</code> takes either <code>delete</code>, <code>archive</code> or <code>retain</code>. Default value is <code>delete</code> which deletes the PVC along with its data. <code>archive</code> option retains the data by renaming <code>pvc-123</code> to <code>archived-pvc-123</code>. <code>retain</code> option retains the data in place.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adding 'pvReclaimPolicy' through config file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+<span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">storage1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica1</span>
+  <span class="na">pvReclaimPolicy</span><span class="pi">:</span> <span class="s">archive</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/vdc</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Adding 'pvReclaimPolicy' through Kadalu CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
+    <span class="nt">--device</span> kube1:/dev/vdc <span class="nt">--pv-reclaim-policy</span><span class="o">=</span>archive</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When PVCs are archived, the data is intact. Due to which 'storage-list' might still be showing consumption.
+One can free these archived data manually or through Kadalu CLI.</p>
+</div>
+<div class="paragraph">
+<p>Note: While using option --pvc only pass the pvc which are archived.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Removing archived pvc(s) through Kadalu CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu remove-archived-pv storage-pool-1</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu remove-archived-pv storage-pool-1 <span class="nt">--pvc</span><span class="o">=</span>pvc-e91ab8c8-4a48-48ad-ab5e-b207399565bc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Removing archived pvc(s) through Kadalu CSI provisioner:</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exec into Kadalu Provisioner pod. Run the script 'remove_archived_pv.py' with similar arguments as Kadalu CLI.</p>
+</div>
+<div class="paragraph">
+<p>+</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> /kadalu
+<span class="gp">$</span><span class="w"> </span>python remove_archived_pv.py storage-pool-1 <span class="nt">--pvc</span><span class="o">=</span>archived-pvc-123-456-789</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_recreation_of_storage_pool_with_existing_volume_id">Recreation of storage-pool with existing Volume ID</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Every storage-pool created with device/path/pvc/external volumes will be associated with a unique Volume ID. In case of cleanup of Kadalu namespace and referencing the same existing volume will throw error since it has already been attached with unique ID, to avoid this and recreate the storage-pool specify the <code>volume_id</code> in storage-config or <code>--volume-id</code> in Kadalu CLI.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Adding 'volume_id' through config file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+<span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">storage1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica1</span>
+  <span class="na">volume_id</span><span class="pi">:</span> <span class="s">example-1234-volumeid-7890</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/vdc</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Adding 'volume_id' through Kadalu CLI:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
+    <span class="nt">--device</span> kube1:/dev/vdc <span class="nt">--volume-id</span><span class="o">=</span>example-1234-volumeid-7890</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+                            </div>
+                        </div>
+                        <div class="p-4 is-flex-grow-1 is-flex-shrink-1 is-hidden-touch" x-data="{headings: document.getElementById('main-content').getElementsByTagName('h2')}" style="position:relative">
+                            <div style="position: sticky;top:20px">
+                                <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                <template x-for="heading in headings">
+                                    <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

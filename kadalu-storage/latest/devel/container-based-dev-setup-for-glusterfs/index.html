@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/kadalu-storage/latest/devel/container-based-dev-setup-for-glusterfs/"/>
+<meta property="og:url" content="/kadalu-storage/latest/devel/container-based-dev-setup-for-glusterfs/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+    <body>
+        <div id="main" x-data="{version: 'latest', menuShow: true}">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        
+    </div>
+
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="tabs is-small mb-0">
+                <ul>
+                    
+                    <li class="is-active">
+                        <a href="/kadalu-storage/latest" class="mb-0">
+                            <span>Kadalu Storage</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/k8s-storage/latest" class="mb-0">
+                            <span>Kadalu Storage (Kubernetes Native)</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/console/latest" class="mb-0">
+                            <span>Kadalu Storage Console</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/binnacle/latest" class="mb-0">
+                            <span>Binnacle</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '230px' : '0'}">
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        
+                        <p class="menu-label mt-4">
+                            User Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/quick-start/">Quick Start</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/container-based-setup/">Container Based Setup</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/introduction/">Introduction</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/install/">Install</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/user-management/">User Management</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/config-snapshots/">Config Snapshots</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/pools/">Pools</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/volumes/">Volumes</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/faqs/">FAQs</a></li>
+                            
+                        </ul>
+                        
+                    </aside>
+                </div>
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light has-text-right" style="flex-basis: 20px; position:relative" @click="menuShow = !menuShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6 content is-flex" id="main-content">
+                        <div class="is-flex-grow-1 is-flex-shrink-1">
+                            <div class="p-2 has-text-right mb-6">
+                                <span>Version</span>
+                                <div class="select is-small is-rounded">
+                                    <select x-model="version" style="width: 100%" @change="window.location=`/kadalu-storage/${version}`">
+                                        <option>latest</option>
+                                        
+                                        <option>1.0.x</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="doc-content">
+                                <h1>Container-based development environment for GlusterFS</h1>
+<div class="paragraph">
+<p>It is not easy to set up an environment for GlusterFS development. Installing all the build dependencies in the main OS makes it cluttered. And clean removal of the dependencies becomes hard once the development is work is over.</p>
+</div>
+<div class="paragraph">
+<p>Setting up using a Virtual machine for GlusterFS development is a better option compared to setting up in the host machine. But cleaning the Setup and re-setup is a tedious job. One has to make sure to clean all the previously installed files and set them up again for new enhancement.</p>
+</div>
+<div class="paragraph">
+<p>Clone the GlusterFS repo using the following command after creating the fork of GlusterFS from Github UI.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nv">gh_username</span><span class="o">=</span>&lt;your-user-name&gt;
+<span class="gp">$</span><span class="w"> </span>git clone git@github.com:<span class="k">${</span><span class="nv">gh_username</span><span class="k">}</span>/glusterfs.git</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run the following docker command to Start the GlusterFS dev container.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> <span class="nv">$GLUSTERFS_SRC</span>
+<span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>docker run <span class="nt">-d</span> <span class="se">\</span>
+      <span class="nt">-v</span> /sys/fs/cgroup/:/sys/fs/cgroup:ro <span class="se">\</span>
+      <span class="nt">--privileged</span> <span class="se">\</span>
+      <span class="nt">--name</span> server1 <span class="se">\</span>
+      <span class="nt">-v</span> <span class="nv">$PWD</span>:/usr/src/glusterfs <span class="se">\</span>
+      <span class="nt">-w</span> /usr/src/glusterfs <span class="se">\</span>
+      <span class="nt">--hostname</span> server1 <span class="se">\</span>
+      kadalu/gluster-build-env:latest</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s it!. Now check out a branch and start making changes. To test the changes, log in to the container and build the GlusterFS using the following commands.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>docker <span class="nb">exec</span> <span class="nt">-it</span> server1 /bin/bash
+<span class="gp">#</span><span class="w"> </span>./autogen.sh
+<span class="gp">#</span><span class="w"> </span>./configure <span class="nt">--disable-linux-io_uring</span>
+<span class="gp">#</span><span class="w"> </span>make
+<span class="gp">#</span><span class="w"> </span>make <span class="nb">install</span>
+<span class="gp">#</span><span class="w"> </span>ldconfig</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once installed, start the Glusterd by running it in debug mode.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">#</span><span class="w"> </span>glusterd <span class="nt">-LDEBUG</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check out a new branch and then make the changes locally. Test it quickly in the container, then submit a PR. After every change to the Gluster code in the host machine, run <code>make install</code> and <code>ldconfig</code> in the container.</p>
+</div>
+<div class="paragraph">
+<p>To destroy the Setup, stop and delete the container. A restart of the container will not keep any state.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: Restarting the container will not retain the installed state(Intentional). Run <code>make install</code> and <code>ldconfig</code> again if other steps are completed in the previous runs.</p>
+</div>
+<div class="paragraph">
+<p>We hope you all like this. Let us know if anything we can do to improve the Gluster development process.</p>
+</div>
+<div class="paragraph">
+<p><strong>Known issue</strong>: On Mac, the Docker Volume mount is very slow(<a href="https://forums.docker.com/t/file-access-in-mounted-volumes-extremely-slow-cpu-bound/8076/243">Refer</a>), building may take more time than doing it in the Virtual or host machine.</p>
+</div>
+<div class="paragraph">
+<p>If any additional debug tools are required or a similar environment is required for Fedora/CentOS, send PRs to update Dockerfiles <a href="https://github.com/kadalu/moana/tree/main/extra/gluster/">here</a>.</p>
+</div>
+                            </div>
+                        </div>
+                        <div class="p-4 is-flex-grow-1 is-flex-shrink-1 is-hidden-touch" x-data="{headings: document.getElementById('main-content').getElementsByTagName('h2')}" style="position:relative">
+                            <div style="position: sticky;top:20px">
+                                <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                <template x-for="heading in headings">
+                                    <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

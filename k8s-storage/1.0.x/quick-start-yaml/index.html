@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/k8s-storage/1.0.x/quick-start-yaml/"/>
+<meta property="og:url" content="/k8s-storage/1.0.x/quick-start-yaml/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+    <body>
+        <div id="main" x-data="{version: '1.0.x', menuShow: true}">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        
+    </div>
+
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="tabs is-small mb-0">
+                <ul>
+                    
+                    <li class="">
+                        <a href="/kadalu-storage/latest" class="mb-0">
+                            <span>Kadalu Storage</span>
+                        </a>
+                    </li>
+                    
+                    <li class="is-active">
+                        <a href="/k8s-storage/latest" class="mb-0">
+                            <span>Kadalu Storage (Kubernetes Native)</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/console/latest" class="mb-0">
+                            <span>Kadalu Storage Console</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/binnacle/latest" class="mb-0">
+                            <span>Binnacle</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '230px' : '0'}">
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        
+                        <p class="menu-label mt-4">
+                            User Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/quick-start/">Quick Start</a></li>
+                            
+                            
+                            <li class=""><a class="is-active" href="/k8s-storage/1.0.x/quick-start-yaml/">Quick Start YAML</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/introduction/">Introduction</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/setup/">Setup</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/using-with-private-container-registry/">Using with Private Container Registry</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/setup-storage/">Setup Storage</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/csi-to-claim-persistent-volumes/">CSI to claim Persistent Volumes</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/try-kadalu/">Try Kadalu</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/external-gluster-storage/">External Gluster Storage</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/storage-config-options/">Storage Config Options</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/block-volume/">Block Volume</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/storage-classes/">Storage Classes</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/troubleshooting/">Troubleshooting</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Use cases
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/running-a-webserver/">Running a Webserver</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/running-minio/">Running Minio</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Articles
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/how-it-works?/">How it works?</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/gluster-and-kadalu/">Gluster and Kadalu</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Developer Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.0.x/get-involved/">Get Involved</a></li>
+                            
+                        </ul>
+                        
+                    </aside>
+                </div>
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light has-text-right" style="flex-basis: 20px; position:relative" @click="menuShow = !menuShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6 content is-flex" id="main-content">
+                        <div class="is-flex-grow-1 is-flex-shrink-1">
+                            <div class="p-2 has-text-right mb-6">
+                                <span>Version</span>
+                                <div class="select is-small is-rounded">
+                                    <select x-model="version" style="width: 100%" @change="window.location=`/k8s-storage/${version}`">
+                                        <option>latest</option>
+                                        
+                                        <option>1.0.x</option>
+                                        
+                                        <option>devel</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="doc-content">
+                                <h1>Quick Start with yaml files</h1>
+<div class="sect1">
+<h2 id="_start_kadalu_operator">Start kadalu operator</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> https://github.com/kadalu/kadalu/releases/latest/download/kadalu-operator.yaml
+<span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> https://github.com/kadalu/kadalu/releases/latest/download/csi-nodeplugin.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You have different flavors of operator yaml files available. Mainly for kubernetes (default), openshift, RKE, Microk8s. Find the relevant file from <a href="https://github.com/kadalu/kadalu/tree/devel/manifests">here</a>. Just remember to use the raw file as argument to <code>kubectl</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note</strong>: Openshift may have some Security Context Constraints, which can be applied only by admins, Run <code>oc login -u system:admin</code> to login as admin.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prepare_and_start_storage_exports">Prepare and start storage exports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Identify the devices available from nodes and run the following command to add storage to Kadalu.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl get nodes
+<span class="gp">kube1 #</span><span class="w"> </span>&lt;<span class="nt">--</span> known your <span class="nb">hostname</span>, which needs to be given <span class="k">in </span>storage config below.
+<span class="c">...
+...</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+if your host is running RHEL/CentOS 7.x series or Ubuntu/Debian older than 18.04, you may need to do below tasks before adding storage to kadalu.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># On CentOS7.x/Ubuntu-16.04
+sudo wipefs -a -t dos -f /dev/sdc
+sudo mkfs.xfs /dev/sdc</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the device is ready, inform the kadalu operator that it can be used as storage.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="c1"># File: sample-storage-config.yaml</span>
+<span class="nn">---</span>
+<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">storage-pool-1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica1</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/sdc</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl apply <span class="nt">-f</span> sample-storage-config.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Other than <code>device</code>, kadalu also supports <code>path</code> and <code>pvc</code> as <strong>storage</strong> options.</p>
+</div>
+<div class="paragraph">
+<p>kadalu supports <code>Replica1</code>, <code>Replica2</code> and <code>Replica3</code> type. This maps to glusterfs volume replication feature. It also support <code>External</code> as a type, where gluster volume may be managed externally, and kadalu is used to provide only CSI access.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_check_status">Check status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Operator will start the storage export pods as required. And, in 2 steps, your storage system is up and running.</p>
+</div>
+<div class="paragraph">
+<p>Check the status of Pods using,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl get pods <span class="nt">-n</span> kadalu
+<span class="go">NAME                             READY   STATUS    RESTARTS   AGE
+server-storage-pool-1-kube1-0    1/1     Running   0          84s
+csi-nodeplugin-5hfms             3/3     Running   0          30m
+csi-nodeplugin-924cc             3/3     Running   0          30m
+csi-nodeplugin-cbjl9             3/3     Running   0          30m
+csi-provisioner-0                5/5     Running   0          30m
+operator-6dfb65dcdd-r664t        1/1     Running   0          30m</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After this, go ahead and <a href="/k8s-storage/1.0.x/csi-to-claim-persistent-volumes">create your PVC and attach</a> it to other applications.</p>
+</div>
+</div>
+</div>
+                            </div>
+                        </div>
+                        <div class="p-4 is-flex-grow-1 is-flex-shrink-1 is-hidden-touch" x-data="{headings: document.getElementById('main-content').getElementsByTagName('h2')}" style="position:relative">
+                            <div style="position: sticky;top:20px">
+                                <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                <template x-for="heading in headings">
+                                    <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

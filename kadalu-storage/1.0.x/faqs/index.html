@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/kadalu-storage/1.0.x/faqs/"/>
+<meta property="og:url" content="/kadalu-storage/1.0.x/faqs/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+    <body>
+        <div id="main" x-data="{version: '1.0.x', menuShow: true}">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        
+    </div>
+
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="tabs is-small mb-0">
+                <ul>
+                    
+                    <li class="is-active">
+                        <a href="/kadalu-storage/latest" class="mb-0">
+                            <span>Kadalu Storage</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/k8s-storage/latest" class="mb-0">
+                            <span>Kadalu Storage (Kubernetes Native)</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/console/latest" class="mb-0">
+                            <span>Kadalu Storage Console</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/binnacle/latest" class="mb-0">
+                            <span>Binnacle</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '230px' : '0'}">
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        
+                        <p class="menu-label mt-4">
+                            User Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.0.x/quick-start/">Quick Start</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.0.x/container-based-setup/">Container Based Setup</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.0.x/introduction/">Introduction</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.0.x/install/">Install</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.0.x/user-management/">User Management</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.0.x/config-snapshots/">Config Snapshots</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.0.x/pools/">Pools</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.0.x/volumes/">Volumes</a></li>
+                            
+                            
+                            <li class=""><a class="is-active" href="/kadalu-storage/1.0.x/faqs/">FAQs</a></li>
+                            
+                        </ul>
+                        
+                    </aside>
+                </div>
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light has-text-right" style="flex-basis: 20px; position:relative" @click="menuShow = !menuShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6 content is-flex" id="main-content">
+                        <div class="is-flex-grow-1 is-flex-shrink-1">
+                            <div class="p-2 has-text-right mb-6">
+                                <span>Version</span>
+                                <div class="select is-small is-rounded">
+                                    <select x-model="version" style="width: 100%" @change="window.location=`/kadalu-storage/${version}`">
+                                        <option>latest</option>
+                                        
+                                        <option>1.0.x</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="doc-content">
+                                <h1>Kadalu Storage FAQs</h1>
+<div class="sect1">
+<h2 id="_is_kadalu_storage_the_same_as_glusterfs_except_for_the_management_layer">Is Kadalu Storage the same as GlusterFS except for the management layer?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kadalu Storage is an opinionated Storage solution. It uses only the core filesystem from GlusterFS. Kadalu Storage brings good parts of GlusterFS with added enhancements like improved Quota, Management layer among others.</p>
+</div>
+<div class="paragraph">
+<p>Along with the additional features, the default configurations/values will differ. All the enhancements available with Kadalu Storage are also Open Source.</p>
+</div>
+<div class="paragraph">
+<p>Kadalu Storage provides a more intuitive Command line interface compared to Gluster CLI.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_can_glusterfs_and_kadalu_storage_co_exist">Can GlusterFS and Kadalu Storage Co-exist?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Why not? Short answer is Yes. If the GlusterFS version available in the system is compatible with the Kadalu Storage supported version then it can co-exist. Else it is not possible since Kadalu Storage uses the core filesystem from GlusterFS.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_who_is_behind_kadalu_storage">Who is behind Kadalu Storage?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The project was started by a few core team members of the GlusterFS project with the initial focus to provide a lightweight storage solution for the apps running on Kubernetes. With the release of the <a href="https://github.com/kadalu/moana">Kadalu Moana</a> project, GlusterFS management is simplified for non Kubernetes use cases as well.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_stable_is_kadalu_storage">How stable is Kadalu Storage?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As explained previously, the major difference between Kadalu Storage and GlusterFS is the management layer. No worries for your data, Kadalu Storage uses time-tested File system bits from GlusterFS. Additionally we invest heavily in automated tests and use advanced testing methods to test both the Filesystem layer as well as the Management layer.</p>
+</div>
+<div class="paragraph">
+<p>Even though the filesystem layer is stable, Kadalu Storage is not yet 1.0. It is still under active development and we are working on making it production ready in 2022.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_not_contribute_back_to_the_glusterfs_project_itself">Why not contribute back to the GlusterFS project itself?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>We do. All filesystem-related enhancements done in Kadalu will be sent to GlusterFS. If any feature is not applicable to the GlusterFS community but useful for Kadalu users then it will be maintained in the Kadalu Storage open source repository. Release and support cycles of Kadalu Storage are not aligned with GlusterFS release cycles, so we will maintain separate releases.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_monitoring_is_one_of_the_pain_points_with_glusterfs_how_is_this_issue_addressed">Monitoring is one of the pain points with GlusterFS, how is this issue addressed?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kadalu Storage exports a rich set of metrics that can be readily used with the Prometheus server. Kadalu Storage also provides JSON metrics so that it can be easily integrated into other applications.</p>
+</div>
+<div class="paragraph">
+<p>Apart from that, we also maintain a couple of projects like Gdash, Gluster metrics exporter, Gstatus etc to improve GlusterFS monitoring without using Kadalu Storage.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_is_kadalu_storage_a_fork_of_glusterfs">Is Kadalu Storage a fork of GlusterFS?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Short answer is No. All the filesystem enhancements will be sent as PR to the GlusterFS repo. But if some of the patches are not applicable to the GlusterFS community then it will be maintained in our repository.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_will_gluster_cli_commands_work_for_kadalu_storage">Will Gluster CLI commands work for Kadalu Storage?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kadalu Storage provides the new CLI to manage the Kadalu Storage Volumes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_where_can_i_request_for_new_features_or_report_issues">Where can I request for new features or report issues?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open a new <a href="https://github.com/kadalu/moana/issues/new">Github issue</a> with the details about the new feature or the issue.</p>
+</div>
+</div>
+</div>
+                            </div>
+                        </div>
+                        <div class="p-4 is-flex-grow-1 is-flex-shrink-1 is-hidden-touch" x-data="{headings: document.getElementById('main-content').getElementsByTagName('h2')}" style="position:relative">
+                            <div style="position: sticky;top:20px">
+                                <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                <template x-for="heading in headings">
+                                    <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

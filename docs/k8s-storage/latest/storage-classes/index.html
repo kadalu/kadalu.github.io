@@ -2,11 +2,8 @@
 <html lang="en">
     <head>
         
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title> | Kadalu </title>
-<link href="/static/css/fav.png" rel="icon" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/static/css/fav.png" />
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
 <meta name="generator" content="Nanoc 4.12.1">
 <meta property="og:title" content=""/>
 <meta name="author" content=""/>
@@ -16,488 +13,84 @@
 <link rel="canonical" href="/docs/k8s-storage/latest/storage-classes/"/>
 <meta property="og:url" content="/docs/k8s-storage/latest/storage-classes/"/>
 <meta property="og:site_name" content="Kadalu"/>
-<meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content=""/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta property="twitter:image" content=""/>
-<meta property="twitter:title" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
 
-        <link rel="stylesheet" href="/static/css/stylesheet.css">
-<link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
-<script defer data-domain="kadalu.github.io" src="https://plausible.io/js/plausible.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/docs/k8s-storage/latest/storage-classes/"/>
+<meta property="og:url" content="/docs/k8s-storage/latest/storage-classes/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
 
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+        
+        <meta charset="utf-8">
+        <title>Redirecting&hellip;</title>
+        <link rel="canonical" href="/k8s-storage/latest/storage-classes/">
+        <script>location="/k8s-storage/latest/storage-classes/"</script>
+        <meta http-equiv="refresh" content="0; url=/k8s-storage/latest/storage-classes/">
+        <meta name="robots" content="noindex">
     </head>
     <body>
-        
-
-<div class="bg-indigo-900">
-    <div class="w-full px-5  m-auto py-5">
-        <div class="lg:grid lg:grid-cols-12" x-data="{ menuOpen : false }">
-            <div class="col-span-4 lg:col-span-2" style="height:40px">
-                <a href="/"><img src="/static/css/logo.png" class="h-10 float-left" /></a>
-                <button @click="menuOpen = !menuOpen" class="block absolute md:hidden right-7 top-5 w-8 h-8 text-gray-200 p-1">
-                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                </button>
-            </div>
-            <div class="pt-2 col-span-8 lg:col-span-10">
-                <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col-reverse md:flex-row-reverse md:space-x-3 font-semibold w-full md:w-auto bg-indigo-900 shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-5 md:p-0"
-                     :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}"  @click.away="menuOpen = false"
-                >
-                    <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Blog</a>
-                    <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
-                    <a href="/docs" class="bg-gray-900 text-white py-2 px-3 rounded-md text-sm font-medium">Docs</a>
-                </nav>
-            </div>
+        <div class="p-6" style="min-height:50vh;max-width:960px;margin:auto">
+            <h1>Redirecting to /k8s-storage/latest/storage-classes/ &hellip;</h1>
+            <a href="/k8s-storage/latest/storage-classes/">Click here if you are not redirected.</a>
+        </div>
+        <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
         </div>
     </div>
-</div>
-
-        
-        <div class="flex flex-col md:grid md:grid-cols-12 w-full" x-data="{docMenuOpen: false}">
-            <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
-                <div class="py-5 px-5">
-                    
-                    <div class="p-5 bg-gray-200 border text-right rounded-lg">
-                        <strong>Version: </strong>
-                        <select class="input-field" onchange="location = '/docs/k8s-storage/' + this.value;">
-                            <option selected value="latest">latest</option>
-                            
-                            <option  value="devel">devel</option>
-                            
-                        </select>
-                    </div>
-                    
-                    <h2 class="text-xl font-semibold mt-7">User Guide</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/quick-start/">Quick Start</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/quick-start-yaml/">Quick Start YAML</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/introduction/">Introduction</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup/">Setup</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/using-with-private-container-registry/">Using with Private Container Registry</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/setup-storage/">Setup Storage</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/csi-to-claim-persistent-volumes/">CSI to claim Persistent Volumes</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/try-kadalu/">Try Kadalu</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/external-gluster-storage/">External Gluster Storage</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/storage-config-options/">Storage Config Options</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/block-volume/">Block Volume</a></li>
-                        
-                        
-                        
-                        
-                        <li class="text-indigo-600 font-semibold py-2 md:py-0">Storage Classes</li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/troubleshooting/">Troubleshooting</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Use cases</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/running-a-webserver/">Running a Webserver</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/running-minio/">Running Minio</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Articles</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/how-it-works?/">How it works?</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/gluster-and-kadalu/">Gluster and Kadalu</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Developer Guide</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/latest/get-involved/">Get Involved</a></li>
-                        
-                        
-                    </ul>
-                    
-                    
-                    
-                </div>
-            </div>
-            <div id="main" class="col-span-9">
-                <div class="py-5 px-10">
-                    
-                    <div class="mb-10">
-                        <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
-                            <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/latest">latest</a> / storage-classes/</span>
-                    </div>
-                    
-                    <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                    </button>
-                    <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Storage Classes</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>From <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/">kubernetes.io/docs/concepts/storage/storage-classes</a></p>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>A StorageClass provides a way for administrators to describe the
-“classes” of storage they offer. Different classes might map to
-quality-of-service levels, or to backup policies, or to arbitrary
-policies determined by the cluster administrators. Kubernetes itself
-is unopinionated about what classes represent. This concept is
-sometimes called “profiles” in other storage systems.</p>
-</div>
-</blockquote>
-</div>
-<div class="paragraph">
-<p>Kadalu provides a few storage classes by default, but users are not
-limited to only these classes. This document helps to understand the
-default available storage classes and how to create new ones for your
-requirements.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_kadalu_storage_pool_name">kadalu.storage-pool-name</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Kadalu creates and deploys Storage Class when storage pool is created.
-The name of this Storage class is same as the Storage name. Kadalu will
-provision PVs only from this Storage pool across the Cluster.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="paragraph">
-<p>When a Storage is created with name "storage-pool-1", Kadalu deploys
-a Storage Class with name "kadalu.storage-pool-1". The parameter "storage_name"
-is set to "storage-pool-1" to filter storages to PVs only from this Storage.</p>
-</div>
-<div class="paragraph">
-<p>Example:
-Create Storage "storage-pool-1",</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool-1 <span class="se">\</span>
-    <span class="nt">--path</span> kube-nodename:/mnt/mount/export-path</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Deployed Storage Class,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">kadalu.storage-pool-1</span>
-<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kadalu</span>
-<span class="na">parameters</span><span class="pi">:</span>
-  <span class="na">storage_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">storage-pool-1"</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>And the PVC,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv1</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.storage-pool-1</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_how_to_create_a_custom_storage_class">How to Create a custom Storage Class?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The following filters are available. Use any of the filters to create
-a new Storage class.</p>
-</div>
-<div class="sect2">
-<h3 id="_storage_name">storage_name</h3>
-<div class="paragraph">
-<p>Specify the name of the Storage pool from which PVs need to
-provision.</p>
-</div>
-<div class="paragraph">
-<p>Example Storage Class</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">kadalu.fast-storage</span>
-<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kadalu</span>
-<span class="na">parameters</span><span class="pi">:</span>
-  <span class="na">storage_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">storage-pool-1"</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>And the PVC,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv5</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.fast-storage</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_node_affinity">node_affinity</h3>
-<div class="paragraph">
-<p>Use this option if a PV needs to provision from the locally available
-Storage, This Storage Class behaves the same as local Storage but with
-the support for dynamic provisioning.</p>
-</div>
-<div class="paragraph">
-<p>Example Storage Class</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">kadalu.local-kube1</span>
-<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kadalu</span>
-<span class="na">parameters</span><span class="pi">:</span>
-  <span class="na">node_affinity</span><span class="pi">:</span> <span class="s2">"</span><span class="s">kube1"</span>  <span class="c1"># Node name as shown in `kubectl get nodes`</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>And the PVC,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv6</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.local-kube1</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_storage_type">storage_type</h3>
-<div class="paragraph">
-<p>Specify the name of the Storage pool type from which PVs need to
-provision. By default, Kadalu provides Storage Class for all supported
-Storage types.</p>
-</div>
-<div class="paragraph">
-<p>Example Storage Class</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">kadalu.replica2</span>
-<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kadalu</span>
-<span class="na">parameters</span><span class="pi">:</span>
-  <span class="na">storage_type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Replica2"</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>And the PVC,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv7</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.replica2</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteMany</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_pv_type">pv_type</h3>
-<div class="paragraph">
-<p>Use this option if the PV created using this Storage Class should be a Mounted Block Volume.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">StorageClass</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">storage.k8s.io/v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">kadalu.db-storage</span>
-<span class="na">provisioner</span><span class="pi">:</span> <span class="s">kadalu</span>
-<span class="na">parameters</span><span class="pi">:</span>
-  <span class="na">storage_name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">storage-pool-1"</span>
-  <span class="na">pv_type</span><span class="pi">:</span> <span class="s">Block</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>And the PVC,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="yaml"><span class="na">kind</span><span class="pi">:</span> <span class="s">PersistentVolumeClaim</span>
-<span class="na">apiVersion</span><span class="pi">:</span> <span class="s">v1</span>
-<span class="na">metadata</span><span class="pi">:</span>
-  <span class="na">name</span><span class="pi">:</span> <span class="s">pv8</span>
-<span class="na">spec</span><span class="pi">:</span>
-  <span class="na">storageClassName</span><span class="pi">:</span> <span class="s">kadalu.db-storage</span>
-  <span class="na">accessModes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">ReadWriteOnce</span>
-  <span class="na">resources</span><span class="pi">:</span>
-    <span class="na">requests</span><span class="pi">:</span>
-      <span class="na">storage</span><span class="pi">:</span> <span class="s">1Gi</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The number of customization a Storage Class can provide is
-impressive. The only limit is your imagination. Please open a new
-<a href="https://github.com/kadalu/kadalu/issues">issue</a> if your use case
-needs more filters than the ones listed above.</p>
-</div>
-</div>
-</div>
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-gray-800 text-gray-100 py-10">
-    <div class="mx-auto w-full px-5 " style="min-height: 40vh">
-        <div class="md:grid gap-2 md:grid-cols-4 md:gap-4">
-            <div class="mb-10">
-                <h2 class="text-xl font-semibold text-indigo-300">Community</h2>
-                <ul>
-                    <li><a href="/opensource">Open Source</a></li>
-                    <li><a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Slack</a></li>
-                    <li><a href="https://github.com/kadalu">Github</a></li>
-                </ul>
-            </div>
-
-            <div class="mb-10">
-                <h2 class="text-xl font-semibold text-indigo-300">Learn</h2>
-                <ul>
-                    <li><a href="/docs">Documentation</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/rfcs">RFCs</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
     </div>
 </div>
-<div class="bg-gray-800 text-gray-100 py-10">
-    <div class="mx-auto w-3/4 text-center text-gray-300 mb-10">
-        &copy; 2022 Kadalu Community(https://github.com/kadalu). All Rights Reserved.
-    </div>
-</div>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144588868-2"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
-
- gtag('config', 'UA-144588868-2');
-</script>
-
 
     </body>
 </html>

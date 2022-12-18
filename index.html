@@ -1,15 +1,21 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Kadalu Storage - Opinionated GlusterFS distribution | Kadalu </title>
-<link href="/static/css/fav.png" rel="icon" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/static/css/fav.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title>List of Kadalu Projects</title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
 <meta name="generator" content="Nanoc 4.12.1">
-<meta property="og:title" content="Kadalu Storage - Opinionated GlusterFS distribution"/>
+<meta property="og:title" content="List of Kadalu Projects"/>
 <meta name="author" content=""/>
 <meta property="og:locale" content="en_US"/>
 <meta name="description" content=""/>
@@ -17,176 +23,181 @@
 <link rel="canonical" href="/"/>
 <meta property="og:url" content="/"/>
 <meta property="og:site_name" content="Kadalu"/>
-<meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content=""/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta property="twitter:image" content=""/>
-<meta property="twitter:title" content="Kadalu Storage - Opinionated GlusterFS distribution"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content="List of Kadalu Projects"/>
+<meta name="twitter:description" content=""/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="/static/css/stylesheet.css">
-<link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
-<script defer data-domain="kadalu.github.io" src="https://plausible.io/js/plausible.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 
-    </head>
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
     <body>
+        <div id="main">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
         
+    </div>
 
-<div class="bg-indigo-900">
-    <div class="w-full px-5 px-10 md:w-3/4 md:px-0 m-auto py-5">
-        <div class="lg:grid lg:grid-cols-12" x-data="{ menuOpen : false }">
-            <div class="col-span-4 lg:col-span-2" style="height:40px">
-                <a href="/"><img src="/static/css/logo.png" class="h-10 float-left" /></a>
-                <button @click="menuOpen = !menuOpen" class="block absolute md:hidden right-7 top-5 w-8 h-8 text-gray-200 p-1">
-                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                </button>
-            </div>
-            <div class="pt-2 col-span-8 lg:col-span-10">
-                <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col-reverse md:flex-row-reverse md:space-x-3 font-semibold w-full md:w-auto bg-indigo-900 shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-5 md:p-0"
-                     :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}"  @click.away="menuOpen = false"
-                >
-                    <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Blog</a>
-                    <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
-                    <a href="/docs" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Docs</a>
-                </nav>
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="has-background-primary-light">
+                <div class="p-4 container" style="max-width:1024px" id="blog-list">
+                    <h1 class="title has-text-centered mt-6">List of Kadalu Projects</h1>
+                    <div class="py-6">
+                        <div class="columns is-multiline">
+
+    <div class="column is-3">
+        <div class="card">
+            <div class="card-content has-text-grey-dark">
+                <a href="/kadalu-storage/latest" class="title is-5 is-block mb-2" style="min-height:70px">
+                    Kadalu Storage
+                </a>
+                <div class="mb-2" style="min-height:30px">
+                    <a href="/kadalu-storage/latest" class="tag">latest</a>
+
+                    <a href="/kadalu-storage/1.0.x" class="tag">1.0.x</a>
+
+                </div>
+                <div class="content is-small" style="min-height: 80px">
+                    Kadalu Storage is a distributed filesystem management system. At its core, at present, Kadalu uses the GlusterFS filesystem.
+                </div>
+                <footer class="card-footer">
+                    <span class="card-footer-item">
+                        <a href="/kadalu-storage/latest" class="button is-primary">Get started</a>
+                    </span>
+                </footer>
             </div>
         </div>
     </div>
-</div>
 
-        <div class="bg-indigo-100" style="min-height:50vh">
-    <div class="w-full px-10 md:w-3/4 md:px-0 mx-auto text-center py-10">
-        <h1 class="text-2xl md:text-4xl font-extrabold mb-10 mt-20">
-            <span class="text-indigo-600">Kadalu Storage</span>
-            <span class="text-gray-700">is an opinionated GlusterFS distribution</span></h1>
-        <p class="text-gray-700">Kadalu Storage is a collection of Open Source projects to make GlusterFS more accessible, user friendly and Scalable.</p>
-        <p class="text-gray-700">Our mission is to provide a stable File system with Modern ways to manage and monitor.</p>
-    </div>
-</div>
+    <div class="column is-3">
+        <div class="card">
+            <div class="card-content has-text-grey-dark">
+                <a href="/k8s-storage/latest" class="title is-5 is-block mb-2" style="min-height:70px">
+                    Kadalu Storage (Kubernetes Native)
+                </a>
+                <div class="mb-2" style="min-height:30px">
+                    <a href="/k8s-storage/latest" class="tag">latest</a>
 
-<div id="k8s-native-storage" class="">
-    <div class="w-full px-10 md:w-3/4 md:px-0 mx-auto py-10">
-        <h2 class="text-2xl font-bold mb-2 text-indigo-600">Kubernetes native Storage</h2>
-        <p class="text-gray-500 font-semibold">Provision storage in less time than it takes to brew coffee</p>
-        <div class="md:grid md:grid-cols-2 gap-4 mt-10">
-            <div class="prose max-w-none mb-10">
-                <p>Kadalu helps you configure persistent storage in 2 easy steps.</p>
-                <p>So you can focus on managing and scaling your applications within the Kubernetes framework.</p>
-                <p><svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Easy to Use</strong> - Easy to install on an already running Kubernetes cluster using Kadalu Operator.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Open Source</strong> - Kadalu is licenced under Apache 2.0 license.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Secure and Scalable</strong> - Natively integrated with Kubernetes for secured access to Storage servers.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Powered by GlusterFS</strong> - Kadalu is powered by time tested industry-proven GlusterFS.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Works with all Kubernetes</strong> - Kadalu works with upstream Kubernetes, Openshift and many others.<br/>
-                    <svg class="w-4 h-4 inline-block text-green-400 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-<strong>Effective Monitoring</strong> - Kadalu comes with built-in health, utilization and performance metrics measures. Easy to integrate into observability patterns.</p>
-            </div>
-            <div class="">
-                <div class="prose max-w-none">
-                    <pre>
-$ kubectl kadalu install
-$ kubectl kadalu storage-add storage-pool-1 \
-    --device kube-node1.example.com:/dev/vdc
-                    </pre>
+                    <a href="/k8s-storage/1.0.x" class="tag">1.0.x</a>
+
+                    <a href="/k8s-storage/devel" class="tag">devel</a>
+
                 </div>
-                <div class="text-right mt-10">
-                    <button class="button bg-indigo-600 text-gray-100" onclick="location.href='/docs/k8s-storage'">Read the docs</button>
+                <div class="content is-small" style="min-height: 80px">
+                    Kadalu Storage for the apps running in Kubernetes
                 </div>
+                <footer class="card-footer">
+                    <span class="card-footer-item">
+                        <a href="/k8s-storage/latest" class="button is-primary">Get started</a>
+                    </span>
+                </footer>
             </div>
         </div>
     </div>
-</div>
 
+    <div class="column is-3">
+        <div class="card">
+            <div class="card-content has-text-grey-dark">
+                <a href="/console/latest" class="title is-5 is-block mb-2" style="min-height:70px">
+                    Kadalu Storage Console
+                </a>
+                <div class="mb-2" style="min-height:30px">
+                    <a href="/console/latest" class="tag">latest</a>
 
-<div class="bg-indigo-200">
-    <div class="w-full px-10 md:w-3/4 md:px-0 mx-auto py-10">
-        <h2 class="text-2xl font-bold mb-10 py-10">Latest Blog Posts</h2>
-        <div class="md:grid md:grid-cols-3 gap-4 pb-10">
-            
-            
-            
-            <a href="/blog/importing-a-gluster-volume-to-kadalu-storage">
-                <div class="shadow-lg bg-white p-5 rounded-lg mb-5" style="height: 350px">
-                    <div class="font-semibold text-xl mb-2">Importing a Gluster Volume to Kadalu Storage</div>
-                    <div class="text-gray-500 text-sm mb-7">Posted on <strong>Jan 25, 2022</strong> by <strong>Aravinda Vishwanathapura</strong></div>
-                    <p class="text-sm">Gluster Storage and Kadalu Storage share the same filesystem backend that is GlusterFS. Which makes it natural to think about migrating a Gluster Volume to Kadalu Volume....</p>
+                    <a href="/console/main" class="tag">main</a>
+
                 </div>
-            </a>
-            
-            
-            
-            <a href="/blog/kadalu-storage-part-1">
-                <div class="shadow-lg bg-white p-5 rounded-lg mb-5" style="height: 350px">
-                    <div class="font-semibold text-xl mb-2">Introducing Kadalu Storage - Part 1</div>
-                    <div class="text-gray-500 text-sm mb-7">Posted on <strong>Jan 18, 2022</strong> by <strong>Aravinda Vishwanathapura</strong></div>
-                    <p class="text-sm">After facing many challenges with Glusterd based Volume management, we experimented to integrate the GlusterFS core filesystem with Kubernetes without using Glusterd. This experiment helped us to understand that some of Gluster's capabilities are limited by the Management layer and not by the filesystem itself....</p>
+                <div class="content is-small" style="min-height: 80px">
+                    Web Console for managing Kadalu Storage
                 </div>
-            </a>
-            
-            
-            
-            <a href="/blog/happy-new-year">
-                <div class="shadow-lg bg-white p-5 rounded-lg mb-5" style="height: 350px">
-                    <div class="font-semibold text-xl mb-2">Happy New Year</div>
-                    <div class="text-gray-500 text-sm mb-7">Posted on <strong>Jan 11, 2022</strong> by <strong>Aravinda Vishwanathapura</strong></div>
-                    <p class="text-sm">2021 was a great year for us with a handful of projects related to GlusterFS feature development, training, and other Open-source projects. We are excited about 2022 with many projects in the pipeline....</p>
-                </div>
-            </a>
-            
-        </div>
-        <div class="text-right">
-            <a class="bg-indigo-600 text-gray-100 button" href="/blog">more</a>
-        </div>
-    </div>
-</div>
-
-        <div class="bg-gray-800 text-gray-100 py-10">
-    <div class="mx-auto w-full px-5 px-10 md:w-3/4 md:px-0" style="min-height: 40vh">
-        <div class="md:grid gap-2 md:grid-cols-4 md:gap-4">
-            <div class="mb-10">
-                <h2 class="text-xl font-semibold text-indigo-300">Community</h2>
-                <ul>
-                    <li><a href="/opensource">Open Source</a></li>
-                    <li><a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Slack</a></li>
-                    <li><a href="https://github.com/kadalu">Github</a></li>
-                </ul>
-            </div>
-
-            <div class="mb-10">
-                <h2 class="text-xl font-semibold text-indigo-300">Learn</h2>
-                <ul>
-                    <li><a href="/docs">Documentation</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/rfcs">RFCs</a></li>
-                </ul>
+                <footer class="card-footer">
+                    <span class="card-footer-item">
+                        <a href="/console/latest" class="button is-primary">Get started</a>
+                    </span>
+                </footer>
             </div>
         </div>
     </div>
+
+    <div class="column is-3">
+        <div class="card">
+            <div class="card-content has-text-grey-dark">
+                <a href="/binnacle/latest" class="title is-5 is-block mb-2" style="min-height:70px">
+                    Binnacle
+                </a>
+                <div class="mb-2" style="min-height:30px">
+                    <a href="/binnacle/latest" class="tag">latest</a>
+
+                    <a href="/binnacle/main" class="tag">main</a>
+
+                </div>
+                <div class="content is-small" style="min-height: 80px">
+                    Simple Test Framework and Infra automation tool
+                </div>
+                <footer class="card-footer">
+                    <span class="card-footer-item">
+                        <a href="/binnacle/latest" class="button is-primary">Get started</a>
+                    </span>
+                </footer>
+            </div>
+        </div>
+    </div>
+
 </div>
-<div class="bg-gray-800 text-gray-100 py-10">
-    <div class="mx-auto w-3/4 text-center text-gray-300 mb-10">
-        &copy; 2022 Kadalu Community(https://github.com/kadalu). All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
     </div>
 </div>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144588868-2"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
-
- gtag('config', 'UA-144588868-2');
-</script>
-
-
+        </div>
     </body>
 </html>

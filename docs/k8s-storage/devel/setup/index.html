@@ -2,11 +2,8 @@
 <html lang="en">
     <head>
         
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title> | Kadalu </title>
-<link href="/static/css/fav.png" rel="icon" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/static/css/fav.png" />
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
 <meta name="generator" content="Nanoc 4.12.1">
 <meta property="og:title" content=""/>
 <meta name="author" content=""/>
@@ -16,302 +13,84 @@
 <link rel="canonical" href="/docs/k8s-storage/devel/setup/"/>
 <meta property="og:url" content="/docs/k8s-storage/devel/setup/"/>
 <meta property="og:site_name" content="Kadalu"/>
-<meta property="og:image" content=""/>
 <meta property="og:type" content="article"/>
 <meta property="article:published_time" content=""/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta property="twitter:image" content=""/>
-<meta property="twitter:title" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
 
-        <link rel="stylesheet" href="/static/css/stylesheet.css">
-<link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
-<script defer data-domain="kadalu.github.io" src="https://plausible.io/js/plausible.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/docs/k8s-storage/devel/setup/"/>
+<meta property="og:url" content="/docs/k8s-storage/devel/setup/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
 
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+</head>
+
+        
+        <meta charset="utf-8">
+        <title>Redirecting&hellip;</title>
+        <link rel="canonical" href="/k8s-storage/devel/setup/">
+        <script>location="/k8s-storage/devel/setup/"</script>
+        <meta http-equiv="refresh" content="0; url=/k8s-storage/devel/setup/">
+        <meta name="robots" content="noindex">
     </head>
     <body>
-        
-
-<div class="bg-indigo-900">
-    <div class="w-full px-5  m-auto py-5">
-        <div class="lg:grid lg:grid-cols-12" x-data="{ menuOpen : false }">
-            <div class="col-span-4 lg:col-span-2" style="height:40px">
-                <a href="/"><img src="/static/css/logo.png" class="h-10 float-left" /></a>
-                <button @click="menuOpen = !menuOpen" class="block absolute md:hidden right-7 top-5 w-8 h-8 text-gray-200 p-1">
-                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                </button>
-            </div>
-            <div class="pt-2 col-span-8 lg:col-span-10">
-                <nav class="absolute md:relative top-16 left-0 md:top-0 z-20 md:flex flex-col-reverse md:flex-row-reverse md:space-x-3 font-semibold w-full md:w-auto bg-indigo-900 shadow-md rounded-lg md:rounded-none md:shadow-none md:bg-transparent p-6 pt-5 md:p-0"
-                     :class="{ 'flex' : menuOpen , 'hidden' : !menuOpen}"  @click.away="menuOpen = false"
-                >
-                    <a href="/blog" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Blog</a>
-                    <a href="/opensource" class="text-gray-300 hover:bg-gray-700 hover:text-white py-4 md:py-2 px-3 rounded-md text-sm font-medium">Open Source</a>
-                    <a href="/docs" class="bg-gray-900 text-white py-2 px-3 rounded-md text-sm font-medium">Docs</a>
-                </nav>
-            </div>
+        <div class="p-6" style="min-height:50vh;max-width:960px;margin:auto">
+            <h1>Redirecting to /k8s-storage/devel/setup/ &hellip;</h1>
+            <a href="/k8s-storage/devel/setup/">Click here if you are not redirected.</a>
+        </div>
+        <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
         </div>
     </div>
-</div>
-
-        
-        <div class="flex flex-col md:grid md:grid-cols-12 w-full" x-data="{docMenuOpen: false}">
-            <div class="col-span-3 bg-gray-100" :class="{ 'block mr-10' : docMenuOpen , 'hidden md:block' : !docMenuOpen}" @click.away="docMenuOpen = false">
-                <div class="py-5 px-5">
-                    
-                    <div class="p-5 bg-gray-200 border text-right rounded-lg">
-                        <strong>Version: </strong>
-                        <select class="input-field" onchange="location = '/docs/k8s-storage/' + this.value;">
-                            <option  value="latest">latest</option>
-                            
-                            <option selected value="devel">devel</option>
-                            
-                        </select>
-                    </div>
-                    
-                    <h2 class="text-xl font-semibold mt-7">User Guide</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/quick-start/">Quick Start</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/quick-start-yaml/">Quick Start YAML</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/introduction/">Introduction</a></li>
-                        
-                        
-                        
-                        
-                        <li class="text-indigo-600 font-semibold py-2 md:py-0">Setup</li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/using-with-private-container-registry/">Using with Private Container Registry</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/setup-storage/">Setup Storage</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/csi-to-claim-persistent-volumes/">CSI to claim Persistent Volumes</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/try-kadalu/">Try Kadalu</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/external-gluster-storage/">External Gluster Storage</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/storage-config-options/">Storage Config Options</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/block-volume/">Block Volume</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/storage-classes/">Storage Classes</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/troubleshooting/">Troubleshooting</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Use cases</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/running-a-webserver/">Running a Webserver</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/running-minio/">Running Minio</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Articles</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/how-it-works?/">How it works?</a></li>
-                        
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/gluster-and-kadalu/">Gluster and Kadalu</a></li>
-                        
-                        
-                    </ul>
-                    
-                    <h2 class="text-xl font-semibold mt-7">Developer Guide</h2>
-                    <ul>
-                        
-                        
-                        
-                        <li class="py-2 md:py-0"><a href="/docs/k8s-storage/devel/get-involved/">Get Involved</a></li>
-                        
-                        
-                    </ul>
-                    
-                    
-                    
-                </div>
-            </div>
-            <div id="main" class="col-span-9">
-                <div class="py-5 px-10">
-                    
-                    <div class="mb-10">
-                        <span class="inline-block font-semibold text-gray-700 py-1 text-xl">
-                            <a href="/">
-                                <svg class="w-6 h-6 inline-block" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg></a> / <a href="/docs/k8s-storage">k8s-storage</a> / <a href="/docs/k8s-storage/devel">devel</a> / setup/</span>
-                    </div>
-                    
-                    <button @click="docMenuOpen = !docMenuOpen" class="block md:hidden w-8 h-8 text-gray-600 mb-5">
-                        <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                    </button>
-                    <div class="mb-24 prose max-w-none prose-indigo">
-                        <h1>Setup</h1>
-<div class="sect1">
-<h2 id="_pre_requisites">Pre-Requisites</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Kubernetes 1.13.0 + version</p>
-</li>
-<li>
-<p>The host should support xfs (<code>mkfs.xfs</code>) with the superblock v5 format</p>
-</li>
-<li>
-<p>On some systems this might require installation of xfsprogs package</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_setup">Setup</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_krew_based_installation">Krew based installation</h3>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl krew <span class="nb">install </span>kadalu</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_binary_based_installation">Binary based installation</h3>
-<div class="paragraph">
-<p>Download and install the latest release of Kadalu Kubectl plugin using,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-fsSL</span> https://github.com/kadalu/kadalu/releases/latest/download/install.sh | <span class="nb">sudo </span>bash <span class="nt">-x</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Test to ensure the version you installed is up-to-date</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl-kadalu version</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Deploy KaDalu Operator using,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu <span class="nb">install</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>In the case of OpenShift, deploy Kadalu Operator using,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>oc kadalu <span class="nb">install</span> <span class="nt">--type</span><span class="o">=</span>openshift</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Note:</strong> Security Context Constraints can be applied only by admins, Run <code>oc login -u system:admin</code> to login as admin</p>
-</div>
-</div>
-</div>
-</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bg-gray-800 text-gray-100 py-10">
-    <div class="mx-auto w-full px-5 " style="min-height: 40vh">
-        <div class="md:grid gap-2 md:grid-cols-4 md:gap-4">
-            <div class="mb-10">
-                <h2 class="text-xl font-semibold text-indigo-300">Community</h2>
-                <ul>
-                    <li><a href="/opensource">Open Source</a></li>
-                    <li><a href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Slack</a></li>
-                    <li><a href="https://github.com/kadalu">Github</a></li>
-                </ul>
-            </div>
-
-            <div class="mb-10">
-                <h2 class="text-xl font-semibold text-indigo-300">Learn</h2>
-                <ul>
-                    <li><a href="/docs">Documentation</a></li>
-                    <li><a href="/blog">Blog</a></li>
-                    <li><a href="/faq">FAQ</a></li>
-                    <li><a href="/rfcs">RFCs</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
     </div>
 </div>
-<div class="bg-gray-800 text-gray-100 py-10">
-    <div class="mx-auto w-3/4 text-center text-gray-300 mb-10">
-        &copy; 2022 Kadalu Community(https://github.com/kadalu). All Rights Reserved.
-    </div>
-</div>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144588868-2"></script>
-<script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
-
- gtag('config', 'UA-144588868-2');
-</script>
-
 
     </body>
 </html>
