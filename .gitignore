@@ -6,7 +6,6 @@ vendor
 .DS_Store
 vendor
 node_modules
-content/static/css/stylesheet.css
 crash.log
 output
 tmp
