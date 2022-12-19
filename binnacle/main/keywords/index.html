@@ -39,7 +39,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
-    <script defer data-domain="kadalu.tech" src="https://plausible.io/js/plausible.js"></script>
+    <script defer data-domain="docs.kadalu.tech" src="https://plausible.io/js/script.js"></script>
 </head>
 
     <body>
@@ -478,45 +478,6 @@
 </div>
 <div class="paragraph">
 <p><strong>Note</strong>: Load path is relative to the current directory from where the <code>binnacle</code> command is called.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_emit_stdout">Emit Stdout</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Some times printing the <code>STDOUT</code> output in test report gives better understanding of the Test case.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="ruby"><span class="no">TEST</span> <span class="s2">"command 1"</span>
-
-<span class="c1"># On setting this all future tests will use this setting</span>
-<span class="no">EMIT_STDOUT</span> <span class="kp">true</span>
-<span class="no">TEST</span> <span class="s2">"command 2"</span>
-
-<span class="c1"># Only use this setting for some commands</span>
-<span class="no">EMIT_STDOUT</span> <span class="kp">true</span> <span class="k">do</span>
-    <span class="no">TEST</span> <span class="s2">"command 3"</span>
-    <span class="no">TEST</span> <span class="s2">"command 4"</span>
-<span class="k">end</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Example output of <code>TEST "stat /var/www/html/index.html"</code></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>#   File: /var/www/html/index.html
-#   Size: 13            Blocks: 8          IO Block: 4096   regular file
-# Device: 10307h/66311d Inode: 4325842     Links: 1
-# Access: (0664/-rw-rw-r--)  Uid: ( 1000/aravinda)   Gid: ( 1000/aravinda)
-# Access: 2022-06-17 13:11:52.807419056 +0530
-# Modify: 2022-06-17 13:11:52.807419056 +0530
-# Change: 2022-06-17 13:11:52.807419056 +0530
-#  Birth: -
-ok       1 - node=local cmd="TEST stat /var/www/html/index.html"</pre>
-</div>
 </div>
 </div>
 </div>
