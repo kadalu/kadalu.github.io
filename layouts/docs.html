@@ -26,8 +26,8 @@
                         </p>
                         <ul class="menu-list">
                             <% section["chapters"].each do |chapter| %>
-                            <% chapter_url = link_from_title(project_name, version, chapter["title"]) %>
-                            <li class=""><a class="<% if chapter_url == @item.path %>is-active<% end %>" href="<%= link_from_title(project_name, version, chapter["title"]) %>"><%= chapter["title"] %></a></li>
+                            <% chapter_url = link_from_chapter(project_name, version, chapter) %>
+                            <li class=""><a class="<% if chapter_url == @item.path %>is-active<% end %>" href="<%= link_from_chapter(project_name, version, chapter) %>"><%= chapter["title"] %></a></li>
                             <% end %>
                         </ul>
                         <% end %>
