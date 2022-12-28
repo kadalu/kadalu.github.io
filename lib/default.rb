@@ -49,7 +49,7 @@ def check_icon
 end
 
 def link_from_chapter(project, version, chapter)
-  slug = chapter["slug"] ? chapter["slug"] : title.gsub(/\s/, "-").downcase
+  slug = chapter["slug"] ? chapter["slug"] : chapter["title"].gsub(/\s/, "-").downcase
   "/#{project}/#{version}/#{slug}/"
 end
 
