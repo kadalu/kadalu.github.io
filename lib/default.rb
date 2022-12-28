@@ -48,8 +48,9 @@ def check_icon
   File.read("./layouts/check_icon.html")
 end
 
-def link_from_title(project, version, title)
-  "/#{project}/#{version}/#{title.gsub(/\s/, "-").downcase}/"
+def link_from_chapter(project, version, chapter)
+  slug = chapter["slug"] ? chapter["slug"] : title.gsub(/\s/, "-").downcase
+  "/#{project}/#{version}/#{slug}/"
 end
 
 def sidemenu(project, version)
