@@ -133,13 +133,13 @@
                             <li class=""><a class="is-active" href="/kadalu-storage/main/user-management/">User Management</a></li>
                             
                             
+                            <li class=""><a class="" href="/kadalu-storage/main/setup/">Setting up the Storage Cluster</a></li>
+                            
+                            
                             <li class=""><a class="" href="/kadalu-storage/main/config-snapshots/">Config Snapshots</a></li>
                             
                             
                             <li class=""><a class="" href="/kadalu-storage/main/pools/">Pools</a></li>
-                            
-                            
-                            <li class=""><a class="" href="/kadalu-storage/main/volumes/">Volumes</a></li>
                             
                             
                             <li class=""><a class="" href="/kadalu-storage/main/faqs/">FAQs</a></li>
@@ -219,9 +219,6 @@ Logged in successfully. Details cached in `~/.kadalu/sessions/admin`. Delete thi
 <li>
 <p>Pool Admin can add more users only to that pool.</p>
 </li>
-<li>
-<p>Volume Admins can add more users only to that Volume.</p>
-</li>
 </ul>
 </div>
 <div class="listingblock">
@@ -236,7 +233,7 @@ User created successfully. Now login to continue with other commands.</span></co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu user create demo <span class="nt">--pool</span><span class="o">=</span>PROD <span class="nt">--volume</span><span class="o">=</span>all <span class="nt">--role</span><span class="o">=</span>viewer
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu user create demo <span class="nt">--pool</span><span class="o">=</span>PROD <span class="nt">--role</span><span class="o">=</span>viewer
 <span class="go">Password:
 User created successfully. Now login to continue with other commands.</span></code></pre>
 </div>
@@ -246,7 +243,7 @@ User created successfully. Now login to continue with other commands.</span></co
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu role add demo viewer <span class="nt">--pool</span><span class="o">=</span>PROD <span class="nt">--volume</span><span class="o">=</span>all</code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu role add demo viewer <span class="nt">--pool</span><span class="o">=</span>PROD</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -265,7 +262,7 @@ Password updated successfully.</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu role remove demo viewer <span class="nt">--pool</span><span class="o">=</span>PROD <span class="nt">--volume</span><span class="o">=</span>all</code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu role remove demo viewer <span class="nt">--pool</span><span class="o">=</span>PROD</code></pre>
 </div>
 </div>
 <div class="paragraph">

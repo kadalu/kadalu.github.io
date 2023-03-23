@@ -133,13 +133,13 @@
                             <li class=""><a class="" href="/kadalu-storage/main/user-management/">User Management</a></li>
                             
                             
+                            <li class=""><a class="" href="/kadalu-storage/main/setup/">Setting up the Storage Cluster</a></li>
+                            
+                            
                             <li class=""><a class="" href="/kadalu-storage/main/config-snapshots/">Config Snapshots</a></li>
                             
                             
                             <li class=""><a class="" href="/kadalu-storage/main/pools/">Pools</a></li>
-                            
-                            
-                            <li class=""><a class="" href="/kadalu-storage/main/volumes/">Volumes</a></li>
                             
                             
                             <li class=""><a class="" href="/kadalu-storage/main/faqs/">FAQs</a></li>
@@ -185,11 +185,11 @@
                             <div class="doc-content">
                                 <h1>Add a new feature</h1>
 <div class="paragraph">
-<p>Let us implement a feature that shows Uptime of all the nodes of a Storage Pool.</p>
+<p>Let us implement a feature that shows Uptime of all the nodes of a Cluster.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">kadalu node uptime &lt;POOL_NAME&gt;</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="go">kadalu node uptime</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -197,10 +197,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu node <span class="nb">uptime </span>DEV
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu node <span class="nb">uptime</span>
 <span class="go">Name                     Uptime
-DEV/server1.example.com  up 1 day, 5 hours, 17 minutes
-DEV/server2.example.com  up 1 day, 4 hours, 24 minutes</span></code></pre>
+server1.example.com      up 1 day, 5 hours, 17 minutes
+server2.example.com      up 1 day, 4 hours, 24 minutes</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -211,10 +211,8 @@ DEV/server2.example.com  up 1 day, 4 hours, 24 minutes</span></code></pre>
 <pre class="rouge highlight"><code data-lang="crystal"><span class="nb">require</span> <span class="s2">"./helpers"</span>
 <span class="nb">require</span> <span class="s2">"../datastore/*"</span>
 
-<span class="n">get</span> <span class="s2">"/api/v1/pools/:pool_name/uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span>
-  <span class="n">pool_name</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">url</span><span class="p">[</span><span class="s2">"pool_name"</span><span class="p">]</span>
-
-  <span class="n">nodes</span> <span class="o">=</span> <span class="no">Datastore</span><span class="p">.</span><span class="nf">list_nodes</span><span class="p">(</span><span class="n">pool_name</span><span class="p">)</span>
+<span class="n">get</span> <span class="s2">"/api/v1/uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span>
+  <span class="n">nodes</span> <span class="o">=</span> <span class="no">Datastore</span><span class="p">.</span><span class="nf">list_nodes</span><span class="p">()</span>
 
   <span class="n">nodes</span><span class="p">.</span><span class="nf">to_json</span>
 <span class="k">end</span></code></pre>
@@ -225,7 +223,7 @@ DEV/server2.example.com  up 1 day, 4 hours, 24 minutes</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl http://localhost:3000/api/v1/pools/DEV/uptime
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl http://localhost:3000/api/v1/uptime
 <span class="go">[
   {
     "id":"341cd9ce-49a6-42ce-bdbf-de4cdbc4159a",
@@ -233,12 +231,7 @@ DEV/server2.example.com  up 1 day, 4 hours, 24 minutes</span></code></pre>
     "state":"",
     "endpoint":"http://kadalu-dev:3000",
     "addresses":[],
-    "token":"",
-    "pool":{
-      "id":"986e16f1-8865-481a-b1d7-40431656bf1b",
-      "name":"DEV",
-      "nodes":[]
-    }
+    "token":""
   }
 ]</span></code></pre>
 </div>
@@ -258,7 +251,6 @@ so that it can have uptime details when exported.</p>
              <span class="n">endpoint</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
              <span class="n">addresses</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">of</span> <span class="no">String</span><span class="p">,</span>
              <span class="n">token</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
-             <span class="n">pool</span> <span class="o">=</span> <span class="no">Pool</span><span class="p">.</span><span class="nf">new</span><span class="p">,</span>
              <span class="n">uptime</span> <span class="o">=</span> <span class="s2">""</span>
 
     <span class="k">def</span> <span class="nf">initialize</span>
@@ -315,14 +307,11 @@ struct. Responses from all the nodes are collected by the
   <span class="k">end</span>
 <span class="k">end</span>
 
-<span class="n">get</span> <span class="s2">"/api/v1/pools/:pool_name/uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span>
-  <span class="n">pool_name</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">url</span><span class="p">[</span><span class="s2">"pool_name"</span><span class="p">]</span>
-
-  <span class="n">nodes</span> <span class="o">=</span> <span class="no">Datastore</span><span class="p">.</span><span class="nf">list_nodes</span><span class="p">(</span><span class="n">pool_name</span><span class="p">)</span>
+<span class="n">get</span> <span class="s2">"/api/v1/uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span>
+  <span class="n">nodes</span> <span class="o">=</span> <span class="no">Datastore</span><span class="p">.</span><span class="nf">list_nodes</span>
 
   <span class="n">resp</span> <span class="o">=</span> <span class="n">dispatch_action</span><span class="p">(</span>
     <span class="no">ACTION_NODE_UPTIME</span><span class="p">,</span>
-    <span class="n">pool_name</span><span class="p">,</span>
     <span class="n">nodes</span>
   <span class="p">)</span>
 
@@ -340,11 +329,11 @@ struct. Responses from all the nodes are collected by the
 </div>
 <div class="paragraph">
 <p>Now the same curl command returns the Uptime
-details for each node in the Pool</p>
+details for each node in the Cluster</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl http://localhost:3000/api/v1/pools/DEV/uptime
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl http://localhost:3000/api/v1/uptime
 <span class="go">[
   {
     "id":"341cd9ce-49a6-42ce-bdbf-de4cdbc4159a",
@@ -353,23 +342,18 @@ details for each node in the Pool</p>
     "endpoint":"http://kadalu-dev:3000",
     "addresses":[],
     "token":"",
-    "pool":{
-      "id":"986e16f1-8865-481a-b1d7-40431656bf1b",
-      "name":"DEV",
-      "nodes":[]
-    },
     "uptime":"up 1 day, 4 hours, 33 minutes"
   }
 ]</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Now add the Client library (<code>$SRC/sdk/crystal/src/pools.cr</code>)</p>
+<p>Now add the Client library (<code>$SRC/sdk/crystal/src/kadalu_storage_manager.cr</code>)</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="crystal">    <span class="k">def</span> <span class="nf">nodes_uptime</span>
-      <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@client</span><span class="p">.</span><span class="nf">url</span><span class="si">}</span><span class="s2">/api/v1/pools/</span><span class="si">#{</span><span class="vi">@name</span><span class="si">}</span><span class="s2">/uptime"</span>
+      <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@client</span><span class="p">.</span><span class="nf">url</span><span class="si">}</span><span class="s2">/api/v1/uptime"</span>
       <span class="n">response</span> <span class="o">=</span> <span class="no">MoanaClient</span><span class="p">.</span><span class="nf">http_get</span><span class="p">(</span>
         <span class="n">url</span><span class="p">,</span>
         <span class="ss">headers: </span><span class="vi">@client</span><span class="p">.</span><span class="nf">auth_header</span>
@@ -390,22 +374,18 @@ details for each node in the Pool</p>
 <pre class="rouge highlight"><code data-lang="crystal"><span class="nb">require</span> <span class="s2">"./helpers"</span>
 
 <span class="n">command</span> <span class="s2">"node.uptime"</span><span class="p">,</span> <span class="s2">"Nodes Uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">parser</span><span class="p">,</span> <span class="n">_</span><span class="o">|</span>
-  <span class="n">parser</span><span class="p">.</span><span class="nf">banner</span> <span class="o">=</span> <span class="s2">"Usage: kadalu node uptime POOL"</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">banner</span> <span class="o">=</span> <span class="s2">"Usage: kadalu node uptime"</span>
 <span class="k">end</span>
 
 <span class="n">handler</span> <span class="s2">"node.uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">args</span><span class="o">|</span>
-  <span class="n">args</span><span class="p">.</span><span class="nf">pool_name</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pool_and_node_name</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="nf">pos_args</span><span class="p">.</span><span class="nf">size</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">?</span> <span class="s2">""</span> <span class="p">:</span> <span class="n">args</span><span class="p">.</span><span class="nf">pos_args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-
-  <span class="n">command_error</span> <span class="s2">"Pool name is required"</span> <span class="k">if</span> <span class="n">args</span><span class="p">.</span><span class="nf">pool_name</span> <span class="o">==</span> <span class="s2">""</span>
-
   <span class="n">api_call</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="s2">"Failed to get list of nodes"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">client</span><span class="o">|</span>
-    <span class="n">nodes</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">pool</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="nf">pool_name</span><span class="p">).</span><span class="nf">nodes_uptime</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">nodes_uptime</span>
 
     <span class="n">table</span> <span class="o">=</span> <span class="no">CliTable</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">table</span><span class="p">.</span><span class="nf">header</span><span class="p">(</span><span class="s2">"Name"</span><span class="p">,</span> <span class="s2">"Uptime"</span><span class="p">)</span>
 
     <span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
-      <span class="n">table</span><span class="p">.</span><span class="nf">record</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">node</span><span class="p">.</span><span class="nf">pool</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">node</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">node</span><span class="p">.</span><span class="nf">uptime</span><span class="p">)</span>
+      <span class="n">table</span><span class="p">.</span><span class="nf">record</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">name</span><span class="p">,</span> <span class="n">node</span><span class="p">.</span><span class="nf">uptime</span><span class="p">)</span>
     <span class="k">end</span>
 
     <span class="n">table</span><span class="p">.</span><span class="nf">render</span>
@@ -429,9 +409,9 @@ details for each node in the Pool</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">root@kadalu-dev:/src/mgr#</span><span class="w"> </span>./bin/kadalu node <span class="nb">uptime </span>DEV
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">root@kadalu-dev:/src/mgr#</span><span class="w"> </span>./bin/kadalu node <span class="nb">uptime</span>
 <span class="go">Name            Uptime
-DEV/kadalu-dev  up 1 day, 5 hours, 30 minutes</span></code></pre>
+kadalu-dev      up 1 day, 5 hours, 30 minutes</span></code></pre>
 </div>
 </div>
                             </div>

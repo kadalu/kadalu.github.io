@@ -133,13 +133,13 @@
                             <li class=""><a class="" href="/kadalu-storage/main/user-management/">User Management</a></li>
                             
                             
+                            <li class=""><a class="" href="/kadalu-storage/main/setup/">Setting up the Storage Cluster</a></li>
+                            
+                            
                             <li class=""><a class="" href="/kadalu-storage/main/config-snapshots/">Config Snapshots</a></li>
                             
                             
                             <li class=""><a class="" href="/kadalu-storage/main/pools/">Pools</a></li>
-                            
-                            
-                            <li class=""><a class="" href="/kadalu-storage/main/volumes/">Volumes</a></li>
                             
                             
                             <li class=""><a class="" href="/kadalu-storage/main/faqs/">FAQs</a></li>
@@ -262,64 +262,44 @@ Login successful. Details saved in `/root/.kadalu/session`. Delete this file or 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_create_a_pool_and_add_storage_nodes">Create a pool and add storage nodes</h2>
+<h2 id="_add_storage_nodes">Add storage nodes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following commands are run from the storage manager (which can be one of the storage nodes or any separate node) which was chosen in the previous step.</p>
 </div>
 <div class="paragraph">
-<p><strong>Note</strong>: The below steps 1 and 2 can be skipped and can be done as part of volume create by passing <code>--auto-add-nodes</code> and <code>--auto-create-pool</code> during volume create command.</p>
+<p><strong>Note</strong>: The below steps 1 and 2 can be skipped and can be done as part of pool create by passing <code>--auto-add-nodes</code>.</p>
 </div>
 <div class="sect2">
 <h3 id="_step_1">Step 1:</h3>
 <div class="paragraph">
-<p>Create a pool</p>
+<p>Add nodes to the cluster</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu pool create DEV
-<span class="go">Pool DEV created successfully
-ID: 2a643b56-3fd9-4782-882a-3915853d67a7</span></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu pool list
-<span class="go">Name  ID
-DEV   2a643b56-3fd9-4782-882a-3915853d67a7</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_step_2">Step 2:</h3>
-<div class="paragraph">
-<p>Add nodes to the pool</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu node add DEV/vm1
-<span class="go">Node vm1 added to DEV successfully
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu node add vm1
+<span class="go">Node vm1 added to the cluster successfully
 ID: 710acd83-d3aa-4292-b362-543599d12edf
 </span><span class="gp">$</span><span class="w">
-</span><span class="gp">$</span><span class="w"> </span>kadalu node add DEV/vm2
-<span class="go">Node vm2 added to DEV successfully
+</span><span class="gp">$</span><span class="w"> </span>kadalu node add vm2
+<span class="go">Node vm2 added to the cluster successfully
 ID: dfed8210-53d4-44e6-8a8b-7abe3fddb145
 </span><span class="gp">$</span><span class="w">
-</span><span class="gp">$</span><span class="w"> </span>kadalu node add DEV/vm3
-<span class="go">Node vm3 added to DEV successfully
+</span><span class="gp">$</span><span class="w"> </span>kadalu node add vm3
+<span class="go">Node vm3 added to the cluster successfully
 ID: 9ac5d869-9542-4dac-9c88-97cfb11a5738
 </span><span class="gp">$</span><span class="w"> </span>kadalu node list
 <span class="go">Name     ID                                    Endpoint
-DEV/vm3  9ac5d869-9542-4dac-9c88-97cfb11a5738  http://vm3:3000
-DEV/vm2  dfed8210-53d4-44e6-8a8b-7abe3fddb145  http://vm2:3000
-DEV/vm1  710acd83-d3aa-4292-b362-543599d12edf  http://vm1:3000</span></code></pre>
+vm3      9ac5d869-9542-4dac-9c88-97cfb11a5738  http://vm3:3000
+vm2      dfed8210-53d4-44e6-8a8b-7abe3fddb145  http://vm2:3000
+vm1      710acd83-d3aa-4292-b362-543599d12edf  http://vm1:3000</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_create_a_storage_volume">Create a storage volume</h2>
+<h2 id="_create_a_storage_pool">Create a storage pool</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Now create a directory to use as a storage unit and create a Kadalu Storage Volume.</p>
@@ -328,13 +308,13 @@ DEV/vm1  710acd83-d3aa-4292-b362-543599d12edf  http://vm1:3000</span></code></pr
 <div class="content">
 <pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo mkdir</span> /data/t2     <span class="o">(</span>Run on all the storage nodes<span class="o">)</span>
 <span class="gp">$</span><span class="w">
-</span><span class="gp">$</span><span class="w"> </span>kadalu volume create DEV/Test-Vol replica 3 vm1:/data/t2 vm2:/data/t2 vm3:/data/t2
-<span class="go">Volume Test-Vol created successfully
+</span><span class="gp">$</span><span class="w"> </span>kadalu pool create Test-Pool replica 3 vm1:/data/t2 vm2:/data/t2 vm3:/data/t2
+<span class="go">Pool Test-Pool created successfully
 ID: 59a726ad-0010-4a4f-ac4d-b11e54e722d7
 </span><span class="gp">$</span><span class="w">
-</span><span class="gp">$</span><span class="w"> </span>kadalu volume list
+</span><span class="gp">$</span><span class="w"> </span>kadalu pool list
 <span class="go">Name          ID                                    State    Type          Size  Inodes
-DEV/Test-Vol  59a726ad-0010-4a4f-ac4d-b11e54e722d7  Started  Replicate  50.0GiB   26.2M</span></code></pre>
+Test-Pool     59a726ad-0010-4a4f-ac4d-b11e54e722d7  Started  Replicate  50.0GiB   26.2M</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -342,24 +322,24 @@ DEV/Test-Vol  59a726ad-0010-4a4f-ac4d-b11e54e722d7  Started  Replicate  50.0GiB 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu volume create DEV/Test-Vol replica 3 vm1:/data/t2 vm2:/data/t2 vm3:/data/t2 <span class="nt">--auto-add-nodes</span> <span class="nt">--auto-create-pool</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu pool create Test-Pool replica 3 vm1:/data/t2 vm2:/data/t2 vm3:/data/t2 <span class="nt">--auto-add-nodes</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>And the steps to create pool and node addition can be skipped.</p>
+<p>And the steps to node addition can be skipped.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_mount_the_volume">Mount the volume</h2>
+<h2 id="_mount_the_pool">Mount the pool</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo mkdir</span> /mnt/kadalu_vol
-<span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>mount <span class="nt">-t</span> kadalu vm1:DEV/Test-Vol /mnt/kadalu_vol/
-<span class="gp">$</span><span class="w"> </span><span class="nb">df</span> <span class="nt">-h</span> /mnt/kadalu_vol/
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo mkdir</span> /mnt/kadalu_pool
+<span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>mount <span class="nt">-t</span> kadalu vm1:Test-Pool /mnt/kadalu_pool/
+<span class="gp">$</span><span class="w"> </span><span class="nb">df</span> <span class="nt">-h</span> /mnt/kadalu_pool/
 <span class="go">Filesystem           Size  Used Avail Use% Mounted on
-kadalu:/Test-Vol   30G  554M   30G   2% /mnt/kadalu_vol</span></code></pre>
+kadalu:/Test-Pool    30G  554M   30G   2% /mnt/kadalu_pool</span></code></pre>
 </div>
 </div>
 </div>

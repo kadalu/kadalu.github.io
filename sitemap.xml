@@ -2,911 +2,911 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://kadalu.io/CNAME</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/installation/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/keywords/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/plugins/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/latest/syntax/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/installation/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/keywords/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/plugins/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/binnacle/main/syntax/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/blog.erb</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/console/latest/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/console/latest/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/console/latest/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/console/main/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/console/main/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/console/main/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/block-volume/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/csi-to-claim-persistent-volumes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/external-gluster-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/get-involved/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/gluster-and-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/how-it-works/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/openshift-monitoring/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/quick-start-yaml/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/release-management/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/running-a-webserver/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/running-minio/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/setup-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/storage-classes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/storage-config-options/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/troubleshooting/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/try-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/upgrade/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/devel/using-with-private-container-registry/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/block-volume/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/csi-to-claim-persistent-volumes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/external-gluster-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/get-involved/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/gluster-and-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/how-it-works/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/openshift-monitoring/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/quick-start-yaml/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/release-management/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/running-a-webserver/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/running-minio/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/setup-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/storage-classes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/storage-config-options/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/troubleshooting/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/try-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/upgrade/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/docs/k8s-storage/latest/using-with-private-container-registry/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/Design/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/block-volume/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/csi-to-claim-persistent-volumes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/drawings.svg</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/examples/storage-config.yaml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/external-gluster-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/get-involved/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/gluster-and-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/how-it-works/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/namespace.png</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/openshift-monitoring/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/quick-start-yaml/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/release-management/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/rethinking-gluster-management-using-k8s.pdf</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/running-a-webserver/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/running-minio/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/server-pod.png</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/setup-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/storage-classes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/storage-config-options/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/troubleshooting/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/try-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/upgrade/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/1.0.x/using-with-private-container-registry/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/Design/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/block-volume/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/csi-to-claim-persistent-volumes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/drawings.svg</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/examples/storage-config.yaml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/external-gluster-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/get-involved/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/gluster-and-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/how-it-works/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/namespace.png</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/openshift-monitoring/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/quick-start-yaml/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/release-management/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/rethinking-gluster-management-using-k8s.pdf</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/running-a-webserver/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/running-minio/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/server-pod.png</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/setup-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/storage-classes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/storage-config-options/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/troubleshooting/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/try-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/upgrade/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/devel/using-with-private-container-registry/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/Design/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/block-volume/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/csi-to-claim-persistent-volumes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/drawings.svg</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/examples/storage-config.yaml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/external-gluster-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/get-involved/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/gluster-and-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/how-it-works/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/namespace.png</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/openshift-monitoring/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/quick-start-yaml/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/release-management/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/rethinking-gluster-management-using-k8s.pdf</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/running-a-webserver/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/running-minio/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/server-pod.png</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/setup-storage/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/storage-classes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/storage-config-options/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/troubleshooting/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/try-kadalu/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/upgrade/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/k8s-storage/latest/using-with-private-container-registry/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/config-snapshots/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/container-based-setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/add-a-new-feature/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/add-node-to-pool/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/auto-detect-manager-and-agent/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/container-based-dev-setup-for-glusterfs/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/container-based-dev-setup-single-node/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/emacs-setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/internal-and-external-apis/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/new-feature-checklist/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/testing/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/faqs/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/install/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/pools/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/user-management/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/1.0.x/volumes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/config-snapshots/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/container-based-setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/add-a-new-feature/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/add-node-to-pool/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/auto-detect-manager-and-agent/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/container-based-dev-setup-for-glusterfs/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/container-based-dev-setup-single-node/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/emacs-setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/internal-and-external-apis/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/new-feature-checklist/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/testing/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/faqs/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/install/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/pools/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/user-management/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/latest/volumes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/config-snapshots/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/container-based-setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/cron-based-config-backup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/README/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/add-a-new-feature/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/add-node-to-pool/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/auto-detect-manager-and-agent/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/container-based-dev-setup-for-glusterfs/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/container-based-dev-setup-single-node/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/emacs-setup/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/internal-and-external-apis/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/new-feature-checklist/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/devel/testing/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/faqs/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/index.yml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/install/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/introduction/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/pools/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/quick-start/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
+  </url>
+  <url>
+    <loc>https://kadalu.io/kadalu-storage/main/setup/</loc>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/kadalu-storage/main/user-management/</loc>
-    <lastmod>2022-12-28</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/main/volumes/</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
   <url>
     <loc>https://kadalu.io/sitemap.xml</loc>
-    <lastmod>2022-12-28</lastmod>
+    <lastmod>2023-03-23</lastmod>
   </url>
 </urlset>
 
