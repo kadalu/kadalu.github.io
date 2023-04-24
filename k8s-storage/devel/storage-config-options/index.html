@@ -213,6 +213,8 @@
                                     <select x-model="version" style="width: 100%" @change="window.location=`/k8s-storage/${version}`">
                                         <option>latest</option>
                                         
+                                        <option>1.1.x</option>
+                                        
                                         <option>1.0.x</option>
                                         
                                         <option>devel</option>
@@ -295,7 +297,7 @@
 <div class="sect2">
 <h3 id="_type">Type</h3>
 <div class="paragraph">
-<p>Native mode is available with 3 <code>type</code> options. They are <code>Replica1</code>, <code>Replica2</code> and another <code>Replica3</code>.</p>
+<p>Native mode is available with 5 <code>type</code> options. They are <code>Replica1</code>, <code>Replica2</code>, <code>Replica3</code>, <code>Disperse</code> and <code>Arbiter</code>.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -358,6 +360,23 @@
 </div>
 <div class="paragraph">
 <p>To create a PVC from this storage, you need to provide <code>storageClassName</code> option as <code>kadalu.disperse</code>.</p>
+</div>
+</li>
+<li>
+<p><strong>Arbiter</strong> Arbiter volume type is a subset of Replica volume. Arbiter volume aims to reduce split-brain and inconsitencies amongst the storage-units/bricks. The Arbiter storage unit will only hold the directory structure, the file and its metadata without the content. Providing Replica3 level consistency without requiring 3 copies of space. This mode requires atleast 3 storages or mulitple of 3 storages if more storages are needed based on the requirement. Refer <a href="https://docs.gluster.org/en/v3/Administrator%20Guide/arbiter-volumes-and-quorum/">GlusterFS documentation</a> to know more about Arbiter Volumes.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="s">$ kubectl kadalu storage-add storage-pool1 --type=Arbiter \</span>
+    <span class="s">--device kube-nodename1:/dev/vdc \</span>
+    <span class="s">--device kube-nodename2:/dev/vdc \</span>
+    <span class="s">--device kube-nodename3:/dev/vdc \</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Above command creates storage-pool of type <code>Arbiter</code> where 1st and 2nd bricks are replicated data bricks and the 3rd brick is the Arbiter brick which holds no file contents.</p>
+</div>
+<div class="paragraph">
+<p>To create a PVC from this storage, you need to provide <code>storageClassName</code> option as <code>kadalu.arbiter</code>.</p>
 </div>
 </li>
 </ul>

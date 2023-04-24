@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/kadalu-storage/1.1.x/devel/add-a-new-feature/"/>
+<meta property="og:url" content="/kadalu-storage/1.1.x/devel/add-a-new-feature/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="docs.kadalu.tech" src="https://plausible.io/js/script.js"></script>
+</head>
+
+    <body>
+        <div id="main" x-data="{version: '1.1.x', menuShow: true}">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        
+    </div>
+
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="tabs is-small mb-0">
+                <ul>
+                    
+                    <li class="is-active">
+                        <a href="/kadalu-storage/latest" class="mb-0">
+                            <span>Kadalu Storage</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/k8s-storage/latest" class="mb-0">
+                            <span>Kadalu Storage (Kubernetes Native)</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/console/latest" class="mb-0">
+                            <span>Kadalu Storage Console</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/binnacle/latest" class="mb-0">
+                            <span>Binnacle</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '230px' : '0'}">
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        
+                        <p class="menu-label mt-4">
+                            User Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/quick-start/">Quick Start</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/container-based-setup/">Container Based Setup</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/introduction/">Introduction</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/install/">Install</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/user-management/">User Management</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/setup/">Setting up the Storage Cluster</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/config-snapshots/">Config Snapshots</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/pools/">Pools</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/faqs/">FAQs</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Tutorials
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/1.1.x/cron-based-config-backup/">Cron-based config backup</a></li>
+                            
+                        </ul>
+                        
+                    </aside>
+                </div>
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light has-text-right" style="flex-basis: 20px; position:relative" @click="menuShow = !menuShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6 content is-flex" id="main-content">
+                        <div class="is-flex-grow-1 is-flex-shrink-1">
+                            <div class="p-2 has-text-right mb-6">
+                                <span>Version</span>
+                                <div class="select is-small is-rounded">
+                                    <select x-model="version" style="width: 100%" @change="window.location=`/kadalu-storage/${version}`">
+                                        <option>latest</option>
+                                        
+                                        <option>1.1.x</option>
+                                        
+                                        <option>1.0.x</option>
+                                        
+                                        <option>main</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="doc-content">
+                                <h1>Add a new feature</h1>
+<div class="paragraph">
+<p>Let us implement a feature that shows Uptime of all the nodes of a Cluster.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="go">kadalu node uptime</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu node <span class="nb">uptime</span>
+<span class="go">Name                     Uptime
+server1.example.com      up 1 day, 5 hours, 17 minutes
+server2.example.com      up 1 day, 4 hours, 24 minutes</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First we will add ReST api handler (<code>$SRC/mgr/src/server/plugins/node_uptime.cr</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="crystal"><span class="nb">require</span> <span class="s2">"./helpers"</span>
+<span class="nb">require</span> <span class="s2">"../datastore/*"</span>
+
+<span class="n">get</span> <span class="s2">"/api/v1/uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span>
+  <span class="n">nodes</span> <span class="o">=</span> <span class="no">Datastore</span><span class="p">.</span><span class="nf">list_nodes</span><span class="p">()</span>
+
+  <span class="n">nodes</span><span class="p">.</span><span class="nf">to_json</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now if we run below curl command, then it returns just the nodes list.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl http://localhost:3000/api/v1/uptime
+<span class="go">[
+  {
+    "id":"341cd9ce-49a6-42ce-bdbf-de4cdbc4159a",
+    "name":"kadalu-dev",
+    "state":"",
+    "endpoint":"http://kadalu-dev:3000",
+    "addresses":[],
+    "token":""
+  }
+]</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now lets add a new field to Node struct(<code>$SRC/types/src/moana_types.cr</code>)
+so that it can have uptime details when exported.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="crystal">  <span class="k">class</span> <span class="nc">Node</span>
+    <span class="kp">include</span> <span class="no">JSON</span><span class="o">::</span><span class="no">Serializable</span>
+
+    <span class="kp">property</span> <span class="nb">id</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+             <span class="nb">name</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+             <span class="n">state</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+             <span class="n">endpoint</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+             <span class="n">addresses</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">of</span> <span class="no">String</span><span class="p">,</span>
+             <span class="n">token</span> <span class="o">=</span> <span class="s2">""</span><span class="p">,</span>
+             <span class="n">uptime</span> <span class="o">=</span> <span class="s2">""</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span>
+    <span class="k">end</span>
+  <span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>ReST API handler function runs only in the Server node,
+so it can&#8217;t get the uptime details from other nodes of
+the Pool. Add a <code>node_action</code> to return the uptime from
+each node and call that by running <code>dispatch_action</code> helper.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="crystal"><span class="no">ACTION_NODE_UPTIME</span> <span class="o">=</span> <span class="s2">"node_uptime"</span>
+
+<span class="n">node_action</span> <span class="no">ACTION_NODE_UPTIME</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="o">|</span>
+  <span class="n">rc</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="s2">"uptime"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"--pretty"</span><span class="p">])</span>
+
+  <span class="k">if</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="no">NodeResponse</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="kp">true</span><span class="p">,</span> <span class="p">{</span><span class="n">out</span><span class="p">.</span><span class="nf">strip</span><span class="p">}.</span><span class="nf">to_json</span><span class="p">)</span>
+  <span class="k">else</span>
+    <span class="no">NodeResponse</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="kp">false</span><span class="p">,</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="n">err</span><span class="p">}.</span><span class="nf">to_json</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Above node action runs <code>uptime --pretty</code> command and returns
+a tuple with uptime data. Every node action receives the input
+in JSON format. In the above example, no input is needed to
+find the node&#8217;s uptime.</p>
+</div>
+<div class="paragraph">
+<p>Response from the node is sent back to server as <code>NodeResponse</code>
+struct. Responses from all the nodes are collected by the
+<code>dispatch_action</code> in the server.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="crystal"><span class="nb">require</span> <span class="s2">"./helpers"</span>
+<span class="nb">require</span> <span class="s2">"../datastore/*"</span>
+
+<span class="no">ACTION_NODE_UPTIME</span> <span class="o">=</span> <span class="s2">"node_uptime"</span>
+
+<span class="n">node_action</span> <span class="no">ACTION_NODE_UPTIME</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="o">|</span>
+  <span class="n">rc</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">execute</span><span class="p">(</span><span class="s2">"uptime"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"--pretty"</span><span class="p">])</span>
+
+  <span class="k">if</span> <span class="n">rc</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="no">NodeResponse</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="kp">true</span><span class="p">,</span> <span class="p">{</span><span class="n">out</span><span class="p">.</span><span class="nf">strip</span><span class="p">}.</span><span class="nf">to_json</span><span class="p">)</span>
+  <span class="k">else</span>
+    <span class="no">NodeResponse</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="kp">false</span><span class="p">,</span> <span class="p">{</span><span class="s2">"error"</span><span class="p">:</span> <span class="n">err</span><span class="p">}.</span><span class="nf">to_json</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">get</span> <span class="s2">"/api/v1/uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span>
+  <span class="n">nodes</span> <span class="o">=</span> <span class="no">Datastore</span><span class="p">.</span><span class="nf">list_nodes</span>
+
+  <span class="n">resp</span> <span class="o">=</span> <span class="n">dispatch_action</span><span class="p">(</span>
+    <span class="no">ACTION_NODE_UPTIME</span><span class="p">,</span>
+    <span class="n">nodes</span>
+  <span class="p">)</span>
+
+  <span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+     <span class="k">if</span> <span class="n">resp</span><span class="p">.</span><span class="nf">node_responses</span><span class="p">[</span><span class="n">node</span><span class="p">.</span><span class="nf">id</span><span class="p">].</span><span class="nf">ok</span>
+      <span class="n">node</span><span class="p">.</span><span class="nf">uptime</span> <span class="o">=</span> <span class="no">Tuple</span><span class="p">(</span><span class="no">String</span><span class="p">).</span><span class="nf">from_json</span><span class="p">(</span>
+           <span class="n">resp</span><span class="p">.</span><span class="nf">node_responses</span><span class="p">[</span><span class="n">node</span><span class="p">.</span><span class="nf">id</span><span class="p">].</span><span class="nf">response</span>
+      <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">nodes</span><span class="p">.</span><span class="nf">to_json</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the same curl command returns the Uptime
+details for each node in the Cluster</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>curl http://localhost:3000/api/v1/uptime
+<span class="go">[
+  {
+    "id":"341cd9ce-49a6-42ce-bdbf-de4cdbc4159a",
+    "name":"kadalu-dev",
+    "state":"",
+    "endpoint":"http://kadalu-dev:3000",
+    "addresses":[],
+    "token":"",
+    "uptime":"up 1 day, 4 hours, 33 minutes"
+  }
+]</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now add the Client library (<code>$SRC/sdk/crystal/src/kadalu_storage_manager.cr</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="crystal">    <span class="k">def</span> <span class="nf">nodes_uptime</span>
+      <span class="n">url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@client</span><span class="p">.</span><span class="nf">url</span><span class="si">}</span><span class="s2">/api/v1/uptime"</span>
+      <span class="n">response</span> <span class="o">=</span> <span class="no">MoanaClient</span><span class="p">.</span><span class="nf">http_get</span><span class="p">(</span>
+        <span class="n">url</span><span class="p">,</span>
+        <span class="ss">headers: </span><span class="vi">@client</span><span class="p">.</span><span class="nf">auth_header</span>
+      <span class="p">)</span>
+      <span class="k">if</span> <span class="n">response</span><span class="p">.</span><span class="nf">status_code</span> <span class="o">==</span> <span class="mi">200</span>
+        <span class="no">Array</span><span class="p">(</span><span class="no">MoanaTypes</span><span class="o">::</span><span class="no">Node</span><span class="p">).</span><span class="nf">from_json</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="nf">body</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="no">MoanaClient</span><span class="p">.</span><span class="nf">error_response</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Last but not the least, add CLI command handler (<code>$SRC/mgr/src/cmds/node_uptime.cr</code>)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="crystal"><span class="nb">require</span> <span class="s2">"./helpers"</span>
+
+<span class="n">command</span> <span class="s2">"node.uptime"</span><span class="p">,</span> <span class="s2">"Nodes Uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">parser</span><span class="p">,</span> <span class="n">_</span><span class="o">|</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">banner</span> <span class="o">=</span> <span class="s2">"Usage: kadalu node uptime"</span>
+<span class="k">end</span>
+
+<span class="n">handler</span> <span class="s2">"node.uptime"</span> <span class="k">do</span> <span class="o">|</span><span class="n">args</span><span class="o">|</span>
+  <span class="n">api_call</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="s2">"Failed to get list of nodes"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">client</span><span class="o">|</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">nodes_uptime</span>
+
+    <span class="n">table</span> <span class="o">=</span> <span class="no">CliTable</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">table</span><span class="p">.</span><span class="nf">header</span><span class="p">(</span><span class="s2">"Name"</span><span class="p">,</span> <span class="s2">"Uptime"</span><span class="p">)</span>
+
+    <span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+      <span class="n">table</span><span class="p">.</span><span class="nf">record</span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="nf">name</span><span class="p">,</span> <span class="n">node</span><span class="p">.</span><span class="nf">uptime</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">table</span><span class="p">.</span><span class="nf">render</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now compile again and restart the server.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> <span class="nv">$SRC</span>/mgr
+<span class="gp">$</span><span class="w"> </span>shards build
+<span class="gp">$</span><span class="w"> </span>./bin/kadalu mgr</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In other terminal, run the following command
+(After creating the Pool and adding nodes)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">root@kadalu-dev:/src/mgr#</span><span class="w"> </span>./bin/kadalu node <span class="nb">uptime</span>
+<span class="go">Name            Uptime
+kadalu-dev      up 1 day, 5 hours, 30 minutes</span></code></pre>
+</div>
+</div>
+                            </div>
+                        </div>
+                        <div class="p-4 is-flex-grow-1 is-flex-shrink-1 is-hidden-touch" x-data="{headings: document.getElementById('main-content').getElementsByTagName('h2')}" style="position:relative">
+                            <div style="position: sticky;top:20px">
+                                <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                <template x-for="heading in headings">
+                                    <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+            <a class="is-block has-text-white" target="_blank" href="https://kadalu.tech">kadalu.tech</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

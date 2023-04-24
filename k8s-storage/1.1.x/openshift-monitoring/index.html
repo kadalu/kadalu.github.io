@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charSet="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/static/css/bulma-0.9.4.min.css">
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/css/syntax-highlight-emacs.css">
+    <script defer src="/static/alpinejs.persist-3.10.5.min.js"></script>
+    <script defer src="/static/alpinejs-3.10.5.min.js"></script>
+
+    <meta name="generator" content="Nanoc 4.12.1">
+    
+<link href="/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/favicon.ico" />
+<meta name="generator" content="Nanoc 4.12.1">
+<meta property="og:title" content=""/>
+<meta name="author" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta name="description" content=""/>
+<meta property="og:description" content=""/>
+<link rel="canonical" href="/k8s-storage/1.1.x/openshift-monitoring/"/>
+<meta property="og:url" content="/k8s-storage/1.1.x/openshift-monitoring/"/>
+<meta property="og:site_name" content="Kadalu"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content=""/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+<meta property="og:image" content="https://kadalu.tech/images/logo-icon-spaced.png"/>
+
+<meta name="twitter:site" content="https://kadalu.tech"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content=""/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <script defer data-domain="docs.kadalu.tech" src="https://plausible.io/js/script.js"></script>
+</head>
+
+    <body>
+        <div id="main" x-data="{version: '1.1.x', menuShow: true}">
+            <nav class="navbar pr-4" role="navigation" aria-label="main navigation" x-data="{showing: false}">
+    <div class="navbar-brand has-text-left">
+        <a class="navbar-item" href="/">
+            <span class="has-text-primary is-size-4">kadalu</span><span class="has-text-grey is-size-4 ml-1">DOCS</span>
+        </a>
+
+        <!-- <div class="field">
+             <p class="control has-icons-left mx-2 mt-4">
+             <input class="input" type="text" placeholder="Search">
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="icon is-small is-left pl-1" style="width: 1.5em">
+             <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+             </svg>
+             </p>
+             </div> -->
+
+        <a role="button" class="navbar-burger" aria-label="menu" :class="showing ? 'is-active' : ''" aria-expanded="false" @click="showing = !showing">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        
+    </div>
+
+    <div class="navbar-end" x-show="showing">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+    <div class="navbar-end is-hidden-touch">
+        <a class="navbar-item" href="https://kadalu.tech">
+            kadalu.tech
+        </a>
+    </div>
+</nav>
+
+            <div class="tabs is-small mb-0">
+                <ul>
+                    
+                    <li class="">
+                        <a href="/kadalu-storage/latest" class="mb-0">
+                            <span>Kadalu Storage</span>
+                        </a>
+                    </li>
+                    
+                    <li class="is-active">
+                        <a href="/k8s-storage/latest" class="mb-0">
+                            <span>Kadalu Storage (Kubernetes Native)</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/console/latest" class="mb-0">
+                            <span>Kadalu Storage Console</span>
+                        </a>
+                    </li>
+                    
+                    <li class="">
+                        <a href="/binnacle/latest" class="mb-0">
+                            <span>Binnacle</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light" style="overflow-x: hidden;transition: all 200ms ease-in-out;" :style="{'flex-basis': menuShow ? '230px' : '0'}">
+                    <aside class="menu mb-4" :class="menuShow ? 'px-4' : 'px-6'">
+                        
+                        <p class="menu-label mt-4">
+                            User Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/quick-start/">Quick Start</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/quick-start-yaml/">Quick Start YAML</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/introduction/">Introduction</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/setup/">Setup</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/using-with-private-container-registry/">Using with Private Container Registry</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/setup-storage/">Setup Storage</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/csi-to-claim-persistent-volumes/">CSI to claim Persistent Volumes</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/try-kadalu/">Try Kadalu</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/external-gluster-storage/">External Gluster Storage</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/storage-config-options/">Storage Config Options</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/block-volume/">Block Volume</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/storage-classes/">Storage Classes</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/troubleshooting/">Troubleshooting</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Use cases
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/running-a-webserver/">Running a Webserver</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/running-minio/">Running Minio</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Articles
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/how-it-works?/">How it works?</a></li>
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/gluster-and-kadalu/">Gluster and Kadalu</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Developer Guide
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/k8s-storage/1.1.x/get-involved/">Get Involved</a></li>
+                            
+                        </ul>
+                        
+                    </aside>
+                </div>
+                <div class="is-flex-grow-0 is-flex-shrink-0 has-background-info-light has-text-right" style="flex-basis: 20px; position:relative" @click="menuShow = !menuShow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" x-show="!menuShow" class="icon is-clickable" style="position: sticky; top:2px">
+                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="is-flex-grow-1 is-flex-shrink-1">
+                    <div class="px-6 mt-4 mb-6 content is-flex" id="main-content">
+                        <div class="is-flex-grow-1 is-flex-shrink-1">
+                            <div class="p-2 has-text-right mb-6">
+                                <span>Version</span>
+                                <div class="select is-small is-rounded">
+                                    <select x-model="version" style="width: 100%" @change="window.location=`/k8s-storage/${version}`">
+                                        <option>latest</option>
+                                        
+                                        <option>1.1.x</option>
+                                        
+                                        <option>1.0.x</option>
+                                        
+                                        <option>devel</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="doc-content">
+                                <h1>Setup Monitoring of Kadalu in Openshift &amp; OKD 4.X clusters</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide will assist you in collecting metrics &amp; performance data into Openshift/OKD Prometheus.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_enable_user_workload_monitoring">Enable user workload monitoring</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Follow the official documentation for enabling user workload monitoring.
+This is a sample from OKD4.10 and it should be used as a guidance only.
+This effectively informs OKD in-cluster monitoring to scrape user workload endpoints as well.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code># In this example we also use Kadalu as persistent storage of Prometheus.
+# If you use another storage class for that -&gt; set only "enableUserWorkload"
+
+$ oc -n openshift-monitoring edit configmap cluster-monitoring-config
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-monitoring-config
+  namespace: openshift-monitoring
+data:
+  config.yaml: |
+    enableUserWorkload: true
+    prometheusK8s:
+      volumeClaimTemplate:
+       metadata:
+         name: prometheusdb
+       spec:
+         storageClassName: kadalu.gluster
+         accessModes:
+           - ReadWriteMany
+         resources:
+           requests:
+             storage: 50Gi
+    alertmanagerMain:
+      volumeClaimTemplate:
+       metadata:
+         name: alertmanager
+       spec:
+         storageClassName: kadalu.gluster
+         accessModes:
+           - ReadWriteMany
+         resources:
+           requests:
+             storage: 50Gi
+
+== Apply the following manifest:</code></pre>
+</div>
+</div>
+<hr>
+</div>
+</div>
+<h1 id="_enables_monitoring_infra_to_scrape_metrics_from_kadalu_namespace" class="sect0">Enables monitoring infra to scrape metrics from <code>kadalu</code> namespace</h1>
+<div class="paragraph">
+<p>kind: Namespace
+apiVersion: v1
+metadata:
+  name: kadalu
+  labels:
+    openshift.io/cluster-monitoring: "true"
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: operator
+  namespace: kadalu
+  labels:
+    name: kadalu
+spec:
+  selector:
+    name: kadalu
+  ports:
+    - name: kadalu-metrics
+      protocol: TCP
+      port: 8050
+      targetPort: 8050
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kadalu-metrics
+  namespace: kadalu
+  labels:
+    name: kadalu
+spec:
+  endpoints:
+    - path: /metrics/
+      port: kadalu-metrics
+      scheme: http
+      bearerTokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+      tlsConfig:
+        insecureSkipVerify: true
+  selector:
+    matchLabels:
+      name: kadalu
+---
+# Enables monitoring infra to have necessary RBAC for scraping metrics in <code>kadalu</code> namespace
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: kadalu-metrics
+  namespace: kadalu
+rules:
+ - apiGroups:
+   - ""
+   resources:
+    - services
+    - endpoints
+    - pods
+   verbs:
+    - get
+    - list
+    - watch
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: kadalu-metrics
+  namespace: kadalu
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kadalu-metrics
+subjects:
+- kind: ServiceAccount
+  name: prometheus-k8s
+  namespace: openshift-monitoring</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>== Verify that the target is being scraped:
+
+- Obtain the endpoints of the service</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>$ oc -n kadalu  describe  services operator | awk '/Endpoints/ {print "http://"$2}'</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code>- Go to the UI -&gt; Administrator -&gt; Observe -&gt; Targets
+
+- Go to the UI -&gt; Administrator -&gt; Observe -&gt; Metrics -&gt; Type "kadalu_" -&gt; There should be multiple metrics
+
+== Alarm configuration
+
+- Once the Metrics are visible in the UI, you can setup some alerts.</code></pre>
+</div>
+</div>
+<h1 id="_create_and_apply_this_manifest" class="sect0">Create and apply this manifest:</h1>
+<div class="paragraph">
+<p>apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: kadalu-alert
+  namespace: kadalu</p>
+</div>
+<div class="paragraph">
+<p>spec:
+  groups:
+  - name: PVC-Space-alerts
+    rules:
+    - alert: PvcFreeSpaceLow
+      annotations:
+        description: PVC space is low!
+      expr: kadalu_pvc_free_capacity_bytes &lt; 1.073741824e+10
+      labels:
+        severity: warning
+    - alert: PvcFreeSpaceCritical
+      annotations:
+        description: PVC space is critical!
+      expr: kadalu_pvc_free_capacity_bytes &lt; 0.536870912e+10
+      labels:
+        severity: critical
+  - name: PVC-inode-alerts
+    rules:
+    - alert: PVCFreeInodesLow
+      annotations:
+        description: PVC Free inodes is low!
+      expr: kadalu_pvc_free_inodes &lt; 500000
+      labels:
+        severity: warning
+    - alert: PVCFreeInodesCritical
+      annotations:
+        description: PVC Free inodes is critical!
+      expr: kadalu_pvc_free_inodes &lt; 200000
+      labels:
+        severity: critical</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code></code></pre>
+</div>
+</div>
+                            </div>
+                        </div>
+                        <div class="p-4 is-flex-grow-1 is-flex-shrink-1 is-hidden-touch" x-data="{headings: document.getElementById('main-content').getElementsByTagName('h2')}" style="position:relative">
+                            <div style="position: sticky;top:20px">
+                                <h4 x-show="headings.length > 0" class="is-size-6 has-text-grey">ON THIS PAGE</h4>
+                                <template x-for="heading in headings">
+                                    <a class="is-block mb-2" :href="`#${heading.id}`" x-text="heading.textContent"></a>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer has-background-primary has-text-white pt-6">
+    <div class="columns">
+        <div class="column">
+            <h2 class="has-font-weight-semibold is-size-5 is-underlined py-2">Community</h2>
+            <a class="is-block has-text-white" target="_blank" href="https://join.slack.com/t/kadalu/shared_invite/enQtNzg1ODQ0MDA5NTM2LWMzMTc5ZTJmMjk4MzI0YWVhOGFlZTJjZjY5MDNkZWI0Y2VjMDBlNzVkZmI1NWViN2U3MDNlNDJhNjE5OTBlOGU">Community Slack</a>
+            <a class="is-block has-text-white" target="_blank" href="https://github.com/kadalu">Github</a>
+            <a class="is-block has-text-white" target="_blank" href="https://kadalu.tech">kadalu.tech</a>
+        </div>
+    </div>
+    <div class="has-text-centered mt-6">
+        Copyright &copy; 2022 Kadalu Technologies Private Limited.
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>

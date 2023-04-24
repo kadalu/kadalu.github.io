@@ -1,0 +1,15 @@
+- section: User Guide
+  chapters:
+    - title: Quick Start
+    - title: Container Based Setup
+    - title: Introduction
+    - title: Install
+    - title: User Management
+    - title: Setting up the Storage Cluster
+      slug: setup
+    - title: Config Snapshots
+    - title: Pools
+    - title: FAQs
+- section: Tutorials
+  chapters:
+    - title: Cron-based config backup
