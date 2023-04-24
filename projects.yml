@@ -3,6 +3,9 @@
   description: Kadalu Storage is a distributed filesystem management system. At its core, at present, Kadalu uses the GlusterFS filesystem.
   repo: https://github.com/kadalu/moana
   branches:
+    - name: kadalu_1.1.x
+      short_name: 1.1.x
+      index: README
     - name: kadalu_1.0.x
       short_name: 1.0.x
       index: README
@@ -16,6 +19,9 @@
   description: Kadalu Storage for the apps running in Kubernetes
   repo: https://github.com/kadalu/kadalu
   branches:
+    - name: kadalu_1.1.x
+      short_name: 1.1.x
+      index: README
     - name: kadalu_1.0.x
       short_name: 1.0.x
       index: README
