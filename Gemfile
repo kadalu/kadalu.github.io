@@ -14,4 +14,4 @@ gem "rouge", "~> 3.26"
 
 gem "builder", "~> 3.2"
 
-gem "puma", "~> 6.0"
+gem "puma", "~> 6.3"

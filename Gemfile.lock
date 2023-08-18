@@ -66,12 +66,12 @@ GEM
       nanoc-checking (~> 1.0)
       nanoc-cli (~> 4.11, >= 4.11.15)
       nanoc-core (~> 4.11, >= 4.11.15)
-    nio4r (2.5.8)
+    nio4r (2.5.9)
     parallel (1.20.1)
     pastel (0.8.0)
       tty-color (~> 0.5)
     public_suffix (5.0.1)
-    puma (6.0.0)
+    puma (6.3.1)
       nio4r (~> 2.0)
     rack (2.2.6.4)
     rack-livereload (0.3.17)
@@ -98,7 +98,7 @@ DEPENDENCIES
   asciidoctor (~> 2.0)
   builder (~> 3.2)
   nanoc (~> 4.12)
-  puma (~> 6.0)
+  puma (~> 6.3)
   rouge (~> 3.26)
 
 BUNDLED WITH
