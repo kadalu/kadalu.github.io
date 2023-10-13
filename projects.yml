@@ -42,7 +42,7 @@
   latest_alias: "main"
 - name: binnacle
   title: Binnacle
-  description: Simple Test Framework and Infra automation tool
+  description: Simple Test and Infra automation tool
   repo: https://github.com/kadalu/binnacle
   branches:
     - name: main
