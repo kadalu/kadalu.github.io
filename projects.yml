@@ -6,14 +6,11 @@
     - name: kadalu_1.1.x
       short_name: 1.1.x
       index: README
-    - name: kadalu_1.0.x
-      short_name: 1.0.x
-      index: README
     - name: main
       short_name: main
       index: README
   docs_dir: "docs"
-  latest_alias: "1.0.x"
+  latest_alias: "1.1.x"
 - name: k8s-storage
   title: Kadalu Storage (Kubernetes Native)
   description: Kadalu Storage for the apps running in Kubernetes
