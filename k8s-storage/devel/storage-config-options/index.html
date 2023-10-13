@@ -100,12 +100,6 @@
                         </a>
                     </li>
                     
-                    <li class="">
-                        <a href="/binnacle/latest" class="mb-0">
-                            <span>Binnacle</span>
-                        </a>
-                    </li>
-                    
                 </ul>
             </div>
             <div class="is-flex" x-data="{menuShow: $persist(true), headings: document.getElementsByClassName('heading')}">
@@ -573,20 +567,17 @@ One can free these archived data manually or through Kadalu CLI.</p>
 </li>
 <li>
 <p>Removing archived pvc(s) through Kadalu CSI provisioner:</p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
 <p>Exec into Kadalu Provisioner pod. Run the script 'remove_archived_pv.py' with similar arguments as Kadalu CLI.</p>
-</div>
-<div class="paragraph">
-<p>+</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">cd</span> /kadalu
 <span class="gp">$</span><span class="w"> </span>python remove_archived_pv.py storage-pool-1 <span class="nt">--pvc</span><span class="o">=</span>archived-pvc-123-456-789</code></pre>
 </div>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -622,6 +613,118 @@ One can free these archived data manually or through Kadalu CLI.</p>
 <div class="content">
 <pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu storage-add storage-pool1 <span class="se">\</span>
     <span class="nt">--device</span> kube1:/dev/vdc <span class="nt">--volume-id</span><span class="o">=</span>example-1234-volumeid-7890</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuring_storage_pool_options">Configuring Storage Pool Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Storage Pool can be modified in their behaviour by configuring with Storage Pool Options available on Kadalu.
+Storage Pool Options can be configured either through storage-config file or using Kubectl Kadalu CLI.</p>
+</div>
+<div class="paragraph">
+<p>List of supported Storage Pool Options for Kadalu:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">performance.client-io-threads</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">on/off</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">performance.stat-prefetch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">on/off</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">performance.quick-read</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">on/off</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">performance.open-behind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">on/off</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">performance.read-ahead</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">on/off</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">performance.io-cache</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">on/off</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">performance.readdir-ahead</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">on/off</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Configuring 'Storage Pool Options' through config file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="yaml"><span class="na">apiVersion</span><span class="pi">:</span> <span class="s">kadalu-operator.storage/v1alpha1</span>
+<span class="na">kind</span><span class="pi">:</span> <span class="s">KadaluStorage</span>
+<span class="na">metadata</span><span class="pi">:</span>
+<span class="c1"># This will be used as name of PV Hosting Volume</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">storage1</span>
+<span class="na">spec</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s">Replica1</span>
+  <span class="na">options</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">performance.quick-read"</span>
+      <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">off"</span>
+    <span class="pi">-</span> <span class="na">key</span><span class="pi">:</span> <span class="s2">"</span><span class="s">performance.write-behind"</span>
+      <span class="na">value</span><span class="pi">:</span> <span class="s2">"</span><span class="s">on"</span>
+  <span class="na">storage</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">node</span><span class="pi">:</span> <span class="s">kube1</span>
+      <span class="na">device</span><span class="pi">:</span> <span class="s">/dev/vdc</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If any further Storage Pool Options is to be configured, simply apply the modified storage-config file again so that Kadalu Operator notices the change and will be handled appropriately by Kadalu Server pods.</p>
+</div>
+</li>
+<li>
+<p>Configuring 'Storage Pool Options' through Kadalu CLI:</p>
+<div class="paragraph">
+<p>To add/set Storage Pool Options, 'option-set' subcommand can be used. It expects name of Storage Pool and Option key(s) and value(s).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu option-set storage-pool1 <span class="se">\</span>
+    performance.quick-read off performance.write-behind on</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To remove/reset Storage Pool Options, 'option-reset' subcommand can be used. It expects name of Storage Pool and Option key(s) to be removed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu option-reset storage-pool1 <span class="se">\</span>
+    performance.quick-read performance.write-behind</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Additionally all of configured options for a Storage Pool can be removed with '--all' flag.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kubectl kadalu option-reset storage-pool1 <span class="nt">--all</span></code></pre>
 </div>
 </div>
 </li>
