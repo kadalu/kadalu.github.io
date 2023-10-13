@@ -127,16 +127,26 @@
                             <li class=""><a class="" href="/kadalu-storage/latest/user-management/">User Management</a></li>
                             
                             
+                            <li class=""><a class="" href="/kadalu-storage/latest/setup/">Setting up the Storage Cluster</a></li>
+                            
+                            
                             <li class=""><a class="" href="/kadalu-storage/latest/config-snapshots/">Config Snapshots</a></li>
                             
                             
                             <li class=""><a class="is-active" href="/kadalu-storage/latest/pools/">Pools</a></li>
                             
                             
-                            <li class=""><a class="" href="/kadalu-storage/latest/volumes/">Volumes</a></li>
-                            
-                            
                             <li class=""><a class="" href="/kadalu-storage/latest/faqs/">FAQs</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Tutorials
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/cron-based-config-backup/">Cron-based config backup</a></li>
                             
                         </ul>
                         
@@ -161,8 +171,6 @@
                                         
                                         <option>1.1.x</option>
                                         
-                                        <option>1.0.x</option>
-                                        
                                         <option>main</option>
                                         
                                     </select>
@@ -170,94 +178,279 @@
                             </div>
                             <div class="doc-content">
                                 <h1>Kadalu Storage Pools</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>Identify a node where Storage manager will be deployed. This node can be one of the storage nodes, or it can be a spare node that is highly available.</p>
+<p>Kadalu Storage pool is a collection of one or more export directories from multiple servers.</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pool_creation">Pool Creation</h3>
 <div class="paragraph">
-<p>Enable and start the <code>kadalu-mgr</code></p>
+<p>Create a Kadalu Storage Pool with Storage units from multiple Storage nodes.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>systemctl <span class="nb">enable </span>kadalu-mgr
-<span class="gp">[root@server1 ~]#</span><span class="w"> </span>systemctl start kadalu-mgr</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create DEV
-<span class="go">Pool created successfully.
-ID: 4e67989e-0c24-44ac-b0a7-81aa5cb4ec6b</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 server1.example.com:/exports/pool1/s1
+<span class="go">Pool pool1 created successfully
+ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Run <code>pool list</code> command to see the list of Pools</p>
+<p>Where</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pool1</code> is the Pool name</p>
+</li>
+<li>
+<p><code>server1.example.com</code> is the node from which the Storage unit will be exported.</p>
+</li>
+<li>
+<p><code>/exports/pool1/s1</code> is the mounted path of Storage Unit.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Automatically add nodes to the Cluster that are specified in the Pool create request by adding <code>--auto-add-nodes</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool list
-<span class="go">                                  ID  Name
-4e67989e-0c24-44ac-b0a7-81aa5cb4ec6b  DEV</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 <span class="se">\</span>
+    server1.example.com:/exports/pool1/s1   <span class="se">\</span>
+    <span class="nt">--auto-add-nodes</span>
+<span class="go">Pool pool1 created successfully
+ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The pool data and the configurations are stored in <code>/var/lib/kadalu</code>. Since the storage manager is running in a single node, by default it is not highly available. Use <code>kadalu-lite</code> Volume for high availability, or backup the Pool data in regular intervals. Refer "High availability" chapter (Coming soon) for more details.</p>
-</div>
-<div class="paragraph">
-<p>Since Kadalu Storage manager supports multiple Pools, the manager node is not part of any Pool by default. Optionally invite the Storage manager node to join the Pool, which is similar to inviting other Storage nodes.</p>
+<p>Create a Replicated or Mirrored Pool</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu node add DEV/server1.example.com
-<span class="go">Node server1.example.com added to DEV successfully
-ID: 3befd57b-1d31-4664-94e9-f87bf7ce90f9</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Default node endpoint is <code><a href="http://&lt;nodename&gt;:3000" class="bare">http://&lt;nodename&gt;:3000</a></code>. If it is different then provide the endpoint using <code>--endpoint=ENDPOINT</code> option.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu node add DEV/server1.example.com <span class="nt">--endpoint</span><span class="o">=</span>http://server1.example.com:3001
-<span class="go">Node server1.example.com added to DEV successfully
-ID: 3befd57b-1d31-4664-94e9-f87bf7ce90f9</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 <span class="se">\</span>
+    replica server1.example.com:/exports/pool1/s1 <span class="se">\</span>
+            server2.example.com:/exports/pool1/s2 <span class="se">\</span>
+            server3.example.com:/exports/pool1/s3
+<span class="go">Pool pool1 created successfully
+ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Before inviting other nodes to join the Pool, start the <code>kadalu-mgr</code> service.</p>
+<p>Using <code>mirror</code> is also supported</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server2 ~]#</span><span class="w"> </span>systemctl <span class="nb">enable </span>kadalu-mgr
-<span class="gp">[root@server2 ~]#</span><span class="w"> </span>systemctl start kadalu-mgr</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu node add DEV/server2.example.com
-<span class="go">Node server2.example.com added to DEV successfully
-ID: 34aabcae-1052-4a78-91a5-d71c89458e8d</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 <span class="se">\</span>
+    mirror server1.example.com:/exports/pool1/s1 <span class="se">\</span>
+           server2.example.com:/exports/pool1/s2 <span class="se">\</span>
+           server3.example.com:/exports/pool1/s3
+<span class="go">Pool pool1 created successfully
+ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Run <code>node list</code> to view the list of the nodes and their status.</p>
+<p>Alternatively, GlusterFS syntax is also supported</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu node list DEV
-<span class="go">                                                ID                 Name  Endpoint
-322b9883-9d00-4b30-b084-953306f0d431  server1.example.com  http://server1.example.com:3000
-34aabcae-1052-4a78-91a5-d71c89458e8d  server2.example.com  http://server2.example.com:3000</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 replica 3 <span class="se">\</span>
+    server1.example.com:/exports/pool1/s1 <span class="se">\</span>
+    server2.example.com:/exports/pool1/s2 <span class="se">\</span>
+    server3.example.com:/exports/pool1/s3
+<span class="go">Pool pool1 created successfully
+ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>By default, pools are started on create. Use <code>--no-start</code> to override this behavior.</p>
+</li>
+<li>
+<p>If the Storage unit path is not a mounted directory then use <code>--allow-root-partition</code> option (Not yet implemented). This is not an optimal setup since the Kadalu Pool can fill up the root partition or other applications can fill up Kadalu Pool.</p>
+</li>
+<li>
+<p>To import a Pool, Use <code>--pool-id</code> option to set the Same Pool ID to the imported Pool. If required Pool ID to be reused is not saved, it can be found in server volfile or at storage unit path as extended attribute in hexadecimal format.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 <span class="se">\</span>
+    server1.example.com:/exports/pool1/s1 <span class="se">\</span>
+   <span class="nt">--pool-id</span><span class="o">=</span>02b6a3a4-e704-47ee-bb05-e541a561a921</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>To reuse a Storage unit directory that was part of other Pool earlier, use <code>--reuse-storage-unit</code> (Not yet implemented, only applicable if the Storage unit directory is empty).</p>
+</li>
+<li>
+<p>To allow using Replicate/Mirrored/Disperse Storage units from same node, use <code>--from-same-node</code>. This is not an optimal setup since it does not provide high availability for the distribute group if one node goes down (Not yet implemented).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ports for the Storage Unit are assigned automatically (<code>49252</code> to <code>49452</code>) while creating the Pool. Restarting the Pool will not change the Ports of the Storage units. The Pool info command will show the assigned ports. It is also possible to manually specify the Port while creating the Pool.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 <span class="se">\</span>
+    mirror server1.example.com:4501:/exports/pool1/s1 <span class="se">\</span>
+           server2.example.com:4501:/exports/pool1/s2 <span class="se">\</span>
+           server3.example.com:4501:/exports/pool1/s3
+<span class="go">Pool pool1 created successfully
+ID: 02b6a3a4-e704-47ee-bb05-e541a561a921</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pool_expansion_and_rebalance">Pool Expansion and Rebalance</h3>
+<div class="paragraph">
+<p>Expand an already created Kadalu Storage Pool with storage units from multiple storage nodes.</p>
+</div>
+<div class="paragraph">
+<p>Example,</p>
+</div>
+<div class="paragraph">
+<p>Create a Replicated or Mirror Kadalu Storage Pool 'pool1' with 3 different storage nodes and 3 storage units.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 <span class="se">\</span>
+    mirror server1.example.com:/exports/pool1/s1 <span class="se">\</span>
+           server2.example.com:/exports/pool1/s2 <span class="se">\</span>
+           server3.example.com:/exports/pool1/s3
+<span class="go">Pool pool1 created successfully
+ID: 03c6a3a4-e704-47ee-bb05-e541a561a875</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Include the Status information</p>
+<p>Expand Kadalu Storage Pool <code>pool1</code> by adding more Storage units.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Note:</p>
+<div class="literalblock">
+<div class="content">
+<pre>Pool type, distribute group count, replica count, data and redundant storage unit count should be the same as when the Kadalu Storage Pool was created.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>For example above Kadalu Storage Pool being of type mirror 3, it has 1 distribute group with 3 storage units. Hence during pool expansion Kadalu Storage expects distribute group being a multiple of 1.</pre>
+</div>
+</div>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu node list DEV <span class="nt">--status</span>
-<span class="go">                                                ID   State                    Name  Endpoint
-322b9883-9d00-4b30-b084-953306f0d431      Up     server1.example.com  http://server1.example.com:3000
-34aabcae-1052-4a78-91a5-d71c89458e8d      Up     server2.example.com  http://server2.example.com:3000</span></code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool <span class="nb">expand </span>pool1   <span class="se">\</span>
+    mirror server1.example.com:/exports/pool1/s1_e <span class="se">\</span>
+           server2.example.com:/exports/pool1/s2_e <span class="se">\</span>
+           server3.example.com:/exports/pool1/s3_e
+<span class="go">Pool pool1 expanded successfully
+ID: 03c6a3a4-e704-47ee-bb05-e541a561a875
+
+Proceed to the rebalancing of pool pool1 by following the below steps.
+To start the rebalancing of pool: kadalu pool rebalance-start pool1.
+To force stop the rebalancing of pool: kadalu pool rebalance-stop pool1.</span></code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rebalance">Rebalance</h4>
+<div class="paragraph">
+<p>During the expansion of pool, Kadalu Storage also fixes the layout of all expanded storage units, i.e., it triggers the creation of directories in the expanded storage units, to maintain the same directory structure as in storage units before expansion.</p>
+</div>
+<div class="paragraph">
+<p>Once the layout of the expanded storage units is fixed, data migration can commence. Data migration involves recalculating the hash of files and distributing them across storage units.</p>
+</div>
+<div class="paragraph">
+<p>To start and stop the rebalance (i.e., data migration), follow the steps displayed after the pool expansion.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu rebalance start pool1
+<span class="go">Rebalance of Pool pool1 started.</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu rebalance stop pool1
+<span class="go">Rebalance of Pool pool1 started.</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Note:</p>
+<div class="literalblock">
+<div class="content">
+<pre>The Rebalance process, if restarted in the middle of completion, will start scanning storage units from the beginning and not from the point where it stopped</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To view the status of Rebalance processes,</p>
+</div>
+<div class="paragraph">
+<p><code>kadalu rebalance status pool1</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu rebalance status pool1
+<span class="go">
+Name                       : pool1
+Type                       : Distributed Mirror
+ID                         : 03c6a3a4-e704-47ee-bb05-e541a561a875
+Fix-Layout Status          : complete
+Total Dirs Scanned         : 3
+Duration                   : 0
+Progress                   : 100.00 %
+Estimate Seconds           : 0
+Scanned                    : 1.13MiB / 1.13MiB
+
+Pool pool1 Rebalance Status            : complete
+Total Number of Rebalance Process       : 6
+Number of Completed Rebalance Process   : 6
+Number of Failed Rebalance Process      : 0</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Fix-Layout Status</code> is status of fix-layout process after pool expansion.</p>
+</li>
+<li>
+<p><code>Total Dirs Scanned</code> indicates total number of dirs which was scanned and added to newer storage units.</p>
+</li>
+<li>
+<p><code>Duration</code> is the time taken for fix-layout process to complete.</p>
+</li>
+<li>
+<p><code>Progress</code> is the percentage amount of progress made with migration of data (Rebalance).</p>
+</li>
+<li>
+<p><code>Estimate Seconds</code> is the estimated amount of time which might be taken for completion of migration of data.</p>
+</li>
+<li>
+<p><code>Scanned</code> indicates in Bytes, files scanned out of total files.</p>
+</li>
+<li>
+<p><code>Rebalance Status</code> can be of complete, partial, failed and not-started indicating the status of Rebalance at pool level.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To view the <code>Rebalance Status</code> of each storage-unit : <code>kadalu rebalance status &lt;pool&gt; --detail</code>.</p>
+</div>
 </div>
 </div>
                             </div>

@@ -127,16 +127,26 @@
                             <li class=""><a class="" href="/kadalu-storage/latest/user-management/">User Management</a></li>
                             
                             
+                            <li class=""><a class="" href="/kadalu-storage/latest/setup/">Setting up the Storage Cluster</a></li>
+                            
+                            
                             <li class=""><a class="" href="/kadalu-storage/latest/config-snapshots/">Config Snapshots</a></li>
                             
                             
                             <li class=""><a class="" href="/kadalu-storage/latest/pools/">Pools</a></li>
                             
                             
-                            <li class=""><a class="" href="/kadalu-storage/latest/volumes/">Volumes</a></li>
-                            
-                            
                             <li class=""><a class="" href="/kadalu-storage/latest/faqs/">FAQs</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Tutorials
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/cron-based-config-backup/">Cron-based config backup</a></li>
                             
                         </ul>
                         
@@ -161,8 +171,6 @@
                                         
                                         <option>1.1.x</option>
                                         
-                                        <option>1.0.x</option>
-                                        
                                         <option>main</option>
                                         
                                     </select>
@@ -170,169 +178,168 @@
                             </div>
                             <div class="doc-content">
                                 <h1>Container based setup</h1>
-<div id="preamble">
+<div class="sect1">
+<h2 id="_when_to_use_container_based_deployment">When to use Container based deployment?</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Native packages are not available for all the distributions. Kadalu Storage packages are available for Ubuntu 22.04 and work is in progress for other distributions like Debian, Fedora and CentOS.</p>
+</li>
+<li>
+<p>Clutter-free host machine.</p>
+</li>
+<li>
+<p>Easy setup and management - No need to worry about the dependencies and other things while setting up the Kadalu Storage.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_session_and_working_directory">Session and working directory</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Kadalu Storage project is still under active development. It depends on the core parts of GlusterFS and built a new ecosystem around it. Many fixes are submitted to upstream GlusterFS to make it work with the Kadalu Storage manager, but unfortunately, the fixes are in devel branch but not yet part of the GlusterFS release. The Kadalu team plans to release the core GlusterFS packages with the Kadalu Storage package releases. Untill the Kadalu Storage packages are available for use, Containers are the best choice to try out and provide feedback to us about it.</p>
+<p>Create two docker volumes as follows.</p>
 </div>
-<div class="paragraph">
-<p>Start the Storage node or Client as shown in the example below.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>kadalu_workdir</strong> - Directory to persist configurations and state.</p>
+</li>
+<li>
+<p><strong>kadalu_session</strong> - Directory to store session details to use the CLI</p>
+</li>
+</ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>sudo docker run -d                            \
-    --network host                            \
-    -v /root/kadalu/workdir:/var/lib/kadalu   \
-    -v /root/kadalu/home:/root/.kadalu        \
-    -v /ZP1/storage1:/ZP/storage1             \
-    -v /sys/fs/cgroup/:/sys/fs/cgroup:ro      \
-    --privileged                              \
-    --name kadalu-$(hostname)                 \
-    --hostname $(hostname)                    \
+<pre>docker volume create kadalu_workdir
+docker volume create kadalu_session</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prepare_storage_backend">Prepare Storage backend</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Kadalu Storage supports many backend filesystems. XFS and ZFS are the two widely used backend filesystems with Kadalu Storage or GlusterFS.</p>
+</div>
+<div class="sect2">
+<h3 id="_ext4">ext4</h3>
+<div class="listingblock">
+<div class="content">
+<pre>mkfs.ext4 -I 512 /dev/vda
+mkdir -p /exports/storage1
+mount -t ext4 /dev/vda /exports/storage1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_xfs">XFS</h3>
+<div class="listingblock">
+<div class="content">
+<pre>mkfs.xfs -f -i size=512 -n size=8192 -d su=128K,sw=10 /dev/vda
+mkdir -p /exports/storage1
+mount -t xfs /dev/vda /exports/storage1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zfs">ZFS</h3>
+<div class="paragraph">
+<p>Create a Zpool and then create a dataset</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>zpool create exports /dev/vda
+zfs create exports/storage1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_directory_from_the_root_filesystem">A directory from the root filesystem</h3>
+<div class="listingblock">
+<div class="content">
+<pre>mkdir -p /exports/storage1</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_log_directory">Configure Log directory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create a directory in the host machine to collect the logs from the container.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>mkdir -p /var/log/kadalu</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_start_the_container">Start the Container</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now start the Kadalu Storage container by running the following command. Make sure to update the export directory path as required in your setup. <strong>Note</strong>: Add multiple export paths if required (When multiple disks available per node)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo docker run -d                        \
+    --network host                         \
+    -v kadalu_workdir:/var/lib/kadalu      \
+    -v kadalu_session:/root/.kadalu        \
+    -v /exports/storage1:/exports/storage1 \
+    -v /var/log/kadalu:/var/log/kadalu     \
+    --privileged                           \
+    --restart unless-stopped               \
+    --name kadalu-$(hostname)              \
+    --hostname $(hostname)                 \
     kadalu/storage-node:latest</pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_storage_units">Storage Units</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>..
-    -v /ZP1/storage1:/ZP/storage1             \
-..</pre>
-</div>
-</div>
 <div class="paragraph">
-<p>Pre create the file system(xfs/ext4/zfs) and expose the Storage while starting the Kadalu Storage container. Provide multiple Storage units per container/node as required. For example, the following code shows creating ZFS dataset and exposing that while starting the Storage node.</p>
+<p>Thats it, now verify that the storage node container is running by executing the following command.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>sudo zpool create ZP1 /dev/vda
-sudo zfs create ZP1/storage1</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Storage from host are exposed to the Storage container.</p>
-</div>
-<div class="paragraph">
-<p>Storage Units are available as Volumes inside container, use those to Create Kadalu Volumes.</p>
-</div>
-<div class="paragraph">
-<p><strong>Note</strong>: This approach will not work in Mac based container setup since these Volumes are not exposed directly from the host machine.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_other_persistent_volumes">Other Persistent Volumes</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>..
-    -v /root/kadalu/workdir:/var/lib/kadalu   \
-    -v /root/kadalu/home:/root/.kadalu        \
-..</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Along with Storage units a few other directories needs to be persisted.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>/var/lib/kadalu</code> - If a Container becomes Mgr instance then it stores full Cluster configurations, else if it is Agent instance, it will contain the tokens that are required to communicate with Mgr instances.</p>
-</li>
-<li>
-<p><code>/root/.kadalu</code> - This is optional, but good to have this persisted to avoid running login command every time on container restart.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_network_host">Network - Host</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>..
-    --network host                            \
-..</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Kadalu Storage nodes will communicate with each other, prefered to use Host network option while starting the Storage container. A few more fixes required to make the Storage manager to customize the Port. Once it gets that capability, possibly other network modes can be supported.</p>
-</div>
-<div class="paragraph">
-<p><strong>Note</strong>: Since network=host option is in use, starting multiple Storage containers per node is not possible. Instead expose multiple Storage units per instance of Storage container.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_initialize">Initialize</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>After starting all the Storage containers, login to any one container and create a User. Note that, first node where we create a user will become Manager. All other instances will become Agents.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>docker <span class="nb">exec</span> <span class="nt">-it</span> kadalu-<span class="si">$(</span><span class="nb">hostname</span><span class="si">)</span> /bin/bash
-<span class="gp">#</span><span class="w"> </span>kadalu user create admin
-<span class="go">Password:
-User admin created successfully. Run `kadalu user login admin` to login
-</span><span class="gp">#</span><span class="w"> </span>kadalu user login admin
-<span class="go">Password:
-Login successful. Details saved in `/root/.kadalu/session`. Delete this file or run `kadalu user logout` command to delete the session.</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Now create a Pool and add nodes(Container instances created as above) to that Pool.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre># kadalu pool create DEV
-# kadalu node add DEV/server1.example.com
-# kadalu node add DEV/server2.example.com
-# kadalu node add DEV/server3.example.com</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Create a Kadalu Volume using the Storages exported from the host.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre># kadalu volume create DEV/vol1 mirror \
-    server1.example.com:/ZP1/storage1/vol1 \
-    server2.example.com:/ZP2/storage2/vol1 \
-    server3.example.com:/ZP3/storage3/vol1</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Mount the Volume by logging into one of the Storage container or the Client container.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ sudo docker exec -it client1.example.com /bin/bash
-# kadalu login admin
-Password:
-# mkdir /mnt/vol1
-# mount -t kadalu server1.example.com:/DEV/vol1 /mnt/vol1</pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span><span class="nb">sudo </span>docker ps
+<span class="go">CONTAINER ID   IMAGE                       	COMMAND              	CREATED          	STATUS          	PORTS 	NAMES
+3d9506e4900b   kadalu/storage-node:latest  	"/usr/bin/supervisord"   About a minute ago   Up About a minute         	kadalu-server1</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_notes">Notes</h2>
+<h2 id="_cli">CLI</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>No separate Client container image is available. Use the storage-node container itself for time being.</p>
-</li>
-<li>
-<p>Container images are not yet optimized for size.</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Now create the following alias</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="sh"><span class="nb">alias </span><span class="nv">kadalu</span><span class="o">=</span><span class="s1">'sudo docker exec -it kadalu-$(hostname) kadalu'</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>With this, execute all the kadalu commands from the host machine itself. For example</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ kadalu --version</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Above command will be expanded as</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo docker exec -it kadalu-$(hostname) kadalu --version</pre>
+</div>
 </div>
 </div>
 </div>

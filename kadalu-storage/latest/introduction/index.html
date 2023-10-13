@@ -127,16 +127,26 @@
                             <li class=""><a class="" href="/kadalu-storage/latest/user-management/">User Management</a></li>
                             
                             
+                            <li class=""><a class="" href="/kadalu-storage/latest/setup/">Setting up the Storage Cluster</a></li>
+                            
+                            
                             <li class=""><a class="" href="/kadalu-storage/latest/config-snapshots/">Config Snapshots</a></li>
                             
                             
                             <li class=""><a class="" href="/kadalu-storage/latest/pools/">Pools</a></li>
                             
                             
-                            <li class=""><a class="" href="/kadalu-storage/latest/volumes/">Volumes</a></li>
-                            
-                            
                             <li class=""><a class="" href="/kadalu-storage/latest/faqs/">FAQs</a></li>
+                            
+                        </ul>
+                        
+                        <p class="menu-label mt-4">
+                            Tutorials
+                        </p>
+                        <ul class="menu-list">
+                            
+                            
+                            <li class=""><a class="" href="/kadalu-storage/latest/cron-based-config-backup/">Cron-based config backup</a></li>
                             
                         </ul>
                         
@@ -161,8 +171,6 @@
                                         
                                         <option>1.1.x</option>
                                         
-                                        <option>1.0.x</option>
-                                        
                                         <option>main</option>
                                         
                                     </select>
@@ -176,10 +184,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Storage Pool</strong> is a logical entity that groups the Volumes and provides isolation from other Pools available.</p>
-</li>
-<li>
-<p><strong>Storage Volume</strong> exposes the storage from all nodes and provides a single Unified namespace to the applications.</p>
+<p><strong>Storage Pool</strong> is a collection of directories from one of more nodes.</p>
 </li>
 <li>
 <p><strong>Storage Nodes</strong> are associated with the Kadalu Storage pool. One Storage node can&#8217;t be part of two Storage pools.</p>
@@ -190,44 +195,40 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>First, create a Storage Pool and then start adding nodes to the Pool. The following example shows three nodes added to the Storage Pool.</p>
+<p>The following example shows three nodes added to the Storage cluster.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu pool create DEV
-<span class="go">Pool created successfully.
-ID: 4e67989e-0c24-44ac-b0a7-81aa5cb4ec6b
-</span><span class="gp">$</span><span class="w">
-</span><span class="gp">$</span><span class="w"> </span>kadalu node add DEV/server1.example.com
-<span class="go">Node server1.example.com added to DEV successfully
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">$</span><span class="w"> </span>kadalu node add server1.example.com
+<span class="go">Node server1.example.com added successfully
 ID: 3befd57b-1d31-4664-94e9-f87bf7ce90f9
 </span><span class="gp">$</span><span class="w">
-</span><span class="gp">$</span><span class="w"> </span>kadalu node add DEV/server2.example.com
-<span class="go">Node server2.example.com added to DEV successfully
+</span><span class="gp">$</span><span class="w"> </span>kadalu node add server2.example.com
+<span class="go">Node server2.example.com added successfully
 ID: e9a4ed06-f3d8-4dcc-aaaf-ae821846167a
 </span><span class="gp">$</span><span class="w">
-</span><span class="gp">$</span><span class="w"> </span>kadalu node add DEV/server3.example.com
-<span class="go">Node server3.example.com added to DEV successfully
+</span><span class="gp">$</span><span class="w"> </span>kadalu node add server3.example.com
+<span class="go">Node server3.example.com added successfully
 ID: 9abf4512-029a-4ae1-85d6-400bf7e8e30c</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Prepare the mounted directory to use as a Storage unit while creating the Volume. Any filesystem that supports xattrs can be used as a Storage Unit of a Kadalu Volume. The following example demonstrates using a directory from each server and creating a Mirrored Kadalu Volume using them.</p>
+<p>Prepare the mounted directory to use as a Storage unit while creating the Pool. Any filesystem that supports xattrs can be used as a Storage Unit of a Kadalu Pool. The following example demonstrates using a directory from each server and creating a Mirrored Kadalu Pool using them.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> /exports/vol1
-<span class="gp">[root@server2 ~]#</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> /exports/vol1
-<span class="gp">[root@server3 ~]#</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> /exports/vol1</code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> /exports/pool1
+<span class="gp">[root@server2 ~]#</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> /exports/pool1
+<span class="gp">[root@server3 ~]#</span><span class="w"> </span><span class="nb">mkdir</span> <span class="nt">-p</span> /exports/pool1</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu volume create DEV/vol1 <span class="se">\</span>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@server1 ~]#</span><span class="w"> </span>kadalu pool create pool1 <span class="se">\</span>
     <span class="nt">--allow-from-root-partition</span>                 <span class="se">\</span>
-    mirror server1.example.com:/exports/vol1/s1 <span class="se">\</span>
-           server2.example.com:/exports/vol1/s2 <span class="se">\</span>
-           server3.example.com:/exports/vol1/s3</code></pre>
+    mirror server1.example.com:/exports/pool1/s1 <span class="se">\</span>
+           server2.example.com:/exports/pool1/s2 <span class="se">\</span>
+           server3.example.com:/exports/pool1/s3</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -235,8 +236,8 @@ ID: 9abf4512-029a-4ae1-85d6-400bf7e8e30c</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@client ~]#</span><span class="w"> </span><span class="nb">mkdir</span> /mnt/vol1
-<span class="gp">[root@client ~]#</span><span class="w"> </span>mount <span class="nt">-t</span> kadalu server1.example.com:/DEV/vol1 /mnt/vol1</code></pre>
+<pre class="rouge highlight"><code data-lang="console"><span class="gp">[root@client ~]#</span><span class="w"> </span><span class="nb">mkdir</span> /mnt/pool1
+<span class="gp">[root@client ~]#</span><span class="w"> </span>mount <span class="nt">-t</span> kadalu /pool1 /mnt/pool1</code></pre>
 </div>
 </div>
                             </div>

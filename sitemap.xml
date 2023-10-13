@@ -685,94 +685,6 @@
     <lastmod>2023-10-13</lastmod>
   </url>
   <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/README/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/config-snapshots/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/container-based-setup/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/README/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/add-a-new-feature/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/add-node-to-pool/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/auto-detect-manager-and-agent/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/container-based-dev-setup-for-glusterfs/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/container-based-dev-setup-single-node/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/emacs-setup/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/internal-and-external-apis/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/new-feature-checklist/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/devel/testing/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/faqs/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/index.yml</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/install/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/introduction/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/pools/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/quick-start/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/user-management/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
-    <loc>https://kadalu.io/kadalu-storage/1.0.x/volumes/</loc>
-    <lastmod>2023-10-13</lastmod>
-  </url>
-  <url>
     <loc>https://kadalu.io/kadalu-storage/1.1.x/README/</loc>
     <lastmod>2023-10-13</lastmod>
   </url>
@@ -877,6 +789,10 @@
     <lastmod>2023-10-13</lastmod>
   </url>
   <url>
+    <loc>https://kadalu.io/kadalu-storage/latest/cron-based-config-backup/</loc>
+    <lastmod>2023-10-13</lastmod>
+  </url>
+  <url>
     <loc>https://kadalu.io/kadalu-storage/latest/devel/README/</loc>
     <lastmod>2023-10-13</lastmod>
   </url>
@@ -945,11 +861,11 @@
     <lastmod>2023-10-13</lastmod>
   </url>
   <url>
-    <loc>https://kadalu.io/kadalu-storage/latest/user-management/</loc>
+    <loc>https://kadalu.io/kadalu-storage/latest/setup/</loc>
     <lastmod>2023-10-13</lastmod>
   </url>
   <url>
-    <loc>https://kadalu.io/kadalu-storage/latest/volumes/</loc>
+    <loc>https://kadalu.io/kadalu-storage/latest/user-management/</loc>
     <lastmod>2023-10-13</lastmod>
   </url>
   <url>
